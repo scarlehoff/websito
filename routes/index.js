@@ -11,6 +11,9 @@ router.get('/teaching', function(req, res, next) {
 router.get('/research', function(req, res, next) {
   res.render('research', { title: 'Research' });
 });
+router.get('/software', function(req, res, next) {
+  res.render('software', { title: 'Software' });
+});
 
 
 module.exports = router;
