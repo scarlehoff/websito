@@ -6,29 +6,28 @@ html
     meta(name="viewport", content="width=device-width, initial-scale=1")
     link(rel='stylesheet', href='./stylesheets/style.css')
     link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
+    script(src="https://kit.fontawesome.com/32dfc55f8c.js" crossorigin="anonymous")
+    //- link(rel='stylesheet', href="https://fonts.googleapis.com/icon?family=Material+Icons")
+    //- material icons: i.material-icons iconame
   body
     header
       nav.navbar.navbar-expand-lg.navbar-light.bg-light
-        a.navbar-brand(href="#") #{title}
+        a.navbar-brand(href="./") Home
         div.collapse.navbar-collapse(id="navbarSupportedContent")
           ul.navbar-nav.mr-auto
             li.nav-item
-              a.nav-link(href="./teaching") Teaching
+              a.nav-link(href='./research', class=(title=="Research" ? 'active' : '')) Research
             li.nav-item
-              a.nav-link(href="./") Software
+                a.nav-link(href="./software", class=(title=="Software" ? 'active' : '')) Software
             li.nav-item
-              a.nav-link(href="./") Talks and Seminars
-            li.nav-item
-              a.nav-link(href="./") Papers
+                a.nav-link(href="./teaching", class=(title=="Teaching" ? 'active' : '')) Teaching
           ul.navbar-nav.ml-auto
             li.nav-item
-              a.nav-link(href="https://github.com/scarlehoff/") Github
+              a.fab.fa-github.nav-link(href="https://github.com/scarlehoff/")
             li.nav-item
-              a.nav-link(href="http://twitter.com/juacrumar") test
+              a.fab.fa-twitter.nav-link(href="http://twitter.com/juacrumar")
             li.nav-item
-              i.fa.fa-twitter
-            li.nav-item
-              a.nav-link(href="https://www.linkedin.com/in/juacrumar/") Linkedin
+              a.fab.fa-linkedin.nav-link(href="https://www.linkedin.com/in/juacrumar/")
     div.jumbotron
       div.container
         block bodyHead

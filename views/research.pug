@@ -1,0 +1,53 @@
+extends layout
+
+block bodyHead
+  p My research is to do research researching re re re
+  p In this page you can also find an up to date list of all my #[a(href="#papers") papers] and public #[a(href="talks") talks].
+
+block content
+  div.row.mb-1
+    div.col-md-12
+      div.card.flex-md-row.mb-4.box-shadow.h-md-250
+        img.card-img-right.flex-auto.d-nome.d-md-block(src="./images/n3fit.png", width="300", height="200", alt="n3fit", data-holder-rendered="true")
+        div.card-body.d-flex.flex-column.align-items-start
+          h3.mb-0 PDF Determination
+          p Protons and quarks and all that
+          p Some of our work has been feature in the cover of the #[a(href="https://link.springer.com/journal/10052/79/8") European Physical Journal C].
+
+      div.card.flex-md-row.mb-4.box-shadow.h-md-250
+        div.card-body.d-flex.flex-column.align-items-start
+          h3.mb-0 Numerical Calculations
+          p I've worked on the Higgs boson which goes puff and boom photons.
+        img.card-img-right.flex-auto.d-nome.d-md-block(src="./images/vegasflow.png", width="300", height="200", alt="Vegasflow", data-holder-rendered="true")
+
+      div.card.flex-md-row.mb-4.box-shadow.h-md-250
+        img.card-img-right.flex-auto.d-nome.d-md-block(src="./images/neural.png", width="200", height="200", alt="ML", data-holder-rendered="true")
+        div.card-body.d-flex.flex-column.align-items-start
+          h3.mb-0 Machine Learning
+          p The machine learns things
+
+      div.card.flex-md-row.mb-4.box-shadow.h-md-250
+        div.card-body.d-flex.flex-column.align-items-start
+          h3.mb-0 Higgs physics
+          p I've worked on the Higgs boson which goes puff and boom photons.
+        img.card-img-right.flex-auto.d-nome.d-md-block(src="./images/cms-event.jpg", width="300", height="200", alt="CMS Higgs", data-holder-rendered="true")
+
+  hr
+  h2(id="papers") Papers
+  ul
+    li Stefano Carrazza, Juan Cruz-Martinez, Towards a new generation of parton densities with deep learning models, #[a(href="https://link.springer.com/article/10.1140%2Fepjc%2Fs10052-019-7197-2") 10.1140/epjc/s10052-019-7197-2] [arxiv: #[a(href="https://arxiv.org/abs/1907.05075") hep-ph/1907.05075]]
+  hr
+  h2(id="talks") Talks
+  ul
+    li Towards a new generation of PDFs with deep learning models, #[a(href="https://www.mpp.mpg.de/en/what-s-new/scientific-events/") QCD@LHC], Buffalo (USA), July 15, 2019 – #[a(href="http://n3pdf.mi.infn.it/wp-content/uploads/2019/07/JCruz-Martinez_USA_072019.pdf") SLIDES]
+
+  
+
+  //div.container.marketing
+    div.row
+      div.col-lg-4
+        img.rounded-circle(src="./images/cms-event.jpg", width="140", height="140")
+        // img from https://home.cern/news/news/accelerators/lhc-experiments-join-forces-zoom-higgs-boson
+        h3 Higgs Physics
+        p Blabla Higgs this is a particle and what's not more info here
+        a.btn.btn-secondary(href="https://home.cern/science/physics/higgs-boson", role="buttoon") View more
