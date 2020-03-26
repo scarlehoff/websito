@@ -1,0 +1,27 @@
+extends layout
+
+block bodyHead
+  p I am passionate about software
+  p Also free software, here some of my projects, related or not to academia
+
+block content
+  div.row
+    div.col-md-4
+      h2 VegasFlow
+      p Monte Carlo integration library written in Python and based on the TensorFlow framework. It is developed with a focus on speed and efficiency, enabling researchers to perform very expensive calculation as quick and easy as possible.
+      a.btn.btn-secondary(href="https://vegasflow.readthedocs.io/en/latest/") Documentation
+
+    div.col-md-4
+      h2 pyHepGrid
+      p Tool for distributed computing management geared towards HEP applications. 
+      a.btn.btn-secondary(href="https://github.com/scarlehoff/pyHepGrid") Repository
+
+    div.col-md-4
+      h2 pybliotecario
+      p simple Telegram bot written en python. The goal of the program is to mantain an active connection between the computer in which the pybliotecario runs and your Telegram account.
+      a.btn.btn-secondary(href="https://github.com/scarlehoff/pybliotecario") Repository
+
+    div.col-md-4
+      h2 Evolutionary Keras
+      p Keras models are trained through the usage of optimizers, all of which are Gradient Descent based. This module deals with that shortcoming of Keras implementing several Genetic Algorithms on top of Keras while keeping the main philosophy of the project: it must be easy to prototype.
+      a.btn.btn-secondary(href="https://evolutionary-keras.readthedocs.io/en/latest/?badge=latest") Documentation
