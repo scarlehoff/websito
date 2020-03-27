@@ -33,23 +33,22 @@ block content
         img.card-img-right.flex-auto.d-nome.d-md-block(src="./images/cms-event.jpg", width="300", height="200", alt="CMS Higgs", data-holder-rendered="true")
 
   hr
-  h2(id="papers") Papers
+  h2(id="papers") Articles
   div.table-responsive
     table.table.table-striped.table-sm(style='font-size:80%;')
       thead(style='text-align:center;')
         tr
           th.centered Title
           th Journal
-          th Doi
           th ArXiv
       tbody
-        tr
-          th Towards a new generation of parton densities with deep learning models
-          th EPJC
-          th
-            a(href="https://link.springer.com/article/10.1140%2Fepjc%2Fs10052-019-7197-2") 10.1140/epjc/s10052-019-7197-2
-          th
-            a(href="https://arxiv.org/abs/1907.05075") hep-ph/1907.05075
+        each item in articles
+          tr
+            th
+              a(href="https://doi.org/#{item['doi']}") #{item['title']}
+            th #{item['journal']} (#{item['year']} #{item['volume']})
+            th
+              a(href="https://arxiv.org/abs/#{item['eprint']}") #{item['eprint']}
   h2(id="talks") Talks
   div.table-responsive
     table.table.table-striped.table-sm(style='font-size:80%;')

@@ -17,9 +17,7 @@ function getBibEntries(bibStringRaw) {
   // Remove indentation
   const bibStringDigest = bibStringRaw.replace( /^\s\s+/gm, " ");
   // Remove the linebreaks that are NOT after ","
-  // (note, using \s{2} instead of \n to avoid cases where the break
-  // was just after a , )
-  const bibString = bibStringDigest.replace( /(?<!,)\s{2,}/gm, "");
+  const bibString = bibStringDigest.replace( /(?<!,)\n+/gm, "");
   // Return the matches
   const matches = bibString.match(myRegex);
   return matches;
@@ -122,6 +120,17 @@ fs.readFile(fileIn, (err, textContent) => {
         break;
       }
     }
+  }
+
+  // Order the items by date
+  for (let key in bibInformation) {
+    bibInformation[key].sort( (x,y) => {
+      if (x['eprint'] < y['eprint']) {
+        return -1;
+      } else {
+        return 1;
+      }
+    });
   }
 
   // Now make it into a json

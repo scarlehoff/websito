@@ -1,14 +1,8 @@
 {
   "article": [
     {
-      "author": "Carrazza, Stefano and Cruz-Martinez, Juan M.",
-      "title": "VegasFlow: accelerating Monte Carlo simulation acrossmultiple hardware platforms",
-      "year": "2020",
-      "eprint": "2002.12921"
-    },
-    {
-      "author": "Chen, X. and Cruz-Martinez, J. and Gehrmann, T. andGlover, E. W. N. and Jaquier, M.",
-      "title": "NNLO QCD corrections to Higgs boson production at largetransverse momentum",
+      "author": "Chen, X. and Cruz-Martinez, J. and Gehrmann, T. and Glover, E. W. N. and Jaquier, M.",
+      "title": "NNLO QCD corrections to Higgs boson production at large transverse momentum",
       "journal": "JHEP",
       "volume": "10",
       "year": "2016",
@@ -17,7 +11,7 @@
     },
     {
       "author": "Boggia, M. and others",
-      "title": "The HiggsTools handbook: a beginners guide to decodingthe Higgs sector",
+      "title": "The HiggsTools handbook: a beginners guide to decoding the Higgs sector",
       "journal": "J. Phys.",
       "volume": "G45",
       "year": "2018",
@@ -25,26 +19,8 @@
       "eprint": "1711.09875"
     },
     {
-      "author": "Cruz-Martinez, J. and Gehrmann, T. and Glover, E. W. N.and Huss, A.",
-      "title": "Second-order QCD effects in Higgs boson productionthrough vector boson fusion",
-      "journal": "Phys. Lett.",
-      "volume": "B781",
-      "year": "2018",
-      "doi": "10.1016/j.physletb.2018.04.046",
-      "eprint": "1802.02445"
-    },
-    {
-      "author": "Carrazza, Stefano and Cruz-Martinez, Juan",
-      "title": "Towards a new generation of parton densities with deeplearning models",
-      "journal": "Eur. Phys. J.",
-      "volume": "C79",
-      "year": "2019",
-      "doi": "10.1140/epjc/s10052-019-7197-2",
-      "eprint": "1907.05075"
-    },
-    {
       "author": "Gehrmann, Thomas and others",
-      "title": "Jet cross sections and transverse momentum distributionswith NNLOJET",
+      "title": "Jet cross sections and transverse momentum distributions with NNLOJET",
       "journal": "PoS",
       "volume": "RADCOR2017",
       "year": "2018",
@@ -52,29 +28,22 @@
       "eprint": "1801.06415"
     },
     {
-      "author": "Cruz-Martinez, J.",
-      "title": "Higgs Production at NNLO in VBF",
-      "journal": "Acta Phys. Polon. Supp.",
-      "volume": "11",
+      "author": "Cruz-Martinez, J. and Gehrmann, T. and Glover, E. W. N. and Huss, A.",
+      "title": "Second-order QCD effects in Higgs boson production through vector boson fusion",
+      "journal": "Phys. Lett.",
+      "volume": "B781",
       "year": "2018",
-      "doi": "10.5506/APhysPolBSupp.11.277"
+      "doi": "10.1016/j.physletb.2018.04.046",
+      "eprint": "1802.02445"
     },
     {
-      "author": "Cruz-Martinez, Juan and Glover, E. W. Nigel and Gehrmann, Thomas and Huss, Alexander",
+      "author": "Cruz-Martinez, Juan and Glover, E. W. Nigel and Gehrmann,  Thomas and Huss, Alexander",
       "title": "NNLO corrections to VBF Higgs boson production",
       "journal": "PoS",
       "volume": "LL2018",
       "year": "2018",
       "doi": "10.22323/1.303.0003",
       "eprint": "1807.07908"
-    },
-    {
-      "author": "Carrazza, Stefano and Cruz-Martinez, Juan andUrtasun-Elizari, Jesús and Villa, Emilio",
-      "title": "Towards hardware acceleration for parton densitiesestimation",
-      "journal": "Frascati Phys. Ser.",
-      "volume": "69",
-      "year": "2019",
-      "eprint": "1909.10547"
     },
     {
       "author": "Azzi, P. and others",
@@ -84,26 +53,57 @@
       "year": "2019",
       "doi": "10.23731/CYRM-2019-007.1",
       "eprint": "1902.04070"
+    },
+    {
+      "author": "Carrazza, Stefano and Cruz-Martinez, Juan",
+      "title": "Towards a new generation of parton densities with deep learning models",
+      "journal": "Eur. Phys. J.",
+      "volume": "C79",
+      "year": "2019",
+      "doi": "10.1140/epjc/s10052-019-7197-2",
+      "eprint": "1907.05075"
+    },
+    {
+      "author": "Carrazza, Stefano and Cruz-Martinez, Juan and Urtasun-Elizari, Jesús and Villa, Emilio",
+      "title": "Towards hardware acceleration for parton densities estimation",
+      "journal": "Frascati Phys. Ser.",
+      "volume": "69",
+      "year": "2019",
+      "eprint": "1909.10547"
+    },
+    {
+      "author": "Carrazza, Stefano and Cruz-Martinez, Juan M.",
+      "title": "VegasFlow: accelerating Monte Carlo simulation across multiple hardware platforms",
+      "year": "2020",
+      "eprint": "2002.12921"
+    },
+    {
+      "author": "Cruz-Martinez, J.",
+      "title": "Higgs Production at NNLO in VBF",
+      "journal": "Acta Phys. Polon. Supp.",
+      "volume": "11",
+      "year": "2018",
+      "doi": "10.5506/APhysPolBSupp.11.277"
     }
   ],
   "software": [
     {
-      "author": "Cruz-Martinez, Juan andWalker, Duncan andWhitehead, James",
+      "author": "Cruz-Martinez, Juan and Walker, Duncan and Whitehead, James",
       "title": "pyHepGrid: distributed computing made easy",
       "year": "2019,",
       "doi": "10.5281/zenodo.3233862",
       "url": "https://doi.org/10.5281/zenodo.3233862"
     },
     {
-      "author": "Juacrumar andRoy Stegeman andStefano Carrazza",
-      "title": "{N3PDF/evolutionary\\_keras: First release ofevolutionary\\_keras",
+      "author": "Juacrumar and Roy Stegeman and Stefano Carrazza",
+      "title": "{N3PDF/evolutionary\\_keras: First release of  evolutionary\\_keras",
       "year": "2020,",
       "doi": "10.5281/zenodo.3630339",
       "url": "https://doi.org/10.5281/zenodo.3630339"
     },
     {
-      "author": "Juacrumar andStefano Carrazza",
-      "title": "{N3PDF/vegasflow: accelerating Monte Carlosimulation across multiple hardware platforms",
+      "author": "Juacrumar and Stefano Carrazza",
+      "title": "{N3PDF/vegasflow: accelerating Monte Carlo  simulation across multiple hardware platforms",
       "year": "2020,",
       "doi": "10.5281/zenodo.3691926.",
       "url": "https://doi.org/10.5281/zenodo.3691926"
