@@ -2,7 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const fileIn = path.join(__dirname, "publications.bib");
+const fileIn = "/home/jumax9/Documents/Burocracia/Curriculum Vitae/publications.bib";
 const fileOut = path.join(__dirname, "publications.json");
 
 
