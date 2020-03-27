@@ -45,10 +45,10 @@ block content
         each item in articles
           tr
             th
-              a(href="https://doi.org/#{item['doi']}") #{item['title']}
+              a(href="https://doi.org/"+item['doi']) #{item['title']}
             th #{item['journal']} (#{item['year']} #{item['volume']})
             th
-              a(href="https://arxiv.org/abs/#{item['eprint']}") #{item['eprint']}
+              a(href="https://arxiv.org/abs/"+item['eprint']) #{item['eprint']}
   h2(id="talks") Talks
   div.table-responsive
     table.table.table-striped.table-sm(style='font-size:80%;')
@@ -60,23 +60,14 @@ block content
           th Date
           th Slides
       tbody
-        tr
-          th Towards a new generation of PDFs with deep learning models
-          th
-            a(href="https://www.mpp.mpg.de/en/what-s-new/scientific-events/") QCD@LHC
-          th Buffalo (USA)
-          th July 15, 2019
-          th 
-            a(href="http://n3pdf.mi.infn.it/wp-content/uploads/2019/07/JCruz-Martinez_USA_072019.pdf") SLIDES
-
-
-  
-
-  //div.container.marketing
-    div.row
-      div.col-lg-4
-        img.rounded-circle(src="./images/cms-event.jpg", width="140", height="140")
-        // img from https://home.cern/news/news/accelerators/lhc-experiments-join-forces-zoom-higgs-boson
-        h3 Higgs Physics
-        p Blabla Higgs this is a particle and what's not more info here
-        a.btn.btn-secondary(href="https://home.cern/science/physics/higgs-boson", role="buttoon") View more
+        each item in talks
+          tr 
+            th #{item['title']}
+            th #{item['conference']}
+            th #{item['place']}
+            th #{item['date']}
+            if item['slides']
+              th 
+                a(href=item['slides']) SLIDES
+            else
+              th

@@ -1,58 +1,18 @@
 {
   "article": [
     {
-      "author": "Chen, X. and Cruz-Martinez, J. and Gehrmann, T. and Glover, E. W. N. and Jaquier, M.",
-      "title": "NNLO QCD corrections to Higgs boson production at large transverse momentum",
-      "journal": "JHEP",
-      "volume": "10",
-      "year": "2016",
-      "doi": "10.1007/JHEP10(2016)066",
-      "eprint": "1607.08817"
+      "author": "Carrazza, Stefano and Cruz-Martinez, Juan M.",
+      "title": "VegasFlow: accelerating Monte Carlo simulation across multiple hardware platforms",
+      "year": "2020",
+      "eprint": "2002.12921"
     },
     {
-      "author": "Boggia, M. and others",
-      "title": "The HiggsTools handbook: a beginners guide to decoding the Higgs sector",
-      "journal": "J. Phys.",
-      "volume": "G45",
-      "year": "2018",
-      "doi": "10.1088/1361-6471/aab812",
-      "eprint": "1711.09875"
-    },
-    {
-      "author": "Gehrmann, Thomas and others",
-      "title": "Jet cross sections and transverse momentum distributions with NNLOJET",
-      "journal": "PoS",
-      "volume": "RADCOR2017",
-      "year": "2018",
-      "doi": "10.22323/1.290.0074",
-      "eprint": "1801.06415"
-    },
-    {
-      "author": "Cruz-Martinez, J. and Gehrmann, T. and Glover, E. W. N. and Huss, A.",
-      "title": "Second-order QCD effects in Higgs boson production through vector boson fusion",
-      "journal": "Phys. Lett.",
-      "volume": "B781",
-      "year": "2018",
-      "doi": "10.1016/j.physletb.2018.04.046",
-      "eprint": "1802.02445"
-    },
-    {
-      "author": "Cruz-Martinez, Juan and Glover, E. W. Nigel and Gehrmann,  Thomas and Huss, Alexander",
-      "title": "NNLO corrections to VBF Higgs boson production",
-      "journal": "PoS",
-      "volume": "LL2018",
-      "year": "2018",
-      "doi": "10.22323/1.303.0003",
-      "eprint": "1807.07908"
-    },
-    {
-      "author": "Azzi, P. and others",
-      "title": "Report from Working Group 1",
-      "journal": "CERN Yellow Rep. Monogr.",
-      "volume": "7",
+      "author": "Carrazza, Stefano and Cruz-Martinez, Juan and Urtasun-Elizari, Jesús and Villa, Emilio",
+      "title": "Towards hardware acceleration for parton densities estimation",
+      "journal": "Frascati Phys. Ser.",
+      "volume": "69",
       "year": "2019",
-      "doi": "10.23731/CYRM-2019-007.1",
-      "eprint": "1902.04070"
+      "eprint": "1909.10547"
     },
     {
       "author": "Carrazza, Stefano and Cruz-Martinez, Juan",
@@ -64,18 +24,58 @@
       "eprint": "1907.05075"
     },
     {
-      "author": "Carrazza, Stefano and Cruz-Martinez, Juan and Urtasun-Elizari, Jesús and Villa, Emilio",
-      "title": "Towards hardware acceleration for parton densities estimation",
-      "journal": "Frascati Phys. Ser.",
-      "volume": "69",
+      "author": "Azzi, P. and others",
+      "title": "Report from Working Group 1",
+      "journal": "CERN Yellow Rep. Monogr.",
+      "volume": "7",
       "year": "2019",
-      "eprint": "1909.10547"
+      "doi": "10.23731/CYRM-2019-007.1",
+      "eprint": "1902.04070"
     },
     {
-      "author": "Carrazza, Stefano and Cruz-Martinez, Juan M.",
-      "title": "VegasFlow: accelerating Monte Carlo simulation across multiple hardware platforms",
-      "year": "2020",
-      "eprint": "2002.12921"
+      "author": "Cruz-Martinez, Juan and Glover, E. W. Nigel and Gehrmann,  Thomas and Huss, Alexander",
+      "title": "NNLO corrections to VBF Higgs boson production",
+      "journal": "PoS",
+      "volume": "LL2018",
+      "year": "2018",
+      "doi": "10.22323/1.303.0003",
+      "eprint": "1807.07908"
+    },
+    {
+      "author": "Cruz-Martinez, J. and Gehrmann, T. and Glover, E. W. N. and Huss, A.",
+      "title": "Second-order QCD effects in Higgs boson production through vector boson fusion",
+      "journal": "Phys. Lett.",
+      "volume": "B781",
+      "year": "2018",
+      "doi": "10.1016/j.physletb.2018.04.046",
+      "eprint": "1802.02445"
+    },
+    {
+      "author": "Gehrmann, Thomas and others",
+      "title": "Jet cross sections and transverse momentum distributions with NNLOJET",
+      "journal": "PoS",
+      "volume": "RADCOR2017",
+      "year": "2018",
+      "doi": "10.22323/1.290.0074",
+      "eprint": "1801.06415"
+    },
+    {
+      "author": "Boggia, M. and others",
+      "title": "The HiggsTools handbook: a beginners guide to decoding the Higgs sector",
+      "journal": "J. Phys.",
+      "volume": "G45",
+      "year": "2018",
+      "doi": "10.1088/1361-6471/aab812",
+      "eprint": "1711.09875"
+    },
+    {
+      "author": "Chen, X. and Cruz-Martinez, J. and Gehrmann, T. and Glover, E. W. N. and Jaquier, M.",
+      "title": "NNLO QCD corrections to Higgs boson production at large transverse momentum",
+      "journal": "JHEP",
+      "volume": "10",
+      "year": "2016",
+      "doi": "10.1007/JHEP10(2016)066",
+      "eprint": "1607.08817"
     },
     {
       "author": "Cruz-Martinez, J.",

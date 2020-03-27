@@ -125,10 +125,13 @@ fs.readFile(fileIn, (err, textContent) => {
   // Order the items by date
   for (let key in bibInformation) {
     bibInformation[key].sort( (x,y) => {
-      if (x['eprint'] < y['eprint']) {
-        return -1;
-      } else {
+      const xprint = x['eprint'];
+      const yprint = y['eprint'];
+      if (!xprint) return 1;
+      if (xprint < yprint) {
         return 1;
+      } else {
+        return -1;
       }
     });
   }
