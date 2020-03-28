@@ -35,7 +35,7 @@ block content
   hr
   h2(id="papers") Articles
   div.table-responsive
-    table.table.table-striped.table-sm(style='font-size:80%;')
+    table.table.table-striped.table-sm(style='font-size:70%;')
       thead(style='text-align:center;')
         tr
           th.centered Title
@@ -49,25 +49,42 @@ block content
             th #{item['journal']} (#{item['year']} #{item['volume']})
             th
               a(href="https://arxiv.org/abs/"+item['eprint']) #{item['eprint']}
-  h2(id="talks") Talks
+  h2(id="talks") Seminars and conferences
   div.table-responsive
-    table.table.table-striped.table-sm(style='font-size:80%;')
+    table.table.table-striped.table-sm(style='font-size:70%;')
       thead(style='text-align:center;')
         tr
-          th Title
-          th Conference
-          th Location
-          th Date
-          th Slides
+          th title
+          th conference
+          th location
+          th date
+          th slides
       tbody
         each item in talks
           tr 
             th #{item['title']}
-            th #{item['conference']}
+            th 
+              a(href=item['url']) #{item['conference']}
             th #{item['place']}
             th #{item['date']}
             if item['slides']
               th 
-                a(href=item['slides']) SLIDES
+                a(href=item['slides']) slides
             else
               th
+  h2(id="software") Academic open-sourced Software
+  div.table-responsive
+    table.table.table-striped.table-sm(style='font-size:80%;')
+      thead(style='text-align:center;')
+        tr
+          th title
+          th description
+          th source
+      tbody
+        each item in software 
+          tr
+            th
+              a(href=item.docs) #{item.title}
+            th #{item.description}
+            th
+              a(href=item.url) Zenodo (#{item.year})

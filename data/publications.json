@@ -89,24 +89,30 @@
   "software": [
     {
       "author": "Cruz-Martinez, Juan and Walker, Duncan and Whitehead, James",
-      "title": "pyHepGrid: distributed computing made easy",
-      "year": "2019,",
+      "title": "pyHepGrid",
+      "year": "2019",
       "doi": "10.5281/zenodo.3233862",
-      "url": "https://doi.org/10.5281/zenodo.3233862"
+      "url": "https://doi.org/10.5281/zenodo.3233862",
+      "docs": "https://github.com/scarlehoff/pyHepGrid",
+      "description": "Distributed computing made easy"
     },
     {
       "author": "Juacrumar and Roy Stegeman and Stefano Carrazza",
-      "title": "{N3PDF/evolutionary\\_keras: First release of  evolutionary\\_keras",
-      "year": "2020,",
+      "title": "evolutionary keras",
+      "year": "2020",
       "doi": "10.5281/zenodo.3630339",
-      "url": "https://doi.org/10.5281/zenodo.3630339"
+      "url": "https://doi.org/10.5281/zenodo.3630339",
+      "docs": "https://evolutionary-keras.readthedocs.io/en/latest/",
+      "description": "An evolutionary algorithm implementation for Keras"
     },
     {
       "author": "Juacrumar and Stefano Carrazza",
-      "title": "{N3PDF/vegasflow: accelerating Monte Carlo  simulation across multiple hardware platforms",
-      "year": "2020,",
+      "title": "vegasflow",
+      "year": "2020",
       "doi": "10.5281/zenodo.3691926.",
-      "url": "https://doi.org/10.5281/zenodo.3691926"
+      "url": "https://doi.org/11.5281/zenodo.3691926",
+      "docs": "https://vegasflow.readthedocs.io",
+      "description": "Accelerating Monte Carlo  simulation across multiple hardware platforms"
     }
   ]
 }

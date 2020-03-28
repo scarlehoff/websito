@@ -11,9 +11,11 @@ html
     //- material icons: i.material-icons iconame
   body
     header
-      nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      nav.navbar.navbar-toggleable-md.navbar-expand-lg.navbar-light.bg-light
+        button.navbar-toggler.navbar-toggler-right(data-toggle="collapse", data-target="#navbarDiv")
+          span.navbar-toggler-icon
         a.navbar-brand(href="./") Home
-        div.collapse.navbar-collapse(id="navbarSupportedContent")
+        div.collapse.navbar-collapse(id="navbarDiv")
           ul.navbar-nav.mr-auto
             li.nav-item(class=(title=="Research" ? 'active' : ''))
               a.nav-link(href='./research') Research

@@ -1,27 +1,40 @@
 [
   {
+    "date": "February 2020",
+    "title": "Optimizating the hyperoptimization",
+    "conference": "NNPDF Collaboration meeting",
+    "place": "Amsterdam (The Netherlands)",
+    "url": "https://twitter.com/NNPDF_Team/status/1226783667126751232"
+  },
+  {
     "date": "October 2019",
     "title": "Studying the parton content of the proton with deep learning models",
     "conference": "Artificial Intelligence for Science, Industry and Society Symposium (AISIS 2019)",
-    "place": "Ciudad de Mexico (Mexico)"
+    "place": "Ciudad de Mexico (Mexico)",
+    "slides": "http://n3pdf.mi.infn.it/wp-content/uploads/2019/10/JCruz-Martinez_Mexico_102019.pdf", 
+    "url": "https://indico.cern.ch/event/781223/"
   },
   {
     "date": "September 2019",
     "title": "Methodological improvements in PDF determination",
     "conference": "James Stirling Memorial Conference \\& PDF4LHC",
-    "place": "Durham (UK)"
+    "place": "Durham (UK)",
+    "slides": "http://n3pdf.mi.infn.it/wp-content/uploads/2019/09/JCruz-Martinez_Durham_092019.pdf",
+    "url" : "https://conference.ippp.dur.ac.uk/event/794/"
   },
   {
     "date": "August 2019",
     "title": "n3fit and hyperoptimization in the context of NNPDF 4.0",
     "conference": "NNPDF Collaboration meeting",
-    "place": "Varenna (Italy)"
+    "place": "Varenna (Italy)",
+    "url": "https://indico.cern.ch/event/825705/"
   },
   {
     "date": "July 2019",
     "title": "Towards a new generation of PDFs with deep learning models",
     "conference": "QCD@LHC 2019",
     "place": "Buffalo, New York (USA)",
+    "url" : "https://indico.fnal.gov/event/19380/",
     "slides": "http://n3pdf.mi.infn.it/wp-content/uploads/2019/07/JCruz-Martinez_USA_072019.pdf" 
   },
   {
@@ -34,66 +47,82 @@
     "date": "February 2019",
     "title": "N3PDF studies of new methodologies",
     "conference": "NNPDF Collaboration meeting",
-    "place": "Amsterdam (The Netherlands)"
+    "place": "Amsterdam (The Netherlands)",
+    "url": "http://nnpdf.mi.infn.it/news/#mce_2"
   },
   {
     "date": "September 2018",
     "title": "Recent developments within NNLOJET",
     "conference": "NNPDF Collaboration \\& N3PDF Kickoff Meeting",
-    "place": "Gargnano, Lake Garda (Italy)"
+    "place": "Gargnano, Lake Garda (Italy)",
+    "url" : "https://indico.cern.ch/event/742441/",
+    "slides": "https://indico.cern.ch/event/742441/contributions/3081440/attachments/1716733/2770322/juan.pdf"
   },
   {
     "date": "May 2018",
     "title": "NNLO corrections to VBF Higgs boson production",
     "conference": "Loops and Legs in Quantum Field Theory 2018",
-    "place": "St. Goar (Germany)"
+    "place": "St. Goar (Germany)",
+    "url": "https://pos.sissa.it/303/"
   },
   {
     "date": "September 2017",
     "title": "NNLO phenomenology with Antenna Subtraction",
     "conference": "HiggsTools Final Meeting",
-    "place": "Durham (UK)"
+    "place": "Durham (UK)",
+    "slides": "https://conference.ippp.dur.ac.uk/event/624/contributions/3433/attachments/2909/3162/Juan.pdf",
+    "url": "https://www.ippp.dur.ac.uk/final-higgstools-meeting"
   },
   {
     "date": "May 2017",
     "title": "\\phi^*_\\eta observable for Higgs production",
     "conference": "Internal Seminar",
+    "url": "https://conference.ippp.dur.ac.uk/category/16/",
     "place": "Durham (UK)"
   },
   {
     "date": "February 2017",
     "title": "Higgs phenomenology with antenna subtraction",
     "conference": "Student Seminar",
+    "url": "http://www.maths.dur.ac.uk/users/studentseminar/home.php",
     "place": "Durham (UK)"
   },
   {
     "date": "Jaunary 2017",
     "title": "Higgs phenomenology with antenna subtraction",
-    "conference": "Seminar",
-    "place": "Valencia (Spain)"
+    "conference": "Invited Seminar",
+    "place": "Valencia (Spain)",
+    "url": "https://indico.ific.uv.es/event/2876/",
+    "slides": "https://indico.ific.uv.es/event/2876/attachments/3105/3475/presentation.pdf"
   },
   {
     "date": "April 2016",
     "title": "NNLO calculations for Higgs processes",
     "conference": "HiggsTools Second Annual Meeting",
-    "place": "Granada (Spain)"
+    "place": "Granada (Spain)",
+    "slides": "https://indico.cern.ch/event/470228/contributions/1989642/attachments/1256308/1854697/JuanCruzMartinez.pdf",
+    "url": "https://indico.cern.ch/event/470228/"
   },
   {
     "date": "February 2016",
     "title": "Renormalisation Scale Dependence as a Testing Ground for NNLO calculations",
     "conference": "Internal Seminar",
+    "url": "https://conference.ippp.dur.ac.uk/category/16/",
     "place": "Durham (UK)"
   },
   {
     "date": "February 2016",
     "title": "Building and Playing with NNLO Monte Carlos",
     "conference": "Student Seminar",
+    "url": "http://www.maths.dur.ac.uk/users/studentseminar/home.php",
     "place": "Durham (UK)"
   },
   {
     "date": "April 2015",
     "title": "NNLO predictions for Higgs production at LHC",
     "conference": "HiggsTools First Annual Meeting",
+    "url": "https://indico.cern.ch/event/373699/",
+    "slides": "https://indico.cern.ch/event/373699/contributions/887233/attachments/744339/1021048/6_Juan.pdf",
     "place": "Freiburg (Germany)"
   }
 ]

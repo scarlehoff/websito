@@ -89,12 +89,20 @@ function parseEntry(entry, keys, safety=true) {
 
 const keySelection = {
   'article' : ["author", "title", "journal", "doi", "year", "eprint", "volume"],
-  'software' :  ["author", "title", "url", "doi", "year"],
+  'software' :  ["author", "title", "url", "doi", "year", "docs",],
 };
 function parseSelector(entry, mode) {
   let safe = true;
   if (mode == 'software') safe = false;
-  return parseEntry(entry, keySelection[mode], safe);
+  let result = parseEntry(entry, keySelection[mode], safe);
+  if (mode == 'software') {
+    result.year = result.year.replace(",","")
+    const title = result.title.match(/[^{^/]*(?=:)/)
+    const description = result.title.match(/(?<=: ).*/)
+    result.title = title[0].replace("\\_", " ")
+    result.description = description[0];
+  };
+  return result;
 }
 
 let bibInformation = {
