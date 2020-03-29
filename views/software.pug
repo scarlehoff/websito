@@ -1,27 +1,45 @@
 extends layout
 
 block bodyHead
-  p I am passionate about software
-  p Also free software, here some of my projects, related or not to academia
+  p I am passionate about software development and open source code. During my academic carreers I have been involved on the development of many tools with a focus on numerical calculations.
+  p You can find #[a(href="#osource") here] some of the open software I have developed or contributed to develop in the last few years. Some of them are research tools, some are personal projects I have done in my spare time.
+  p I have #[a(href="#pastwork") listed] some of the software development work I have been involved with in the past. This includes my work as as a researcher in different research group as well as my work outside academia.
 
 block content
+  h2 Technologies
+  p Fortran, C++, python, javascript, opencl
+  p tensorflow, keras, vim, linux
+  hr
+
+  h2(id="pastwork") Past work
+  p Familyapp. It was featured in the #[a(href="https://www.europapress.es/portaltic/internet/noticia-familyapp-web-solidaria-descuentos-donaciones-ong-20140915135251.html") news]. The project died out but some of it can still be accessed through the #[a(href="https://web.archive.org/web/20140914195450/http://www.familyapp.es/") wayback] machine.
+
+  p NNLOJET. A parton-level monte carlo generator written in Fortran. I have work on the implementation of the Higgs production process through gluon fusion and vector boson fusion. The codebase is mostly private, with an aim of making it public in the future. The code is built so that the computation can easily be distributed among different systems. The implementation of the Vegas algorithm that fuels the integration is based on the code that can be found in this github #[a(href="https://github.com/scarlehoff/vegasSocket") repository].
+
+  p Shell Projects & Technology Rijswijk. As part of an internship I was part of the Projects and Tehcnology branch of Shell, where I worked on the geophysical tomography imaging tool #[a(href="https://www.shell.com/energy-and-innovation/overcoming-technology-challenges/finding-oil-and-gas/_jcr_content/par/textimage.stream/1519763871115/bb09c37973c5a21a00f9e95015f705e1dae794cf/geophysical-imaging-brochure-2014.pdf") SIPMAP].
+
+  p NNPDF. 
+
+  hr
+
+  h2(id="osource") Open source projects
   div.row
     div.col-md-4
-      h2 VegasFlow
+      h3 VegasFlow
       p Monte Carlo integration library written in Python and based on the TensorFlow framework. It is developed with a focus on speed and efficiency, enabling researchers to perform very expensive calculation as quick and easy as possible.
       a.btn.btn-secondary(href="https://vegasflow.readthedocs.io/en/latest/") Documentation
 
     div.col-md-4
-      h2 pyHepGrid
+      h3 pyHepGrid
       p Tool for distributed computing management geared towards HEP applications. 
       a.btn.btn-secondary(href="https://github.com/scarlehoff/pyHepGrid") Repository
 
     div.col-md-4
-      h2 pybliotecario
+      h3 pybliotecario
       p simple Telegram bot written en python. The goal of the program is to mantain an active connection between the computer in which the pybliotecario runs and your Telegram account.
       a.btn.btn-secondary(href="https://github.com/scarlehoff/pybliotecario") Repository
 
     div.col-md-4
-      h2 Evolutionary Keras
+      h3 Evolutionary Keras
       p Keras models are trained through the usage of optimizers, all of which are Gradient Descent based. This module deals with that shortcoming of Keras implementing several Genetic Algorithms on top of Keras while keeping the main philosophy of the project: it must be easy to prototype.
       a.btn.btn-secondary(href="https://evolutionary-keras.readthedocs.io/en/latest/?badge=latest") Documentation
