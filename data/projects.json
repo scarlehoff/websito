@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Vegasflow",
+    "documentation" : "https://vegasflow.readthedocs.io",
+    "repository" : "https://github.com/N3PDF/VegasFlow/",
+    "description" : "Monte Carlo integration library written in Python and based on the TensorFlow framework. It is developed with a focus on speed and efficiency, enabling researchers to perform very expensive calculation as quick and easy as possible."
+  },
+  {
+    "title": "EvolutionaryKeras",
+    "documentation" : "https://evolutionary-keras.readthedocs.io",
+    "repository" : "https://github.com/N3PDF/evolutionary-keras/",
+    "description" : "Keras models are trained through the usage of optimizers, all of which are Gradient Descent based. This module deals with that shortcoming of Keras implementing several Genetic Algorithms on top of Keras while keeping the main philosophy of the project: it must be easy to prototype."
+  },
+  {
+    "title": "pyHepGrid",
+    "documentation" : "https://zenodo.org/record/3233862",
+    "repository" : "https://github.com/scarlehoff/pybliotecario",
+    "description" : "Tool for distributed computing management geared towards HEP applications."
+  },
+  {
+    "title": "pybliotecario",
+    "documentation" : "https://github.com/scarlehoff/pybliotecario/wiki",
+    "repository" : "https://github.com/N3PDF/VegasFlow/",
+    "description" : "Simple Telegram bot written en python. The goal of the program is to mantain an active connection between the computer in which the pybliotecario runs and your Telegram account."
+  }
+]

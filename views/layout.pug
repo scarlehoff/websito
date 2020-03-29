@@ -11,7 +11,7 @@ html
     //- material icons: i.material-icons iconame
   body
     header
-      nav.navbar.navbar-toggleable-md.navbar-expand-lg.navbar-light.bg-light
+      nav.navbar.navbar-toggleable-sm.navbar-expand-sm.navbar-light.bg-light
         button.navbar-toggler.navbar-toggler-right(data-toggle="collapse", data-target="#navbarDiv")
           span.navbar-toggler-icon
         a.navbar-brand(href="./") Home
@@ -32,6 +32,7 @@ html
               a.fab.fa-linkedin.nav-link(href="https://www.linkedin.com/in/juacrumar/")
     div.jumbotron
       div.container
+        h2= title
         block bodyHead
     div.container
       block content
