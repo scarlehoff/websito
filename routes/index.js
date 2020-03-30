@@ -20,8 +20,14 @@ router.get('/research', function(req, res, next) {
 });
 
 router.get('/software', function(req, res, next) {
-  const projects = require('../data/projects.json');
-  res.render('software', { title: 'Software', projects});
+  const development = require('../data/development.json');
+  const projects = development["openSource"];
+  const pastWork = development["pastWork"];
+  res.render('software', { title: 'Software', projects, pastWork});
+});
+
+router.get('/resume', function(req, res, next) {
+  res.render('resume', { title: 'Resume' });
 });
 
 

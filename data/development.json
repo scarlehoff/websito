@@ -1,0 +1,46 @@
+{
+  "pastWork" : [
+    {
+      "title": "NNLOJET",
+      "description": "A parton-level monte carlo generator written in Fortran. I have work on the implementation of the Higgs production process through gluon fusion and vector boson fusion. The codebase is mostly private, with an aim of making it public in the future. The code is built so that the computation can easily be distributed among different systems. The implementation of the Vegas algorithm that fuels the integration is based on the code that can be found in this github <a href='https://github.com/scarlehoff/vegasSocket'>repository</a>"
+    },
+    {
+      "title" : "familyapp",
+      "description" : "It was featured in the <a href='https://www.europapress.es/portaltic/internet/noticia-familyapp-web-solidaria-descuentos-donaciones-ong-20140915135251.html'> news</a>. The project died out but some of it can still be accessed through the <a href='https://web.archive.org/web/20140914195450/http://www.familyapp.es/'> wayback<a/> machine."
+    },
+    {
+      "title" : "Shell Projects & Technology Rijswijk",
+      "description" : "As part of an internship I was part of the Projects and Tehcnology branch of Shell, where I worked on the geophysical tomography imaging tool <a href='https://www.shell.com/energy-and-innovation/overcoming-technology-challenges/finding-oil-and-gas/_jcr_content/par/textimage.stream/1519763871115/bb09c37973c5a21a00f9e95015f705e1dae794cf/geophysical-imaging-brochure-2014.pdf'> SIPMAP<a/>."
+    },
+    {
+      "title" : "NNPDF",
+      "description" : "NNPDF collaboration"
+    }
+  ],
+  "openSource" : [
+    {
+      "title": "Vegasflow",
+      "documentation" : "https://vegasflow.readthedocs.io",
+      "repository" : "https://github.com/N3PDF/VegasFlow/",
+      "description" : "Monte Carlo integration library written in Python and based on the TensorFlow framework. It is developed with a focus on speed and efficiency, enabling researchers to perform very expensive calculation as quick and easy as possible."
+    },
+    {
+      "title": "EvolutionaryKeras",
+      "documentation" : "https://evolutionary-keras.readthedocs.io",
+      "repository" : "https://github.com/N3PDF/evolutionary-keras/",
+      "description" : "Keras models are trained through the usage of optimizers, all of which are Gradient Descent based. This module deals with that shortcoming of Keras implementing several Genetic Algorithms on top of Keras while keeping the main philosophy of the project: it must be easy to prototype."
+    },
+    {
+      "title": "pyHepGrid",
+      "documentation" : "https://zenodo.org/record/3233862",
+      "repository" : "https://github.com/scarlehoff/pyhepgrid",
+      "description" : "Tool for distributed computing management geared towards HEP applications."
+    },
+    {
+      "title": "pybliotecario",
+      "documentation" : "https://github.com/scarlehoff/pybliotecario/wiki",
+      "repository" : "https://github.com/scarlehoff/pybliotecario",
+      "description" : "Simple Telegram bot written en python. The goal of the program is to mantain an active connection between the computer in which the pybliotecario runs and your Telegram account."
+    }
+  ]
+}

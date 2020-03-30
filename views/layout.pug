@@ -9,7 +9,7 @@ html
     script(src="https://kit.fontawesome.com/32dfc55f8c.js" crossorigin="anonymous")
     //- link(rel='stylesheet', href="https://fonts.googleapis.com/icon?family=Material+Icons")
     //- material icons: i.material-icons iconame
-  body
+  body.bg-light
     header
       nav.navbar.navbar-toggleable-sm.navbar-expand-sm.navbar-light.bg-light
         button.navbar-toggler.navbar-toggler-right(data-toggle="collapse", data-target="#navbarDiv")
@@ -23,6 +23,8 @@ html
                 a.nav-link(href="./software") Software
             li.nav-item(class=(title=="Teaching" ? 'active' : ''))
                 a.nav-link(href="./teaching") Teaching
+            li.nav-item(class=(title=="Resume" ? 'active' : ''))
+                a.nav-link(href="./resume") Resume 
           ul.navbar-nav.ml-auto
             li.nav-item
               a.fab.fa-github.nav-link(href="https://github.com/scarlehoff/")
@@ -30,8 +32,8 @@ html
               a.fab.fa-twitter.nav-link(href="http://twitter.com/juacrumar")
             li.nav-item
               a.fab.fa-linkedin.nav-link(href="https://www.linkedin.com/in/juacrumar/")
-    div.jumbotron
-      div.container
+    div.container
+      div.jumbotron
         h2= title
         block bodyHead
     div.container
