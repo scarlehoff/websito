@@ -2,16 +2,38 @@ extends layout
 
 block bodyHead
   p In this page you can find some of the higlights of my resume
-  p You can also download the PDF version here, 
+  p You can download the full version in PDF here, 
   p There is also the academic version with a focus on publications and conferences attended.
 
 block content
-  div.container-fluid.text-center(id="tech")
-    div.row
+  div.container-fluid
+    div.row.rounded.bg-white
       div.col-sm-12
-        h2 Technical skills
+        h2.text-center(id="tech") Technical skills
+        p Learning new programming languages or more or less useful libraries has been one of my main hobbies for a long time. One of my main strenghs would be the ability to learn quickly to use new frameworks, languages and technologies. Here I list some of the main languages, frameworks and technologies I used in my everyday life and work.
       div.col-sm-6
-        h4 Programming languages
-        p Fortran, C++, python, javascript, opencl
+        h4.text-center Programming languages 
+        each desc, lang in resume.programming_languages
+          p
+            strong= lang + ':'
+            |  !{desc}
       div.col-sm-6
-        h4 Libraries and technologies
+        h4.text-center Libraries and technologies
+        each desc, tech in resume.technologies
+          p
+            strong= tech + ':'
+            |  !{desc}
+            
+  div.container-fluid
+    div.row.rounded.bg-white
+      div.col-sm-12
+        h2.text-center Languages
+        p
+          strong Spanish:
+          |  This is my native language
+        p
+          strong English:
+          |  I have lived for four years in Durham (UK). For some examples of my writting you can check my papers or my PhD thesis.
+        p
+          strong Italian:
+          |  I have lived for several year in Milan (Italy) and have teached several courses in the university during this time.

@@ -27,7 +27,8 @@ router.get('/software', function(req, res, next) {
 });
 
 router.get('/resume', function(req, res, next) {
-  res.render('resume', { title: 'Resume' });
+  const resume = require('../data/resume.json');
+  res.render('resume', { title: 'Resume', resume });
 });
 
 
