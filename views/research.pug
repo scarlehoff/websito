@@ -4,42 +4,22 @@ block bodyHead
   p As a particle phenomenologist with a focus on computation, my research it's half way between the experimental and theoretical worlds, without fully falling in any of them. Putting it in layman terms, I use theoretical model to compute simulations that can then be tested by my experimentalist colleagues in the various experiments across the globe (most of them, actually, in Geneva (Switzerland)).
   p Of the very extense world of particle physics, my work is mainly within the realm of Quantum Chromodynamics. My aim is to obtain more precise predictions with more faithful errors which can then be compared to the experiments.
   p In the computational side, my research is on Machine Learning and Monte Carlo simulations. They are all pieces of the same big puzzle: artificial intelligence is used to model the internal structure of the colliding protons, the theory of Quantum Chromodynamics allows us to model what happens after the collision. The resulting complicated integrals are then computed using Monte Carlo methods.
-  p In this page you can read a bit more about what I do and also find an up to date list of all my #[a(href="#papers") papers], #[a(href="talks") talks] and open-sourced #[a(href="software") software].
+  p In this page you can read a bit more about what I do and also find an up to date list of all my #[a(href="#papers") papers], #[a(href="talks") talks] and open-sourced #[a(href="#software") software].
 
 block content
   div.row.mb-1
     div.col-md-12
-      div.card.flex-md-row.mb-4.box-shadow.h-md-250
-        img.card-img-right.flex-auto.d-nome.d-md-block(src="./images/neural.png", width="200", height="200", alt="ML", data-holder-rendered="true")
-        div.card-body.d-flex.flex-column.align-items-start
-          h3.mb-0 Machine Learning
-          p Machine learning (ML) is the scientific study of algorithms and statistical models that computer systems use to perform a specific task without using explicit instructions, relying on patterns and inference instead. It is seen as a subset of artificial intelligence. Machine learning algorithms build a mathematical model based on sample data, known as "training data", in order to make predictions or decisions without being explicitly programmed to perform the task. Machine learning algorithms are used in a wide variety of applications, such as email filtering and computer vision, where it is difficult or infeasible to develop a conventional algorithm for effectively performing the task. 
+      for topic in research
+        if topic.active
+          div.card.flex-md-row.mb-4.box-shadow.h-md-250
+            if (topic.left)
+              img.card-img-left.flex-auto.d-nome.d-md-block(src=topic.thumbnail[0], width=topic.thumbnail[1], height=topic.thumbnail[2], data-holder-rendered="true")
+            div.card-body.d-flex.flex-column.align-items-start
+              h3.mb-0=topic.title
+              p !{topic.text}
+            if (!topic.left)
+              img.card-img-right.flex-auto.d-nome.d-md-block(src=topic.thumbnail[0], width=topic.thumbnail[1], height=topic.thumbnail[2], data-holder-rendered="true")
 
-      div.card.flex-md-row.mb-4.box-shadow.h-md-250
-        div.card-body.d-flex.flex-column.align-items-start
-          h3.mb-0 The parton content of the proton
-          p One very important ingredient for the high energy physics program of the Large Hadron Collider (#[a(href="https://www.google.com/search?client=firefox-b-d&q=large+hadron+collider+cern") LHC]) at CERN is the determination of the parton content of the proton. The structure of the proton in terms of quarks and gluons is given by the Parton Distribution Functions.
-          p In the #[a(href="http://nnpdf.mi.infn.it/") NNPDF] we use Machine Learning techniques in order to determinate the aforementioned PDFs.
-          p Some of our work has been feature in the cover of the #[a(href="https://link.springer.com/journal/10052/79/8") European Physical Journal C].
-        img.card-img-right.flex-auto.d-nome.d-md-block(src="./images/n3fit.png", width="300", height="300", alt="n3fit", data-holder-rendered="true")
-
-      div.card.flex-md-row.mb-4.box-shadow.h-md-250
-        img.card-img-right.flex-auto.d-nome.d-md-block(src="./images/cms-event.jpg", width="300", height="200", alt="CMS Higgs", data-holder-rendered="true")
-        div.card-body.d-flex.flex-column.align-items-start
-          h3.mb-0 QCD corrections to Higgs physics
-          p The Higgs boson is at the center of the physics program of the LHC at Cern. After its discovery in 2012, the effort of the phenomenological community (hep-ph) has been focused on the more precise determination of its properties.
-          p I have worked on some of the most precise calculations for the determination of the corrections due to Quantum Chromodynamics (QCD) effects to Higgs boson production on the gluon fusion and Vector Boson Fusion (VBF) production channels.
-
-
-      div.card.flex-md-row.mb-4.box-shadow.h-md-250
-        div.card-body.d-flex.flex-column.align-items-start
-          h3.mb-0 Numerical Calculations, Monte Carlo methods
-          p State-of-the-art computations in High Energy Physics (HEP) require computing very complex multi-dimensional integrals numerically, as the analytical result is often not known. Monte Carlo algoriths are generally the option of choice be it in HEP applications or elsewhere, as the error of such algorithms does not grow with the number of dimensions.
-          p Our aim is to improve the efficiency of widely used methods in order to enable more physics in less time.
-        img.card-img-right.flex-auto.d-nome.d-md-block(src="./images/vegasflow.png", width="300", height="200", alt="Vegasflow", data-holder-rendered="true")
-
-  hr
-  h2(id="papers") Articles
   div.table-responsive
     table.table.table-striped.table-sm(style='font-size:70%;')
       thead(style='text-align:center;')

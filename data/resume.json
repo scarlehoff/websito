@@ -10,6 +10,7 @@
     "Mathematica, Maple" : "As a theoretical physicist, I have great experience using algebra libraries",
     "Linux" : "I have been using Linux from way before it was cool",
     "Latex" : "Not sure whether this is something you should brag about",
-    "GPU computing" : "Some of my research focus is based on improving the efficiency of numerical calculation. This sometimes requires the usage of GPUs. In particular I have used tensorflow as the driver of GPU computation (as it makes things easier) but also Cuda and Opencl" 
+    "GPU computing" : "Some of my research focus is based on improving the efficiency of numerical calculation. This sometimes requires the usage of GPUs. In particular I have used tensorflow as the driver of GPU computation (as it makes things easier) but also Cuda and Opencl",
+    "Version control" : "I have ample experience working with VCSs such as git or mercurial"
   }
 }

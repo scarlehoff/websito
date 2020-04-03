@@ -12,11 +12,12 @@ router.get('/teaching', function(req, res, next) {
 });
 
 router.get('/research', function(req, res, next) {
+  const research = require('../data/research.json')
   const pubInfo = require('../data/publications.json');
   const articles = pubInfo["article"];
   const software = pubInfo["software"];
   const talks = require('../data/talks.json');
-  res.render('research', { title: 'Research', articles, software, talks });
+  res.render('research', { title: 'Research', articles, software, talks, research});
 });
 
 router.get('/software', function(req, res, next) {
