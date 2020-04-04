@@ -1,7 +1,7 @@
 [
   {
     "title" : "Machine Learning",
-    "text" : "A branch of Artificial Intelligence, this scientific discipline uses automated learning to perform tasks without knowing the necessary explicit instructions. We use ML algorithms in order construct mathematical models which, based on sample data (commonly known as training data), are able to make prediction on data that the model has never seen. Nowadays machine learning techniques are widespread in the world of physics (jet tagging, model building, pdf determination, ...) and beyond (email fitlering, computer vision, ...). Currently my main topic of research as part of <a href='http://n3pdf.mi.infn.it'>N3PDF</a> consist on the application of ML techniques to the <a href='https://link.springer.com/article/10.1140/epjc/s10052-019-7197-2'>determination of the internal structure of the proton</a>.",
+    "text" : "A branch of Artificial Intelligence, this scientific discipline uses automated learning to perform tasks without knowing the necessary explicit instructions. We use ML algorithms in order construct mathematical models which, based on sample data (commonly known as training data), are able to make prediction on data that the model has never seen. Nowadays machine learning techniques are widespread in the world of physics (jet tagging, model building, pdf determination, ...) and beyond (email filtering, computer vision, ...). Currently my main topic of research as part of <a href='http://n3pdf.mi.infn.it'>N3PDF</a> consist on the application of ML techniques to the <a href='https://link.springer.com/article/10.1140/epjc/s10052-019-7197-2'>determination of the internal structure of the proton</a>.",
     "thumbnail" : ["./images/neural.png", 200, 200],
     "active" : true,
     "left" : true
@@ -15,14 +15,14 @@
   },
   {
     "title" : "QCD corrections to Higgs physics",
-    "text" : "The Higgs boson is at the center of the physics program of the LHC at Cern. After its discovery in 2012, the effort of the phenomenological community (hep-ph) has been focused on the more precise determination of its properties.<p>I have worked on some of the most precise calculations for the determination of the corrections due to Quantum Chromodynamics (QCD) effects to Higgs boson production on the <a href='https://doi.org/10.1007/JHEP10(2016)066'>gluon fusion</a> and <a href='https://doi.org/10.1016/j.physletb.2018.04.046'>Vector Boson Fusion</a> (VBF) production channels.",
+    "text" : "The Higgs boson is at the center of the physics program of the LHC at CERN. After its discovery in 2012, the effort of the phenomenological community (hep-ph) has been focused on the more precise determination of its properties.<p>I have worked on some of the most precise calculations for the determination of the corrections due to Quantum Chromodynamics (QCD) effects to Higgs boson production on the <a href='https://doi.org/10.1007/JHEP10(2016)066'>gluon fusion</a> and <a href='https://doi.org/10.1016/j.physletb.2018.04.046'>Vector Boson Fusion</a> (VBF) production channels.",
     "thumbnail": ["./images/cms-event.jpg", 300, 200],
     "left" : true,
     "active" : true
   },
   {
     "title" : "Numerical Calculations, Monte Carlo methods",
-    "text" : "State-of-the-art computations in High Energy Physics (HEP) require computing very complex multi-dimensional integrals numerically, as the analytical result is often not known. Monte Carlo algoriths are generally the option of choice be it in HEP applications or elsewhere, as the error of such algorithms does not grow with the number of dimensions.<p>Our aim is to improve the efficiency of widely used methods in order to enable more physics in less time. Some examples are our implementation of the Vegas algorithm in tensorflow (<a href='https://arxiv.org/abs/2002.12921'>Vegasflow</a>) or the distributed computing tool <a href='https://github.com/scarlehoff/pyHepGrid'>pyHepGrid.</a>",
+    "text" : "State-of-the-art computations in High Energy Physics (HEP) require computing very complex multi-dimensional integrals numerically, as the analytical result is often not known. Monte Carlo algorithms are generally the option of choice be it in HEP applications or elsewhere, as the error of such algorithms does not grow with the number of dimensions.<p>Our aim is to improve the efficiency of widely used methods in order to enable more physics in less time. Some examples are our implementation of the Vegas algorithm in tensorflow (<a href='https://arxiv.org/abs/2002.12921'>Vegasflow</a>) or the distributed computing tool <a href='https://github.com/scarlehoff/pyHepGrid'>pyHepGrid.</a>",
     "thumbnail": ["./images/vegasflow.png", 300, 200],
     "left" : false,
     "active" : true
