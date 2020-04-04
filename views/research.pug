@@ -11,7 +11,7 @@ block content
     div.col-md-12
       for topic in research
         if topic.active
-          div.card.flex-md-row.mb-4.box-shadow.h-md-250
+          div.card.flex-md-row.mb-4.box-shadow.h-md-250(id=topic.title)
             if (topic.left)
               img.card-img-left.flex-auto.d-nome.d-md-block(src=topic.thumbnail[0], width=topic.thumbnail[1], height=topic.thumbnail[2], data-holder-rendered="true")
             div.card-body.d-flex.flex-column.align-items-start
