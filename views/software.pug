@@ -19,14 +19,16 @@ block content
           strong.d-block.text-gray-dark #{item.title}
           span !{item.description}
 
-  h2(id="osource") Open source projects
-  div.container.row
-    each project in projects
-      div.col-md-6.card.mb-6.shadow-sm.card-body
-        h3
-          a(href=project.repository) #{project.title}
-        p.card-text #{project.description}
-        div.d-flex.justify-content-between.align-item-center
-          div.btn-group
-            a.btn.btn-sm.btn-outline-secondary(href=project.documentation) Documentation
-            a.btn.btn-sm.btn-outline-secondary(href=project.repository) Source code
+  div.container
+    h2(id="osource") Open source projects
+    div.row.mx-auto
+      each project in projects
+        div.col-lg-6.d-flex
+          div.mb-3.mr-1.card.shadow-sm.card-body
+            h3.anchored
+              a.text-secondary(href=project.repository) #{project.title}
+            p.card-text #{project.description}
+            div.d-flex.align-self-end(style='margin-top: auto;')
+              div.btn-group
+                a.btn.btn-sm.btn-outline-info(href=project.documentation) Documentation
+                a.btn.btn-sm.btn-outline-info(href=project.repository) Source code
