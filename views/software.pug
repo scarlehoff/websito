@@ -6,25 +6,18 @@ block bodyHead
   p I have #[a(href="#pastwork") listed] some of the software development work I have been involved with in the past. This includes my work as as a researcher in different research group as well as my work outside academia.
 
 block content
-  h2 About: software
   div.container
+    h2 About: software
     p Some more information about me and about software and about my interests
   hr
 
-  h2(id="pastwork") Past work
-  div.container.my-3.p-3.bg-white.rounded.shadow-sm
-    each item in pastWork
-      div.media.pt-3
-        p.media-body.pb-3.mb-0.small.lh-125
-          strong.d-block.text-gray-dark #{item.title}
-          span !{item.description}
-
-  div.container
-    h2(id="osource") Open source projects
+  div.container(style='padding:0px;')
     div.row.mx-auto
+      div.col-md-12
+        h2(id="osource") Open source projects
       each project in projects
         div.col-lg-6.d-flex
-          div.mb-3.mr-1.card.shadow-sm.card-body
+          div.mb-3.mr-0.card.shadow-sm.card-body
             h3.anchored
               a.text-secondary(href=project.repository) #{project.title}
             p.card-text #{project.description}
@@ -32,3 +25,13 @@ block content
               div.btn-group
                 a.btn.btn-sm.btn-outline-info(href=project.documentation) Documentation
                 a.btn.btn-sm.btn-outline-info(href=project.repository) Source code
+
+  div.container
+    h2(id="pastwork") Past work
+    div.my-3.p-3.bg-white.rounded.shadow-sm
+      each item in pastWork
+        div.media.pt-3
+          p.media-body.pb-3.mb-0.small.lh-125
+            strong.d-block.text-gray-dark #{item.title}
+            span !{item.description}
+
