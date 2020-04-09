@@ -33,7 +33,7 @@
     },
     {
       "title": "pyHepGrid",
-      "documentation" : "https://zenodo.org/record/3233862",
+      "documentation" : "https://scarlehoff.github.io/pyHepGrid",
       "repository" : "https://github.com/scarlehoff/pyhepgrid",
       "description" : "Tool for distributed computing management geared towards HEP applications."
     },

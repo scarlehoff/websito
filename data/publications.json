@@ -93,11 +93,11 @@
       "year": "2019",
       "doi": "10.5281/zenodo.3233862",
       "url": "https://doi.org/10.5281/zenodo.3233862",
-      "docs": "https://github.com/scarlehoff/pyHepGrid",
+      "docs": "https://scarlehoff.github.io/pyHepGrid/",
       "description": "Distributed computing made easy"
     },
     {
-      "author": "Juacrumar and Roy Stegeman and Stefano Carrazza",
+      "author": "Cruz-Martinez, Juan and Roy Stegeman and Stefano Carrazza",
       "title": "evolutionary keras",
       "year": "2020",
       "doi": "10.5281/zenodo.3630339",
@@ -106,7 +106,7 @@
       "description": "An evolutionary algorithm implementation for Keras"
     },
     {
-      "author": "Juacrumar and Stefano Carrazza",
+      "author": "Cruz-Martinez, Juan and Stefano Carrazza",
       "title": "vegasflow",
       "year": "2020",
       "doi": "10.5281/zenodo.3691926.",
