@@ -4,7 +4,7 @@ let router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Home' });
+  res.render('index', { title: 'Juan Manuel Cruz Martinez' });
 });
 
 router.get('/teaching', function(req, res, next) {

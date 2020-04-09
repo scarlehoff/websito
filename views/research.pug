@@ -20,7 +20,7 @@ block content
             if (!topic.left)
               img.card-img-right.flex-auto.d-nome.d-md-block(src=topic.thumbnail[0], width=topic.thumbnail[1], height=topic.thumbnail[2], data-holder-rendered="true")
 
-  h2(id="papers") Papers
+  h2.anchored(id="papers") Journal articles and proceedings
   div.table-responsive
     table.table.table-striped.table-sm(style='font-size:70%;')
       thead(style='text-align:center;')
@@ -36,7 +36,7 @@ block content
             th #{item['journal']} (#{item['year']} #{item['volume']})
             th
               a(href="https://arxiv.org/abs/"+item['eprint']) #{item['eprint']}
-  h2(id="talks") Seminars and conferences
+  h2.anchored(id="talks") Seminars and conferences
   div.table-responsive
     table.table.table-striped.table-sm(style='font-size:70%;')
       thead(style='text-align:center;')
@@ -59,7 +59,7 @@ block content
                 a(href=item['slides']) slides
             else
               th
-  h2(id="software") Academic open-sourced Software
+  h2.anchored(id="software") Academic open-sourced Software
   div.table-responsive
     table.table.table-striped.table-sm(style='font-size:70%;')
       thead(style='text-align:center;')
