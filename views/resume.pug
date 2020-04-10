@@ -1,9 +1,9 @@
 extends layout
 
 block bodyHead
-  p In this page you can find some of the higlights of my resume
-  p You can download the full version in PDF here, 
-  p There is also the academic version with a focus on publications and conferences attended.
+  p In this page you can find some of the higlights of my resume, such as a summary of my #[a(href="#experience") past work experiences] and #[a(href="#techskills") tech skills].
+  | In this site you can also find information about my #[a(href="research") research interests], #[a(href="software") software projects] and #[a(href="teaching") teaching experience].
+  p The full sober version of my CV can be downloaded in PDF from #[a(href="pdfs/curriculum_juan.pdf") here].
 
 block content
   div.container.p-4
@@ -19,7 +19,7 @@ block content
   div.container.p-4
     div.row.rounded.bg-white
       div.col-sm-12(id="tech")
-        h2.anchored.text-center Tech skills
+        h2.anchored.text-center(id="techskills") Tech skills
         p Learning new programming languages or more or less useful libraries has been one of my main hobbies for a long time. One of my main strenghs would be the ability to learn quickly to use new frameworks, languages and technologies. Here I list some of the main languages, frameworks and technologies I used in my everyday life and work.
         each desc, tech in resume.technologies
           - var iconName = iconmap[tech]
