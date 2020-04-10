@@ -1,16 +1,33 @@
 {
-  "programming_languages" : {
+  "technologies" : {
     "fortran" : "I've worked extensively with Fortran in several projects during my career. It has been the main language in which the program developed during my PhD thesis was written. I have also used fortren in an internship at Shell",
     "C++" : "I've worked with C++ at several points of my career. My master thesis Monte Carlo code was written in C++, as well as supporting code for my PhD thesis and at the internship at Shell. I've also been Teaching Assistant for the C++ course of the University of Milano.",
     "python" : "Most of my work nowadays is developed using python, be it under the umbrella of the NNPDF collaboration or other research projects such as Vegasflow and evolutionary-keras. The backbone of the familyapp system, in which I worked before starting my PhD was also written using python (using django). I have also some personal projects written in python available in my github.",
-    "javascript" : "My experience with javascript is limited to personal projects, such as the server running this webpage (with express) or a small mobile app, using React, to log the spendings of my academic trips"
-  },
-  "technologies" : {
+    "javascript" : "My experience with javascript is limited to personal projects, such as the server running this webpage (with express) or a small mobile app, using React, to log the spendings of my academic trips",
     "keras & tensorflow" : "In my current position I used google's tensorflow in a daily basis. The MC integrator, VegasFlow it is written using the tensorflow library. The n3fit code, on the other hand, driver of the PDF fits for the NNPDF collaboration, is written using the keras library as its backend.",
     "Mathematica, Maple" : "As a theoretical physicist, I have great experience using algebra libraries",
     "Linux" : "I have been using Linux from way before it was cool",
-    "Latex" : "Not sure whether this is something you should brag about",
+    "Latex & markdown" : "Not sure whether this is something you should brag about",
     "GPU computing" : "Some of my research focus is based on improving the efficiency of numerical calculation. This sometimes requires the usage of GPUs. In particular I have used tensorflow as the driver of GPU computation (as it makes things easier) but also Cuda and Opencl",
-    "Version control" : "I have ample experience working with VCSs such as git or mercurial"
-  }
+    "Version control" : "I have ample experience working with VCSs such as git or mercurial",
+    "Vim" : "Everybody knows <a href='https://xkcd.com/378/'>real</a> programmers use vim"
+  },
+
+  "languages" : [
+    {
+      "name" : "Spanish",
+      "flag" : "spain",
+      "description" : "This is my native language."
+    },
+    {
+      "name" : "English",
+      "flag" : "uk",
+      "description" : "I have lived for four years in Durham (UK). For some examples of my writting you can check my papers or my PhD thesis."
+    },
+    {
+      "name" : "Italian",
+      "flag" : "italy",
+      "description" : "I have lived for several year in Milan (Italy) and have teached several courses in the university during this time."
+    }
+  ]
 }

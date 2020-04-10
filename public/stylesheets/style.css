@@ -22,3 +22,8 @@
 .active>a {
 color: #1abc9c !important;;
 }
+
+/* icons */
+.tf-plain::before {
+  content: "TF";
+}

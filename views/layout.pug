@@ -3,12 +3,18 @@ html
   head
     title= title
     meta(name="active-menu", content=menuId)
+    // Devicons by Konpa
+    link(rel='stylesheet' href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css")
+    // Use material design first so that bootstrap takes over
+    // npm install mdbootstrap
+    // link(rel='stylesheet', href='css/mdb.min.css')
+    link(rel='stylesheet', href='mdbootstrap/css/addons/flag.min.css')
     meta(name="viewport", content="width=device-width, initial-scale=1")
     link(rel='stylesheet', href='./stylesheets/style.css')
     link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
+    // https://materialdesignicons.com/
+    link(rel='stylesheet', href='https://cdn.materialdesignicons.com/5.0.45/css/materialdesignicons.min.css')
     script(src="https://kit.fontawesome.com/32dfc55f8c.js" crossorigin="anonymous")
-    //- link(rel='stylesheet', href="https://fonts.googleapis.com/icon?family=Material+Icons")
-    //- material icons: i.material-icons iconame
   body.bg-light
     header
       nav.navbar.navbar-toggleable-sm.navbar-expand-sm.navbar-dark.bg-dark
@@ -41,6 +47,8 @@ html
         hr
     footer.container
       p(align="right") Juan M. Cruz-Martinez (#[a(href="mailto:juan.cruz@mi.infn.it") juan.cruz@mi.infn.it])
+      // script(src="js/mdb.min.js")
+      // script(src="js/addons/flag.min.js")
       script(src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js")
       script anchors.add('.anchored');
       script(src="https://code.jquery.com/jquery-3.4.1.slim.min.js")

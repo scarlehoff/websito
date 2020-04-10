@@ -6,44 +6,45 @@ block bodyHead
   p There is also the academic version with a focus on publications and conferences attended.
 
 block content
-  div.container-fluid
+  div.container.p-4
     div.row.rounded.bg-white
       div.col-sm-12
-        h2.text-center(id="experience") Work experience
+        h2.anchored.text-center(id="experience") Work experience
         p I'm currently working at physics department of the University of Milano as a postdoctoral researcher in Stefano Forte's group. Under the ERC project N3PDF.
         p My main line of research is machine learning applied to particle physics. You can find more about it in the #[a(href="research") research] section of this site.
         p I did my undergraduate degree in physics in the University of Seville, where I developed an interest for numerical calculation. Before going to Valencia for a master in theoretical particle physics I worked as a full stack developer at FamilyApp, a small startup in Seville.
         p I did my PhD at the #[a(href="https://www.ippp.dur.ac.uk") IPPP] of #[a(href="https://www.dur.ac.uk") Durham University] (UK) where I did my Ph.D. Thesis as part of the Initial Training Network #[a(href="https://higgstools.org/") Higgstools] on the second order QCD corrections to the Higgs boson VBF production. During my PhD I had the opportunity to work on the Projects and Technology branch of Shell as an intern for three months.
         p I have participated in many conferences across the world and organized three editions of the #[a(href="http://maths.dur.ac.uk/YTF") YTF] (Young Theorists Forum) held in Durham every Christmas.
 
-  div.container-fluid
+  div.container.p-4
     div.row.rounded.bg-white
-      div.col-sm-12
-        h2.text-center(id="tech") Technical skills
+      div.col-sm-12(id="tech")
+        h2.anchored.text-center Tech skills
         p Learning new programming languages or more or less useful libraries has been one of my main hobbies for a long time. One of my main strenghs would be the ability to learn quickly to use new frameworks, languages and technologies. Here I list some of the main languages, frameworks and technologies I used in my everyday life and work.
-      div.col-sm-6
-        h4.text-center Programming languages 
-        each desc, lang in resume.programming_languages
-          p
-            strong= lang + ':'
-            |  !{desc}
-      div.col-sm-6
-        h4.text-center Libraries and technologies
         each desc, tech in resume.technologies
-          p
-            strong= tech + ':'
-            |  !{desc}
-            
-  div.container-fluid
+          - var iconName = iconmap[tech]
+          if iconName
+            - var iconId = iconName.replace(" ", "-")
+            p.btn.btn-light(class=iconName, data-toggle="collapse", data-target=`#${iconId}`, aria-expanded="false", value='test')
+        each desc, tech in resume.technologies
+          - var hasIcon = iconmap[tech]
+          if !hasIcon
+            p #{tech}
+        each desc, tech in resume.technologies
+          - var iconName = iconmap[tech]
+          if iconName
+            - var iconId = iconName.replace(" ", "-")
+          div.collapse.toggle(id=iconId, data-parent="#tech")
+            div.card.card-body 
+              b #{tech} 
+              p !{desc}
+
+  div.container.p-4
     div.row.rounded.bg-white
       div.col-sm-12
-        h2.text-center(id="langs") Languages
-        p
-          strong Spanish:
-          |  This is my native language.
-        p
-          strong English:
-          |  I have lived for four years in Durham (UK). For some examples of my writting you can check my papers or my PhD thesis.
-        p
-          strong Italian:
-          |  I have lived for several year in Milan (Italy) and have teached several courses in the university during this time.
+        h2.anchored.text-center(id="langs") Languages
+        each language in resume.languages
+          p
+            i.flag(class=language.flag)
+            b #{language.name}: 
+            | #{language.description}
