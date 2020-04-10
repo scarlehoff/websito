@@ -18,7 +18,7 @@ const iconmap = {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Juan Manuel Cruz Martinez' });
+  res.render('index', { title: 'Juan Manuel Cruz Martinez, PhD' });
 });
 
 router.get('/teaching', function(req, res, next) {
