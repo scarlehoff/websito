@@ -18,8 +18,8 @@ const iconmap = {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  let userIp = req.header('X-Real-IP') || req.connection.remoteAddress;
-  console.log(`Client ip: ${userIp}`);
+//  let userIp = req.header('X-Real-IP') || req.connection.remoteAddress;
+//  console.log(`Client ip: ${userIp}`);
   res.render('index', { title: 'Juan Manuel Cruz Martinez, PhD' });
 });
 

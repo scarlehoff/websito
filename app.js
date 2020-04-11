@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var fs = require('fs');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -13,12 +14,31 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
+
+// Prepare the logging (needs to be done before setting /)
+// Set up the dev logger to console
+app.use(logger('dev'));
+
+// Create a write stream to log the IP
+let logStream = fs.createWriteStream(path.join(__dirname, 'access.log'),
+  { flags: 'a' }
+);
+// Create a token for the ip
+logger.token('userIP', (req) => {
+  let userIP = req.header('X-Real-IP') || req.connection.remoteAddress;
+  return userIP;
+})
+// Set up the IP 
+app.use(
+  logger(' > :date visited from :userIP', {
+    stream: logStream
+  })
+);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -27,6 +47,7 @@ app.use('/users', usersRouter);
 // needs to set in nginx:
 //  proxy_set_header X-Real-IP $remote_addr; 
 app.set('trust proxy', true);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
