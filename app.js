@@ -23,6 +23,11 @@ app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+// trust the proxy to be able to look at IPs
+// needs to set in nginx:
+//  proxy_set_header X-Real-IP $remote_addr; 
+app.set('trust proxy', true);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
