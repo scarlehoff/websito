@@ -37,7 +37,7 @@ logger.token('userIP', (req) => {
 })
 //// Set up the IP 
 app.use(
-  logger(' > :date > :url > :userIP', {
+  logger(':date > :url > :userIP', {
     stream: logStream
   })
 );
