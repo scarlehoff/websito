@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var fs = require('fs');
+var rfs = require('rotating-file-stream');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -24,18 +24,20 @@ app.use(express.static(path.join(__dirname, 'node_modules')));
 // Set up the dev logger to console
 app.use(logger('dev'));
 
-// Create a write stream to log the IP
-let logStream = fs.createWriteStream(path.join(__dirname, 'access.log'),
-  { flags: 'a' }
-);
+// Create a log per day
+let logStream = rfs.createStream('access.log', {
+  interval: '1d', // rotate every day
+  path: path.join(__dirname, 'log')
+});
+
 // Create a token for the ip
 logger.token('userIP', (req) => {
   let userIP = req.header('X-Real-IP') || req.connection.remoteAddress;
   return userIP;
 })
-// Set up the IP 
+//// Set up the IP 
 app.use(
-  logger(' > :date visited from :userIP', {
+  logger(' > :date > :url > :userIP', {
     stream: logStream
   })
 );
