@@ -7,11 +7,12 @@
 // Imports
 const fs = require('fs');
 const mv = require('mv');
+const chokidar = require('chokidar');
 
 // Parameters
 const basicLogName = "access.log";
-const logFolder = "./log/";
-const backupFolder = "./backupLog/";
+const logFolder = "log/";
+const backupFolder = "log/backupLog/";
 
 // Create folders 
 function checkCreate(folname) {
@@ -23,26 +24,31 @@ function checkCreate(folname) {
 checkCreate(logFolder);
 checkCreate(backupFolder);
 
-// Look for changes
-// Read the new files
-// And move them to the backup folder
-function watchOnce() {
-  const watcher = fs.watch(logFolder, (eventType, filename) => {
-    watcher.close();
+/*
+ * Look for new file,
+ * read them up (later on, write up the data to a db)
+ * move the files to the backup folde
+ */
+const watcher = chokidar.watch(logFolder, {
+  persistent: true,
+  ignored: `${backupFolder}*`
+});
 
-    if (eventType == "rename" && filename.endsWith(`-${basicLogName}`)) {
-      console.log(`New event: ${eventType} - ${filename}`);
-      // Move the file out of the way
-      const originalPath = `${logFolder}/${filename}`;
-      const finalPath = `${backupFolder}/${filename}`;
-      mv(originalPath, finalPath, (err) => {
-        console.log(err);
-      });
-    }
+watcher.on('add', (filename) => {
+  // and move them to the backup folder
+  if (filename.endsWith(`-${basicLogName}`)) {
+    // Read the file up
+    fs.readFile(filename, (err, textContent) => {
+      if (err) return console.log(err);
 
-    // resurrect the watcher after a few seconds
-    setTimeout(watchOnce, 5000);
-  });
-}
+      // Save to database
 
-watchOnce();
+    });
+    // Move the file out of the way
+    const finalPath = filename.replace(logFolder, backupFolder);
+    console.log(`Moving ${filename} to ${finalPath}`);
+    mv(filename, finalPath, (err) => {
+      if (err) console.log(err);
+    });
+  }
+});

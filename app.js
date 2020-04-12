@@ -26,7 +26,7 @@ app.use(logger('dev'));
 
 // Create a log per day
 let logStream = rfs.createStream('access.log', {
-  interval: '10s', // rotate every day
+  interval: '20s', // rotate every day
   path: path.join(__dirname, 'log')
 });
 
