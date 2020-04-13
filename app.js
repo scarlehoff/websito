@@ -17,8 +17,8 @@ app.set('view engine', 'pug');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Prepare the logging (needs to be done before setting /)
 // Set up the dev logger to console
@@ -44,6 +44,7 @@ app.use(
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use(express.static(path.join(__dirname, 'public/pdfs/')));
 
 // trust the proxy to be able to look at IPs
 // needs to set in nginx:
