@@ -3,10 +3,13 @@ let router = express.Router();
 
 // Parse icons
 const iconmap = {
+  'C' : 'devicon-c-plain',
   'C++' : 'devicon-cplusplus-plain',
   'python' : 'devicon-python-plain',
   'javascript' : 'devicon-javascript-plain',
+  'nodejs' : 'devicon-nodejs-plain',
   'Linux' : 'devicon-linux-plain',
+  'debian': 'devicon-debian-plain',
   'Vim' : 'devicon-vim-plain',
   'Version control' : 'devicon-git-plain',
   'GPU computing' : 'mdi mdi-expansion-card',
@@ -14,6 +17,7 @@ const iconmap = {
   'Latex & markdown' : 'mdi mdi-language-markdown',
   'fortran' : 'mdi mdi-language-fortran',
   'keras & tensorflow' : 'tf-plain',
+  'Mac' : 'devicon-apple-original'
 }
 
 /* GET home page. */

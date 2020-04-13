@@ -24,6 +24,12 @@ color: #1abc9c !important;;
 }
 
 /* icons */
-.tf-plain::before {
-  content: "TF";
+.tf-plain {
+  background-image: url("/icons/tensorflow.svg");
+  background-repeat: no-repeat;
+  background-size: 18px 26px;
+  background-position: center;
+  display: inline-block;
+  height: 38px;
+  width: 42px;
 }

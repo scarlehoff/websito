@@ -22,9 +22,13 @@ block content
         h2.anchored.text-center(id="techskills") Tech skills
         p Learning new programming languages or more or less useful libraries has been one of my main hobbies for a long time. One of my main strenghs would be the ability to learn quickly to use new frameworks, languages and technologies. Here I list some of the main languages, frameworks and technologies I used in my everyday life and work.
         each desc, tech in resume.technologies
-          - var iconName = iconmap[tech]
+          - var iconName = iconmap[tech];
           if iconName
-            - var iconId = iconName.replace(" ", "-")
+            if desc.startsWith("ReferTo:")
+              - var referral = desc.replace("ReferTo:", "");
+              - var iconId = iconmap[referral];
+            else
+              - var iconId = iconName.replace(" ", "-");
             p.btn.btn-light(class=iconName, data-toggle="collapse", data-target=`#${iconId}`, aria-expanded="false", value='test')
         each desc, tech in resume.technologies
           - var hasIcon = iconmap[tech]
@@ -32,12 +36,13 @@ block content
             p #{tech}
         each desc, tech in resume.technologies
           - var iconName = iconmap[tech]
-          if iconName
-            - var iconId = iconName.replace(" ", "-")
-          div.collapse.toggle(id=iconId, data-parent="#tech")
-            div.card.card-body 
-              b #{tech} 
-              p !{desc}
+          if !desc.startsWith("ReferTo:")
+            if iconName
+              - var iconId = iconName.replace(" ", "-")
+            div.collapse.toggle(id=iconId, data-parent="#tech")
+              div.card.card-body 
+                b #{tech} 
+                p !{desc}
 
   div.container.p-4
     div.row.rounded.bg-white
