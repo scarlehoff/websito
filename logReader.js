@@ -91,6 +91,7 @@ watcher.on('add', (filename) => {
       const infoInsertion = db.prepare(`INSERT INTO ${infoTable} VALUES (${q.join(',')})`);
       for (let line of lines) {
         if (!line) continue;
+        if (line.includes("favicon.ico")) continue;
         const lineData = line.trim().split(" > ")
         infoInsertion.run(lineData);
         // Now look at the IP and save it if necessary
@@ -102,6 +103,7 @@ watcher.on('add', (filename) => {
       q = new Array(dbTables[ipTable].length).fill("?");
       const ipInsertion = db.prepare(`INSERT INTO ${ipTable} VALUES (${q.join(',')})`);
       for (let ip in allIps) {
+        if (ip.includes("192.168.1.")) continue;
         ipinfo.lookupIp(ip).then( (response) => {
           console.log(`\n > > Checking IP: ${ip}:`);
           console.log(response);
