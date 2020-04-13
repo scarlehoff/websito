@@ -14,7 +14,7 @@ block content
   div.container(style='padding:0px;')
     div.row.mx-auto
       div.col-md-12
-        h2(id="osource") Open source projects
+        h2.anchored(id="osource") Open source projects
       each project in projects
         div.col-lg-6.d-flex
           div.mb-3.mr-0.card.shadow-sm.card-body
@@ -27,7 +27,7 @@ block content
                 a.btn.btn-sm.btn-outline-info(href=project.repository) Source code
 
   div.container
-    h2(id="pastwork") Past dev. work
+    h2.anchored(id="pastwork") Development work
     div.my-3.p-3.bg-white.rounded.shadow-sm
       each item in pastWork
         div.media.pt-3

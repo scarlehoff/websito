@@ -10,17 +10,17 @@ block content
     div.row.rounded.bg-white
       div.col-sm-12
         h2.anchored.text-center(id="experience") Work experience
-        p I'm currently working at physics department of the University of Milano as a postdoctoral researcher in Stefano Forte's group. Under the ERC project N3PDF.
-        p My main line of research is machine learning applied to particle physics. You can find more about it in the #[a(href="research") research] section of this site.
-        p I did my undergraduate degree in physics in the University of Seville, where I developed an interest for numerical calculation. Before going to Valencia for a master in theoretical particle physics I worked as a full stack developer at FamilyApp, a small startup in Seville.
-        p I did my PhD at the #[a(href="https://www.ippp.dur.ac.uk") IPPP] of #[a(href="https://www.dur.ac.uk") Durham University] (UK) where I did my Ph.D. Thesis as part of the Initial Training Network #[a(href="https://higgstools.org/") Higgstools] on the second order QCD corrections to the Higgs boson VBF production. During my PhD I had the opportunity to work on the Projects and Technology branch of Shell as an intern for three months.
-        p I have participated in many conferences across the world and organized three editions of the #[a(href="http://maths.dur.ac.uk/YTF") YTF] (Young Theorists Forum) held in Durham every Christmas.
+        p I'm currently working at the #[a(href="http://www.fisica.unimi.it/ecm/home") physics department] of the #[a(href="https://www.unimi.it") University of Milano] as a postdoctoral researcher in #[a(href="http://pcforte.mi.infn.it/") Stefano Forte]'s group. Under the ERC project #[a(href="http://n3pdf.mi.infn.it/") N3PDF].
+        | My main line of research is machine learning applied to particle physics. You can find more about it in the #[a(href="research") research] section of this site.
+        p I did my undergraduate degree in physics in the #[a(href="https://www.us.es/") University of Seville], where I developed an interest for numerical calculations. Before going to Valencia for a master in theoretical particle physics I worked as a full stack developer at FamilyApp, a small startup in Seville.
+        p Previously I was at the #[a(href="https://www.ippp.dur.ac.uk") IPPP] of #[a(href="https://www.dur.ac.uk") Durham University] (UK) where I did my Ph.D. Thesis as part of the Initial Training Network #[a(href="https://higgstools.org/") Higgstools] on the #[a(href="http://etheses.dur.ac.uk/12806/") second order QCD corrections to the Higgs boson VBF production]. During my PhD I had the opportunity to work on the Projects and Technology branch of Shell as an intern for three months and to be a visitor at the #[a(href="https://www.physik.uzh.ch/en/groups/gehrmann/team/gehrmann.html") University of Zurich] for another three months.
+        p I have participated in many #[a(href="research#talks") conferences] across the world and organized three editions of the #[a(href="http://maths.dur.ac.uk/YTF") YTF] (Young Theorists Forum) held in Durham every Christmas.
 
   div.container.p-4
     div.row.rounded.bg-white
       div.col-sm-12(id="tech")
         h2.anchored.text-center(id="techskills") Tech skills
-        p Learning new programming languages or more or less useful libraries has been one of my main hobbies for a long time. One of my main strenghs would be the ability to learn quickly to use new frameworks, languages and technologies. Here I list some of the main languages, frameworks and technologies I used in my everyday life and work.
+        p Learning new programming languages or more or less useful libraries has been one of my main hobbies for a long time. In fact, I made this webpage because I wanted to learn to use javascript and node (this page is powered by #[a(href="https://expressjs.com/") Express]). Here I list some of the languages, frameworks and technologies I used in my everyday life and work.
         each desc, tech in resume.technologies
           - var iconName = iconmap[tech];
           if iconName
@@ -52,4 +52,4 @@ block content
           p
             i.flag(class=language.flag)
             b #{language.name}: 
-            | #{language.description}
+            | !{language.description}
