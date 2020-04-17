@@ -3,11 +3,22 @@ extends layout
 block extracss
   link(rel='stylesheet', href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css")
   script(src='https://unpkg.com/leaflet@1.6.0/dist/leaflet.js')
+  script(src='./sql.js/dist/sql-wasm-debug.js')
 
 block bodyHeadContainer
-  p Let's try to do something here
-
-block content 
-  div(id='mapid', style='height:450px;')
+  p
+  
+block content
+  div.container
+    div(id='mapid', style='height:450px;')
+  div.container(style='margin-top: 20px;')
+    div.row
+      div.input-group.col-3
+        div.custom-file
+          input.custom-file-input(type="file", id="dbfile")
+          label.custom-file-label(for='dbfile', id='dbname') Choose file
+    div.row(style='margin-top: 20px;')
+      div.col-3
+        button.btn.btn-outline-success(type='button', id='runQuery') Run
   script
     include stats.js
