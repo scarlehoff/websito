@@ -40,8 +40,22 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 //}).addTo(map);
 
 // Now prepare some useful functions to be used later
+let savedPositions = {};
 function generate_marker(info) {
-  L.marker([info.lat, info.lon]).addTo(map).bindPopup(info.ip);
+  const lat = info.lat;
+  const lon = info.lon;
+  if (savedPositions[lat] && savedPositions[lat][lon]) {
+    console.log(`We already have this position: ${lat}, ${lon}`)
+    let layer = savedPositions[lat][lon];
+    const currentVals = layer.getPopup()._content;
+    if (!currentVals.includes(info.ip)) {
+      layer.bindPopup(`${currentVals}<br>${info.ip}`);
+    }
+  } else {
+    if (!(lat in savedPositions)) savedPositions[lat] = {};
+    savedPositions[lat][lon] = L.marker([lat, lon]).addTo(map).bindPopup(info.ip);
+  }
+
 }
 function parse_response(arr) {
   const ip = arr[0];
@@ -76,7 +90,6 @@ dbFileElm.onchange = function() {
         generate_marker(information);
       }
       console.log(results);
-      debugger;
     })
   }
   r.readAsArrayBuffer(f);
@@ -97,22 +110,3 @@ initSqlJs(config).then( (SQL) => {
   // Run some query without even returning the results
   
 });
-
-// Add a marker at Malaga
-// const malagaPos = [36.7, -4.4];
-// L.marker(malagaPos).addTo(map)
-//   .bindPopup('Boquerones!');
-// // if you click you see the text, but you can also do .openPopup() to make it open from the begining
-
-// // alternatively, we can also treat popups markers and so as layers
-// let popupL = L.popup();
-// popupL.setLatLng(
-//   malagaPos.map( x =>  x+0.15 )
-// );
-// popupL.setContent("Hello").openOn(map); // openOn closes other popups
-
-// // We can also do things when the user does things
-// function onMapClick(e) {
-//   console.log("Clickedd map at " + e.latlng);
-// }
-// map.on('click', onMapClick); // register the function
