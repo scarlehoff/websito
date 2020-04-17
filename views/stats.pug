@@ -1,0 +1,13 @@
+extends layout
+
+block extracss
+  link(rel='stylesheet', href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css")
+  script(src='https://unpkg.com/leaflet@1.6.0/dist/leaflet.js')
+
+block bodyHeadContainer
+  p Let's try to do something here
+
+block content 
+  div(id='mapid', style='height:450px;')
+  script
+    include stats.js
