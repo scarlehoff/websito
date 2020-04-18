@@ -10,10 +10,17 @@ config = {
   }
 }
 
+// Global variables
+let f = undefined;
+let savedPositions = {};
+let visitedIPs = {};
+
 // get the page elements
 let dbFileElm = document.getElementById('dbfile');
 let dbLabel = document.getElementById('dbname');
 let executeBtn = document.getElementById("runQuery");
+let clearBtn = document.getElementById("clearMarkers");
+let informationElm = document.getElementById('informationContent');
 
 // Create a map and center it in Seville
 const startingZoom = 8;
@@ -33,6 +40,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 // TODO: remember to rotate this token or to set some domain limit or whatever when merging (if) to master
     accessToken: 'pk.eyJ1Ijoic2NhcmxlaG9mZiIsImEiOiJjazkzOHNwcDEwMmtmM2ZubnZ1bzAxNHhiIn0.u2dsmdZ6Mqd76N3U6T86WQ'
 }).addTo(map);
+let savedPositionsLayerGroup = L.layerGroup([]).addTo(map);
 
 // Example from openstreetmap
 //L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -40,24 +48,59 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 //}).addTo(map);
 
 // Now prepare some useful functions to be used later
-let savedPositions = {};
-function generate_marker(info) {
+function objectToHtml(visitedPages) {
+  // receives an array of objects and creates a table
+  let text = `<table class="table">`;
+  text += `<thead class="text-center"><tr><th>Date</th><th>Page</th></tr></thead>`;
+  text += `<tbody>`
+  for (page of visitedPages) {
+    text += `<tr>`
+    text += `<td> ${page.date} </td><td> ${page.page} </td>`
+    text += `</tr>`
+  }
+  text += '</tbody></table>'
+  return text;
+}
+function generateInfoTable(ipval) {
+  const visitedPages = visitedIPs[ipval];
+  informationElm.innerHTML = objectToHtml(visitedPages);
+}
+
+function compareDate(d1, d2) {
+  return d1.getTime() == d2.getTime();
+}
+
+function removeDuplicates(arr) {
+  let newArr = [];
+  outerLoop:
+    for (let oldItem of arr) {
+      for(let newItem of newArr) {
+        if (newItem.page == oldItem.page && compareDate(newItem.date, oldItem.date)) continue outerLoop;
+      }
+      newArr.push(oldItem);
+    }
+  return newArr;
+}
+
+function generateMarker(info) {
+  // generate a marker in the map given an info object
+  // with latitude, longitude, ip
   const lat = info.lat;
   const lon = info.lon;
+  const newText = `<a href="#" onclick="generateInfoTable('${info.ip}')">${info.ip}</a>`
   if (savedPositions[lat] && savedPositions[lat][lon]) {
-    console.log(`We already have this position: ${lat}, ${lon}`)
     let layer = savedPositions[lat][lon];
     const currentVals = layer.getPopup()._content;
-    if (!currentVals.includes(info.ip)) {
-      layer.bindPopup(`${currentVals}<br>${info.ip}`);
-    }
+    layer.bindPopup(`${currentVals}<br>${newText}`);
   } else {
     if (!(lat in savedPositions)) savedPositions[lat] = {};
-    savedPositions[lat][lon] = L.marker([lat, lon]).addTo(map).bindPopup(info.ip);
+    const layerRef = L.marker([lat, lon]).bindPopup(newText);
+    savedPositions[lat][lon] = layerRef;
+    savedPositionsLayerGroup.addLayer(layerRef);
   }
-
 }
-function parse_response(arr) {
+
+function parseResponse(arr) {
   const ip = arr[0];
   const coord = arr[1];
   const lat = parseFloat(coord.split(",")[0]);
@@ -65,48 +108,72 @@ function parse_response(arr) {
   return { ip, lat, lon };
 }
 
+
 // Do something when the database is loaded
 dbFileElm.onchange = function() {
-  const f = this.files[0];
+  f = this.files[0];
   const fileName = f.name;
   // add the name to the label
   dbLabel.innerHTML = fileName;
   console.log(f);
+}
+
+function clearMarkers() {
+  console.log("Clearing all markers");
+  savedPositions = {};
+  visitedIPs = {};
+  savedPositionsLayerGroup.clearLayers();
+  informationElm.innerHTML = "";
+}
+clearBtn.addEventListener("click", clearMarkers, true);
+
+// All information is obtained from the database once the RUN button is pressed
+// visited IPs are cached at visitedIPs
+function executeAction() {
+  console.log("Executing RUN");
+  // Clean current info
+  clearMarkers();
+
   // Now let's read up the file
   let r = new FileReader();
   r.onload = function() {
     const Uints = new Uint8Array(r.result);
     initSqlJs(config).then( (SQL) => {
       // open the database
+      console.log("opening the db");
       const db = new SQL.Database(Uints);
       // get all pairs IP and location
       let results = db.exec('select `ip`, `geo` from iptab where ip!="192.168.1.1"');
+      // Prepare a query to read up the data for a given IP
+      let getData = db.prepare("select `date`,`web` from info where ip=$ip");
       // And use them to add markers to the map
       for (let value of results[0].values) {
         // In their most naive formt he results are just
         // an array with two values ["ip", "coordinates"]
-        const information = parse_response(value);
+        const information = parseResponse(value);
+        if (information.ip in visitedIPs) continue;
         // Now pass the information to generate the marker with
-        generate_marker(information);
+        getData.bind({$ip:information.ip});
+        // and loop over it to get all values we are interested
+        let visitedPages = [];
+        while(getData.step()) {
+          const row = getData.getAsObject();
+          const parsedDate = new Date(row.date);
+          visitedPages.push({page:row.web, date:parsedDate});
+        }
+        // Remove duplicates
+        visitedPages = removeDuplicates(visitedPages);
+        // Order the dates
+        visitedPages.sort( (a,b) => {
+          return (a.date > b.date) ? 1 : -1
+        });
+        
+        generateMarker(information);
+        visitedIPs[information.ip] = visitedPages;
       }
-      console.log(results);
     })
   }
   r.readAsArrayBuffer(f);
 }
+executeBtn.addEventListener("click", executeAction, true);
 
-// Do something when the apply button is pressed
-function executeQuery() {
-  initSqlJs(config).then( (SQL) => {
-    let db = n
-  });
-}
-executeBtn.addEventListener("click", executeQuery, true);
-
-
-initSqlJs(config).then( (SQL) => {
-  let db = new SQL.Database();
-  console.log("db created");
-  // Run some query without even returning the results
-  
-});
