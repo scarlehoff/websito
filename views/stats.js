@@ -21,6 +21,7 @@ let dbLabel = document.getElementById('dbname');
 let executeBtn = document.getElementById("runQuery");
 let clearBtn = document.getElementById("clearMarkers");
 let informationElm = document.getElementById('informationContent');
+let selectorWebElm = document.getElementById('selectorWeb');
 
 // Create a map and center it in Seville
 const startingZoom = 8;
@@ -116,6 +117,25 @@ dbFileElm.onchange = function() {
   // add the name to the label
   dbLabel.innerHTML = fileName;
   console.log(f);
+  // Now read the database and select all pages included
+  let r = new FileReader();
+  r.onload = function() {
+    const Uints = new Uint8Array(r.result);
+    initSqlJs(config).then( (SQL) => {
+      const db = new SQL.Database(Uints);
+      const results = db.exec('select `web` from info where ip!="192.168.1.1"')[0].values;
+      selectorWebElm.innerHTML = `<option selected value="*">Show all</option><option value='/'>/</option>`;
+      let check = ["/"];
+      for (let entry of results) {
+        const val = entry[0];
+        if (check.includes(val)) continue;
+        check.push(val);
+        selectorWebElm.innerHTML += `<option value="${val}">${val}</option>`;
+      }
+    });
+  }
+  r.readAsArrayBuffer(f);
+
 }
 
 function clearMarkers() {
@@ -134,6 +154,9 @@ function executeAction() {
   // Clean current info
   clearMarkers();
 
+  // Read the filters
+  const selectedPage = selectorWebElm.selectedOptions[0].value;
+
   // Now let's read up the file
   let r = new FileReader();
   r.onload = function() {
@@ -145,7 +168,11 @@ function executeAction() {
       // get all pairs IP and location
       let results = db.exec('select `ip`, `geo` from iptab where ip!="192.168.1.1"');
       // Prepare a query to read up the data for a given IP
-      let getData = db.prepare("select `date`,`web` from info where ip=$ip");
+      let queryData = 'select `date`, `web` from info where ip=$ip';
+      if (selectedPage != '*') {
+        queryData += ` and web="${selectedPage}"`;
+      }
+      let getData = db.prepare(queryData);
       // And use them to add markers to the map
       for (let value of results[0].values) {
         // In their most naive formt he results are just
@@ -161,6 +188,9 @@ function executeAction() {
           const parsedDate = new Date(row.date);
           visitedPages.push({page:row.web, date:parsedDate});
         }
+        // if this IP dont have any values for the returned values
+        // just skip
+        if (!visitedPages.length) continue;
         // Remove duplicates
         visitedPages = removeDuplicates(visitedPages);
         // Order the dates

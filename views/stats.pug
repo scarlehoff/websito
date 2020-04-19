@@ -13,14 +13,18 @@ block content
     div(id='mapid', style='height:450px;')
   div.container(style='margin-top: 20px;')
     div.row
-      div.input-group.col-3
+      div.input-group.col-5
         div.custom-file
           input.custom-file-input(type="file", id="dbfile")
           label.custom-file-label(for='dbfile', id='dbname') Choose file
     div.row(style='margin-top: 20px;')
-      div.col-2
+      div.col-4
+        select.browser-default.custom-select(id='selectorWeb')
+          option(selected) Load a database
+    div.row(style='margin-top: 20px;')
+      div.col-3
         button.btn.btn-outline-success(type='button', id='runQuery') Run
-      div.col-1
+      div.col-2
         button.btn.btn-outline-danger(type='button', id='clearMarkers') Clear
     div.container(style='margin-top: 20px;', id='informationContent')
   script
