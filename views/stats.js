@@ -149,6 +149,7 @@ function clearMarkers() {
 }
 function clearAll() {
   datepickerElm.value = null;
+  selectorWebElm.selectedIndex = 0;
   clearMarkers();
 }
 clearBtn.addEventListener("click", clearAll, true);
