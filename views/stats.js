@@ -22,6 +22,8 @@ let executeBtn = document.getElementById("runQuery");
 let clearBtn = document.getElementById("clearMarkers");
 let informationElm = document.getElementById('informationContent');
 let selectorWebElm = document.getElementById('selectorWeb');
+let datepickerElm = document.getElementById('datetimepickerInfo');
+datepickerElm.value = null;
 
 // Create a map and center it in Seville
 const startingZoom = 8;
@@ -127,10 +129,10 @@ dbFileElm.onchange = function() {
       selectorWebElm.innerHTML = `<option selected value="*">Show all</option><option value='/'>/</option>`;
       let check = ["/"];
       for (let entry of results) {
-        const val = entry[0];
-        if (check.includes(val)) continue;
-        check.push(val);
-        selectorWebElm.innerHTML += `<option value="${val}">${val}</option>`;
+        const web = entry[0];
+        if (check.includes(web)) continue;
+        check.push(web);
+        selectorWebElm.innerHTML += `<option value="${web}">${web}</option>`;
       }
     });
   }
@@ -145,7 +147,11 @@ function clearMarkers() {
   savedPositionsLayerGroup.clearLayers();
   informationElm.innerHTML = "";
 }
-clearBtn.addEventListener("click", clearMarkers, true);
+function clearAll() {
+  datepickerElm.value = null;
+  clearMarkers();
+}
+clearBtn.addEventListener("click", clearAll, true);
 
 // All information is obtained from the database once the RUN button is pressed
 // visited IPs are cached at visitedIPs
@@ -156,6 +162,12 @@ function executeAction() {
 
   // Read the filters
   const selectedPage = selectorWebElm.selectedOptions[0].value;
+  const selectedDateRaw = datepickerElm.value;
+  console.log(selectedDateRaw);
+  let selectedDate = null;
+  if (selectedDateRaw) {
+    selectedDate = new Date(selectedDateRaw).getDate();
+  }
 
   // Now let's read up the file
   let r = new FileReader();
@@ -186,6 +198,8 @@ function executeAction() {
         while(getData.step()) {
           const row = getData.getAsObject();
           const parsedDate = new Date(row.date);
+          // Check whether this is the selected date
+          if(selectedDate && parsedDate.getDate() != selectedDate) continue;
           visitedPages.push({page:row.web, date:parsedDate});
         }
         // if this IP dont have any values for the returned values

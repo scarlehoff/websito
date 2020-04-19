@@ -4,6 +4,10 @@ block extracss
   link(rel='stylesheet', href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css")
   script(src='https://unpkg.com/leaflet@1.6.0/dist/leaflet.js')
   script(src='./sql.js/dist/sql-wasm-debug.js')
+  script(type="text/javascript",src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+  script(type="text/javascript",src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js")
+  script(type="text/javascript",src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js")
+  link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css")
 
 block bodyHeadContainer
   p
@@ -13,19 +17,30 @@ block content
     div(id='mapid', style='height:450px;')
   div.container(style='margin-top: 20px;')
     div.row
-      div.input-group.col-5
+      div.input-group.col-6
         div.custom-file
           input.custom-file-input(type="file", id="dbfile")
           label.custom-file-label(for='dbfile', id='dbname') Choose file
     div.row(style='margin-top: 20px;')
-      div.col-4
+      div.col-6
         select.browser-default.custom-select(id='selectorWeb')
           option(selected) Load a database
+      div.col-6
+        div.form-group
+          div.input-group.date(id="datetimepickerId", data-target-input="nearest")
+            input.form-control.datetimepicker-input(id='datetimepickerInfo', type='text', data-target='#datetimepickerId')
+            div.input-group-append(data-target="#datetimepickerId", data-toggle="datetimepicker")
+              div.input-group-text
+                i.fa.fa-calendar
     div.row(style='margin-top: 20px;')
-      div.col-3
+      div.col-4
         button.btn.btn-outline-success(type='button', id='runQuery') Run
       div.col-2
         button.btn.btn-outline-danger(type='button', id='clearMarkers') Clear
     div.container(style='margin-top: 20px;', id='informationContent')
   script
     include stats.js
+  script.
+    $('#datetimepickerId').datetimepicker({
+        format: 'L'
+        });
