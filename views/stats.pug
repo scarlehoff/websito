@@ -10,7 +10,9 @@ block extracss
   link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css")
 
 block bodyHeadContainer
-  p
+  p This is a simple app to show on a map (with #[a(href="https://leafletjs.com/") leaflet] and #[a(href="https://www.mapbox.com/") mapbox]) the visits to this webpage.
+  p In order not to use any tracking services (like Google Analytics) I'm parsing the logs of the web server (which contain information as the visitor's IP, the pages they visit and when they visited). In order to obtain the location of the users I am using #[a(href="https://ipinfo.io/") ipinfo] to generate a database with location information.
+  p When showing the information of the database in this map nothing is uploaded anywhere, everything is browser-side javascript.
   
 block content
   div.container

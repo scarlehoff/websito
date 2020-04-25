@@ -67,3 +67,4 @@ typings/
 have_a_look.sh
 *tmp.json
 getac.sh
+*.orig
