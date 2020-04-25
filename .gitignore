@@ -59,3 +59,11 @@ typings/
 
 # next.js build output
 .next
+
+# database
+*.db
+
+# some specific scripts
+have_a_look.sh
+*tmp.json
+getac.sh
