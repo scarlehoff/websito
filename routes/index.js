@@ -52,5 +52,9 @@ router.get('/resume', function(req, res, next) {
   res.render('resume', { title: 'Resume', resume, iconmap });
 });
 
+router.get('/stats', function(req, res, next) {
+  res.render('stats', { title: 'Stats' });
+});
+
 
 module.exports = router;

@@ -15,6 +15,7 @@ html
     // https://materialdesignicons.com/
     link(rel='stylesheet', href='https://cdn.materialdesignicons.com/5.0.45/css/materialdesignicons.min.css')
     script(src="https://kit.fontawesome.com/32dfc55f8c.js", crossorigin="anonymous")
+    block extracss
       
   body.bg-light
     header
@@ -39,20 +40,24 @@ html
               a.fab.fa-twitter.nav-link(href="http://twitter.com/juacrumar")
             li.nav-item
               a.fab.fa-linkedin.nav-link(href="https://www.linkedin.com/in/juacrumar/")
-    div.container
-      div.jumbotron(style='margin-top: 3%;')
-        h2= title
-        block bodyHead
+    div.container(style='margin-top: 3%;')
+      block bodyHeadContainer
+        div.jumbotron
+          h2= title
+          block bodyHead
     div.container
       block content
-        hr
-    footer.container
-      //p(align="left") This page is running in #[i.devicon-nginx-original] with #[i.devicon-express-original] in a Raspberry Pi 2 Model b.
-      p(align="right") Juan M. Cruz-Martinez (#[a(href="mailto:juan.cruz@mi.infn.it") juan.cruz@mi.infn.it])
-      // script(src="js/mdb.min.js")
-      // script(src="js/addons/flag.min.js")
-      script(src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js")
-      script anchors.add('.anchored');
-      script(src="https://code.jquery.com/jquery-3.4.1.slim.min.js")
-      script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js")
-      script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js")
+      hr
+    block footer
+      footer.container
+        p(align='left')
+        //p(align="left") This page is running in #[i.devicon-nginx-original] with #[i.devicon-express-original] in a Raspberry Pi 2 Model b.
+        p(align="right") Juan M. Cruz-Martinez (#[a(href="mailto:juan.cruz@mi.infn.it") juan.cruz@mi.infn.it])
+        // script(src="js/mdb.min.js")
+        // script(src="js/addons/flag.min.js")
+        script(src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js")
+        script anchors.add('.anchored');
+        script(src="https://code.jquery.com/jquery-3.4.1.slim.min.js")
+        script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js")
+        block extrajs
