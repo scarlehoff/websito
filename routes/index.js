@@ -57,7 +57,7 @@ router.get('/stats', function(req, res, next) {
 });
 
 router.get('/publicationDigestor', function(req, res, next) {
-  res.render('pubdigest', { title: 'Publications' });
+  res.render('pubdigest', { title: 'Publications Applet' });
 });
 
 
