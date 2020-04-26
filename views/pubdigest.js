@@ -1,12 +1,11 @@
 const recordsPerCall = 50;
-const baseurl = `http://old.inspirehep.net/search?of=recjson&ot=authors,title,physical_description,publication_info&rg=${recordsPerCall}&`;
-// Using old inspire API
 // Will be phased out: http://old.inspirehep.net/info/hep/api
 
 // html elements
 const informationElm = document.getElementById('informationContent');
 const formAuthor = document.getElementById('authorForm');
 const formPublished = document.getElementById('publishedCheck');
+const formProceedings = document.getElementById('ignoreProceedingsCheck');
 const formFreeText = document.getElementById('exampleText');
 const formRun = document.getElementById('runQuery');
 const statusElm = document.getElementById('statusContent');
@@ -47,7 +46,11 @@ function parseTextField(textField){
 //
 class InspireHEP {
   // The constructor prepares the api call 
-  constructor(author) {
+  constructor(author, complete=false) {
+    let baseurl = `http://old.inspirehep.net/search?of=recjson&rg=${recordsPerCall}&`;
+    if (!complete) baseurl += "&ot=authors,title,physical_description,publication_info,collection&";
+
+// Using old inspire API
     this.apiUrl = baseurl + "p=find+a+" + author.replace(" ", "+");
   }
 
@@ -107,6 +110,13 @@ class InspireHEP {
     console.log(res);
     return "NotFound";
   }
+
+  isProceedings(res) {
+    // Check whether this is a conference paper
+    const paperType = res.collection[3];
+    if (paperType) return paperType.primary == 'ConferencePaper';
+    return false;
+  }
 }
 
 
@@ -140,6 +150,8 @@ function fetchResults(rApi, currentRecord, listTextItems, qInfo) {
       }
       // Now run over all entries and parse the information
       res.forEach( result => {
+        // Check whether this should be ignored
+        if (qInfo.ignoreProceeding && rApi.isProceedings(result)) return;
         // Parse all necessary info
         const pubInfo = rApi.parsePublicationInfo(result);
         if (publishedOnly && !pubInfo) return;
@@ -181,14 +193,17 @@ function performAPIcall() {
   const exampleText = parseTextField(formFreeText);
   // Do we want published only?
   const publishedOnly = formPublished.checked;
+  // Do we want to ignore proceedings?
+  const ignoreProceeding = formProceedings.checked;
   // Who are we looking for
   const authorSelected = parseTextField(formAuthor);
   // Generate API call
-  const apiObject = new InspireHEP(authorSelected);
+  const apiObject = new InspireHEP(authorSelected, true);
 
   // Create a query info object to fitler the data (very simple for now)
   const qInfo = {
     publishedOnly,
+    ignoreProceeding,
     exampleText
   }
 
