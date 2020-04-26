@@ -8,7 +8,7 @@ block bodyHead
 
 block content
   h4 Prepare your query
-  p You can use the following self descriptive keywords, that will be substituted with the corresponding information $PAGES, $JOURNAL, $TITLE, $JOURNALPAGE, $JOURNALVOL
+  p You can use the following self descriptive keywords, that will be substituted with the corresponding information $PAGES, $JOURNAL, $TITLE, $PAGEJOURNAL, $VOLJOURNAL
   form
     div.row
       div.col-6
@@ -27,7 +27,7 @@ block content
       div.col-12
         div.form-group
           label(for="exampleText") Per-publication text:
-          textarea.form-control(id="exampleText", rows=3, placeholder="The paper $TITLE published in $JOURNAL volume $JOURNALVOL pag. $JOURNALPAGE has $PAGES pags")
+          textarea.form-control(id="exampleText", rows=3, placeholder="The paper $TITLE published in $JOURNAL volume $VOLJOURNAL pag. $PAGEJOURNAL has $PAGES pags")
       div.col-6
         button.btn.btn-outline-success(type='button', id='runQuery') Run
   hr

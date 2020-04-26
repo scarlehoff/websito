@@ -28,11 +28,11 @@ function toggleRunningStatus(active) {
 
 // enabled substitutions
 const substitutions = {
-  pages: "$PAGES",
-  title: "$TITLE",
-  journal: "$JOURNAL",
-  journalPage: "$JOURNALPAGE",
-  journalVol: "$JOURNALVOL"
+  pages: new RegExp("\\$PAGES", 'g'),
+  title: new RegExp("\\$TITLE", 'g'),
+  journal: new RegExp("\\$JOURNAL", 'g'),
+  journalPage: new RegExp("\\$PAGEJOURNAL", 'g'),
+  journalVol: new RegExp("\\$VOLJOURNAL", 'g')
 };
 
 // Small utility one-liners functions
