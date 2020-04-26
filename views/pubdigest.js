@@ -45,59 +45,73 @@ function parseTextField(textField){
 //
 // INSPIRE API 
 //
-
-// Generate API call
-function genApiCall(author) {
-  const url = baseurl + "p=find+a+" + author.replace(" ", "+");
-  return url;
-}
-
-// Parse API responses
-// They all take as input one of the objects from INSPIRE
-// that are received when making an API call
-function parseAuthors(res) {
-  // parse the author list
-  const authorList = res.authors;
-  let authorString = "";
-  for (let author of authorList) {
-    authorString += ` ${author.full_name}`;
+class InspireHEP {
+  // The constructor prepares the api call 
+  constructor(author) {
+    this.apiUrl = baseurl + "p=find+a+" + author.replace(" ", "+");
   }
-  return authorString;
-}
 
-function parseTitle(res) {
-  // parse the title
-  return res.title.title;
-}
-
-function parsePublicationInfo(res) {
-  // parse the publication information
-  pubInfo = res.publication_info;
-  if (!pubInfo) return null;
-  const journal = pubInfo.title;
-  if (!journal) return null;
-  const volume = pubInfo.volume;
-  const year = pubInfo.year;
-  const pagination = pubInfo.pagination;
-  return { journal, volume, year, pagination };
-}
-
-function parsePages(res) {
-  // parse the number of pages
-  if (res.physical_description) return res.physical_description.pagination;
-  // The result does not contain a physical description
-  // try to get the number of pages from the publication info
-  if (res.publication_info) {
-    return Math.abs(evalMath(res.publication_info.pagination));
+  fetchUrl(currentRecord) {
+    return this.apiUrl + `&jrec=${currentRecord}`;
   }
-  console.log("Could not obtain pagination information for: ")
-  console.log(res);
-  return "NotFound";
+
+  // Parsers
+  // They all take as input one of the objects from INSPIRE
+  // that are received when making an API call
+  parseAuthors(res) {
+    // parse the author list
+    const authorList = res.authors;
+    let authorString = "";
+    for (let author of authorList) {
+      authorString += ` ${author.full_name}`;
+    }
+    return authorString;
+  }
+
+  parseAuthors(res) {
+    // parse the author list
+    const authorList = res.authors;
+    let authorString = "";
+    for (let author of authorList) {
+      authorString += ` ${author.full_name}`;
+    }
+    return authorString;
+  }
+
+  parseTitle(res) {
+    // parse the title
+    return res.title.title;
+  }
+
+  parsePublicationInfo(res) {
+    // parse the publication information
+    const pubInfo = res.publication_info;
+    if (!pubInfo) return null;
+    const journal = pubInfo.title;
+    if (!journal) return null;
+    const volume = pubInfo.volume;
+    const year = pubInfo.year;
+    const pagination = pubInfo.pagination;
+    return { journal, volume, year, pagination };
+  }
+
+  parsePages(res) {
+    // parse the number of pages
+    if (res.physical_description) return res.physical_description.pagination;
+    // The result does not contain a physical description
+    // try to get the number of pages from the publication info
+    if (res.publication_info) {
+      return Math.abs(evalMath(res.publication_info.pagination));
+    }
+    console.log("Could not obtain pagination information for: ")
+    console.log(res);
+    return "NotFound";
+  }
 }
 
 
 // Actual applet
-function fetchResults(rawUrl, currentRecord, listTextItems, qInfo) {
+function fetchResults(rApi, currentRecord, listTextItems, qInfo) {
   // recursive function to fetch results
   // upon finalization, if there are still records to retrieve
   // calls itself
@@ -110,7 +124,7 @@ function fetchResults(rawUrl, currentRecord, listTextItems, qInfo) {
   const publishedOnly = qInfo.publishedOnly;
   const exampleText = qInfo.exampleText;
 
-  let url = rawUrl + `&jrec=${currentRecord}`;
+  let url = rApi.fetchUrl(currentRecord);
   console.log("Api call: ");
   console.log(url);
 
@@ -127,11 +141,11 @@ function fetchResults(rawUrl, currentRecord, listTextItems, qInfo) {
       // Now run over all entries and parse the information
       res.forEach( result => {
         // Parse all necessary info
-        const pubInfo = parsePublicationInfo(result);
+        const pubInfo = rApi.parsePublicationInfo(result);
         if (publishedOnly && !pubInfo) return;
         let infoDict = {};
-        infoDict.title = parseTitle(result);
-        infoDict.pages = parsePages(result);
+        infoDict.title = rApi.parseTitle(result);
+        infoDict.pages = rApi.parsePages(result);
         if (pubInfo) {
           infoDict.journal = pubInfo.journal;
           infoDict.journalVol = pubInfo.volume;
@@ -154,13 +168,9 @@ function fetchResults(rawUrl, currentRecord, listTextItems, qInfo) {
       if (res.length == recordsPerCall) {
         return true;
       };
-      console.log("We are finished here");
-      console.log(res.length);
-      console.log(recordsPerCall);
       return false;
     }).then( mustContinue => {
-      console.log("TEST");
-      if (mustContinue) fetchResults(rawUrl, currentRecord + recordsPerCall, listTextItems, qInfo);
+      if (mustContinue) fetchResults(remoteApi, currentRecord + recordsPerCall, listTextItems, qInfo);
       toggleRunningStatus(mustContinue);
     });
 }
@@ -174,7 +184,7 @@ function performAPIcall() {
   // Who are we looking for
   const authorSelected = parseTextField(formAuthor);
   // Generate API call
-  const rawUrl = genApiCall(authorSelected);
+  const apiObject = new InspireHEP(authorSelected);
 
   // Create a query info object to fitler the data (very simple for now)
   const qInfo = {
@@ -188,7 +198,7 @@ function performAPIcall() {
   let textItems = [];
 
   // everything's ready start fetching result
-  fetchResults(rawUrl, 0, textItems, qInfo);
+  fetchResults(apiObject, 0, textItems, qInfo);
 
 }
 formRun.addEventListener("click", performAPIcall, true);

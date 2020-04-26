@@ -19,10 +19,15 @@ block content
         div.form-check
           input.form-check-input(type='checkbox', value="", id="publishedCheck")
           label.form-check-label(for="publishedCheck") Published only
+      div.col-6
+        div.form-group
+          label(for='selectApi') Select API:
+          select.browser-default.custom-select(id='selectApi')
+            option(selected) InspireHEP
       div.col-12
         div.form-group
           label(for="exampleText") Per-publication text:
-          textarea.form-control(id="exampleText", rows=3, placeholder="The paper $TITLE published in $JOURNAL volume $JOURNALVOL pag. $JOURNALPAGE has $PAGES pags") 
+          textarea.form-control(id="exampleText", rows=3, placeholder="The paper $TITLE published in $JOURNAL volume $JOURNALVOL pag. $JOURNALPAGE has $PAGES pags")
       div.col-6
         button.btn.btn-outline-success(type='button', id='runQuery') Run
   hr

@@ -56,7 +56,7 @@ router.get('/stats', function(req, res, next) {
   res.render('stats', { title: 'Stats' });
 });
 
-router.get('/publicationDigestor', function(req, res, next) {
+router.get('/publicatonDigestor', function(req, res, next) {
   res.render('pubdigest', { title: 'Publications Applet' });
 });
 
