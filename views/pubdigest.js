@@ -8,19 +8,19 @@ const formPublished = document.getElementById('publishedCheck');
 const formProceedings = document.getElementById('ignoreProceedingsCheck');
 const formFreeText = document.getElementById('exampleText');
 const formRun = document.getElementById('runQuery');
-const statusElm = document.getElementById('statusContent');
 const queryInfoElm = document.getElementById('queryInfoContent');
 
 // global state variables
 let runningQuery = false;
+formRun.innerHTML = "Run";
 function toggleRunningStatus(active) {
   // Toogle a marker for a running query
   if (active) {
-    statusElm.innerHTML = "Running query, please wait...";
+    formRun.innerHTML = '<div class="spinner-border spinner-border-sm"/>';
     runningQuery = true;
   } else {
     runningQuery = false;
-    statusElm.innerHTML = "";
+    formRun.innerHTML = 'Run';
   }
 }
 
@@ -182,7 +182,7 @@ function fetchResults(rApi, currentRecord, listTextItems, qInfo) {
       };
       return false;
     }).then( mustContinue => {
-      if (mustContinue) fetchResults(remoteApi, currentRecord + recordsPerCall, listTextItems, qInfo);
+      if (mustContinue) fetchResults(rApi, currentRecord + recordsPerCall, listTextItems, qInfo);
       toggleRunningStatus(mustContinue);
     });
 }
@@ -210,6 +210,7 @@ function performAPIcall() {
   // initializate the state
   toggleRunningStatus(true);
   queryInfoElm.innerHTML = "";
+  informationElm.innerHTML = "";
   let textItems = [];
 
   // everything's ready start fetching result
