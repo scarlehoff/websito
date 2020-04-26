@@ -1,5 +1,4 @@
 const recordsPerCall = 50;
-// Will be phased out: http://old.inspirehep.net/info/hep/api
 
 // html elements
 const informationElm = document.getElementById('informationContent');
@@ -45,9 +44,10 @@ function parseTextField(textField){
 // INSPIRE API 
 //
 class InspireHEP {
+// Will be phased out: http://old.inspirehep.net/info/hep/api
   // The constructor prepares the api call 
   constructor(author, complete=false) {
-    let baseurl = `http://old.inspirehep.net/search?of=recjson&rg=${recordsPerCall}&`;
+    let baseurl = `https://old.inspirehep.net/search?of=recjson&rg=${recordsPerCall}&`;
     if (!complete) baseurl += "&ot=authors,title,physical_description,publication_info,collection&";
 
 // Using old inspire API
