@@ -4,17 +4,21 @@ html
     title= title
     meta(name="active-menu", content=menuId)
     // Devicons by Konpa
-    link(rel='stylesheet' href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css")
-    // Use material design first so that bootstrap takes over
+    link(rel='stylesheet' href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css", integrity='sha256-4LcvM6Kisp2RIksJbr9MdLdjZrVxALxPqi0SwWmymPI=', crossorigin='anonymous')
+    // mdbootsrap
+    // Use material design bootstrap first so that bootstrap takes over
     // npm install mdbootstrap
     // link(rel='stylesheet', href='css/mdb.min.css')
     link(rel='stylesheet', href='./mdbootstrap/css/addons/flag.min.css')
     meta(name="viewport", content="width=device-width, initial-scale=1")
+    // Custom stylesheet
     link(rel='stylesheet', href='./stylesheets/style.css')
-    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
+    // Bootstrap
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css', integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk", crossorigin="anonymous")
     // https://materialdesignicons.com/
-    link(rel='stylesheet', href='https://cdn.materialdesignicons.com/5.0.45/css/materialdesignicons.min.css')
-    script(src="https://kit.fontawesome.com/32dfc55f8c.js", crossorigin="anonymous")
+    link(rel='stylesheet', href='https://cdn.materialdesignicons.com/5.0.45/css/materialdesignicons.min.css', integrity="sha256-nRyVCcVDSlWN9d68r9M+rKBLE4k9Cp1j3XSY/umjvvU=", crossorigin="anonymous")
+    // Font awesome
+    script(src="https://kit.fontawesome.com/32dfc55f8c.js", integrity="sha256-5Y3XLJe5Ev2uO1GmLyViKXG56lnlU1BbaLDpUc90UQU=", crossorigin="anonymous")
     block extracss
       
   body.bg-light
@@ -22,7 +26,7 @@ html
       nav.navbar.navbar-toggleable-sm.navbar-expand-sm.navbar-dark.bg-dark
         button.navbar-toggler.navbar-toggler-right(data-toggle="collapse", data-target="#navbarDiv")
           span.navbar-toggler-icon
-        a.navbar-brand(href="./") Home
+        a.navbar-brand(href="./") Home 
         div.collapse.navbar-collapse(id="navbarDiv")
           ul.navbar-nav.mr-auto
             li.nav-item(class=(title=="Research" ? 'active' : ''))
@@ -56,9 +60,10 @@ html
         p(align="right") Juan M. Cruz-Martinez (#[a(href="mailto:juan.cruz@mi.infn.it") juan.cruz@mi.infn.it])
         // script(src="js/mdb.min.js")
         // script(src="js/addons/flag.min.js")
-        script(src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js")
+        script(src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js", integrity="sha256-E4RlfxwyJVmkkk0szw7LYJxuPlp6evtPSBDlWHsYYL8=", crossorigin="anonymous")
         script anchors.add('.anchored');
-        script(src="https://code.jquery.com/jquery-3.4.1.slim.min.js")
-        script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js")
-        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js")
+        // Bootstrap
+        script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js", integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj", crossorigin="anonymous")
+        script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js", integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo", crossorigin="anonymous")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js", integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI", crossorigin="anonymous")
         block extrajs
