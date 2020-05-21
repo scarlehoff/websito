@@ -1,5 +1,15 @@
 extends layout
 
+block extracss
+    // Extra icons from various places
+    // mdbootsrap: npm install mdbootstrap
+    // link(rel='stylesheet', href='css/mdb.min.css')
+    link(rel='stylesheet', href='./mdbootstrap/css/addons/flag.min.css')
+    // https://materialdesignicons.com/
+    link(rel='stylesheet', href='https://cdn.materialdesignicons.com/5.0.45/css/materialdesignicons.min.css', integrity="sha256-nRyVCcVDSlWN9d68r9M+rKBLE4k9Cp1j3XSY/umjvvU=", crossorigin="anonymous")
+    // Devicons by Konpa
+    link(rel='stylesheet' href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css", integrity='sha256-4LcvM6Kisp2RIksJbr9MdLdjZrVxALxPqi0SwWmymPI=', crossorigin='anonymous')
+
 block bodyHead
   p In this page you can find some of the higlights of my resume, such as a summary of my #[a(href="#experience") past work experiences] and #[a(href="#techskills") tech skills].
   | In this site you can also find information about my #[a(href="research") research interests], #[a(href="software") software projects] and #[a(href="teaching") teaching experience].
