@@ -1,3 +1,5 @@
+#!/usr/bin/node
+
 "use strict";
 const fs = require('fs');
 const path = require('path');
@@ -89,6 +91,7 @@ function parseEntry(entry, keys, safety=true) {
 
 const keySelection = {
   'article' : ["author", "title", "journal", "doi", "year", "eprint", "volume"],
+  'inproceedings' : ["author", "title", "year", "eprint", "booktitle"],
   'software' :  ["author", "title", "url", "doi", "year", "docs",],
 };
 function parseSelector(entry, mode) {
@@ -96,15 +99,16 @@ function parseSelector(entry, mode) {
   if (mode == 'software') safe = false;
   let result = parseEntry(entry, keySelection[mode], safe);
   if (mode == 'software') {
-    result.year = result.year.replace(",","")
-    const title = result.title.match(/[^{^/]*(?=:)/)
-    const description = result.title.match(/(?<=: ).*/)
-    result.title = title[0].replace("\\_", " ")
+    result.year = result.year.replace(",","");
+    const title = result.title.match(/[^{^/]*(?=:)/);
+    const description = result.title.match(/(?<=: ).*/) || title;
+    result.title = title[0].replace("\\_", " ");
     result.description = description[0];
   };
   return result;
 }
 
+const keys = ['article', 'software', 'inproceedings'];
 let bibInformation = {
   'article' : [],
   'software' : [],
@@ -120,10 +124,14 @@ fs.readFile(fileIn, (err, textContent) => {
   // Now, parse each entry depending on their type
   for (let i in entries) {
     const entry = entries[i];
-    for (let key in bibInformation) {
+    for (let key of keys) {
       // If the key is accepted, parse it
       if (entry.includes(`@${key}`)) {
-        const result = parseSelector(entry, key);
+        let result = parseSelector(entry, key);
+        if (key == 'inproceedings') {
+          result["journal"] = result["booktitle"];
+          key = 'article';
+        }
         bibInformation[key].push(result);
         break;
       }
