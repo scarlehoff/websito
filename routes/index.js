@@ -65,5 +65,10 @@ router.get('/robots.txt', (req, res, next) => {
   res.send("User-agent: *\nDisallow: /honey.pot");
 });
 
+router.get('/honey.pot', (req, res, next) => {
+  const userIP = req.header('X-Real-IP') || req.connection.remoteAddress;
+  res.type('text/plain')
+  res.send(`Access Denied to ${userIP} (for 2 minutes)!`);
+});
 
 module.exports = router;
