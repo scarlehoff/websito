@@ -1,42 +1,9 @@
 let express = require('express');
 let router = express.Router();
-// dynamic list of blocked ips
-let ipSuspicious = [];
-let ipBlackList = [];
-// Set the functions that act on the ip lists
-// these functions take an ip and output a text/plain response
-const banTime = 30*60*1000;
-function isSuspicious(userIP) {
-    console.log("Adding userIP to the suspicious list: ", userIP);
-    ipSuspicious.push(userIP);
-    return `Your access will be denied if you do something funny!`;
-}
-function blockIfSuspicious(userIP) {
-    console.log("Adding userIP to the blacklist: ", userIP);
-    ipBlackList.push(userIP);
-    setTimeout( () => {
-      const i = ipBlackList.indexOf(userIP);
-      console.log("Lifted ban to: ", userIP);
-      ipBlackList.splice(i, 1);
-    }, banTime);
-    const i  = ipSuspicious.indexOf(userIP);
-    ipSuspicious.splice(i, 1);
-    return `Access Denied to ${userIP} (for 30 minutes)!`
-}
+let securitySite = require('./securitySite');
 
 // Add the blocking middleware to all routes
-
-router.use( function(req, res, next) {
-  // Get the IP
-  const userIP = req.header('X-Real-IP') || req.connection.remoteAddress;
-  if (ipBlackList.indexOf(userIP) === -1) {
-    next();
-  } else {
-    console.log("Blocked access to ", userIP);
-    res.type('text/plain')
-    res.send('Access Denied');
-  }
-})
+router.use( securitySite.checkAndBlock );
 
 // Parse icons
 const iconmap = {
@@ -102,19 +69,6 @@ router.get('/robots.txt', (req, res, next) => {
   res.send("User-agent: *\nDisallow: /honey.pot");
 });
 
-router.get('/honey.pot', (req, res, next) => {
-  const userIP = req.header('X-Real-IP') || req.connection.remoteAddress;
-  console.log(userIP);
-  console.log(ipSuspicious);
-  res.type('text/plain')
-  // Check whether the IP is suspicious, if it is
-  // add it to the blocking list
-  if (ipSuspicious.indexOf(userIP) > -1) {
-    res.send(blockIfSuspicious(userIP));
-  } else {
-    // tell the visitor you are marking it as suspicious
-    res.send(isSuspicious(userIP));
-  }
-});
+router.get('/honey.pot', securitySite.blockOrMark);
 
 module.exports = router;
