@@ -47,15 +47,16 @@ class InspireHEP {
 // Will be phased out: http://old.inspirehep.net/info/hep/api
   // The constructor prepares the api call 
   constructor(author, complete=false) {
-    let baseurl = `https://old.inspirehep.net/search?of=recjson&rg=${recordsPerCall}&`;
-    if (!complete) baseurl += "&ot=authors,title,physical_description,publication_info,collection&";
-
-// Using old inspire API
-    this.apiUrl = baseurl + "p=find+a+" + author.replace(" ", "+");
+    // TODO make the order an option
+    let baseUrl = `https://inspirehep.net/api/literature?sort=mostrecent&size=${recordsPerCall}&q=find a ${author}`;
+    this.apiUrl = baseUrl;
+    this.currentPage = 1;
   }
 
-  fetchUrl(currentRecord) {
-    return this.apiUrl + `&jrec=${currentRecord}`;
+  fetchUrl() {
+    const returnUrl = this.apiUrl + `&page=${this.currentPage}`;
+    this.currentPage += 1;
+    return returnUrl;
   }
 
   // Parsers
@@ -63,7 +64,7 @@ class InspireHEP {
   // that are received when making an API call
   parseAuthors(res) {
     // parse the author list
-    const authorList = res.authors;
+    const authorList = res.metadata.authors;
     let authorString = "";
     for (let author of authorList) {
       authorString += ` ${author.full_name}`;
@@ -82,59 +83,55 @@ class InspireHEP {
   }
 
   parseTitle(res) {
+    return res.metadata.titles[0].title
     // parse the title
-    return res.title.title;
+//    return res.title.title;
   }
 
   parsePublicationInfo(res) {
     // parse the publication information
-    const pubInfo = res.publication_info;
-    if (!pubInfo) return null;
-    const journal = pubInfo.title;
-    if (!journal) return null;
-    const volume = pubInfo.volume;
+    const pubInfoRaw = res.metadata.publication_info;
+    if (!pubInfoRaw) return null;
+    const pubInfo = pubInfoRaw[0];
+    let journal = pubInfo.journal_title;
+    if (!journal) { // maybe it is a conference and it is not a journal
+      if (pubInfo.titles) {
+        journal = pubInfo.titles[0].title
+      } else {
+        journal = null
+      }
+    }
+    const volume = pubInfo.journal_volume;
     const year = pubInfo.year;
-    const pagination = pubInfo.pagination;
+    const pagination = pubInfo.page_start;
     return { journal, volume, year, pagination };
   }
 
   parsePages(res) {
-    // parse the number of pages
-    if (res.physical_description) return res.physical_description.pagination;
-    // The result does not contain a physical description
-    // try to get the number of pages from the publication info
-    if (res.publication_info) {
-      return Math.abs(evalMath(res.publication_info.pagination));
-    }
-    console.log("Could not obtain pagination information for: ")
-    console.log(res);
-    return "NotFound";
+    return res.metadata.number_of_pages;
   }
 
   isProceedings(res) {
     // Check whether this is a conference paper
-    const paperType = res.collection[3];
-    if (paperType) return paperType.primary == 'ConferencePaper';
+    const paperType = res.metadata.document_type;
+    if (paperType) return paperType.primary == 'conference paper';
     return false;
   }
 }
 
 
 // Actual applet
-function fetchResults(rApi, currentRecord, listTextItems, qInfo) {
+function fetchResults(rApi, listTextItems, qInfo) {
   // recursive function to fetch results
   // upon finalization, if there are still records to retrieve
   // calls itself
   if (!runningQuery) return;
 
-  // If you have more than 5000 papers you really don't needs this fuck it
-  if (currentRecord > 5000) return;
-
   // Parse the query information
   const publishedOnly = qInfo.publishedOnly;
   const exampleText = qInfo.exampleText;
 
-  let url = rApi.fetchUrl(currentRecord);
+  let url = rApi.fetchUrl();
   console.log("Api call: ");
   console.log(url);
 
@@ -149,7 +146,7 @@ function fetchResults(rApi, currentRecord, listTextItems, qInfo) {
         toggleRunningStatus(false);
       }
       // Now run over all entries and parse the information
-      res.forEach( result => {
+      res.hits.hits.forEach( result => {
         // Check whether this should be ignored
         if (qInfo.ignoreProceeding && rApi.isProceedings(result)) return;
         // Parse all necessary info
@@ -177,12 +174,12 @@ function fetchResults(rApi, currentRecord, listTextItems, qInfo) {
       });
       queryInfoElm.innerHTML = `Found ${listTextItems.length} records total:`;
       // If the full stack of records was consumed, make another API call
-      if (res.length == recordsPerCall) {
+      if (res.hits.hits.length == recordsPerCall) {
         return true;
       };
       return false;
     }).then( mustContinue => {
-      if (mustContinue) fetchResults(rApi, currentRecord + recordsPerCall, listTextItems, qInfo);
+      if (mustContinue) fetchResults(rApi, listTextItems, qInfo);
       toggleRunningStatus(mustContinue);
     });
 }
@@ -214,7 +211,7 @@ function performAPIcall() {
   let textItems = [];
 
   // everything's ready start fetching result
-  fetchResults(apiObject, 0, textItems, qInfo);
+  fetchResults(apiObject, textItems, qInfo);
 
 }
 formRun.addEventListener("click", performAPIcall, true);
