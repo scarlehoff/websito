@@ -84,8 +84,6 @@ class InspireHEP {
 
   parseTitle(res) {
     return res.metadata.titles[0].title
-    // parse the title
-//    return res.title.title;
   }
 
   parsePublicationInfo(res) {
