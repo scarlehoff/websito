@@ -114,7 +114,7 @@ class InspireHEP {
   isProceedings(res) {
     // Check whether this is a conference paper
     const paperType = res.metadata.document_type;
-    if (paperType) return paperType.primary == 'conference paper';
+    if (paperType) return paperType[0] == 'conference paper';
     return false;
   }
 }
