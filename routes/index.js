@@ -1,5 +1,9 @@
 let express = require('express');
 let router = express.Router();
+let securitySite = require('./securitySite');
+
+// Add the blocking middleware to all routes
+router.use( securitySite.checkAndBlock );
 
 // Parse icons
 const iconmap = {
@@ -60,5 +64,11 @@ router.get('/publicatonDigestor', function(req, res, next) {
   res.render('pubdigest', { title: 'Publications Applet' });
 });
 
+router.get('/robots.txt', (req, res, next) => {
+  res.type('text/plain')
+  res.send("User-agent: *\nDisallow: /honey.pot");
+});
+
+router.get('/honey.pot', securitySite.blockOrMark);
 
 module.exports = router;
