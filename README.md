@@ -13,6 +13,23 @@ npm install
 NODE_ENV=production nodemon
 ```
 
+Alternatively you can place the `websito.service` file into `/etc/systemd/system/` and run
+
+```
+systemctl daemon-reload
+systemctl enable websito
+systemctl start websito
+```
+
+and check the logs with
+
+```
+journalctl -u websito -f
+```
+
+Don't forget to modify the working directory and user section to match your configuration!
+
+
 #### Parse visitors
 A log of the visitor with the pages they visit is stored in `log/access.log` and it is rotated every day (normally at 00:00).
 The `logReader.js` script offers an automated way for waiting for the rotations and parsing the data to a sqlite database.

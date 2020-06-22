@@ -1,0 +1,12 @@
+[Unit]
+Description=Websito
+After=network.target
+
+[Service]
+User=<user>
+Environment=NODE_ENV=production
+WorkingDirectory=<working directory>
+ExecStart=/usr/bin/nodemon
+
+[Install]
+WantedBy=multi-user.target
