@@ -1,5 +1,13 @@
 [
   {
+    "date": "July 2020",
+    "title": "VegasFlow: accelerating Monte Carlo simulation across devices",
+    "conference": "ICHEP 2020",
+    "place": "Virtually Prague",
+    "url": "https://ichep2020.org/",
+    "slides": "https://indico.cern.ch/event/868940/contributions/3814440/"
+  },
+  {
     "date": "February 2020",
     "title": "Optimizating the hyperoptimization",
     "conference": "NNPDF Collaboration meeting",

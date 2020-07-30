@@ -22,6 +22,7 @@
       "title": "Studying the parton content of the proton with deep learning models",
       "booktitle": "Artificial Intelligence for Science, Industry and Society",
       "eprint": "2002.06587",
+      "doi": "10.22323/1.372.0008",
       "year": "2020",
       "journal": "Artificial Intelligence for Science, Industry and Society"
     },
@@ -131,7 +132,16 @@
       "doi": "10.5281/zenodo.3691926.",
       "url": "https://doi.org/11.5281/zenodo.3691926",
       "docs": "https://vegasflow.readthedocs.io",
-      "description": "Accelerating Monte Carlo  simulation across multiple hardware platforms"
+      "description": "Accelerating Monte Carlo simulation across multiple hardware platforms"
+    },
+    {
+      "author": "Cruz-Martinez, Juan and Marco Rossi and Stefano Carrazza",
+      "title": "pdfflow",
+      "year": "2020",
+      "doi": "10.5281/zenodo.3964191",
+      "url": "https://doi.org/10.5281/zenodo.3964190",
+      "docs": "https://pdfflow.readthedocs.io",
+      "description": "fast device agnostic PDF interpolation "
     },
     {
       "author": "Stefano Carrazza and Juan Cruz-Martinez and Felix Hekhorn",
