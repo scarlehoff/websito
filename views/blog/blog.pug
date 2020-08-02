@@ -1,0 +1,14 @@
+extends ../layout
+
+block extracss
+  link(rel='stylesheet', href='./highlight.js/styles/default.css')
+
+block bodyHead 
+  div.row
+    p Quizá llamarlo blog es muy atrevido. Se trata solo de una colección de scripts y cosas que he hecho para configurar mi sistema de forma que no lo olvide.
+    p Si has llegado hasta aquí y echas un ojo verás como tengo razones para olvidarlo, la mayoría de las cosas son bastante #[a(href="blog?dvaonline") tontas], jueguecitos y eyecandy que no me gustaría perder si un desastre nuclear me hace perder todos mis discos duros y copias de seguridad.
+    p Most of the content of this "blog" is written in Spanish because there is more than enough content in English in the Internet plus most (all, really) of my work is in English, so it is nice writting using my mother tongue every now and then.
+
+block content
+  p
+    | !{content}
