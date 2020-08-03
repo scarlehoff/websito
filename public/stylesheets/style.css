@@ -33,3 +33,10 @@ color: #1abc9c !important;;
   height: 38px;
   width: 42px;
 }
+
+pre {
+  border: 2px solid grey;
+  border-radius: 7px;
+  padding: 7px;
+  background-color: lightgray;
+}

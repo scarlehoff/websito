@@ -1,0 +1,22 @@
+{
+  "showall" : {
+      "Customization": {
+        "items" : ["dvaonline"],
+        "brief" : "Scripts for customization"
+      },
+      "Programacion" : {
+        "items" : ["androidreact"],
+        "brief" : "Tricks and idea to help programming"
+      }
+  },
+  "dvaonline": {
+    "input": "administration/dva_online.md",
+    "title": "D.VA Online!",
+    "brief": "Usa udev rules para hacer que el ordenador emita un sonido al conectar un ratón."
+  },
+  "androidreact" : {
+    "input": "programacion/androidreact.md",
+    "title": "Testing react-native en Android",
+    "brief": "Un pequeño recordatiorio de las environmental variables y tools que hay que instalar para hacer funcionar el emulador de Android Studio con react-native."
+  }
+}
