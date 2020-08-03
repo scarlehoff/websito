@@ -102,7 +102,7 @@ router.get('/blog', function(req, res, next) {
           next(createError(404));
         } else {
           res.render('blog/blog', {
-            title: 'Blog',
+            title: 'Blog: Tips & Tricks',
             content: md.render(text),
           });
         }
