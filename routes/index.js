@@ -88,7 +88,8 @@ router.get('/publicatonDigestor', function(req, res, next) {
   res.render('pubdigest', { title: 'Publications Applet' });
 });
 
-router.get('/blog', function(req, res, next) {
+
+router.get('/blogpost', function(req, res, next) {
   const readme = req._parsedOriginalUrl.query;
   if(readme){
     // Check whether we have this readme available
@@ -101,7 +102,7 @@ router.get('/blog', function(req, res, next) {
           // if we have any problems reading the file, fail
           next(createError(404));
         } else {
-          res.render('blog/blog', {
+          res.render('blog/blogpost', {
             title: 'Blog: Tips & Tricks',
             content: md.render(text),
           });
@@ -113,10 +114,13 @@ router.get('/blog', function(req, res, next) {
     }
   } else {
     res.render('blog/blog', {
-      title: 'Blog',
+      title: 'Blog: Tips & Tricks',
     });
   }
+});
 
+router.get('/blog', function(req, res, next) {
+  res.render('blog/blog', { title: 'Blog: Tips & Tricks', registers: registros });
 });
 
 router.get('/robots.txt', (req, res, next) => {

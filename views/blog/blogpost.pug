@@ -1,0 +1,12 @@
+extends ../layout
+
+block extracss
+  link(rel='stylesheet', href='./highlight.js/styles/default.css')
+
+block bodyHeadContainer
+  div.jumbotron
+    h2 #[a(href='blog', style="color:black;") Blog: Tips & Tricks]
+
+block content
+  p
+    | !{content}
