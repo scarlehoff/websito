@@ -2,11 +2,11 @@
   "showall" : {
       "Customization": {
         "items" : ["dvaonline"],
-        "brief" : "Scripts for customization"
+        "brief" : "Scripts for goodies and eye-candy"
       },
       "Programacion" : {
         "items" : ["androidreact"],
-        "brief" : "Tricks and idea to help programming"
+        "brief" : "Tricks and ideas"
       }
   },
   "dvaonline": {
