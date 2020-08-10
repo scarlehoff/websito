@@ -9,7 +9,7 @@
         "brief" : "Tricks and ideas"
       },
       "Android" : { 
-        "items" : ["slimdownshare"],
+        "items" : ["debloat"],
         "brief" : "Tips for Android"
       }
   },
@@ -24,8 +24,8 @@
     "brief": "Un pequeño recordatiorio de las environmental variables y tools que hay que instalar para hacer funcionar el emulador de Android Studio con react-native."
   },
   "slimdownshare" : {
-    "input": "android/slimdownshare.md",
-    "title": "Reducir el menú Share",
-    "brief": "Comandos adb a utilizar para eliminar entradas inútiles del menú compartir"
+    "input": "android/debloatphone.md",
+    "title": "Eliminar contenido innecesario del teléfono",
+    "brief": "Comandos adb a utilizar para hacer debloating al telefono"
   }
 }
