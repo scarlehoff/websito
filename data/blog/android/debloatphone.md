@@ -69,10 +69,10 @@ Los mensajes de Samsung tampoco los utilizo, por lo que no necesito escribir en 
   adb shell pm disable-user --user 0 com.samsung.android.service.livedrawing
 ```
 
-Bixby es algo bastante molesto que es fácil desactivar.
+Bixby es algo bastante molesto que es fácil desactivar, aunque esto se lleva por delante el botón de Bixby.
+Yo no lo usaba así que no hay problema (no tengo claro qué botón lo hace).
 
 ```bash
-  # This one seems to reactivate itself... so we might uninstall
   adb shell pm disable-user --user 0 com.samsung.android.app.spage
   adb shell pm disable-user --user 0 com.samsung.android.bixby.service
   adb shell pm disable-user --user 0 com.samsung.android.bixby.agent

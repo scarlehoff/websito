@@ -23,7 +23,7 @@
     "title": "Testing react-native en Android",
     "brief": "Un pequeño recordatiorio de las environmental variables y tools que hay que instalar para hacer funcionar el emulador de Android Studio con react-native."
   },
-  "slimdownshare" : {
+  "debloat" : {
     "input": "android/debloatphone.md",
     "title": "Eliminar contenido innecesario del teléfono",
     "brief": "Comandos adb a utilizar para hacer debloating al telefono"
