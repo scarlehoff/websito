@@ -64,7 +64,7 @@ router.get('/research', function(req, res, next) {
   const pubInfo = require('../data/publications.json');
   const articles = pubInfo["article"];
   const software = pubInfo["software"];
-  const talks = require('/data/talks.json');
+  const talks = require('../data/talks.json');
   res.render('research', { title: 'Research', articles, software, talks, research});
 });
 
