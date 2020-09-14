@@ -8,6 +8,10 @@
         "items" : ["androidreact"],
         "brief" : "Tricks and ideas"
       },
+      "Admin" : {
+        "items" : ["auradmin"],
+        "brief" : "Administration scripts and helpers"
+      },
       "Android" : { 
         "items" : ["debloat"],
         "brief" : "Tips for Android"
@@ -27,5 +31,10 @@
     "input": "android/debloatphone.md",
     "title": "Eliminar contenido innecesario del teléfono",
     "brief": "Comandos adb a utilizar para hacer debloating al telefono"
+  },
+  "auradmin" : {
+    "input": "administration/auradmin.md",
+    "title": "Comprobando paquetes de AUR con docker",
+    "brief": "Cómo usar docker para comprobar que los PKGBUILD funcionan correctamente antes de subirlos al AUR"
   }
 }
