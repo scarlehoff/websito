@@ -32,3 +32,12 @@ Una vez hayamos acabado podemos eliminar el contenedor sin problemas.
 docker container stop arch_test
 docker container prune
 ```
+
+### Cosas a tener en cuenta
+Ejemplos de fallos al instalar pueden ser, por ejemplo, haber dejado links apuntando
+al directorio en el que los paquetes han sido creados, en lugar de a sitios tipo `/usr/`,
+así que una vez instalado, es una buena idea para testar borrar todo producto de la instalación.
+
+```bash
+docker exec -it arch_test bash -c "sudo rm -rf *"
+```
