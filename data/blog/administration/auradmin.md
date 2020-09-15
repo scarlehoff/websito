@@ -4,6 +4,7 @@ Actualmente soy el _maintainer_ de varios paquetes en el Arch User Repository o 
 
 - VegasFlow: [![AUR](https://img.shields.io/aur/version/python-vegasflow)](https://aur.archlinux.org/packages/python-vegasflow/)
 - PineAPPL: [![AUR](https://img.shields.io/aur/version/pineappl)](https://aur.archlinux.org/packages/pineappl)
+- PDFFlow: [![AUR](https://img.shields.io/aur/version/python-pdfflow)](https://aur.archlinux.org/packages/python-pdfflow)
 
 Me es por tanto bastante útil tener una serie de scripts y workflows para testear que los paquetes funcionan
 correctamente en un sistema limpio.
@@ -41,3 +42,10 @@ así que una vez instalado, es una buena idea para testar borrar todo producto d
 ```bash
 docker exec -it arch_test bash -c "sudo rm -rf *"
 ```
+
+Es también importante no olvidar crear el fichero ``SRCINFO`` ya que este no se genera automáticamente:
+
+```bash
+makepkg --printsrcinfo > .SRCINFO
+```
+
