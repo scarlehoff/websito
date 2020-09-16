@@ -80,12 +80,18 @@ router.get('/resume', function(req, res, next) {
   res.render('resume', { title: 'Resume', resume, iconmap });
 });
 
+
+//----- JS Webapps -----
 router.get('/stats', function(req, res, next) {
   res.render('stats', { title: 'Stats' });
 });
 
 router.get('/publicatonDigestor', function(req, res, next) {
   res.render('pubdigest', { title: 'Publications Applet' });
+});
+
+router.get('/todoapp', function(req, res, next) {
+  res.render('todoapp', { title: 'Todo Applet' });
 });
 
 
