@@ -160,7 +160,7 @@ updatePage(Views.home);
 const msalConfig = {
   auth: {
     clientId: 'ee9c4b26-6a40-4418-a476-0378c7ad7ef5', // temporary id for testing
-    redirectUri: 'http://localhost:3000/callback'
+    redirectUri: 'http://localhost:3000/todoapp'
   }
 };
 
@@ -173,12 +173,77 @@ const msalRequest = {
 }
 // Create the main MSAL instance
 const msalClient = new msal.PublicClientApplication(msalConfig);
-function signIn() {
-  // TEMPORARY
-  updatePage({name: 'Megan Bowen', userName: 'meganb@contoso.com'});
+async function getToken() {
+  let account = sessionStorage.getItem('msalAccount');
+  if (!account){
+    throw new Error(
+      'User account missing from session. Please sign out and sign in again.');
+  }
+
+  try {
+    // First, attempt to get the token silently
+    const silentRequest = {
+      scopes: msalRequest.scopes,
+      account: msalClient.getAccountByUsername(account)
+    };
+
+    const silentResult = await msalClient.acquireTokenSilent(silentRequest);
+    return silentResult.accessToken;
+  } catch (silentError) {
+    // If silent requests fails with InteractionRequiredAuthError,
+    // attempt to get the token interactively
+    if (silentError instanceof msal.InteractionRequiredAuthError) {
+      const interactiveResult = await msalClient.acquireTokenPopup(msalRequest);
+      return interactiveResult.accessToken;
+    } else {
+      throw silentError;
+    }
+  }
+}
+async function signIn() {
+  // Login
+  try {
+    // Use MSAL to login
+    const authResult = await msalClient.loginPopup(msalRequest);
+    console.log('id_token acquired at: ' + new Date().toString());
+    // Save the account username, needed for token acquisition
+    sessionStorage.setItem('msalAccount', authResult.account.username);
+
+    // Get the user's profile from Graph
+    user = await getUser();
+    // Save the profile in session
+    sessionStorage.setItem('graphUser', JSON.stringify(user));
+    updatePage(Views.home);
+  } catch (error) {
+    console.log(error);
+    updatePage(Views.error, {
+      message: 'Error logging in',
+      debug: error
+    });
+  }
+}
+function signOut() {
+  account = null;
+  sessionStorage.removeItem('graphUser');
+  msalClient.logout();
 }
 
-function signOut() {
-  // TEMPORARY
-  updatePage();
+// --- graph.js
+// Create an authentication provider
+const authProvider = {
+  getAccessToken: async () => {
+    // Call getToken in auth.js
+    return await getToken();
+  }
+};
+
+// Initialize the Graph client
+const graphClient = MicrosoftGraph.Client.initWithMiddleware({authProvider});
+
+async function getUser() {
+  return await graphClient
+    .api('/me')
+    // Only get the fields used by the app
+    .select('id,displayName,mail,userPrincipalName,mailboxSettings')
+    .get();
 }
