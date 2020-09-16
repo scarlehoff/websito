@@ -13,7 +13,16 @@ block bodyHead
 block content
   h4 Prepare your query
 
-  main.container(role="main", id="account-nav")
+  div.container
+    a(href="/todoapp") Javascript SPA Graph Tutorial
+    div(id="navbarCollapse")
+      ul.mr-auto(id="authenticated-nav")
+      ul.justify-content-end
+        li
+          a(href="https://developer.microsoft.com/graph/docs/concepts/overview",target="_blank") Docs
+        li(id="account-nav")
+
+  main.container(role="main", id="main-container")
 
 
   script

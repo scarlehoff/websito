@@ -1,21 +1,11 @@
-// auth.js
-function signIn() {
-  // TEMPORARY
-  updatePage({name: 'Megan Bowen', userName: 'meganb@contoso.com'});
-}
-
-function signOut() {
-  // TEMPORARY
-  updatePage();
-}
-
-// ui.js
+// --- ui.js
 // Select DOM elements to work with
 const authenticatedNav = document.getElementById('authenticated-nav');
 const accountNav = document.getElementById('account-nav');
 const mainContainer = document.getElementById('main-container');
 
 const Views = { error: 1, home: 2, calendar: 3 };
+var account = null;
 
 function createElement(type, className, text) {
   var element = document.createElement(type);
@@ -82,7 +72,7 @@ function showAccountNav(user) {
     // Show a "sign in" button
     accountNav.className = 'nav-item';
 
-    var signInButton = createElement('button', 'btn btn-link nav-link', 'Sign in');
+    var signInButton = createElement('button', 'btn btn-outline-success btn-link nav-link', 'Sign in');
     signInButton.setAttribute('onclick', 'signIn();');
     accountNav.appendChild(signInButton);
   }
@@ -163,3 +153,32 @@ function updatePage(view, data) {
 }
 
 updatePage(Views.home);
+
+// ---  auth.js
+
+// config js
+const msalConfig = {
+  auth: {
+    clientId: 'ee9c4b26-6a40-4418-a476-0378c7ad7ef5', // temporary id for testing
+    redirectUri: 'http://localhost:3000/callback'
+  }
+};
+
+const msalRequest = {
+  scopes: [
+    'user.read',
+    'mailboxsettings.read',
+    'calendars.readwrite'
+  ]
+}
+// Create the main MSAL instance
+const msalClient = new msal.PublicClientApplication(msalConfig);
+function signIn() {
+  // TEMPORARY
+  updatePage({name: 'Megan Bowen', userName: 'meganb@contoso.com'});
+}
+
+function signOut() {
+  // TEMPORARY
+  updatePage();
+}
