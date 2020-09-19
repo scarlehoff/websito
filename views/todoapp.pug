@@ -12,15 +12,8 @@ block bodyHead
 
 block content
   h4 Prepare your query
-
-  div.container
-    a(href="/todoapp") Javascript SPA Graph Tutorial
-    div(id="navbarCollapse")
-      ul.mr-auto(id="authenticated-nav")
-      ul.justify-content-end
-        li
-          a(href="https://developer.microsoft.com/graph/docs/concepts/overview",target="_blank") Docs
-        li(id="account-nav")
+  button.btn.btn-primary.btn-large(onclick="signIn()", id="signmein") Sign in
+  button.btn.btn-link.btn-large(onclick="getEvents()", id="showTasks") Tasks
 
   main.container(role="main", id="main-container")
 
