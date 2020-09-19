@@ -185,10 +185,14 @@ const msalConfig = {
 
 const msalRequest = {
   scopes: [
+    'email',
+    'offline_access',
+    'profile',
     'user.read',
-    'tasks.read',
-    'mailboxsettings.read',
-    'calendars.readwrite'
+    'Tasks.Read',
+    'Tasks.Read.Shared',
+    'Tasks.ReadWrite',
+    'Tasks.ReadWrite.Shared'
   ]
 }
 // Create the main MSAL instance
@@ -284,26 +288,31 @@ async function getEvents() {
   let startOfWeek = moment.tz('America/Los_Angeles').startOf('week').utc();
   // Set end of the view to 7 days after start of week
   let endOfWeek = moment(startOfWeek).add(7, 'day');
+  console.log("This point");
 
   try {
     // GET /me/calendarview?startDateTime=''&endDateTime=''
     // &$select=subject,organizer,start,end
     // &$orderby=start/dateTime
     // &$top=50
+    console.log("Started response");
     let response = await graphClient
-      .api('/me/calendarview') // This needs to change to /me/todo/lists to get the lists or /me/todo/lists/{listname}/tasks to get the tasks in a list
+      .api('/me/todo/lists').version('beta')
+//      .api('/me/calendarview') // This needs to change to /me/todo/lists to get the lists or /me/todo/lists/{listname}/tasks to get the tasks in a list
       // Set the Prefer=outlook.timezone header so date/times are in
       // user's preferred time zone
-      .header("Prefer", `outlook.timezone="${user.mailboxSettings.timeZone}"`)
-      // Add the startDateTime and endDateTime query parameters
-      .query({ startDateTime: startOfWeek.format(), endDateTime: endOfWeek.format() })
-      // Select just the fields we are interested in
-      .select('subject,organizer,start,end')
-      // Sort the results by start, earliest first
-      .orderby('start/dateTime')
-      // Maximum 50 events in response
-      .top(50)
+//      .header("Prefer", `outlook.timezone="${user.mailboxSettings.timeZone}"`)
+//      // Add the startDateTime and endDateTime query parameters
+//      .query({ startDateTime: startOfWeek.format(), endDateTime: endOfWeek.format() })
+//      // Select just the fields we are interested in
+//      .select('subject,organizer,start,end')
+//      // Sort the results by start, earliest first
+//      .orderby('start/dateTime')
+//      // Maximum 50 events in response
+//      .top(50)
       .get();
+    console.log("Get finished");
+    console.log(response);
 
     updatePage(Views.calendar, response.value);
   } catch (error) {
