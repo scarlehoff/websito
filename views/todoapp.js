@@ -1,11 +1,121 @@
-// --- ui.js
 // Select DOM elements to work with
 const mainContainer = document.getElementById('main-container');
 const signinButtonElm = document.getElementById('signmein');
 const showTasksButtonElm = document.getElementById('showTasks');
+const selectorWebElm = document.getElementById('selectorWeb');
 
 const Views = { error: 1, home: 2, calendar: 3 };
 var account = null;
+
+// --- Initialize the Graph client
+// TODO At this point we should read up config.js
+// for devleopment we will put some placeholder config.js file here, which needs to be reset
+// after deployment
+//
+const msalConfig = {
+  auth: {
+    clientId: 'ee9c4b26-6a40-4418-a476-0378c7ad7ef5', // temporary id for testing
+    redirectUri: 'http://localhost:3000/todoapp'
+  }
+};
+// 1. Create the main MSAL instance
+const msalClient = new msal.PublicClientApplication(msalConfig);
+
+// 2. Select the permissions we need to use
+const msalRequest = {
+  scopes: [
+    'email',
+    'openid',
+    'offline_access',
+    'profile',
+    'user.read',
+    'Tasks.Read',
+    'Tasks.Read.Shared',
+    'Tasks.ReadWrite',
+    'Tasks.ReadWrite.Shared'
+  ]
+}
+
+// 3. Prepare the getToken function (why is this not included in the API is beyond me)
+async function getToken() {
+  let account = sessionStorage.getItem('msalAccount');
+  if (!account) throw new Error('User account missing from session. Please sign out and sign in again.');
+
+  try {
+    // First, attempt to get the token silently
+    const silentRequest = {
+      scopes: msalRequest.scopes,
+      account: msalClient.getAccountByUsername(account)
+    };
+
+    const silentResult = await msalClient.acquireTokenSilent(silentRequest);
+    return silentResult.accessToken;
+  } catch (silentError) {
+    // If silent requests fails with InteractionRequiredAuthError,
+    // attempt to get the token interactively
+    if (silentError instanceof msal.InteractionRequiredAuthError) {
+      const interactiveResult = await msalClient.acquireTokenPopup(msalRequest);
+      return interactiveResult.accessToken;
+    } else {
+      throw silentError;
+    }
+  }
+}
+
+// 4. Create an authentication provider (basically an object with the getToken function)
+const authProvider = {
+  getAccessToken: async () => {
+    return await getToken();
+  }
+};
+
+// 5. Instantiate the graph client to be used by the API calls
+const graphClient = MicrosoftGraph.Client.initWithMiddleware({authProvider});
+//-------------------- Graph client initialized
+
+/* API call to Microsoft Graph to receive a list of all lists
+ * in my MS To do account */
+let listOfLists = null;
+async function getAllLists() {
+  let ret = null;
+  try {
+    const response = await graphClient.api('/me/todo/lists').version('beta').get();
+    ret = response.value;
+  } catch (error) {
+    console.log("Error getting list of tasks");
+    console.log(error);
+    updatePage(Views.error, {message: 'Error', debug:error});
+  }
+  return ret;
+}
+
+/* Update the selector of lists of tasks
+ * This function must be called upon first log in to fill in the selector
+ */
+async function updateList() {
+  if (!listOfLists) {
+    selectorWebElm.innerHTML = '<option>Fetching results...</option>';
+    console.log("Fetching lists");
+    let results = await getAllLists();
+    if (results) {
+      listOfLists = results;
+    } else {
+      throw new Error("Did not receive any lists?");
+    }
+  }
+  console.log("Filling in options");
+  let options = '<option selected>Select a list</option>';
+  for (res of listOfLists) {
+    options += `<option value="${res.id}">${res.displayName}</option>`;
+  }
+  selectorWebElm.innerHTML = options;
+}
+
+
+
+
+
+
 
 function createElement(type, className, text) {
   var element = document.createElement(type);
@@ -18,6 +128,7 @@ function createElement(type, className, text) {
 
   return element;
 }
+
 
 
 function showError(error) {
@@ -63,15 +174,16 @@ function updatePage(view, data) {
 
   const user = JSON.parse(sessionStorage.getItem('graphUser'));
 
-
-  if (account) {
+  if (user) {
     // Hide the signin button
-    signinButtonElm.style.display = "block";
-    showTasksButtonElm.style.display = "none";
+    signinButtonElm.style.display = "none";
+    showTasksButtonElm.style.display = null;
+    // Receive all lists and fill in the selector
+    updateList();
   } else {
     // Show it up again
-    signinButtonElm.style.display = "none";
-    showTasksButtonElm.style.display = "block";
+    signinButtonElm.style.display = null;
+    showTasksButtonElm.style.display = "none";
   }
 
   switch (view) {
@@ -92,55 +204,6 @@ updatePage(Views.home);
 
 // ---  auth.js
 
-// config js
-const msalConfig = {
-  auth: {
-    clientId: 'ee9c4b26-6a40-4418-a476-0378c7ad7ef5', // temporary id for testing
-    redirectUri: 'http://localhost:3000/todoapp'
-  }
-};
-
-const msalRequest = {
-  scopes: [
-    'email',
-    'offline_access',
-    'profile',
-    'user.read',
-    'Tasks.Read',
-    'Tasks.Read.Shared',
-    'Tasks.ReadWrite',
-    'Tasks.ReadWrite.Shared'
-  ]
-}
-// Create the main MSAL instance
-const msalClient = new msal.PublicClientApplication(msalConfig);
-async function getToken() {
-  let account = sessionStorage.getItem('msalAccount');
-  if (!account){
-    throw new Error(
-      'User account missing from session. Please sign out and sign in again.');
-  }
-
-  try {
-    // First, attempt to get the token silently
-    const silentRequest = {
-      scopes: msalRequest.scopes,
-      account: msalClient.getAccountByUsername(account)
-    };
-
-    const silentResult = await msalClient.acquireTokenSilent(silentRequest);
-    return silentResult.accessToken;
-  } catch (silentError) {
-    // If silent requests fails with InteractionRequiredAuthError,
-    // attempt to get the token interactively
-    if (silentError instanceof msal.InteractionRequiredAuthError) {
-      const interactiveResult = await msalClient.acquireTokenPopup(msalRequest);
-      return interactiveResult.accessToken;
-    } else {
-      throw silentError;
-    }
-  }
-}
 async function signIn() {
   // Login
   try {
@@ -171,15 +234,6 @@ function signOut() {
 
 // --- graph.js
 // Create an authentication provider
-const authProvider = {
-  getAccessToken: async () => {
-    // Call getToken in auth.js
-    return await getToken();
-  }
-};
-
-// Initialize the Graph client
-const graphClient = MicrosoftGraph.Client.initWithMiddleware({authProvider});
 
 async function getUser() {
   return await graphClient
@@ -228,9 +282,6 @@ async function getEvents() {
 //      // Maximum 50 events in response
 //      .top(50)
       .get();
-    console.log("Get finished");
-    console.log(response);
-
     updatePage(Views.calendar, response.value);
   } catch (error) {
     updatePage(Views.error, {

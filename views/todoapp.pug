@@ -14,6 +14,10 @@ block content
   h4 Prepare your query
   button.btn.btn-primary.btn-large(onclick="signIn()", id="signmein") Sign in
   button.btn.btn-link.btn-large(onclick="getEvents()", id="showTasks") Tasks
+  div.row(style='margin-top: 20px;')
+    div.col-6
+      select.browser-default.custom-select(id='selectorWeb')
+        option(selected) Select a list
 
   main.container(role="main", id="main-container")
 
