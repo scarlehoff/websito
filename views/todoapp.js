@@ -214,13 +214,34 @@ async function showTasks() {
   // Now write them down
   let listOfTasks = "";
   for (task of tasks) {
+    // Title of the task
     let title = task.title;
-    listOfTasks += `<tr><th>${title}</th></tr>`;
+    // Link to task in To Do
+    const linkToTask = `https://to-do.live.com/tasks/id/${task.id}/details`;
+
+    // Check whether the task includes extra information
+    const bodyContent = task.body.content;
+    if (bodyContent) {
+      // This body content can be just text or complete html!
+      let btext = bodyContent;
+      if (task.body.contentType == "html") {
+        btext = (new DOMParser).parseFromString(bodyContent, 'text/html').documentElement.textContent;
+      }
+      // Add an icon that upon hovering adds extra information
+      title += ` <i class="fas fa-window-restore" data-toogle="tooltip" title="${btext.trim()}"/>`;
+    }
+
+    listOfTasks += `
+      <tr>
+        <th>
+         <a href="${linkToTask}" target="_blank" class="fas fa-external-link-alt"></a> ${title}
+        </th>
+      </tr>`;
   }
 
   // Write down the HTML
   const tableContent = `<div class="table-responsive">
-  <table class="table table-striped table-sm" style="font-size:70%;">
+  <table class="table table-sm table-striped" style="font-size:70%;">
     <thead style="text-align:center;">
       <tr> 
         <th><h4>Tasks from ${listTitle} completed between ${startDate.format('DD/MM/YYYY')} and ${finalDate.format('DD/MM/YYYY')} </h4></th>

@@ -22,7 +22,7 @@
   },
   {
     "title" : "Numerical Calculations, Monte Carlo methods",
-    "text" : "State-of-the-art computations in High Energy Physics (HEP) require computing very complex multi-dimensional integrals numerically, as the analytical result is often not known. Monte Carlo algorithms are generally the option of choice be it in HEP applications or elsewhere, as the error of such algorithms does not grow with the number of dimensions.<p>Our aim is to improve the efficiency of widely used methods in order to enable more physics in less time. Some examples are our implementation of the Vegas algorithm in tensorflow (<a href='https://arxiv.org/abs/2002.12921'>Vegasflow</a>) or the distributed computing tool <a href='https://github.com/scarlehoff/pyHepGrid'>pyHepGrid.</a>",
+    "text" : "State-of-the-art computations in High Energy Physics (HEP) require computing very complex multi-dimensional integrals numerically, as the analytical result is often not known. Monte Carlo algorithms are generally the option of choice be it in HEP applications or elsewhere, as the error of such algorithms does not grow with the number of dimensions.<p>Our aim is to improve the efficiency of widely used methods in order to enable more physics in less time. Some examples are our implementation of the Vegas algorithm in tensorflow (<a href='https://arxiv.org/abs/2002.12921'>Vegasflow</a>), <a href='https://pdfflow.readthedocs.io/en/latest/'>PDFFlow</a> or the distributed computing tool <a href='https://github.com/scarlehoff/pyHepGrid'>pyHepGrid.</a>",
     "thumbnail": ["./images/vegasflow.png", 300, 200],
     "left" : false,
     "active" : true
