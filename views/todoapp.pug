@@ -13,13 +13,14 @@ block bodyHead
 block content
   h4 Prepare your query
   button.btn.btn-primary.btn-large(onclick="signIn()", id="signmein") Sign in
-  button.btn.btn-link.btn-large(onclick="getEvents()", id="showTasks") Tasks
-  div.row(style='margin-top: 20px;')
+  div.row.mb-1(style='margin-top: 20px;')
     div.col-6
       select.browser-default.custom-select(id='selectorWeb')
         option(selected) Select a list
-
-  main.container(role="main", id="main-container")
+    button.btn.btn-info.btn-large(onclick="showTasks()", id="showTasks") Receive tasks
+  
+  div.row.mb-1(style='margin-top: 20px;')
+    main.container.col-12(role="main", id="main-container")
 
 
   script

@@ -73,6 +73,9 @@ const authProvider = {
 const graphClient = MicrosoftGraph.Client.initWithMiddleware({authProvider});
 //-------------------- Graph client initialized
 
+//------------ User-space functions
+
+//--- Getting the list of lists
 /* API call to Microsoft Graph to receive a list of all lists
  * in my MS To do account */
 let listOfLists = null;
@@ -82,7 +85,7 @@ async function getAllLists() {
     const response = await graphClient.api('/me/todo/lists').version('beta').get();
     ret = response.value;
   } catch (error) {
-    console.log("Error getting list of tasks");
+    console.log("Error getting list of lists");
     console.log(error);
     updatePage(Views.error, {message: 'Error', debug:error});
   }
@@ -104,12 +107,89 @@ async function updateList() {
     }
   }
   console.log("Filling in options");
-  let options = '<option selected>Select a list</option>';
+  let options = '<option selected value="">Select a list</option>';
   for (res of listOfLists) {
     options += `<option value="${res.id}">${res.displayName}</option>`;
   }
   selectorWebElm.innerHTML = options;
 }
+
+
+//--- Getting all tasks once a list is selected
+/* This function calls the Graph API
+ * to receive a list of tasks for the selected list */
+async function fetchTasks(selectedId, query) {
+  // API call to receive the list of tasks
+  try {
+    let response = await graphClient
+      .api(`me/todo/lists/${selectedId}/tasks`)
+      .version('beta')
+      .filter(query)
+      .top(50)
+      .get();
+    console.log("Response: ", response);
+    return response.value;
+  } catch (error) {
+    console.log("Error getting list of tasks");
+    console.log(error);
+    updatePage(Views.error, {message: 'Error', debug:error});
+  }
+  return;
+}
+
+/* Function called by the user to receive a list of tasks
+ * This function checks that a list was selected
+ * calls the API
+ * calls the filter
+ * fills in the html
+ */
+async function showTasks() {
+  // Check that indeed a list was selected
+  const selectedOption = selectorWebElm.selectedOptions[0];
+  const selectedId = selectedOption.value;
+  if (selectedId == "") {
+    console.log("No value selected, do nothing");
+    return;
+  }
+  const listTitle = selectedOption.text;
+
+  // Prepare the query
+  const fakeDate = moment('2020-09-06').format('YYYY-MM-DD');
+  let query = "status eq 'completed'"; // we want only completed tasks
+  query += ` and completedDateTime/dateTime ge '${fakeDate}'`;
+
+  // Fetch the tasks
+  console.log(`Fetching tasks for ${listTitle}`);
+  const tasks = await fetchTasks(selectedId, query);
+  if (!tasks) {
+      throw new Error("Did not receive any tasks?");
+  }
+
+  // Filter for completion
+  let completedTasks = [];
+  for (task of tasks) {
+    let stat = task.status;
+    if (stat == "completed") completedTasks.push(task);
+  }
+  console.log(completedTasks);
+
+  // Now write them down
+  let listOfTasks = "";
+  for (task of completedTasks) {
+    let title = task.title;
+    let completionRaw = moment(task.completedDateTime.dateTime);
+    let completion = completionRaw.format('D MMMM YYYY');
+    listOfTasks += `<li>${title}, Finished on: ${completion}</li>`;
+  }
+  const htmlListOfTasks = `<ul>${listOfTasks}</ul>`;
+
+  // Now write the html
+  const responseHTML = `<h3>${listTitle}</h3><br>${htmlListOfTasks}`;
+
+  mainContainer.innerHTML = responseHTML;
+}
+
+
 
 
 
