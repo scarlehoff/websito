@@ -1,0 +1,58 @@
+extend layout
+
+block extracss
+  // MSAL
+  script(type="text/javascript", src="https://alcdn.msauth.net/browser/2.1.0/js/msal-browser.min.js", integrity="sha384-EmYPwkfj+VVmL1brMS1h6jUztl4QMS8Qq8xlZNgIT/luzg7MAzDVrRa2JxbNmk/e", crossorigin="anonymous")
+  // Graph SDK
+  script(type="text/javascript", src="https://cdn.jsdelivr.net/npm/@microsoft/microsoft-graph-client/lib/graph-js-sdk.js")
+  // moment
+  script(type="text/javascript",src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js", integrity="sha256-CutOzxCRucUsn6C6TcEYsauvvYilEniTXldPa6/wu0k=", crossorigin="anonymous")
+  // datarangepicker from https://www.daterangepicker.com/
+  script(type="text/javascript",src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js")
+  script(type="text/javascript",src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js")
+  script(type="text/javascript",src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js")
+  link(rel="stylesheet", type="text/css", href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css")
+
+
+block bodyHead
+  p Light js applet using Microsoft's #[a(href="https://docs.microsoft.com/en-us/graph/overview?view=graph-rest-beta") Graph API] to retrieve and curate information from #[a(href="https://to-do.live.com/tasks/") MS To Do].
+  p Upon login, it fetches all available lists from your account so that you can select a specific list (or 'All tasks' if desired) and a daterange. This applet will fetch all tasks in the selected list that were finished within the specified date range.
+  p Note: all communication happens between the browser and Microsoft's server, this is just a js app running entirely in the browser.
+
+block content
+  h4 Prepare your query
+  button.btn.btn-primary.btn-large(onclick="signIn()", id="signmein") Sign in
+  div.row.mb-1(style='margin-top: 20px;')
+    div.col-4
+      select.browser-default.custom-select(id='selectorWeb')
+        option(selected) Select a list
+
+    div.col-4
+      input.form-control(type="text", name="daterange", id="datepicker", style="display:none;")
+
+    button.btn.btn-info.btn-large(onclick="showTasks()", id="showTasks", style="display:none;") Receive tasks
+
+      script.
+          $('input[name="daterange"]').daterangepicker({
+            opens: 'left',
+            showDropdowns: true,
+            minYear: 2016,
+            maxYear: 2021,
+            startDate: "01/09/2020",
+            endDate: "30/09/2020",
+            autoApply: true,
+            locale: {
+              format: "DD/MM/YYYY",
+            }
+          });
+
+  div.row.mb-1(style='margin-top: 20px;')
+    main.container.col-12(role="main", id="main-container")
+
+  script
+    include config.js
+    include todoapp.js
+  script.
+    $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip();
+    });

@@ -1,6 +1,12 @@
 {
   "article": [
     {
+      "author": "Carrazza, Stefano and Cruz-Martinez, Juan M. and Rossi, Marco",
+      "title": "PDFFlow: parton distribution functions on GPU",
+      "eprint": "2009.06635",
+      "year": "2020"
+    },
+    {
       "author": "Amoroso, S. and others",
       "title": "Les Houches 2019: Physics at TeV Colliders: Standard Model Working Group Report",
       "booktitle": "11th Les Houches Workshop on Physics at TeV Colliders: {PhysTeV Les Houches}",
