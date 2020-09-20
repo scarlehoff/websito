@@ -5,6 +5,13 @@ block extracss
   script(type="text/javascript", src="https://alcdn.msauth.net/browser/2.1.0/js/msal-browser.min.js", integrity="sha384-EmYPwkfj+VVmL1brMS1h6jUztl4QMS8Qq8xlZNgIT/luzg7MAzDVrRa2JxbNmk/e", crossorigin="anonymous")
   // Graph SDK
   script(type="text/javascript", src="https://cdn.jsdelivr.net/npm/@microsoft/microsoft-graph-client/lib/graph-js-sdk.js")
+  // moment
+  script(type="text/javascript",src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js", integrity="sha256-CutOzxCRucUsn6C6TcEYsauvvYilEniTXldPa6/wu0k=", crossorigin="anonymous")
+  // datarangepicker from https://www.daterangepicker.com/
+  script(type="text/javascript",src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js")
+  script(type="text/javascript",src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js")
+  script(type="text/javascript",src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js")
+  link(rel="stylesheet", type="text/css", href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css")
 
 
 block bodyHead
@@ -14,18 +21,32 @@ block content
   h4 Prepare your query
   button.btn.btn-primary.btn-large(onclick="signIn()", id="signmein") Sign in
   div.row.mb-1(style='margin-top: 20px;')
-    div.col-6
+    div.col-4
       select.browser-default.custom-select(id='selectorWeb')
         option(selected) Select a list
-    button.btn.btn-info.btn-large(onclick="showTasks()", id="showTasks") Receive tasks
-  
+
+    div.col-4
+      input.form-control(type="text", name="daterange", id="datepicker", style="display:none;")
+
+    button.btn.btn-info.btn-large(onclick="showTasks()", id="showTasks", style="display:none;") Receive tasks
+
+      script.
+          $('input[name="daterange"]').daterangepicker({
+            opens: 'left',
+            showDropdowns: true,
+            minYear: 2016,
+            maxYear: 2021,
+            startDate: "01/09/2020",
+            endDate: "30/09/2020",
+            autoApply: true,
+            locale: {
+              format: "DD/MM/YYYY",
+            }
+          });
+
   div.row.mb-1(style='margin-top: 20px;')
     main.container.col-12(role="main", id="main-container")
 
 
   script
     include todoapp.js
-  // moment
-  script(type="text/javascript", src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js")
-  script(type="text/javascript", src="https://momentjs.com/downloads/moment-timezone-with-data-10-year-range.js")
-

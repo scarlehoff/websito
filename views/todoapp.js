@@ -3,6 +3,7 @@ const mainContainer = document.getElementById('main-container');
 const signinButtonElm = document.getElementById('signmein');
 const showTasksButtonElm = document.getElementById('showTasks');
 const selectorWebElm = document.getElementById('selectorWeb');
+const calendarElm = document.getElementById('datepicker');
 
 const Views = { error: 1, home: 2, calendar: 3 };
 var account = null;
@@ -153,10 +154,15 @@ async function showTasks() {
   }
   const listTitle = selectedOption.text;
 
+  // Get the dateframe
+  const dateRange = calendarElm.value.split("-");
+  const startDate = moment(dateRange[0], 'DD/MM/YYYY');
+  const finalDate = moment(dateRange[1], 'DD/MM/YYYY');
+
   // Prepare the query
-  const fakeDate = moment('2020-09-06').format('YYYY-MM-DD');
   let query = "status eq 'completed'"; // we want only completed tasks
-  query += ` and completedDateTime/dateTime ge '${fakeDate}'`;
+  query += ` and completedDateTime/dateTime ge '${startDate.format('YYYY-MM-DD')}'`;
+  query += ` and completedDateTime/dateTime le '${finalDate.format('YYYY-MM-DD')}'`;
 
   // Fetch the tasks
   console.log(`Fetching tasks for ${listTitle}`);
@@ -165,28 +171,27 @@ async function showTasks() {
       throw new Error("Did not receive any tasks?");
   }
 
-  // Filter for completion
-  let completedTasks = [];
-  for (task of tasks) {
-    let stat = task.status;
-    if (stat == "completed") completedTasks.push(task);
-  }
-  console.log(completedTasks);
-
   // Now write them down
   let listOfTasks = "";
-  for (task of completedTasks) {
+  for (task of tasks) {
     let title = task.title;
     let completionRaw = moment(task.completedDateTime.dateTime);
-    let completion = completionRaw.format('D MMMM YYYY');
-    listOfTasks += `<li>${title}, Finished on: ${completion}</li>`;
+    listOfTasks += `<tr><th>${title}</th></tr>`;
   }
-  const htmlListOfTasks = `<ul>${listOfTasks}</ul>`;
 
-  // Now write the html
-  const responseHTML = `<h3>${listTitle}</h3><br>${htmlListOfTasks}`;
+  // Write down the HTML
+  const tableContent = `<div class="table-responsive">
+  <table class="table table-striped table-sm" style="font-size:70%;">
+    <thead style="text-align:center;">
+      <tr> 
+        <th><h4>Tasks from ${listTitle} completed between ${startDate.format('DD/MM/YYYY')} and ${finalDate.format('DD/MM/YYYY')} </h4></th>
+      </tr>
+    </thead>
+    <tbody>${listOfTasks}</tbody>
+  </table>
+  </div>`
 
-  mainContainer.innerHTML = responseHTML;
+  mainContainer.innerHTML = tableContent;
 }
 
 
@@ -257,12 +262,14 @@ function updatePage(view, data) {
   if (user) {
     // Hide the signin button
     signinButtonElm.style.display = "none";
+    calendarElm.style.display = null;
     showTasksButtonElm.style.display = null;
     // Receive all lists and fill in the selector
     updateList();
   } else {
     // Show it up again
     signinButtonElm.style.display = null;
+    calendarElm.style.display = "none";
     showTasksButtonElm.style.display = "none";
   }
 
