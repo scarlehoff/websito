@@ -9,31 +9,22 @@ const Views = { error: 1, home: 2, calendar: 3 };
 var account = null;
 
 // --- Initialize the Graph client
-// TODO At this point we should read up config.js
-// for devleopment we will put some placeholder config.js file here, which needs to be reset
-// after deployment
-//
-const msalConfig = {
-  auth: {
-    clientId: 'ee9c4b26-6a40-4418-a476-0378c7ad7ef5', // temporary id for testing
-    redirectUri: 'http://localhost:3000/todoapp'
-  }
-};
+// Read config.js, which must contain something like this
+// and need to be included before this file!
+//const msalConfig = {
+//  auth: {
+//    clientId: <some client/app id>,
+//    redirectUri: window.location.href
+//  }
+//};
 // 1. Create the main MSAL instance
 const msalClient = new msal.PublicClientApplication(msalConfig);
 
 // 2. Select the permissions we need to use
 const msalRequest = {
   scopes: [
-    'email',
-    'openid',
-    'offline_access',
-    'profile',
     'user.read',
-    'Tasks.Read',
-    'Tasks.Read.Shared',
     'Tasks.ReadWrite',
-    'Tasks.ReadWrite.Shared'
   ]
 }
 
@@ -58,7 +49,7 @@ async function getToken() {
       const interactiveResult = await msalClient.acquireTokenPopup(msalRequest);
       return interactiveResult.accessToken;
     } else {
-      throw silentError;
+      main.innerHTML = silentError;
     }
   }
 }
@@ -84,18 +75,17 @@ async function signIn() {
     console.log('id_token acquired at: ' + new Date().toString());
     // Save the account username, needed for token acquisition
     sessionStorage.setItem('msalAccount', authResult.account.username);
+    console.log("Saving account", authResult.account);
 
     // Get the user's profile from Graph
     user = await getUser();
+    console.log("Login success: ", user);
     // Save the profile in session
     sessionStorage.setItem('graphUser', JSON.stringify(user));
-    updatePage(Views.home);
+    updatePage();
   } catch (error) {
     console.log(error);
-    updatePage(Views.error, {
-      message: 'Error logging in',
-      debug: error
-    });
+    mainCoptions.innerHTML = error;
   }
 }
 function signOut() {
@@ -106,8 +96,7 @@ function signOut() {
 async function getUser() {
   return await graphClient
     .api('/me')
-    // Only get the fields used by the app
-    .select('id,displayName,mail,userPrincipalName,mailboxSettings')
+    .select('id')
     .get();
 }
 // --------------------------------------------------------------------
@@ -124,9 +113,8 @@ async function getAllLists() {
     const response = await graphClient.api('/me/todo/lists').version('beta').get();
     ret = response.value;
   } catch (error) {
-    console.log("Error getting list of lists");
     console.log(error);
-    updatePage(Views.error, {message: 'Error', debug:error});
+    mainContainer.innerHTML = error.message;
   }
   return ret;
 }
@@ -142,7 +130,7 @@ async function updateList() {
     if (results) {
       listOfLists = results;
     } else {
-      throw new Error("Did not receive any lists?");
+      return;
     }
   }
   console.log("Filling in options");
@@ -259,7 +247,7 @@ async function showTasks() {
  * such as refresh or login
  * and hides/shows the right buttons/elements
  */
-function updatePage(view) {
+function updatePage() {
   const user = JSON.parse(sessionStorage.getItem('graphUser'));
 
   if (user) {
@@ -277,4 +265,4 @@ function updatePage(view) {
   }
 }
 
-updatePage(Views.home);
+updatePage();

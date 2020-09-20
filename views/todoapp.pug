@@ -50,5 +50,9 @@ block content
     main.container.col-12(role="main", id="main-container")
 
   script
+    include config.js
     include todoapp.js
-  script $('[data-toggle="tooltip"]').tooltip();
+  script.
+    $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip();
+    });
