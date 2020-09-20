@@ -148,7 +148,9 @@ async function updateList() {
   console.log("Filling in options");
   let options = '<option selected value="">Select a list</option>';
   for (res of listOfLists) {
-    options += `<option value="${res.id}">${res.displayName}</option>`;
+    let displayName = res.displayName;
+    if (displayName == "Tasks") displayName = "All tasks";
+    options += `<option value="${res.id}">${displayName}</option>`;
   }
   selectorWebElm.innerHTML = options;
 }

@@ -32,9 +32,9 @@ block content
         each item in articles
           tr
             th
-              a(href="https://doi.org/"+item['doi']) #{item['title']}
-            th #{item['journal']} (#{item['year']} #{item['volume']})
-            th
+             a(href="https://doi.org/"+item['doi']) #{item['title']}
+            td #{item['journal']} (#{item['year']} #{item['volume']})
+            td
               a(href="https://arxiv.org/abs/"+item['eprint']) #{item['eprint']}
   h2.anchored(id="talks") Seminars and conferences
   div.table-responsive
@@ -51,14 +51,14 @@ block content
           tr 
             th #{item['title']}
             th 
-              a(href=item['url']) #{item['conference']}
-            th #{item['place']}
-            th #{item['date']}
+             a(href=item['url']) #{item['conference']}
+            td #{item['place']}
+            td #{item['date']}
             if item['slides']
-              th 
+              td 
                 a(href=item['slides']) slides
             else
-              th
+              td
   h2.anchored(id="software") Academic open-sourced Software
   div.table-responsive
     table.table.table-striped.table-sm(style='font-size:70%;')
@@ -72,6 +72,6 @@ block content
           tr
             th
               a(href=item.docs) #{item.title}
-            th #{item.description}
-            th
+            td #{item.description}
+            td
               a(href=item.url) Zenodo (#{item.year})

@@ -15,7 +15,9 @@ block extracss
 
 
 block bodyHead
-  p Applet to retrieve information from Microsoft To Do.
+  p Light js applet using Microsoft's #[a(href="https://docs.microsoft.com/en-us/graph/overview?view=graph-rest-beta") Graph API] to retrieve and curate information from #[a(href="https://to-do.live.com/tasks/") MS To Do].
+  p Upon login, it fetches all available lists from your account so that you can select a specific list (or 'All tasks' if desired) and a daterange. This applet will fetch all tasks in the selected list that were finished within the specified date range.
+  p Note: all communication happens between the browser and Microsoft's server, this is just a js app running entirely in the browser.
 
 block content
   h4 Prepare your query

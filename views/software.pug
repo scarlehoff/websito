@@ -8,7 +8,7 @@ block content
   div.containter
     h3 About: Software
     p If you want to know me better, you can always look at my #[a(href="https://github.com/scarlehoff/dotvim") vimrc] configuration.
-    p I have also written a few tools to make my life easier, like #[a(href="publicatonDigestor") this small webapp] to help me fill in bureaucay by looking at Inspire.
+    p I have also written a few tools and webapps to make my life easier, which can be seen  #[a(href="#applets") below].
   //div.container
     h2 About: software
     p Some more information about me and about software and about my interests
@@ -36,3 +36,25 @@ block content
           strong.d-block.text-gray-dark #{item.title}
           span !{item.description}
 
+  h2.anchored(id="applets") Applets
+  p One of the reasons I started this website was to gain some experience with javascript, since it is a very useful language for small projects and utilities. I've written several such utilities (javascript apps running of course entirely in the browser) listed below:
+    div.table-responsive
+      table.table.table-striped.table-sm(style='font-size:70%;')
+        thead
+          tr
+            th title
+            th description
+        tbody
+          tr
+            th
+              a(href='publicatonDigestor') Publication digestor
+            td
+              Get your publications from Inspire HEP in a bureacracy-filling helping way
+          tr
+            th
+              a(href='todoapp') MS To Do
+              td Fetch completed app from your MS To Do account
+          tr
+            th
+              a(href='stats') Map Stats
+            td Map the visits received
