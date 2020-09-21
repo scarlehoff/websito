@@ -1,10 +1,12 @@
-## Personal webpage: https://juacrumar.es
+# Personal webpage: https://juacrumar.es
 
 A personal webpage to keep a nice-to-the-eye cv on The Internets.
 
 The server is expressjs and most of the random scripts that do things (log the visitors, parse the log data, etc) are done using javascript.
 
-### Dev deployement
+I started this project as a way of learning javascript which I think has been successful.
+
+#### Dev deployement
 
 ```
 git clone git@github.com:scarlehoff/websito.git
