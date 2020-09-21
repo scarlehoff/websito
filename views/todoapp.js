@@ -221,15 +221,15 @@ async function showTasks() {
 
     listOfTasks += `
       <tr>
-        <th>
+        <td>
          <a href="${linkToTask}" target="_blank" class="fas fa-external-link-alt"></a> ${title}
-        </th>
+        </td>
       </tr>`;
   }
 
   // Write down the HTML
   const tableContent = `<div class="table-responsive">
-  <table class="table table-sm table-striped" style="font-size:70%;">
+  <table class="table table-sm table-striped"">
     <thead style="text-align:center;">
       <tr> 
         <th><h4>Tasks from ${listTitle} completed between ${startDate.format('DD/MM/YYYY')} and ${finalDate.format('DD/MM/YYYY')} </h4></th>
