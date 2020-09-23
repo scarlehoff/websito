@@ -1,5 +1,8 @@
 # Personal webpage: https://juacrumar.es
 
+![CodeQL](https://github.com/scarlehoff/websito/workflows/CodeQL/badge.svg)
+
+
 A personal webpage to keep a nice-to-the-eye cv on The Internets.
 
 The server is expressjs and most of the random scripts that do things (log the visitors, parse the log data, etc) are done using javascript.
