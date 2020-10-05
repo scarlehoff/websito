@@ -32,19 +32,7 @@ block content
 
     button.btn.btn-info.btn-large(onclick="showTasks()", id="showTasks", style="display:none;") Receive tasks
 
-      script.
-          $('input[name="daterange"]').daterangepicker({
-            opens: 'left',
-            showDropdowns: true,
-            minYear: 2016,
-            maxYear: 2021,
-            startDate: "01/09/2020",
-            endDate: "30/09/2020",
-            autoApply: true,
-            locale: {
-              format: "DD/MM/YYYY",
-            }
-          });
+
 
   div.row.mb-1(style='margin-top: 20px;')
     main.container.col-12(role="main", id="main-container")
@@ -56,3 +44,16 @@ block content
     $(document).ready(function(){
       $('[data-toggle="tooltip"]').tooltip();
     });
+  script.
+      $('input[name="daterange"]').daterangepicker({
+        opens: 'left',
+        showDropdowns: true,
+        minYear: 2016,
+        maxYear: 2021,
+        startDate: moment().startOf("week").subtract(7, "day"),
+        endDate: moment().startOf("day"),
+        autoApply: true,
+        locale: {
+          format: "DD/MM/YYYY",
+        }
+      });

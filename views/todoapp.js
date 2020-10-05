@@ -1,3 +1,5 @@
+moment.updateLocale('en', { week: { dow: 1, } });
+
 // Select DOM elements to work with
 const mainContainer = document.getElementById('main-container');
 const signinButtonElm = document.getElementById('signmein');
@@ -137,7 +139,7 @@ async function updateList() {
   let options = '<option selected value="">Select a list</option>';
   for (res of listOfLists) {
     let displayName = res.displayName;
-    if (displayName == "Tasks") displayName = "All tasks";
+    if (displayName == "Tasks") displayName = "Untagged tasks";
     options += `<option value="${res.id}">${displayName}</option>`;
   }
   selectorWebElm.innerHTML = options;
@@ -215,8 +217,17 @@ async function showTasks() {
       if (task.body.contentType == "html") {
         btext = (new DOMParser).parseFromString(bodyContent, 'text/html').documentElement.textContent;
       }
-      // Add an icon that upon hovering adds extra information
-      title += ` <i class="fas fa-window-restore" data-toogle="tooltip" title="${btext.trim()}"/>`;
+      // Now it seems that everyone has "body content" so this is less than ideal
+      // but there is a <!-- comment that gets through the body content?
+      // Maybe it is a bug in Microsoft's side, but let's play along for now...
+      // write a msg to console though
+      btext = btext.trim();
+      if (btext.startsWith("<!--") && btext.endsWith("-->")) { // it is a comment
+        console.log("Text covered by <!-- --!> so understood as a comment and ignored!");
+      } else {
+        // Add an icon that upon hovering adds extra information
+        title += ` <i class="fas fa-window-restore" data-toogle="tooltip" title="${btext}"/>`;
+      }
     }
 
     listOfTasks += `
