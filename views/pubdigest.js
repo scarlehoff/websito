@@ -29,6 +29,9 @@ const substitutions = {
   pages: new RegExp("\\$PAGES", 'g'),
   title: new RegExp("\\$TITLE", 'g'),
   journal: new RegExp("\\$JOURNAL", 'g'),
+  authors: new RegExp("\\$AUTHORS", 'g'),
+  doi: new RegExp("\\$DOI", 'g'),
+  year: new RegExp("\\$PUBYEAR", 'g'),
   journalPage: new RegExp("\\$PAGEJOURNAL", 'g'),
   journalVol: new RegExp("\\$VOLJOURNAL", 'g')
 };
@@ -72,14 +75,10 @@ class InspireHEP {
     return authorString;
   }
 
-  parseAuthors(res) {
-    // parse the author list
-    const authorList = res.authors;
-    let authorString = "";
-    for (let author of authorList) {
-      authorString += ` ${author.full_name}`;
-    }
-    return authorString;
+  parseDoi(res) {
+    const dois = res.metadata.dois;
+    if (dois) return dois[0].value;
+    return "";
   }
 
   parseTitle(res) {
@@ -153,10 +152,13 @@ function fetchResults(rApi, listTextItems, qInfo) {
         let infoDict = {};
         infoDict.title = rApi.parseTitle(result);
         infoDict.pages = rApi.parsePages(result);
+        infoDict.authors = rApi.parseAuthors(result);
+        infoDict.doi = rApi.parseDoi(result);
         if (pubInfo) {
           infoDict.journal = pubInfo.journal;
           infoDict.journalVol = pubInfo.volume;
           infoDict.journalPage = pubInfo.pagination;
+          infoDict.year = pubInfo.year;
         }
 
         // Prepare the output text for this entry
