@@ -1,6 +1,14 @@
 {
   "article": [
     {
+      "author": "Carrazza, Stefano and Cruz-Martinez, Juan M. and Schwan, Christopher",
+      "title": "Constructing PineAPPL grids on hardware accelerators",
+      "booktitle": "8th Large Hadron Collider Physics Conference",
+      "eprint": "2009.11798",
+      "year": "2020",
+      "journal": "8th Large Hadron Collider Physics Conference"
+    },
+    {
       "author": "Carrazza, Stefano and Cruz-Martinez, Juan M. and Rossi, Marco",
       "title": "PDFFlow: parton distribution functions on GPU",
       "eprint": "2009.06635",
@@ -138,16 +146,7 @@
       "doi": "10.5281/zenodo.3691926.",
       "url": "https://doi.org/10.5281/zenodo.3691926",
       "docs": "https://vegasflow.readthedocs.io",
-      "description": "Accelerating Monte Carlo simulation across multiple hardware platforms"
-    },
-    {
-      "author": "Cruz-Martinez, Juan and Marco Rossi and Stefano Carrazza",
-      "title": "pdfflow",
-      "year": "2020",
-      "doi": "10.5281/zenodo.3964191",
-      "url": "https://doi.org/10.5281/zenodo.3964190",
-      "docs": "https://pdfflow.readthedocs.io",
-      "description": "fast device agnostic PDF interpolation "
+      "description": "Accelerating Monte Carlo  simulation across multiple hardware platforms"
     },
     {
       "author": "Stefano Carrazza and Juan Cruz-Martinez and Felix Hekhorn",
@@ -157,6 +156,15 @@
       "url": "https://doi.org/10.5281/zenodo.3874237",
       "docs": "https://n3pdf.github.io/eko/",
       "description": "eko"
+    },
+    {
+      "author": "Juacrumar and Marco Rossi and Stefano Carrazza",
+      "title": "pdfflow",
+      "year": "2020",
+      "doi": "10.5281/zenodo.3964190",
+      "url": "https://doi.org/10.5281/zenodo.3964190",
+      "docs": "https://pdfflow.readthedocs.io",
+      "description": "fast device agnostic PDF interpolation "
     }
   ]
 }
