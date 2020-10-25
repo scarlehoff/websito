@@ -9,7 +9,7 @@
         "brief" : "Tricks and ideas"
       },
       "Admin" : {
-        "items" : ["auradmin"],
+        "items" : ["auradmin", "reverseSSH"],
         "brief" : "Administration scripts and helpers"
       },
       "Android" : { 
@@ -36,5 +36,10 @@
     "input": "administration/auradmin.md",
     "title": "Comprobando paquetes de AUR con docker",
     "brief": "Cómo usar docker para comprobar que los PKGBUILD funcionan correctamente antes de subirlos al AUR"
+  },
+  "reverseSSH" : {
+    "input": "administration/reverse_ssh.md",
+    "title": "Cómo crear un túnel SSH inverso",
+    "brief": "Crear un túnel SSH inverso puede ser útil en situaciones en las que la conexión ssh funcione en una sola dirección"
   }
 }
