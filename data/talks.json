@@ -1,9 +1,17 @@
 [
   {
-    "date": "July 2020",
-    "title": "VegasFlow: accelerating Monte Carlo simulation across devices",
-    "conference": "ICHEP 2020",
-    "place": "Virtually Prague",
+    "date": "October 2020",
+    "title": "VegasFlow and PDFFlow:  accelerating Monte Carlosimulation across multiple devices",
+    "conference": "Generator Infrastructure and Tools Subgroup Meeting",
+    "place": "CERN (Virtual meeting)",
+    "url" : "https://indico.cern.ch/event/969470/",
+    "slides": ""
+  },
+  {
+    "date": "August 2020",
+    "title": "VegasFlow: accelerating Monte Carlo simulation across platforms",
+    "conference": "40th International Conference on High Energy Physics, ICHEP",
+    "place": "Prague (Virtual meeting)",
     "url": "https://ichep2020.org/",
     "slides": "https://indico.cern.ch/event/868940/contributions/3814440/"
   },
