@@ -1,5 +1,13 @@
 [
   {
+    "date": "November 2020",
+    "title": "PDF/Vegas-Flow",
+    "conference": "HSF WLCG Virtual Workshop",
+    "place": "Virtual meeting",
+    "url" : "https://indico.cern.ch/event/941278/",
+    "slides": "https://indico.cern.ch/event/941278/contributions/4095929/attachments/2146217/3619331/juancruzmartinez.pdf"
+  },
+  {
     "date": "October 2020",
     "title": "VegasFlow and PDFFlow:  accelerating Monte Carlosimulation across multiple devices",
     "conference": "Generator Infrastructure and Tools Subgroup Meeting",

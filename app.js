@@ -36,10 +36,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Prepare the logging (needs to be done before setting /)
-// Set up the dev logger to console
-app.use(logger('dev'));
-
 // Create a log per day
 let logStream = rfs.createStream('access.log', {
   interval: '1d', // rotate every day
@@ -47,10 +43,17 @@ let logStream = rfs.createStream('access.log', {
 });
 
 // Create a token for the ip
+// (due to being behind nginx, the ip might not come in the standard place)
 logger.token('userIP', (req) => {
   let userIP = req.header('X-Real-IP') || req.connection.remoteAddress;
   return userIP;
 })
+
+// Prepare the logging (needs to be done before setting /)
+// set up the combine logger from morgan to console
+// might be unnecesarily verbose?
+app.use(logger('combined'));
+
 //// Set up the IP 
 app.use(
   logger(':date > :url > :userIP', {
