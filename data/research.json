@@ -26,5 +26,12 @@
     "thumbnail": ["./images/vegasflow.png", 300, 200],
     "left" : false,
     "active" : true
+  },
+  {
+    "title" : "New Hardware in High Energy Physics",
+    "text" : "Physics at the frontier of knowledge require [] at the frontier of software and hardware. As a result very complicated calculation are also very costly in term of computing resources. Part of my work is dedicated to adapt these very complicated calculations to the hardware accelerators that have seen an amazing development during the last decades. Although with an important focus on Graphical Processing Units (<b>GPUs</b>) with packages like <a href='https://arxiv.org/abs/2002.12921'>Vegasflow</a> or <a href='https://pdfflow.readthedocs.io/en/latest/'>PDFFlow</a>, we are also considering Field Programable Gate Arrays (FPGAs) or, more recently, we are exploring the usage of quantum circuits as co-processor in order to accelrate calculation, such as the QPDF for PDF fitting using Variational Quantum Circuits.",
+    "thumbnail": ["./images/qpdf.png", 300, 200],
+    "left" : true,
+    "active" : true
   }
 ]

@@ -1,6 +1,28 @@
 {
   "article": [
     {
+      "author": "Rossi, Marco and Carrazza, Stefano and Cruz-Martinez, Juan M.",
+      "title": "PDFFlow: hardware accelerating parton density access",
+      "eprint": "2012.08221",
+      "journal": "40th International Conference on High Energy Physics",
+      "year": "2020"
+    },
+    {
+      "author": "Perez-Salinas, Adrian and Cruz-Martinez, Juan and Alhajri, Abdulla A. and Carrazza, Stefano",
+      "title": "Determining the proton content with a quantum computer",
+      "eprint": "2011.13934",
+      "journal": "Submitted to PRX",
+      "year": "2020"
+    },
+    {
+      "author": "Carrazza, Stefano and Cruz-Martinez, Juan M.",
+      "title": "VegasFlow: accelerating Monte Carlo simulation across platforms",
+      "booktitle": "40th International Conference on High Energy Physics",
+      "eprint": "2010.09341",
+      "year": "2020",
+      "journal": "40th International Conference on High Energy Physics"
+    },
+    {
       "author": "Carrazza, Stefano and Cruz-Martinez, Juan M. and Schwan, Christopher",
       "title": "Constructing PineAPPL grids on hardware accelerators",
       "booktitle": "8th Large Hadron Collider Physics Conference",
@@ -12,6 +34,7 @@
       "author": "Carrazza, Stefano and Cruz-Martinez, Juan M. and Rossi, Marco",
       "title": "PDFFlow: parton distribution functions on GPU",
       "eprint": "2009.06635",
+      "journal": "Submitted to Comput. Phys. Commun. ",
       "year": "2020"
     },
     {
@@ -158,7 +181,7 @@
       "description": "eko"
     },
     {
-      "author": "Juacrumar and Marco Rossi and Stefano Carrazza",
+      "author": "Juan Cruz-Martinez and Marco Rossi and Stefano Carrazza",
       "title": "pdfflow",
       "year": "2020",
       "doi": "10.5281/zenodo.3964190",
