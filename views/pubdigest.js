@@ -169,7 +169,7 @@ function fetchResults(rApi, listTextItems, qInfo) {
 
         // And now make it into HTML
         listTextItems.push(resultText);
-        informationElm.innerHTML = listTextItems.join('<br><br>');// objectToHtml(visitedPages);
+        informationElm.innerHTML = listTextItems.join('<br><br>');
 
       });
       queryInfoElm.innerHTML = `Found ${listTextItems.length} records total:`;
