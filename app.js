@@ -33,7 +33,10 @@ app.set('view engine', 'pug');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'node_modules')));
+// flag
+app.use(express.static(path.join(__dirname, 'node_modules/mdbootstrap/css/addons')));
+// sql
+app.use(express.static(path.join(__dirname, 'node_modules/sql.js/dist/')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Create a log per day
