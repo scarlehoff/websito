@@ -32,7 +32,12 @@ block content
         each item in articles
           tr
             th
-             a(href="https://doi.org/"+item['doi']) #{item['title']}
+              if item['url']
+                a(href=item['url']) #{item['title']}
+              else if item['doi']
+                a(href="https://doi.org/"+item['doi']) #{item['title']}
+              else
+                a(href="https://arxiv.org/abs/"+item['eprint']) #{item['title']}
             td #{item['journal']} (#{item['year']} #{item['volume']})
             td
               a(href="https://arxiv.org/abs/"+item['eprint']) #{item['eprint']}

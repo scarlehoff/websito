@@ -5,7 +5,8 @@
       "title": "PDFFlow: hardware accelerating parton density access",
       "eprint": "2012.08221",
       "journal": "40th International Conference on High Energy Physics",
-      "year": "2020"
+      "year": "2020",
+      "url": "https://pos.sissa.it/390/921/"
     },
     {
       "author": "Perez-Salinas, Adrian and Cruz-Martinez, Juan and Alhajri, Abdulla A. and Carrazza, Stefano",
@@ -20,7 +21,8 @@
       "booktitle": "40th International Conference on High Energy Physics",
       "eprint": "2010.09341",
       "year": "2020",
-      "journal": "40th International Conference on High Energy Physics"
+      "journal": "40th International Conference on High Energy Physics",
+      "url": "https://pos.sissa.it/390/906/"
     },
     {
       "author": "Carrazza, Stefano and Cruz-Martinez, Juan M. and Schwan, Christopher",
@@ -28,7 +30,8 @@
       "booktitle": "8th Large Hadron Collider Physics Conference",
       "eprint": "2009.11798",
       "year": "2020",
-      "journal": "8th Large Hadron Collider Physics Conference"
+      "journal": "8th Large Hadron Collider Physics Conference",
+      "doi": "10.22323/1.382.0057"
     },
     {
       "author": "Carrazza, Stefano and Cruz-Martinez, Juan M. and Rossi, Marco",
@@ -43,6 +46,7 @@
       "booktitle": "11th Les Houches Workshop on Physics at TeV Colliders: {PhysTeV Les Houches}",
       "eprint": "2003.01700",
       "year": "2020",
+      "url": "http://cds.cern.ch/record/2712776",
       "journal": "11th Les Houches Workshop on Physics at TeV Colliders: {PhysTeV Les Houches}"
     },
     {
@@ -61,6 +65,7 @@
       "eprint": "2002.06587",
       "doi": "10.22323/1.372.0008",
       "year": "2020",
+      "url" : "https://pos.sissa.it/372/008/",
       "journal": "Artificial Intelligence for Science, Industry and Society"
     },
     {
@@ -69,7 +74,9 @@
       "journal": "Frascati Phys. Ser.",
       "volume": "69",
       "year": "2019",
-      "eprint": "1909.10547"
+      "eprint": "1909.10547",
+      "url" : "http://library.lnf.infn.it/volumi-pubblicati/",
+      "ISBN" : "978-88-86409-70-4"
     },
     {
       "author": "Carrazza, Stefano and Cruz-Martinez, Juan",
