@@ -1,5 +1,19 @@
 [
   {
+    "date": "February 2021",
+    "title": "Offloading Monte Carlo simulations to hardware accelerators",
+    "conference": "Milano Joint Phenomenology Seminar",
+    "place": "Milan (Italy, Virtual)"
+  },
+  {
+    "date": "February 2021",
+    "title": "PDF determination with a quantum hardware",
+    "conference": "Invited Seminar",
+    "place": "Valencia (Spain, Virtual)"
+    "url" : "https://indico.ific.uv.es/event/6041/",
+    "slides": "https://indico.ific.uv.es/event/6041/attachments/8497/10642/juanCM.pdf"
+  },
+  {
     "date": "November 2020",
     "title": "PDF/Vegas-Flow",
     "conference": "HSF WLCG Virtual Workshop",
