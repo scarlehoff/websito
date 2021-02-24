@@ -3,7 +3,9 @@
     "date": "February 2021",
     "title": "Offloading Monte Carlo simulations to hardware accelerators",
     "conference": "Milano Joint Phenomenology Seminar",
-    "place": "Milan (Italy, Virtual)"
+    "place": "Milan (Italy, Virtual)",
+    "url" : "https://indico.cern.ch/event/1003552/",
+    "slides": "https://indico.cern.ch/event/1003552/attachments/2181450/3709100/juanCM.pdf"
   },
   {
     "date": "February 2021",
