@@ -69,3 +69,5 @@ ipinfodata.json
 *tmp.json
 getac.sh
 *.orig
+update_cv.sh
+have_a_look.sh
