@@ -5,7 +5,7 @@
         "brief" : "Scripts for goodies and eye-candy"
       },
       "Programacion" : {
-        "items" : ["androidreact"],
+        "items" : ["androidreact", "customfbpush"],
         "brief" : "Tricks and ideas"
       },
       "Admin" : {
@@ -26,6 +26,11 @@
     "input": "programacion/androidreact.md",
     "title": "Testing react-native en Android",
     "brief": "Un pequeño recordatiorio de las environmental variables y tools que hay que instalar para hacer funcionar el emulador de Android Studio con react-native."
+  },
+  "customfbpush" : {
+    "input": "programacion/customfirebasebg.md",
+    "title": "Background task usando notificaciones push de FireBase",
+    "brief": "Un pequeño truco/hack para conseguir de forma determinista bg task usando notificaciones push"
   },
   "debloat" : {
     "input": "android/debloatphone.md",
