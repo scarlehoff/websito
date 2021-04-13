@@ -19,7 +19,7 @@
     "mdbootstrap": "^4.15.0",
     "morgan": "~1.9.0",
     "mv": "^2.1.1",
-    "node-ipinfo": "^1.0.1",
+    "node-ipinfo": "^2.1.0",
     "pug": "^3.0.1",
     "rotating-file-stream": "^2.0.2",
     "sql.js": "^1.2.2",

@@ -1,6 +1,22 @@
 {
   "article": [
     {
+      "author": "Carrazza, Stefano and Cruz-Martinez, Juan and Rabemananjara, Tanjona R.",
+      "title": "Compressing PDF sets using generative adversarial networks",
+      "eprint": "2104.04535",
+      "year": "2021",
+      "journal": "Submitted to EPJ-C "
+    },
+    {
+      "author": "Cruz-Martinez, Juan and Forte, Stefano and Nocera, Emanuele R.",
+      "title": "Future tests of parton distributions",
+      "eprint": "2103.08606",
+      "doi": "10.5506/APhysPolB.52.243",
+      "journal": "Acta Phys. Polon. B",
+      "volume": "52",
+      "year": "2021"
+    },
+    {
       "author": "Rossi, Marco and Carrazza, Stefano and Cruz-Martinez, Juan M.",
       "title": "PDFFlow: hardware accelerating parton density access",
       "booktitle": "40th International Conference on High Energy Physics",
@@ -180,7 +196,7 @@
       "doi": "10.5281/zenodo.3691926.",
       "url": "https://doi.org/10.5281/zenodo.3691926",
       "docs": "https://vegasflow.readthedocs.io",
-      "description": "Accelerating Monte Carlo  simulation across multiple hardware platforms"
+      "description": "Accelerating Monte Carlo simulation across multiple hardware platforms"
     },
     {
       "author": "Stefano Carrazza and Juan Cruz-Martinez and Felix Hekhorn",
@@ -189,7 +205,7 @@
       "doi": "10.5281/zenodo.3874237",
       "url": "https://doi.org/10.5281/zenodo.3874237",
       "docs": "https://n3pdf.github.io/eko/",
-      "description": "eko"
+      "description": "Solves the DGLAP equations in Mellin space and produces evolution kernel operators (EKO)"
     },
     {
       "author": "Juan Cruz-Martinez and Marco Rossi and Stefano Carrazza",
@@ -198,7 +214,25 @@
       "doi": "10.5281/zenodo.3964190",
       "url": "https://doi.org/10.5281/zenodo.3964190",
       "docs": "https://pdfflow.readthedocs.io",
-      "description": "fast device agnostic PDF interpolation "
+      "description": "Fast device agnostic Parton Distribution Function interpolation "
+    },
+    {
+      "author": "Tanjona Rabemananjara and Juan Cruz-Martinez and Stefano Carrazza",
+      "title": "ganpdfs",
+      "year": "2021",
+      "doi": "10.5281/zenodo.4616369",
+      "url": "https://doi.org/10.5281/zenodo.4616369",
+      "docs": "https://n3pdf.github.io/ganpdfs/",
+      "description": "PDF (parton distribution functions) enhancement using Generative Adversarial Networks"
+    },
+    {
+      "author": "Tanjona Rabemananjara and Juan Cruz-Martinez and Stefano Carrazza",
+      "title": "pycompressor",
+      "year": "2021",
+      "doi": "10.5281/zenodo.4616385",
+      "url": "https://doi.org/10.5281/zenodo.4616385",
+      "docs": "https://n3pdf.github.io/pycompressor/",
+      "description": "PDF (parton distribution functions) compression using GANs"
     }
   ]
 }
