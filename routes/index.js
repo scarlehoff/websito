@@ -52,7 +52,7 @@ const iconmap = {
 router.get('/', function(req, res, next) {
 //  let userIp = req.header('X-Real-IP') || req.connection.remoteAddress;
 //  console.log(`Client ip: ${userIp}`);
-  res.render('index', { title: 'Juan Manuel Cruz Martinez, PhD' });
+  res.render('index', { title: 'Juan Manuel Cruz Martinez, PhD', pagetitle: 'Juan Cruz-Martinez'});
 });
 
 router.get('/teaching', function(req, res, next) {
@@ -65,7 +65,14 @@ router.get('/research', function(req, res, next) {
   const articles = pubInfo["article"];
   const software = pubInfo["software"];
   const talks = require('../data/talks.json');
-  res.render('research', { title: 'Research', articles, software, talks, research});
+  res.render('research', {
+    title: 'Research',
+    articles,
+    software,
+    talks,
+    research,
+    'extra_content': md.render("If you want to check my contributions in iNSPIRE, you can use the following search string:  [`find a cruz-martinez, j`](https://inspirehep.net/literature?sort=mostrecent&size=25&page=1&q=find%20a%20cruz-martinez%2C%20j)")
+  });
 });
 
 router.get('/software', function(req, res, next) {
