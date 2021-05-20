@@ -54,11 +54,13 @@
       "doi": "10.22323/1.382.0057"
     },
     {
-      "author": "Carrazza, Stefano and Cruz-Martinez, Juan M. and Rossi, Marco",
-      "title": "PDFFlow: parton distribution functions on GPU",
-      "eprint": "2009.06635",
-      "journal": "Submitted to Comput. Phys. Commun. ",
-      "year": "2020"
+      "title": "PDFFlow: Parton distribution functions on GPU",
+      "journal": "Computer Physics Communications",
+      "volume": "264",
+      "year": "2021",
+      "doi": "https://doi.org/10.1016/j.cpc.2021.107995",
+      "author": "Stefano Carrazza and Juan M. Cruz-Martinez and Marco Rossi",
+      "eprint": "2009.06635"
     },
     {
       "author": "Amoroso, S. and others",
@@ -85,7 +87,6 @@
       "eprint": "2002.06587",
       "doi": "10.22323/1.372.0008",
       "year": "2020",
-      "url" : "https://pos.sissa.it/372/008/",
       "journal": "Artificial Intelligence for Science, Industry and Society"
     },
     {

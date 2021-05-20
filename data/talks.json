@@ -1,5 +1,21 @@
 [
   {
+    "date": "May 2021",
+    "title": "MadFlow: towards the automation of Monte Carlo simulation on GPU for particle physics",
+    "conference": "25th International Conference on Computing in High-Energy and Nuclear Physics (vCHEP)",
+    "place": "Virtual",
+    "url": "https://indico.cern.ch/event/948465/contributions/4324113/",
+    "slides": "http://n3pdf.mi.infn.it/wp-content/uploads/2021/05/JuanCM_vCHEP_19052021.pdf"
+  },
+  {
+    "date": "March 2021",
+    "title": "New studies from the NNPDF group",
+    "conference": "PDF4LHC 2021",
+    "place": "Virtual",
+    "slides" : "http://n3pdf.mi.infn.it/wp-content/uploads/2021/04/pdf4lhc_all.pdf",
+    "url": "https://indico.cern.ch/event/1002964/contributions/4256827/"
+  },
+  {
     "date": "February 2021",
     "title": "Offloading Monte Carlo simulations to hardware accelerators",
     "conference": "Milano Joint Phenomenology Seminar",
