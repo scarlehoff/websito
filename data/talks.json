@@ -1,5 +1,11 @@
 [
   {
+    "date": "June 2021",
+    "title": "Towards a GPU future for particle physics Monte Carlo simulations",
+    "conference": "Invited Seminar (virtual)",
+    "place": "KIT Karlsruhe (Germany)"
+  },
+  {
     "date": "May 2021",
     "title": "MadFlow: towards the automation of Monte Carlo simulation on GPU for particle physics",
     "conference": "25th International Conference on Computing in High-Energy and Nuclear Physics (vCHEP)",
@@ -27,7 +33,7 @@
     "date": "February 2021",
     "title": "PDF determination with a quantum hardware",
     "conference": "Invited Seminar",
-    "place": "Valencia (Spain, Virtual)",
+    "place": "IFIC Valencia (Spain, Virtual)",
     "url" : "https://indico.ific.uv.es/event/6041/",
     "slides": "https://indico.ific.uv.es/event/6041/attachments/8497/10642/juanCM.pdf"
   },

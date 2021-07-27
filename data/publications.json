@@ -1,6 +1,12 @@
 {
   "article": [
     {
+      "author": "Carrazza, Stefano and Cruz-Martinez, Juan and Rossi, Marco and Zaro, Marco",
+      "title": "MadFlow: automating Monte Carlo simulation on GPU for particle physics processes",
+      "eprint": "2106.10279",
+      "year": "2021"
+    },
+    {
       "author": "Buckley, A. and others",
       "title": "A comparative study of Higgs boson production from vector-boson fusion",
       "eprint": "2105.11399",
@@ -9,15 +15,19 @@
     {
       "author": "Carrazza, Stefano and Cruz-Martinez, Juan and Rossi, Marco and Zaro, Marco",
       "title": "Towards the automation of Monte Carlo simulation on GPU for particle physics processes",
+      "booktitle": "25th International Conference on Computing in High-Energy and Nuclear Physics",
       "eprint": "2105.10529",
-      "year": "2021"
+      "year": "2021",
+      "journal": "25th International Conference on Computing in High-Energy and Nuclear Physics"
     },
     {
-      "author": "Carrazza, Stefano and Cruz-Martinez, Juan and Rabemananjara, Tanjona R.",
+      "author": "Carrazza, Stefano and Cruz-Martinez, Juan M. and Rabemananjara, Tanjona R.",
       "title": "Compressing PDF sets using generative adversarial networks",
       "eprint": "2104.04535",
-      "year": "2021",
-      "journal": "Submitted to EPJ-C "
+      "doi": "10.1140/epjc/s10052-021-09338-8",
+      "journal": "Eur. Phys. J. C",
+      "volume": "81",
+      "year": "2021"
     },
     {
       "author": "Cruz-Martinez, Juan and Forte, Stefano and Nocera, Emanuele R.",
