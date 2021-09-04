@@ -9,95 +9,95 @@
     "date": "May 2021",
     "title": "MadFlow: towards the automation of Monte Carlo simulation on GPU for particle physics",
     "conference": "25th International Conference on Computing in High-Energy and Nuclear Physics (vCHEP)",
-    "place": "Virtual",
     "url": "https://indico.cern.ch/event/948465/contributions/4324113/",
-    "slides": "http://n3pdf.mi.infn.it/wp-content/uploads/2021/05/JuanCM_vCHEP_19052021.pdf"
+    "slides": "http://n3pdf.mi.infn.it/wp-content/uploads/2021/05/JuanCM_vCHEP_19052021.pdf",
+    "place": "Virtual"
   },
   {
     "date": "March 2021",
     "title": "New studies from the NNPDF group",
     "conference": "PDF4LHC 2021",
-    "place": "Virtual",
     "slides" : "http://n3pdf.mi.infn.it/wp-content/uploads/2021/04/pdf4lhc_all.pdf",
-    "url": "https://indico.cern.ch/event/1002964/contributions/4256827/"
+    "url": "https://indico.cern.ch/event/1002964/contributions/4256827/",
+    "place": "Virtual"
   },
   {
     "date": "February 2021",
     "title": "Offloading Monte Carlo simulations to hardware accelerators",
     "conference": "Milano Joint Phenomenology Seminar",
-    "place": "Milan (Italy, Virtual)",
     "url" : "https://indico.cern.ch/event/1003552/",
-    "slides": "https://indico.cern.ch/event/1003552/attachments/2181450/3709100/juanCM.pdf"
+    "slides": "https://indico.cern.ch/event/1003552/attachments/2181450/3709100/juanCM.pdf",
+    "place": "Milan (Italy, Virtual)"
   },
   {
     "date": "February 2021",
     "title": "PDF determination with a quantum hardware",
-    "conference": "Invited Seminar",
-    "place": "IFIC Valencia (Spain, Virtual)",
+    "conference": "Invited Seminar (virtual)",
     "url" : "https://indico.ific.uv.es/event/6041/",
-    "slides": "https://indico.ific.uv.es/event/6041/attachments/8497/10642/juanCM.pdf"
+    "slides": "https://indico.ific.uv.es/event/6041/attachments/8497/10642/juanCM.pdf",
+    "place": "IFIC Valencia (Spain)"
   },
   {
     "date": "November 2020",
     "title": "PDF/Vegas-Flow",
     "conference": "HSF WLCG Virtual Workshop",
-    "place": "Virtual meeting",
     "url" : "https://indico.cern.ch/event/941278/",
-    "slides": "https://indico.cern.ch/event/941278/contributions/4095929/attachments/2146217/3619331/juancruzmartinez.pdf"
+    "slides": "https://indico.cern.ch/event/941278/contributions/4095929/attachments/2146217/3619331/juancruzmartinez.pdf",
+    "place": "Virtual meeting"
   },
   {
     "date": "October 2020",
-    "title": "VegasFlow and PDFFlow: accelerating Monte Carlosimulation across multiple devices (joint talk with M. Rossi)",
+    "title": "VegasFlow and PDFFlow: accelerating Monte Carlo simulation across multiple devices (joint talk with M. Rossi)",
     "conference": "Generator Infrastructure and Tools Subgroup Meeting",
-    "place": "CERN (Virtual meeting)",
     "url" : "https://indico.cern.ch/event/969470/",
-    "slides": "http://n3pdf.mi.infn.it/wp-content/uploads/2020/11/JCruzMartinez_ATLAS_2020.pdf"
+    "slides": "http://n3pdf.mi.infn.it/wp-content/uploads/2020/11/JCruzMartinez_ATLAS_2020.pdf",
+    "place": "CERN (Virtual meeting)"
   },
   {
     "date": "August 2020",
     "title": "VegasFlow: accelerating Monte Carlo simulation across platforms",
     "conference": "40th International Conference on High Energy Physics, ICHEP",
-    "place": "Prague (Virtual meeting)",
     "url": "https://ichep2020.org/",
-    "slides": "https://indico.cern.ch/event/868940/contributions/3814440/"
+    "slides": "https://indico.cern.ch/event/868940/contributions/3814440/",
+    "place": "Prague (Virtual meeting)"
   },
   {
     "date": "February 2020",
-    "title": "Optimizating the hyperoptimization",
+    "title": "Optimizing the hyperoptimization",
     "conference": "NNPDF Collaboration meeting",
-    "place": "Amsterdam (The Netherlands)",
-    "url": "https://twitter.com/NNPDF_Team/status/1226783667126751232"
+    "url": "https://twitter.com/NNPDF_Team/status/1226783667126751232",
+    "place": "Amsterdam (The Netherlands)"
   },
   {
     "date": "October 2019",
     "title": "Studying the parton content of the proton with deep learning models",
     "conference": "Artificial Intelligence for Science, Industry and Society Symposium (AISIS 2019)",
-    "place": "Ciudad de Mexico (Mexico)",
     "slides": "http://n3pdf.mi.infn.it/wp-content/uploads/2019/10/JCruz-Martinez_Mexico_102019.pdf", 
-    "url": "https://indico.cern.ch/event/781223/"
+    "url": "https://indico.cern.ch/event/781223/",
+    "place": "Ciudad de Mexico (Mexico)"
   },
   {
     "date": "September 2019",
     "title": "Methodological improvements in PDF determination",
     "conference": "James Stirling Memorial Conference \\& PDF4LHC",
-    "place": "Durham (UK)",
     "slides": "http://n3pdf.mi.infn.it/wp-content/uploads/2019/09/JCruz-Martinez_Durham_092019.pdf",
-    "url" : "https://conference.ippp.dur.ac.uk/event/794/"
+    "url" : "https://conference.ippp.dur.ac.uk/event/794/",
+    "place": "Durham (UK)"
   },
   {
     "date": "August 2019",
     "title": "n3fit and hyperoptimization in the context of NNPDF 4.0",
     "conference": "NNPDF Collaboration meeting",
-    "place": "Varenna (Italy)",
-    "url": "https://indico.cern.ch/event/825705/"
+    "url": "https://indico.cern.ch/event/825705/",
+    "place": "Varenna (Italy)"
   },
   {
     "date": "July 2019",
     "title": "Towards a new generation of PDFs with deep learning models",
     "conference": "QCD@LHC 2019",
-    "place": "Buffalo, New York (USA)",
     "url" : "https://indico.fnal.gov/event/19380/",
-    "slides": "http://n3pdf.mi.infn.it/wp-content/uploads/2019/07/JCruz-Martinez_USA_072019.pdf" 
+    "slides": "http://n3pdf.mi.infn.it/wp-content/uploads/2019/07/JCruz-Martinez_USA_072019.pdf",
+    "place": "Buffalo, New York (USA)"
   },
   {
     "date": "May 2019",
@@ -109,31 +109,31 @@
     "date": "February 2019",
     "title": "N3PDF studies of new methodologies",
     "conference": "NNPDF Collaboration meeting",
-    "place": "Amsterdam (The Netherlands)",
-    "url": "http://nnpdf.mi.infn.it/news/#mce_2"
+    "url": "http://nnpdf.mi.infn.it/news/#mce_2",
+    "place": "Amsterdam (The Netherlands)"
   },
   {
     "date": "September 2018",
     "title": "Recent developments within NNLOJET",
     "conference": "NNPDF Collaboration \\& N3PDF Kickoff Meeting",
-    "place": "Gargnano, Lake Garda (Italy)",
     "url" : "https://indico.cern.ch/event/742441/",
-    "slides": "https://indico.cern.ch/event/742441/contributions/3081440/attachments/1716733/2770322/juan.pdf"
+    "slides": "https://indico.cern.ch/event/742441/contributions/3081440/attachments/1716733/2770322/juan.pdf",
+    "place": "Gargnano, Lake Garda (Italy)"
   },
   {
     "date": "May 2018",
     "title": "NNLO corrections to VBF Higgs boson production",
     "conference": "Loops and Legs in Quantum Field Theory 2018",
-    "place": "St. Goar (Germany)",
-    "url": "https://pos.sissa.it/303/"
+    "url": "https://pos.sissa.it/303/",
+    "place": "St. Goar (Germany)"
   },
   {
     "date": "September 2017",
     "title": "NNLO phenomenology with Antenna Subtraction",
     "conference": "HiggsTools Final Meeting",
-    "place": "Durham (UK)",
     "slides": "https://conference.ippp.dur.ac.uk/event/624/contributions/3433/attachments/2909/3162/Juan.pdf",
-    "url": "https://www.ippp.dur.ac.uk/final-higgstools-meeting"
+    "url": "https://www.ippp.dur.ac.uk/final-higgstools-meeting",
+    "place": "Durham (UK)"
   },
   {
     "date": "May 2017",
@@ -153,17 +153,17 @@
     "date": "Jaunary 2017",
     "title": "Higgs phenomenology with antenna subtraction",
     "conference": "Invited Seminar",
-    "place": "Valencia (Spain)",
     "url": "https://indico.ific.uv.es/event/2876/",
-    "slides": "https://indico.ific.uv.es/event/2876/attachments/3105/3475/presentation.pdf"
+    "slides": "https://indico.ific.uv.es/event/2876/attachments/3105/3475/presentation.pdf",
+    "place": "Valencia (Spain)"
   },
   {
     "date": "April 2016",
     "title": "NNLO calculations for Higgs processes",
     "conference": "HiggsTools Second Annual Meeting",
-    "place": "Granada (Spain)",
     "slides": "https://indico.cern.ch/event/470228/contributions/1989642/attachments/1256308/1854697/JuanCruzMartinez.pdf",
-    "url": "https://indico.cern.ch/event/470228/"
+    "url": "https://indico.cern.ch/event/470228/",
+    "place": "Granada (Spain)"
   },
   {
     "date": "February 2016",

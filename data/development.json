@@ -14,11 +14,23 @@
     },
     {
       "title" : "NNPDF",
-      "description" : "I have participated on the development of the fitting code used by the NNPDF collaboration. The code has been presented in a <a href='https://link.springer.com/article/10.1140/epjc/s10052-019-7197-2'>paper<a/> and will be used for official releases starting in version 4.0. Within the NNPDF collaboration I have worked on other side projects such as the implementation of Genetic Algorithms in Keras or GPU implementation of observable convolution."
+      "description" : "I have led the development of the latest version of the fitting code used by the NNPDF collaboration. The code has been presented in a <a href='https://link.springer.com/article/10.1140/epjc/s10052-019-7197-2'>paper<a/>, it is openly accessible at the <a href='https://github.com/NNPDF/nnpdf'>NNPDF repository</a> and is used for official releases starting in version 4.0. Within the NNPDF collaboration I have also worked on other side projects such as the implementation of Genetic Algorithms in Keras or GPU implementation of observable convolution."
     }
   ],
 
   "openSource" : [
+    {
+      "title": "NNPDF",
+      "documentation" : "https://docs.nnpdf.science/",
+      "repository" : "https://github.com/NNPDF/nnpdf/",
+      "description" : "An open-source machine learning framework for global analyses of parton distributions. It uses Neural Networks to model the parton-content of the proton."
+    },
+    {
+      "title": "MadFlow",
+      "documentation" : "https://madflow.readthedocs.io//",
+      "repository" : "https://github.com/N3PDF/madflow/",
+      "description" : "A framework to automatize the generation and simulation of collision processes at Leading Order targeting hardware accelerators. Built upon VegasFlow, PDFFlow, Madgraph5_aMC@NLO, and TensorFlow"
+    },
     {
       "title": "Vegasflow",
       "documentation" : "https://vegasflow.readthedocs.io",
