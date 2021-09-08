@@ -1,6 +1,18 @@
 {
   "article": [
     {
+      "author": "Ball, Richard D. and others",
+      "title": "An open-source machine learning framework for global analyses of parton distributions",
+      "eprint": "2109.02671",
+      "year": "2021"
+    },
+    {
+      "author": "Ball, Richard D. and others",
+      "title": "The Path to Proton Structure at One-Percent Accuracy",
+      "eprint": "2109.02653",
+      "year": "2021"
+    },
+    {
       "author": "Carrazza, Stefano and Cruz-Martinez, Juan and Rossi, Marco and Zaro, Marco",
       "title": "MadFlow: automating Monte Carlo simulation on GPU for particle physics processes",
       "eprint": "2106.10279",
@@ -225,7 +237,7 @@
       "description": "Accelerating Monte Carlo integrations across multiple hardware platforms"
     },
     {
-      "author": "Stefano Carrazza and Juan Cruz-Martinez and Felix Hekhorn",
+      "author": "Felix Hekhorn and Giacomo Magni and Alessandro Candido and Juan Cruz-Martinez and Stefano Carrazza",
       "title": "eko",
       "year": "2020",
       "doi": "10.5281/zenodo.3874237",
