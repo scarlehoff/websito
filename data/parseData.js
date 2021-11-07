@@ -90,7 +90,7 @@ function parseEntry(entry, keys, safety=true) {
 }
 
 const keySelection = {
-  'article' : ["author", "title", "journal", "doi", "year", "eprint", "volume", "url"],
+  'article' : ["author", "title", "journal", "doi", "year", "eprint", "volume", "page", "url"],
   'inproceedings' : ["author", "title", "year", "eprint", "booktitle", "doi", "url"],
   'software' :  ["author", "title", "url", "doi", "year", "docs",],
 };

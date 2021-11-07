@@ -1,9 +1,19 @@
 {
   "article": [
     {
-      "author": "Ball, Richard D. and others",
+      "author": "Carrazza, Stefano and Cruz-Martinez, Juan M. and Stegeman, Roy",
+      "title": "A data-based parametrization of parton distribution functions",
+      "eprint": "2111.02954",
+      "year": "2021"
+    },
+    {
+      "author": "NNPDF Collaboration",
       "title": "An open-source machine learning framework for global analyses of parton distributions",
       "eprint": "2109.02671",
+      "doi": "10.1140/epjc/s10052-021-09747-9",
+      "journal": "Eur. Phys. J. C",
+      "volume": "81",
+      "page": "958",
       "year": "2021"
     },
     {
@@ -19,6 +29,7 @@
       "doi": "10.1140/epjc/s10052-021-09443-8",
       "journal": "Eur. Phys. J. C",
       "volume": "81",
+      "page": "656",
       "year": "2021"
     },
     {
@@ -42,6 +53,7 @@
       "doi": "10.1140/epjc/s10052-021-09338-8",
       "journal": "Eur. Phys. J. C",
       "volume": "81",
+      "page": "530",
       "year": "2021"
     },
     {
@@ -51,6 +63,7 @@
       "doi": "10.5506/APhysPolB.52.243",
       "journal": "Acta Phys. Polon. B",
       "volume": "52",
+      "page": "243",
       "year": "2021"
     },
     {
@@ -70,6 +83,7 @@
       "doi": "10.1103/PhysRevD.103.034027",
       "journal": "Phys. Rev. D",
       "volume": "103",
+      "page": "034027",
       "year": "2021"
     },
     {
@@ -88,12 +102,14 @@
       "doi": "10.22323/1.382.0057",
       "journal": "PoS",
       "volume": "LHCP2020",
+      "page": "057",
       "year": "2021"
     },
     {
       "title": "PDFFlow: Parton distribution functions on GPU",
       "journal": "Computer Physics Communications",
       "volume": "264",
+      "page": "107995",
       "year": "2021",
       "doi": "https://doi.org/10.1016/j.cpc.2021.107995",
       "url": "https://www.sciencedirect.com/science/article/pii/S0010465521001077",
@@ -116,6 +132,7 @@
       "doi": "10.1016/j.cpc.2020.107376",
       "journal": "Comput. Phys. Commun.",
       "volume": "254",
+      "page": "107376",
       "year": "2020"
     },
     {
@@ -133,6 +150,7 @@
       "journal": "Frascati Phys. Ser.",
       "volume": "69",
       "year": "2019",
+      "page": "1-6",
       "eprint": "1909.10547",
       "url": "http://library.lnf.infn.it/volumi-pubblicati/"
     },
@@ -142,6 +160,7 @@
       "journal": "Eur. Phys. J.",
       "volume": "C79",
       "year": "2019",
+      "page": "676",
       "doi": "10.1140/epjc/s10052-019-7197-2",
       "eprint": "1907.05075"
     },
@@ -151,6 +170,7 @@
       "journal": "CERN Yellow Rep. Monogr.",
       "volume": "7",
       "year": "2019",
+      "page": "1-220",
       "doi": "10.23731/CYRM-2019-007.1",
       "eprint": "1902.04070"
     },
@@ -160,6 +180,7 @@
       "journal": "PoS",
       "volume": "LL2018",
       "year": "2018",
+      "page": "003",
       "doi": "10.22323/1.303.0003",
       "eprint": "1807.07908"
     },
@@ -169,6 +190,7 @@
       "journal": "Phys. Lett.",
       "volume": "B781",
       "year": "2018",
+      "page": "672-677",
       "doi": "10.1016/j.physletb.2018.04.046",
       "eprint": "1802.02445"
     },
@@ -178,6 +200,7 @@
       "journal": "PoS",
       "volume": "RADCOR2017",
       "year": "2018",
+      "page": "074",
       "doi": "10.22323/1.290.0074",
       "eprint": "1801.06415"
     },
@@ -187,6 +210,7 @@
       "journal": "J. Phys.",
       "volume": "G45",
       "year": "2018",
+      "page": "065004",
       "doi": "10.1088/1361-6471/aab812",
       "eprint": "1711.09875"
     },
@@ -196,6 +220,7 @@
       "journal": "JHEP",
       "volume": "10",
       "year": "2016",
+      "page": "066",
       "doi": "10.1007/JHEP10(2016)066",
       "eprint": "1607.08817"
     },
@@ -205,6 +230,7 @@
       "journal": "Acta Phys. Polon. Supp.",
       "volume": "11",
       "year": "2018",
+      "page": "277-284",
       "doi": "10.5506/APhysPolBSupp.11.277"
     }
   ],
