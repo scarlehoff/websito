@@ -40,9 +40,9 @@ block content
               else
                 a(href="https://arxiv.org/abs/"+item['eprint']) #{item['title']}
               if item['page']
-                td #{item['journal']} (#{item['year']} #{item['volume']}, #{item['page']})
+                td #{item['journal']} (#{item['year']}) #{item['volume']}, #{item['page']}
               else
-                td #{item['journal']} (#{item['year']} #{item['volume']})
+                td #{item['journal']} (#{item['year']}) #{item['volume']}
             td
               a(href="https://arxiv.org/abs/"+item['eprint']) #{item['eprint']}
   h2.anchored(id="talks") Seminars and conferences
