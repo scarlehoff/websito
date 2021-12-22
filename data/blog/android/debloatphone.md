@@ -1,6 +1,6 @@
 # Reducir el bloatware
 
-La mayoría de los paquetes los he sacado de [este tutorial](https://forum.xda-developers.com/galaxy-note-9/how-to/note-9-debloat-bash-script-t3907659) donde se han dado el trabajo de hacer una lista con todo el bloatware de los Samsung.
+La mayoría de los paquetes los he sacado de [este tutorial](https://forum.xda-developers.com/galaxy-note-9/how-to/note-9-debloat-bash-script-t3907659) donde se han dado el trabajo de hacer una lista con todo el bloatware de los Samsung. Para ver qué otros paquetes hay podemos usar: `adb shell pm list packages | grep "samsung"`. Se pueden usar flags como `-d` para ver solo los deshabilitados.
 
 Estos comandos son pues específicos para la gama Galaxy de Samsung,
 pero debería ser posible encontrar los servicios equivalentes para otros teléfonos Android.
@@ -70,15 +70,16 @@ Los mensajes de Samsung tampoco los utilizo, por lo que no necesito escribir en 
 ```
 
 Bixby es algo bastante molesto que es fácil desactivar, aunque esto se lleva por delante el botón de Bixby.
-Yo no lo usaba así que no hay problema (no tengo claro qué botón lo hace).
+Yo no lo usaba así que no hay problema.
 
 ```bash
   adb shell pm disable-user --user 0 com.samsung.android.app.spage
   adb shell pm disable-user --user 0 com.samsung.android.bixby.service
-  adb shell pm disable-user --user 0 com.samsung.android.bixby.agent
   adb shell pm disable-user --user 0 com.samsung.android.bixby.agent.dummy
   adb shell pm disable-user --user 0 com.samsung.android.bixby.wakeup
   adb shell pm disable-user --user 0 com.samsung.android.visionintelligence
+  # Este desactiva el botón
+  adb shell pm disable-user --user 0 com.samsung.android.bixby.agent
 ```
 
 La LED Cover no funciona asï que mejor no tenerla habilitada, la verdad.
@@ -95,4 +96,12 @@ Duo no lo uso nunca, por lo que es mejor desahibilitarlo.
 
 ```bash
   adb shell pm disable-user --user 0 com.google.android.apps.tachyon
+```
+
+## Misc
+
+```bash
+adb shell pm disable-user --user 0 com.samsung.android.hmt.vrsvc
+adb shell pm disable-user --user 0 com.samsung.android.app.tips
+adb shell pm disable-user --user 0 com.samsung.android.arzone
 ```
