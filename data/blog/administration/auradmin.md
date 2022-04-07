@@ -5,6 +5,8 @@ Actualmente soy el _maintainer_ de varios paquetes en el Arch User Repository o 
 - VegasFlow: [![AUR](https://img.shields.io/aur/version/python-vegasflow)](https://aur.archlinux.org/packages/python-vegasflow/)
 - PineAPPL: [![AUR](https://img.shields.io/aur/version/pineappl)](https://aur.archlinux.org/packages/pineappl)
 - PDFFlow: [![AUR](https://img.shields.io/aur/version/python-pdfflow)](https://aur.archlinux.org/packages/python-pdfflow)
+- eko: [![AUR](https://img.shields.io/aur/version/python-eko)](https://aur.archlinux.org/packages/python-eko)
+- banana-hep: [![AUR](https://img.shields.io/aur/version/python-banana-hep)](https://aur.archlinux.org/packages/python-banana-hep)
 
 Me es por tanto bastante útil tener una serie de scripts y workflows para testear que los paquetes funcionan
 correctamente en un sistema limpio.
