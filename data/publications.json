@@ -1,10 +1,28 @@
 {
   "article": [
     {
+      "author": "Amoroso, S. and others",
+      "title": "Snowmass 2021 whitepaper: Proton structure at the precision frontier",
+      "eprint": "2203.13923",
+      "year": "2022"
+    },
+    {
+      "author": "Campbell, J. M. and others",
+      "title": "Event Generators for High-Energy Physics Experiments",
+      "booktitle": "2022 Snowmass Summer Study",
+      "eprint": "2203.11110",
+      "year": "2022",
+      "journal": "2022 Snowmass Summer Study"
+    },
+    {
       "author": "Carrazza, Stefano and Cruz-Martinez, Juan M. and Stegeman, Roy",
       "title": "A data-based parametrization of parton distribution functions",
-      "eprint": "2111.02954",
-      "year": "2021"
+      "journal": "Eur. Phys. J.",
+      "volume": "C82",
+      "year": "2022",
+      "page": "163",
+      "doi": "10.1140/epjc/s10052-022-10136-z",
+      "eprint": "2111.02954"
     },
     {
       "author": "NNPDF Collaboration",
@@ -18,9 +36,13 @@
     },
     {
       "author": "Ball, Richard D. and others",
-      "title": "The Path to Proton Structure at One-Percent Accuracy",
+      "title": "The path to proton structure at 1\\% accuracy: NNPDF Collaboration",
       "eprint": "2109.02653",
-      "year": "2021"
+      "doi": "10.1140/epjc/s10052-022-10328-7",
+      "journal": "Eur. Phys. J. C",
+      "volume": "82",
+      "page": "428",
+      "year": "2022"
     },
     {
       "author": "Carrazza, Stefano and Cruz-Martinez, Juan and Rossi, Marco and Zaro, Marco",
@@ -36,6 +58,10 @@
       "author": "Buckley, A. and others",
       "title": "A comparative study of Higgs boson production from vector-boson fusion",
       "eprint": "2105.11399",
+      "doi": "10.1007/JHEP11(2021)108",
+      "journal": "JHEP",
+      "volume": "11",
+      "page": "108",
       "year": "2021"
     },
     {
@@ -232,6 +258,15 @@
       "year": "2018",
       "page": "277-284",
       "doi": "10.5506/APhysPolBSupp.11.277"
+    },
+    {
+      "author": "Stegeman, Roy and Carrazza, Stefano and Cruz-Martinez, Juan",
+      "title": "Small $x$ extrapolation for parton distributions",
+      "doi": "10.22323/1.398.0371",
+      "journal": "PoS",
+      "volume": "EPS-HEP2021",
+      "page": "371",
+      "year": "2022"
     }
   ],
   "software": [
