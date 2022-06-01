@@ -1,5 +1,28 @@
 [
   {
+    "date": "May 2022",
+    "title": "Machine Learning in PDF determination: NNPDF4.0",
+    "conference": "Transversity 2022",
+    "url": "https://agenda.infn.it/event/19219/",
+    "slides": "https://agenda.infn.it/event/19219/contributions/170916/attachments/91468/124205/juanCM.pdf",
+    "place": "Pavia (Italy)"
+  },
+  {
+    "date": "November 2021",
+    "title": "NNPDF4.0: the path to proton structure at 1\\% accuracy",
+    "conference": "Invited seminar, Dalitz series",
+    "url": "https://inspirehep.net/seminars/1939751",
+    "place": "Oxford (UK, Virtual)"
+  },
+  {
+    "date": "November 2021",
+    "title": "GPU acceleration in High Energy Physics",
+    "conference": "The 2021 International Workshop on the High Energy Circular Electron Positron Collider",
+    "url": "https://indico.ihep.ac.cn/event/14938/",
+    "slides": "https://indico.ihep.ac.cn/event/14938/session/15/contribution/166/material/slides/0.pdf",
+    "place": "Nanjing (China, Virtual)"
+  },
+  {
     "date": "June 2021",
     "title": "Towards a GPU future for particle physics Monte Carlo simulations",
     "conference": "Invited Seminar (virtual)",
@@ -150,7 +173,7 @@
     "place": "Durham (UK)"
   },
   {
-    "date": "Jaunary 2017",
+    "date": "January 2017",
     "title": "Higgs phenomenology with antenna subtraction",
     "conference": "Invited Seminar",
     "url": "https://indico.ific.uv.es/event/2876/",
