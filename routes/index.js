@@ -52,7 +52,11 @@ const iconmap = {
 router.get('/', function(req, res, next) {
 //  let userIp = req.header('X-Real-IP') || req.connection.remoteAddress;
 //  console.log(`Client ip: ${userIp}`);
-  res.render('index', { title: 'Juan Manuel Cruz Martinez, PhD', pagetitle: 'Juan Cruz-Martinez'});
+  const nameTitle='Juan Manuel Cruz Martinez, PhD'
+  res.render('index', { 
+    title: nameTitle,
+    headertitle: nameTitle,
+    pagetitle: 'Juan Cruz-Martinez'});
 });
 
 router.get('/teaching', function(req, res, next) {
@@ -106,7 +110,24 @@ router.get('/biblioteca', function(req, res, next) {
 });
 
 router.get('/libros', function(req, res, next) {
-  res.render('biblioteca/libros', {title: 'Biblioteca', pagetitle: 'Libros'});
+  const library = require("../data/biblioteca/libros.json")
+  res.render('biblioteca/libros', {title: 'Biblioteca', pagetitle: 'Libros', library: library});
+});
+
+router.get('/libros/:author', function(req, res, next) {
+  const library = require("../data/biblioteca/libros.json")
+  const author = req.params.author;
+  const bookIdx = req._parsedOriginalUrl.query;
+  let authorData = library[author];
+  let books = authorData.books;
+  if(bookIdx) {
+    books = [books[bookIdx]];
+  }
+  res.render('biblioteca/librosAutor', 
+    { title: 'Biblioteca',
+      pagetitle: authorData.full_name,
+      books: books
+    });
 });
 
 router.get('/blog', function(req, res, next) {

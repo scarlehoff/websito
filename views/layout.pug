@@ -7,7 +7,7 @@ html
     block extracss
     meta(name="viewport", content="width=device-width, initial-scale=1")
     // Custom stylesheet
-    link(rel='stylesheet', href='./stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
     // Bootstrap
     link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css', integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk", crossorigin="anonymous")
     // Font awesome icons in the upper right corner (icons like twitter, gihtub, linkedin, version 5.15.4)
@@ -18,24 +18,22 @@ html
       nav.navbar.navbar-toggleable-sm.navbar-expand-sm.navbar-dark.bg-dark
         button.navbar-toggler.navbar-toggler-right(data-toggle="collapse", data-target="#navbarDiv")
           span.navbar-toggler-icon
-        a.navbar-brand(href="./") Home 
+        a.navbar-brand(href="/") Home 
         div.collapse.navbar-collapse(id="navbarDiv")
           ul.navbar-nav.mr-auto
             li.nav-item(class=(title=="Research" ? 'active' : ''))
-              a.nav-link(href='./research') Research
+              a.nav-link(href='/research') Research
             li.nav-item(class=(title=="Software" ? 'active' : ''))
-                a.nav-link(href="./software") Software
+                a.nav-link(href="/software") Software
             li.nav-item(class=(title=="Teaching" ? 'active' : ''))
-                a.nav-link(href="./teaching") Teaching
+                a.nav-link(href="/teaching") Teaching
             li.nav-item(class=(title=="Resume" ? 'active' : ''))
-                a.nav-link(href="./resume") Resume 
+                a.nav-link(href="/resume") Resume 
             li.nav-item(class=(title=="Blog" ? 'active' : ''))
-                a.nav-link(href="./blog") Blog
+                a.nav-link(href="/blog") Blog
             li.nav-item(class=(title=="Biblioteca" ? 'active' : ''))
-                a.nav-link(href="./biblioteca") Biblioteca
+                a.nav-link(href="/biblioteca") Biblioteca
           ul.navbar-nav.ml-auto
-            li.nav-item
-              a.nav-link.btn(class="github-ic", href="https://github.com/scarlehoff/")
             li.nav-item
               a.fab.fa-github.nav-link(href="https://github.com/scarlehoff/")
             li.nav-item
@@ -45,7 +43,7 @@ html
     div.container(style='margin-top: 3%;')
       block bodyHeadContainer
         div.jumbotron
-          h2= pagetitle ? pagetitle : title
+          h2= headertitle ? headertitle : (pagetitle ? pagetitle : title)
           block bodyHead
     div.container
       block content

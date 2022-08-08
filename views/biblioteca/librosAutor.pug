@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+  ul
+    for book, idx in books
+      li
+        h4.anchored(id=idx) #{book.title}
+        p
+          | !{book.review}

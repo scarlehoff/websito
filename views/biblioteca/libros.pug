@@ -1,5 +1,10 @@
 extends ../layout
 
 block content
-  2022
-  2019
+  for author_data, author_ref in library
+    h4.anchored 
+      a(href=`./libros/${author_ref}`) #{author_data.full_name}
+    ul
+      for book, idx in author_data.books
+        li
+          a(href=`./libros/${author_ref}#${idx}`) #{book.title}
