@@ -117,16 +117,17 @@ router.get('/libros', function(req, res, next) {
 router.get('/libros/:author', function(req, res, next) {
   const library = require("../data/biblioteca/libros.json")
   const author = req.params.author;
-  const bookIdx = req._parsedOriginalUrl.query;
   let authorData = library[author];
-  let books = authorData.books;
-  if(bookIdx) {
-    books = [books[bookIdx]];
+  // If the author doesnt exist, send the user back to books
+  if(!authorData) {
+    res.redirect(308, '/libros');
+    return;
   }
+
   res.render('biblioteca/librosAutor', 
     { title: 'Biblioteca',
       pagetitle: authorData.full_name,
-      books: books
+      books: authorData.books
     });
 });
 
