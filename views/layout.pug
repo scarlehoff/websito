@@ -10,7 +10,7 @@ html
     link(rel='stylesheet', href='./stylesheets/style.css')
     // Bootstrap
     link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css', integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk", crossorigin="anonymous")
-    // Font awesome (icons like twitter, gihtub, linkedin, version 5.15.4
+    // Font awesome icons in the upper right corner (icons like twitter, gihtub, linkedin, version 5.15.4)
     script(src="https://kit.fontawesome.com/32dfc55f8c.js", integrity="sha384-u6WDJwG2ShRy7dnapmHsdCDwEBeK+ThaDvU9Qch71H8a7NtKYPbLiB1GxcTGnQUw", crossorigin="anonymous")
       
   body.bg-light
@@ -31,7 +31,11 @@ html
                 a.nav-link(href="./resume") Resume 
             li.nav-item(class=(title=="Blog" ? 'active' : ''))
                 a.nav-link(href="./blog") Blog
+            li.nav-item(class=(title=="Biblioteca" ? 'active' : ''))
+                a.nav-link(href="./biblioteca") Biblioteca
           ul.navbar-nav.ml-auto
+            li.nav-item
+              a.nav-link.btn(class="github-ic", href="https://github.com/scarlehoff/")
             li.nav-item
               a.fab.fa-github.nav-link(href="https://github.com/scarlehoff/")
             li.nav-item
@@ -41,21 +45,20 @@ html
     div.container(style='margin-top: 3%;')
       block bodyHeadContainer
         div.jumbotron
-          h2= title
+          h2= pagetitle ? pagetitle : title
           block bodyHead
     div.container
       block content
       hr
     block footer
       footer.container
-        //a(href="publicatonDigestor") InspireHEP applet
         p(align='left')
-        //p(align="left") This page is running in #[i.devicon-nginx-original] with #[i.devicon-express-original] in a Raspberry Pi 2 Model b.
         p(align="right") Juan M. Cruz-Martinez (#[a(href="mailto:juacrumar@lairen.eu") juacrumar@lairen.eu] - #[a(href="pgpjuacrumar.asc") key])
+        // Facilitates anchoring
         script(src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js", integrity="sha256-0WMZ9PF4b2hTF66Eglv/9H5Vwk6lnOG4AbmCJxo96WQ=", crossorigin="anonymous")
         script anchors.add('.anchored');
         // Bootstrap
         script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js", integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj", crossorigin="anonymous")
-        script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js", integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo", crossorigin="anonymous")
         script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js", integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI", crossorigin="anonymous")
+        //script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js", integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo", crossorigin="anonymous")
         block extrajs

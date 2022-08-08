@@ -101,6 +101,18 @@ router.get('/todoapp', function(req, res, next) {
   res.render('todoapp', { title: 'Todo Applet' });
 });
 
+router.get('/biblioteca', function(req, res, next) {
+  res.render('biblioteca/biblioteca', { title: 'Biblioteca' });
+});
+
+router.get('/libros', function(req, res, next) {
+  res.render('biblioteca/libros', {title: 'Biblioteca', pagetitle: 'Libros'});
+});
+
+router.get('/blog', function(req, res, next) {
+  res.render('blog/blog', { title: 'Blog: Tips & Tricks', registers: registros });
+});
+
 
 router.get('/blogpost', function(req, res, next) {
   const readme = req._parsedOriginalUrl.query;
@@ -130,10 +142,6 @@ router.get('/blogpost', function(req, res, next) {
       title: 'Blog: Tips & Tricks',
     });
   }
-});
-
-router.get('/blog', function(req, res, next) {
-  res.render('blog/blog', { title: 'Blog: Tips & Tricks', registers: registros });
 });
 
 router.get('/robots.txt', (req, res, next) => {
