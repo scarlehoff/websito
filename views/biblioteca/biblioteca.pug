@@ -6,4 +6,16 @@ block bodyHead
   p Dado que llevo un tiempo escribiendo reseñas y reviews como notas en markdown (soy retro #[i così]) esta parte de la web será en práctica un dump del contenido de esas notas de manera (más o menos) ordenada.
 
 block content
-  a(href="/libros") Libros
+  div.row.row-cols-1.row-cols-md-2.g-4
+    div.col-md-4
+      div.card
+        img.card-img-top.bibliocard(src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Bookshelf_at_Yale.jpg/320px-Bookshelf_at_Yale.jpg")
+        a.card-body.btn.btn-info(href="/libros") Libros
+    div.col-md-4
+      div.card
+        img.card-img-top.bibliocard(src="https://upload.wikimedia.org/wikipedia/it/8/84/Gintama_sigla.png")
+        a.card-body.btn.btn-info(href="https://anilist.co/user/jumax9/animelist") Anime
+    div.col-md-4
+      div.card
+        img.card-img-top.bibliocard(src="https://upload.wikimedia.org/wikipedia/en/3/3a/Legend_of_Zelda_NES.PNG")
+        a.card-body.btn.btn-info(href="https://howlongtobeat.com/user?n=jumax9") Videojuegos

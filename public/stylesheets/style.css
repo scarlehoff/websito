@@ -20,7 +20,11 @@
 }
 
 .active>a {
-color: #1abc9c !important;;
+    color: #1abc9c !important;;
+}
+
+.bibliocard {
+    height: 15rem;
 }
 
 /* icons */
