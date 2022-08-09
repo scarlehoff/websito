@@ -48,7 +48,29 @@ function parseAuthor(stringAuthor) {
   }
 }
 
-function noteEntries(rawString) {
+
+async function wikiAuthor(author, lang="es") {
+  // Get information about the author through the wikipedia API
+  const api_endpoint=`https://${lang}.wikipedia.org/api/rest_v1/page/summary/${author}`
+  const author_data = await fetch(api_endpoint).then( (response) => {
+    return response.json()
+  }).then( (data) => {
+    const thumb = data.thumbnail;
+    if (thumb) {
+      return {
+        "thumb": thumb.source,
+        "summary": data.extract,
+        "wiki": data.content_urls.desktop.page
+      }
+    }
+  }).catch( (err) => {
+    console.log(err);
+  });
+  if (lang == "es" && !author_data) return wikiAuthor(author, lang="en");
+  return author_data;
+}
+
+async function noteEntries(rawString) {
   // Read the raw content of the note and separate it by entries
   // relying on the fact that
   //  1. Each author starts with \n## Author
@@ -62,7 +84,8 @@ function noteEntries(rawString) {
   let authors = {};
   for (let authorContent of noteContent.split("\n## ").slice(1)) {
     const tmp = parseAuthor(authorContent);
-    authors[tmp.full_name.split(" ").pop()] = tmp;
+    const wikiData = await wikiAuthor(tmp.full_name);
+    authors[tmp.full_name.split(" ").pop()] = {...wikiData, ...tmp};
   }
   return authors;
 }
@@ -70,16 +93,17 @@ function noteEntries(rawString) {
 fs.readFile(target, (err, textContent) => {
   if (err) return console.log(err);
 
-  const entries = noteEntries(textContent.toString());
-  const jsonLib = JSON.stringify(entries, null, 2);
+  noteEntries(textContent.toString()).then( (entries) => {
+    const jsonLib = JSON.stringify(entries, null, 2);
 
-  // And now write down the file
-  fs.writeFile(output, jsonLib, (err) => {
-    if(err) {
-      console.log(err);
-    } else {
-      console.log(`File saved to ${output}`);
-    }
-  }); 
+    // And now write down the file
+    fs.writeFile(output, jsonLib, (err) => {
+      if(err) {
+        console.log(err);
+      } else {
+        console.log(`File saved to ${output}`);
+      }
+    });
+  }).catch( (err) => console.log(err) );
 
 });

@@ -2,9 +2,14 @@ extends ../layout
 
 block content
   for author_data, author_ref in library
-    h4.anchored 
-      a(href=`./libros/${author_ref}`) #{author_data.full_name}
-    ul
-      for book, idx in author_data.books
-        li
-          a(href=`./libros/${author_ref}#${idx}`) #{book.title}
+    table.table.table-hover
+      thead
+        tr.table-secondary
+          //- By using stretched-link the parent of a becomes in its entirety a link until it finds a position-relative
+          th.position-relative #{author_data.full_name} 
+            a.stretched-link(href=`./libros/${author_ref}`)
+      tbody
+        for book, idx in author_data.books
+          tr
+            td.position-relative #{idx+1}. #{book.title}
+              a.stretched-link(href=`./libros/${author_ref}#${idx}`)

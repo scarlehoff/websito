@@ -127,7 +127,7 @@ router.get('/libros/:author', function(req, res, next) {
   res.render('biblioteca/librosAutor', 
     { title: 'Biblioteca',
       pagetitle: authorData.full_name,
-      books: authorData.books
+      author: authorData
     });
 });
 

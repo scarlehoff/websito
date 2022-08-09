@@ -1,9 +1,21 @@
 extends ../layout
 
+block bodyHead
+  div.row
+    div.col-lg-2
+      figure
+        img.figure-img.img-fluid.rounded(src=author.thumb, height=09-Aug-202250)
+        figcaption.figure-caption (img and text sourced from wikipedia)
+    div.col-lg-10
+      p #{author.summary}
+      a(href=author.wiki) Ir a Wikipedia
+
 block content
   ul
-    for book, idx in books
+    for book, idx in author.books
       li
         h4.anchored(id=idx) #{book.title}
         p
           | !{book.review}
+
+  a(href="/libros") Vuelve a libros
