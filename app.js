@@ -1,7 +1,6 @@
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
-var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var rfs = require("rotating-file-stream");
 // Use helmet to protect the http headers
@@ -33,7 +32,6 @@ app.locals.basedir = path.join(__dirname, "views");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 // flag
 app.use(express.static(path.join(__dirname, "node_modules/mdbootstrap/css/addons")));
 // sql
