@@ -1,5 +1,8 @@
 extends ../layout
 
+block bodyHead
+  p Hasta mediados de 2022 estuve escribiendo las reseñas en #[a(href="https://www.goodreads.com/user/show/16346384-jumax9") goodreads]. Poco a poco las iré trasnfiriendo aquí.
+
 block content
   for author_data, author_ref in library
     table.table.table-hover
@@ -11,5 +14,5 @@ block content
       tbody
         for book, idx in author_data.books
           tr
-            td.position-relative #{idx+1}. #{book.title}
+            td.justify-content-between.position-relative #{idx+1}. #{book.title}
               a.stretched-link(href=`./libros/${author_ref}#${idx}`)

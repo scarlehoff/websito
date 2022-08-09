@@ -4,18 +4,26 @@ block bodyHead
   div.row
     div.col-lg-2
       figure
-        img.figure-img.img-fluid.rounded(src=author.meta.thumb, height=09-Aug-202250)
+        img.figure-img.img-fluid.rounded(src=author.meta.thumb)
         figcaption.figure-caption (img and text sourced from wikipedia)
     div.col-lg-10
       p #{author.meta.summary}
-      a(href=author.meta.wiki) Ir a Wikipedia
+      p
+        a(href=author.meta.wiki) Ir a Wikipedia
+      p 
+        a(href="/libros") Volver a libros
 
 block content
   ul
     for book, idx in author.books
       li
-        h4.anchored(id=idx) #{book.title}
-        p
-          | !{book.review}
+        a(href=`#${idx}`) #{book.title}
 
-  a(href="/libros") Vuelve a libros
+  div.list-group
+    for book, idx in author.books
+      div.list-group-item
+        div.d-flex.w-100.justify-content-between
+          h4.anchored.mb-1(id=idx) #{book.title}
+          small #{book.date}
+        p.mb-1
+          | !{book.review}
