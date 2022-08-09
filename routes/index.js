@@ -109,21 +109,21 @@ router.get('/biblioteca', function(req, res, next) {
   res.render('biblioteca/biblioteca', { title: 'Biblioteca' });
 });
 
-router.get('/:media', function(req, res, next) {
+router.get('/biblioteca/:media', function(req, res, next) {
   const mediaType = req.params.media.toLowerCase();
   const library = require(`../data/biblioteca/${mediaType}.json`);
   const pagetitle = mediaType.charAt(0).toUpperCase() + mediaType.slice(1);
   res.render('biblioteca/media', {title: 'Biblioteca', pagetitle: pagetitle, library: library});
 });
 
-router.get('/:media/:author', function(req, res, next) {
+router.get('/biblioteca/:media/:author', function(req, res, next) {
   const mediaType = req.params.media.toLowerCase();
   const library = require(`../data/biblioteca/${mediaType}.json`)
   const author = req.params.author;
   let authorData = library[author];
   // If the author/console doesnt exist, send the user back to books
   if(!authorData) {
-    res.redirect(308, `/${mediaType}`);
+    res.redirect(308, `/biblioteca/${mediaType}`);
     return;
   }
 

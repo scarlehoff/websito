@@ -9,7 +9,7 @@
     "semi": true,
     "printWidth": 100,
     "quoteProps": "consistent"
-    },
+  },
   "dependencies": {
     "chokidar": "^3.3.1",
     "cookie-parser": "~1.4.3",
@@ -28,7 +28,6 @@
     "pug": "^3.0.1",
     "rotating-file-stream": "^2.0.2",
     "sql.js": "^1.2.2",
-    "sqlite": "^4.0.7",
-    "sqlite3": "^4.1.1"
+    "sqlite3": "^5.0.11"
   }
 }
