@@ -1,11 +1,32 @@
 [
   {
+    "date": "July 2022",
+    "title": "Facilitating GPU acceleration for Monte Carlo simulations",
+    "conference": "Invited seminar",
+    "place": "Freiburg (Germany)",
+    "url": "http://www.tep.physik.uni-freiburg.de/seminars/fundi"
+  },
+  {
+    "date": "July 2022",
+    "title": "MadFlow: automating Monte Carlo simulation on GPU for particle physics",
+    "conference": "41th International Conference on High Energy Physics, ICHEP 2022",
+    "place": "Bologna (Italy)",
+    "url": "https://agenda.infn.it/event/28874/contributions/170197/",
+    "slides": "https://agenda.infn.it/event/28874/contributions/170197/attachments/94536/129850/juanCM.pdf"
+  },
+  {
     "date": "May 2022",
     "title": "Machine Learning in PDF determination: NNPDF4.0",
     "conference": "Transversity 2022",
     "url": "https://agenda.infn.it/event/19219/",
     "slides": "https://agenda.infn.it/event/19219/contributions/170916/attachments/91468/124205/juanCM.pdf",
     "place": "Pavia (Italy)"
+  },
+  {
+    "date": "May 2022",
+    "title": "Accelerating Monte Carlo simulations across hardware platforms",
+    "conference": "Invited seminar",
+    "place": "USM/LMU Munich (Germany)"
   },
   {
     "date": "November 2021",
