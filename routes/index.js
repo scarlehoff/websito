@@ -109,26 +109,35 @@ router.get('/biblioteca', function(req, res, next) {
   res.render('biblioteca/biblioteca', { title: 'Biblioteca' });
 });
 
-router.get('/libros', function(req, res, next) {
-  const library = require("../data/biblioteca/libros.json")
-  res.render('biblioteca/libros', {title: 'Biblioteca', pagetitle: 'Libros', library: library});
+router.get('/:media', function(req, res, next) {
+  const mediaType = req.params.media.toLowerCase();
+  const library = require(`../data/biblioteca/${mediaType}.json`);
+  const pagetitle = mediaType.charAt(0).toUpperCase() + mediaType.slice(1);
+  res.render('biblioteca/media', {title: 'Biblioteca', pagetitle: pagetitle, library: library});
 });
 
-router.get('/libros/:author', function(req, res, next) {
-  const library = require("../data/biblioteca/libros.json")
+router.get('/:media/:author', function(req, res, next) {
+  const mediaType = req.params.media.toLowerCase();
+  const library = require(`../data/biblioteca/${mediaType}.json`)
   const author = req.params.author;
   let authorData = library[author];
-  // If the author doesnt exist, send the user back to books
+  // If the author/console doesnt exist, send the user back to books
   if(!authorData) {
-    res.redirect(308, '/libros');
+    res.redirect(308, `/${mediaType}`);
     return;
   }
 
-  res.render('biblioteca/librosAutor', 
+  res.render('biblioteca/mediaDetail', 
     { title: 'Biblioteca',
       pagetitle: authorData.full_name,
-      author: authorData
+      author: authorData,
+      originMedia: mediaType,
     });
+});
+
+router.get('/videojuegos', function(req, res, next) {
+  const library = require("../data/biblioteca/videojuegos.json")
+  res.render('biblioteca/media', {title: 'Biblioteca', pagetitle: 'Videojuegos', library: library});
 });
 
 router.get('/blog', function(req, res, next) {
