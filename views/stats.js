@@ -7,8 +7,8 @@ config = {
     // This is necessary to find the wasm file
     // for sql.js to run
     return `./sql.js/dist/${filename}`;
-  }
-}
+  },
+};
 
 // Global variables
 let f = undefined;
@@ -16,32 +16,34 @@ let savedPositions = {};
 let visitedIPs = {};
 
 // get the page elements
-let dbFileElm = document.getElementById('dbfile');
-let dbLabel = document.getElementById('dbname');
+let dbFileElm = document.getElementById("dbfile");
+let dbLabel = document.getElementById("dbname");
 let executeBtn = document.getElementById("runQuery");
 let clearBtn = document.getElementById("clearMarkers");
-let informationElm = document.getElementById('informationContent');
-let selectorWebElm = document.getElementById('selectorWeb');
-let datepickerElm = document.getElementById('datetimepickerInfo');
+let informationElm = document.getElementById("informationContent");
+let selectorWebElm = document.getElementById("selectorWeb");
+let datepickerElm = document.getElementById("datetimepickerInfo");
 datepickerElm.value = null;
 
 // Create a map and center it in Seville
 const startingZoom = 8;
 const startingPos = [37.39, -5.98];
-let map = L.map('mapid').setView(startingPos, startingZoom);
+let map = L.map("mapid").setView(startingPos, startingZoom);
 
 // At this point we have a map of the world, a grey world
-// now we have to add a layer from openstreetmap or 
+// now we have to add a layer from openstreetmap or
 // mapbox https://docs.mapbox.com/api/maps/#static-tiles
 // or whatever other provider
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox/satellite-streets-v11',
-    tileSize: 512,
-    zoomOffset: -1,
-// TODO: remember to rotate this token or to set some domain limit or whatever when merging (if) to master
-    accessToken: 'pk.eyJ1Ijoic2NhcmxlaG9mZiIsImEiOiJjazkzOHNwcDEwMmtmM2ZubnZ1bzAxNHhiIn0.u2dsmdZ6Mqd76N3U6T86WQ'
+L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+  attribution:
+    'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+  maxZoom: 18,
+  id: "mapbox/satellite-streets-v11",
+  tileSize: 512,
+  zoomOffset: -1,
+  // TODO: remember to rotate this token or to set some domain limit or whatever when merging (if) to master
+  accessToken:
+    "pk.eyJ1Ijoic2NhcmxlaG9mZiIsImEiOiJjazkzOHNwcDEwMmtmM2ZubnZ1bzAxNHhiIn0.u2dsmdZ6Mqd76N3U6T86WQ",
 }).addTo(map);
 let savedPositionsLayerGroup = L.layerGroup([]).addTo(map);
 
@@ -55,13 +57,13 @@ function objectToHtml(visitedPages) {
   // receives an array of objects and creates a table
   let text = `<table class="table">`;
   text += `<thead class="text-center"><tr><th>Date</th><th>Page</th></tr></thead>`;
-  text += `<tbody>`
+  text += `<tbody>`;
   for (page of visitedPages) {
-    text += `<tr>`
-    text += `<td> ${page.date} </td><td> ${page.page} </td>`
-    text += `</tr>`
+    text += `<tr>`;
+    text += `<td> ${page.date} </td><td> ${page.page} </td>`;
+    text += `</tr>`;
   }
-  text += '</tbody></table>'
+  text += "</tbody></table>";
   return text;
 }
 function generateInfoTable(ipval) {
@@ -75,13 +77,13 @@ function compareDate(d1, d2) {
 
 function removeDuplicates(arr) {
   let newArr = [];
-  outerLoop:
-    for (let oldItem of arr) {
-      for(let newItem of newArr) {
-        if (newItem.page == oldItem.page && compareDate(newItem.date, oldItem.date)) continue outerLoop;
-      }
-      newArr.push(oldItem);
+  outerLoop: for (let oldItem of arr) {
+    for (let newItem of newArr) {
+      if (newItem.page == oldItem.page && compareDate(newItem.date, oldItem.date))
+        continue outerLoop;
     }
+    newArr.push(oldItem);
+  }
   return newArr;
 }
 
@@ -90,7 +92,7 @@ function generateMarker(info) {
   // with latitude, longitude, ip
   const lat = info.lat;
   const lon = info.lon;
-  const newText = `<a href="#" onclick="generateInfoTable('${info.ip}')">${info.ip}</a>`
+  const newText = `<a href="#" onclick="generateInfoTable('${info.ip}')">${info.ip}</a>`;
   if (savedPositions[lat] && savedPositions[lat][lon]) {
     let layer = savedPositions[lat][lon];
     const currentVals = layer.getPopup()._content;
@@ -111,9 +113,8 @@ function parseResponse(arr) {
   return { ip, lat, lon };
 }
 
-
 // Do something when the database is loaded
-dbFileElm.onchange = function() {
+dbFileElm.onchange = function () {
   f = this.files[0];
   const fileName = f.name;
   // add the name to the label
@@ -121,9 +122,9 @@ dbFileElm.onchange = function() {
   console.log(f);
   // Now read the database and select all pages included
   let r = new FileReader();
-  r.onload = function() {
+  r.onload = function () {
     const Uints = new Uint8Array(r.result);
-    initSqlJs(config).then( (SQL) => {
+    initSqlJs(config).then((SQL) => {
       const db = new SQL.Database(Uints);
       const results = db.exec('select `web` from info where ip!="192.168.1.1"')[0].values;
       selectorWebElm.innerHTML = `<option selected value="*">Show all</option><option value='/'>/</option>`;
@@ -135,10 +136,9 @@ dbFileElm.onchange = function() {
         selectorWebElm.innerHTML += `<option value="${web}">${web}</option>`;
       }
     });
-  }
+  };
   r.readAsArrayBuffer(f);
-
-}
+};
 
 function clearMarkers() {
   console.log("Clearing all markers");
@@ -172,17 +172,17 @@ function executeAction() {
 
   // Now let's read up the file
   let r = new FileReader();
-  r.onload = function() {
+  r.onload = function () {
     const Uints = new Uint8Array(r.result);
-    initSqlJs(config).then( (SQL) => {
+    initSqlJs(config).then((SQL) => {
       // open the database
       console.log("opening the db");
       const db = new SQL.Database(Uints);
       // get all pairs IP and location
       let results = db.exec('select `ip`, `geo` from iptab where ip!="192.168.1.1"');
       // Prepare a query to read up the data for a given IP
-      let queryData = 'select `date`, `web` from info where ip=$ip';
-      if (selectedPage != '*') {
+      let queryData = "select `date`, `web` from info where ip=$ip";
+      if (selectedPage != "*") {
         queryData += ` and web="${selectedPage}"`;
       }
       let getData = db.prepare(queryData);
@@ -193,15 +193,15 @@ function executeAction() {
         const information = parseResponse(value);
         if (information.ip in visitedIPs) continue;
         // Now pass the information to generate the marker with
-        getData.bind({$ip:information.ip});
+        getData.bind({ $ip: information.ip });
         // and loop over it to get all values we are interested
         let visitedPages = [];
-        while(getData.step()) {
+        while (getData.step()) {
           const row = getData.getAsObject();
           const parsedDate = new Date(row.date);
           // Check whether this is the selected date
-          if(selectedDate && parsedDate.getDate() != selectedDate) continue;
-          visitedPages.push({page:row.web, date:parsedDate});
+          if (selectedDate && parsedDate.getDate() != selectedDate) continue;
+          visitedPages.push({ page: row.web, date: parsedDate });
         }
         // if this IP dont have any values for the returned values
         // just skip
@@ -209,16 +209,15 @@ function executeAction() {
         // Remove duplicates
         visitedPages = removeDuplicates(visitedPages);
         // Order the dates
-        visitedPages.sort( (a,b) => {
-          return (a.date > b.date) ? 1 : -1
+        visitedPages.sort((a, b) => {
+          return a.date > b.date ? 1 : -1;
         });
-        
+
         generateMarker(information);
         visitedIPs[information.ip] = visitedPages;
       }
-    })
-  }
+    });
+  };
   r.readAsArrayBuffer(f);
 }
 executeBtn.addEventListener("click", executeAction, true);
-

@@ -1,13 +1,13 @@
 const recordsPerCall = 50;
 
 // html elements
-const informationElm = document.getElementById('informationContent');
-const formAuthor = document.getElementById('authorForm');
-const formPublished = document.getElementById('publishedCheck');
-const formProceedings = document.getElementById('ignoreProceedingsCheck');
-const formFreeText = document.getElementById('exampleText');
-const formRun = document.getElementById('runQuery');
-const queryInfoElm = document.getElementById('queryInfoContent');
+const informationElm = document.getElementById("informationContent");
+const formAuthor = document.getElementById("authorForm");
+const formPublished = document.getElementById("publishedCheck");
+const formProceedings = document.getElementById("ignoreProceedingsCheck");
+const formFreeText = document.getElementById("exampleText");
+const formRun = document.getElementById("runQuery");
+const queryInfoElm = document.getElementById("queryInfoContent");
 
 // global state variables
 let runningQuery = false;
@@ -19,37 +19,38 @@ function toggleRunningStatus(active) {
     runningQuery = true;
   } else {
     runningQuery = false;
-    formRun.innerHTML = 'Run';
+    formRun.innerHTML = "Run";
   }
 }
 
-
 // enabled substitutions
 const substitutions = {
-  pages: new RegExp("\\$PAGES", 'g'),
-  title: new RegExp("\\$TITLE", 'g'),
-  journal: new RegExp("\\$JOURNAL", 'g'),
-  authors: new RegExp("\\$AUTHORS", 'g'),
-  doi: new RegExp("\\$DOI", 'g'),
-  year: new RegExp("\\$PUBYEAR", 'g'),
-  journalPage: new RegExp("\\$PAGEJOURNAL", 'g'),
-  journalVol: new RegExp("\\$VOLJOURNAL", 'g')
+  pages: new RegExp("\\$PAGES", "g"),
+  title: new RegExp("\\$TITLE", "g"),
+  journal: new RegExp("\\$JOURNAL", "g"),
+  authors: new RegExp("\\$AUTHORS", "g"),
+  doi: new RegExp("\\$DOI", "g"),
+  year: new RegExp("\\$PUBYEAR", "g"),
+  journalPage: new RegExp("\\$PAGEJOURNAL", "g"),
+  journalVol: new RegExp("\\$VOLJOURNAL", "g"),
 };
 
 // Small utility one-liners functions
-function evalMath(math) { return Function(`'use strict'; return (${math})`)() }
-function parseTextField(textField){
+function evalMath(math) {
+  return Function(`'use strict'; return (${math})`)();
+}
+function parseTextField(textField) {
   if (textField.value) return textField.value;
   return textField.placeholder;
 }
 
 //
-// INSPIRE API 
+// INSPIRE API
 //
 class InspireHEP {
-// Will be phased out: http://old.inspirehep.net/info/hep/api
-  // The constructor prepares the api call 
-  constructor(author, complete=false) {
+  // Will be phased out: http://old.inspirehep.net/info/hep/api
+  // The constructor prepares the api call
+  constructor(author, complete = false) {
     // TODO make the order an option
     let baseUrl = `https://inspirehep.net/api/literature?sort=mostrecent&size=${recordsPerCall}&q=find a ${author}`;
     this.apiUrl = baseUrl;
@@ -82,7 +83,7 @@ class InspireHEP {
   }
 
   parseTitle(res) {
-    return res.metadata.titles[0].title
+    return res.metadata.titles[0].title;
   }
 
   parsePublicationInfo(res) {
@@ -91,11 +92,12 @@ class InspireHEP {
     if (!pubInfoRaw) return null;
     const pubInfo = pubInfoRaw[0];
     let journal = pubInfo.journal_title;
-    if (!journal) { // maybe it is a conference and it is not a journal
+    if (!journal) {
+      // maybe it is a conference and it is not a journal
       if (pubInfo.titles) {
-        journal = pubInfo.titles[0].title
+        journal = pubInfo.titles[0].title;
       } else {
-        journal = null
+        journal = null;
       }
     }
     const volume = pubInfo.journal_volume;
@@ -111,11 +113,10 @@ class InspireHEP {
   isProceedings(res) {
     // Check whether this is a conference paper
     const paperType = res.metadata.document_type;
-    if (paperType) return paperType[0] == 'conference paper';
+    if (paperType) return paperType[0] == "conference paper";
     return false;
   }
 }
-
 
 // Actual applet
 function fetchResults(rApi, listTextItems, qInfo) {
@@ -132,18 +133,20 @@ function fetchResults(rApi, listTextItems, qInfo) {
   console.log("Api call: ");
   console.log(url);
 
-  fetch(url).then( data => {
-    // Get the information
-    console.log(data);
-    return data.json();
-    }).then( res => {
+  fetch(url)
+    .then((data) => {
+      // Get the information
+      console.log(data);
+      return data.json();
+    })
+    .then((res) => {
       // Get the json
       console.log(res);
       if (res.length < 1) {
         toggleRunningStatus(false);
       }
       // Now run over all entries and parse the information
-      res.hits.hits.forEach( result => {
+      res.hits.hits.forEach((result) => {
         // Check whether this should be ignored
         if (qInfo.ignoreProceeding && rApi.isProceedings(result)) return;
         // Parse all necessary info
@@ -169,16 +172,16 @@ function fetchResults(rApi, listTextItems, qInfo) {
 
         // And now make it into HTML
         listTextItems.push(resultText);
-        informationElm.innerHTML = listTextItems.join('<br><br>');
-
+        informationElm.innerHTML = listTextItems.join("<br><br>");
       });
       queryInfoElm.innerHTML = `Found ${listTextItems.length} records total:`;
       // If the full stack of records was consumed, make another API call
       if (res.hits.hits.length == recordsPerCall) {
         return true;
-      };
+      }
       return false;
-    }).then( mustContinue => {
+    })
+    .then((mustContinue) => {
       if (mustContinue) fetchResults(rApi, listTextItems, qInfo);
       toggleRunningStatus(mustContinue);
     });
@@ -201,8 +204,8 @@ function performAPIcall() {
   const qInfo = {
     publishedOnly,
     ignoreProceeding,
-    exampleText
-  }
+    exampleText,
+  };
 
   // initializate the state
   toggleRunningStatus(true);
@@ -212,6 +215,5 @@ function performAPIcall() {
 
   // everything's ready start fetching result
   fetchResults(apiObject, textItems, qInfo);
-
 }
 formRun.addEventListener("click", performAPIcall, true);

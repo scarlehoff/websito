@@ -1,11 +1,11 @@
-moment.updateLocale('en', { week: { dow: 1, } });
+moment.updateLocale("en", { week: { dow: 1 } });
 
 // Select DOM elements to work with
-const mainContainer = document.getElementById('main-container');
-const signinButtonElm = document.getElementById('signmein');
-const showTasksButtonElm = document.getElementById('showTasks');
-const selectorWebElm = document.getElementById('selectorWeb');
-const calendarElm = document.getElementById('datepicker');
+const mainContainer = document.getElementById("main-container");
+const signinButtonElm = document.getElementById("signmein");
+const showTasksButtonElm = document.getElementById("showTasks");
+const selectorWebElm = document.getElementById("selectorWeb");
+const calendarElm = document.getElementById("datepicker");
 
 const Views = { error: 1, home: 2, calendar: 3 };
 var account = null;
@@ -24,22 +24,20 @@ const msalClient = new msal.PublicClientApplication(msalConfig);
 
 // 2. Select the permissions we need to use
 const msalRequest = {
-  scopes: [
-    'user.read',
-    'Tasks.ReadWrite',
-  ]
-}
+  scopes: ["user.read", "Tasks.ReadWrite"],
+};
 
 // 3. Prepare the getToken function (why is this not included in the API is beyond me)
 async function getToken() {
-  let account = sessionStorage.getItem('msalAccount');
-  if (!account) throw new Error('User account missing from session. Please sign out and sign in again.');
+  let account = sessionStorage.getItem("msalAccount");
+  if (!account)
+    throw new Error("User account missing from session. Please sign out and sign in again.");
 
   try {
     // First, attempt to get the token silently
     const silentRequest = {
       scopes: msalRequest.scopes,
-      account: msalClient.getAccountByUsername(account)
+      account: msalClient.getAccountByUsername(account),
     };
 
     const silentResult = await msalClient.acquireTokenSilent(silentRequest);
@@ -60,11 +58,11 @@ async function getToken() {
 const authProvider = {
   getAccessToken: async () => {
     return await getToken();
-  }
+  },
 };
 
 // 5. Instantiate the graph client to be used by the API calls
-const graphClient = MicrosoftGraph.Client.initWithMiddleware({authProvider});
+const graphClient = MicrosoftGraph.Client.initWithMiddleware({ authProvider });
 //-------------------- Graph client initialized
 
 // --- Sign In API
@@ -74,16 +72,16 @@ async function signIn() {
   try {
     // Use MSAL to login
     const authResult = await msalClient.loginPopup(msalRequest);
-    console.log('id_token acquired at: ' + new Date().toString());
+    console.log("id_token acquired at: " + new Date().toString());
     // Save the account username, needed for token acquisition
-    sessionStorage.setItem('msalAccount', authResult.account.username);
+    sessionStorage.setItem("msalAccount", authResult.account.username);
     console.log("Saving account", authResult.account);
 
     // Get the user's profile from Graph
     user = await getUser();
     console.log("Login success: ", user);
     // Save the profile in session
-    sessionStorage.setItem('graphUser', JSON.stringify(user));
+    sessionStorage.setItem("graphUser", JSON.stringify(user));
     updatePage();
   } catch (error) {
     console.log(error);
@@ -92,17 +90,13 @@ async function signIn() {
 }
 function signOut() {
   account = null;
-  sessionStorage.removeItem('graphUser');
+  sessionStorage.removeItem("graphUser");
   msalClient.logout();
 }
 async function getUser() {
-  return await graphClient
-    .api('/me')
-    .select('id')
-    .get();
+  return await graphClient.api("/me").select("id").get();
 }
 // --------------------------------------------------------------------
-
 
 //------------ User-space functions
 //--- Getting the list of lists
@@ -112,7 +106,7 @@ let listOfLists = null;
 async function getAllLists() {
   let ret = null;
   try {
-    const response = await graphClient.api('/me/todo/lists').version('beta').get();
+    const response = await graphClient.api("/me/todo/lists").version("beta").get();
     ret = response.value;
   } catch (error) {
     console.log(error);
@@ -126,7 +120,7 @@ async function getAllLists() {
  */
 async function updateList() {
   if (!listOfLists) {
-    selectorWebElm.innerHTML = '<option>Fetching results...</option>';
+    selectorWebElm.innerHTML = "<option>Fetching results...</option>";
     console.log("Fetching lists");
     let results = await getAllLists();
     if (results) {
@@ -145,7 +139,6 @@ async function updateList() {
   selectorWebElm.innerHTML = options;
 }
 
-
 //--- Getting all tasks once a list is selected
 /* This function calls the Graph API
  * to receive a list of tasks for the selected list */
@@ -154,7 +147,7 @@ async function fetchTasks(selectedId, query) {
   try {
     let response = await graphClient
       .api(`me/todo/lists/${selectedId}/tasks`)
-      .version('beta')
+      .version("beta")
       .filter(query)
       .top(50)
       .get();
@@ -163,7 +156,7 @@ async function fetchTasks(selectedId, query) {
   } catch (error) {
     console.log("Error getting list of tasks");
     console.log(error);
-    updatePage(Views.error, {message: 'Error', debug:error});
+    updatePage(Views.error, { message: "Error", debug: error });
   }
   return;
 }
@@ -186,19 +179,19 @@ async function showTasks() {
 
   // Get the dateframe
   const dateRange = calendarElm.value.split("-");
-  const startDate = moment(dateRange[0], 'DD/MM/YYYY');
-  const finalDate = moment(dateRange[1], 'DD/MM/YYYY');
+  const startDate = moment(dateRange[0], "DD/MM/YYYY");
+  const finalDate = moment(dateRange[1], "DD/MM/YYYY");
 
   // Prepare the query
   let query = "status eq 'completed'"; // we want only completed tasks
-  query += ` and completedDateTime/dateTime ge '${startDate.format('YYYY-MM-DD')}'`;
-  query += ` and completedDateTime/dateTime le '${finalDate.format('YYYY-MM-DD')}'`;
+  query += ` and completedDateTime/dateTime ge '${startDate.format("YYYY-MM-DD")}'`;
+  query += ` and completedDateTime/dateTime le '${finalDate.format("YYYY-MM-DD")}'`;
 
   // Fetch the tasks
   console.log(`Fetching tasks for ${listTitle}`);
   const tasks = await fetchTasks(selectedId, query);
   if (!tasks) {
-      throw new Error("Did not receive any tasks?");
+    throw new Error("Did not receive any tasks?");
   }
 
   // Now write them down
@@ -215,14 +208,16 @@ async function showTasks() {
       // This body content can be just text or complete html!
       let btext = bodyContent;
       if (task.body.contentType == "html") {
-        btext = (new DOMParser).parseFromString(bodyContent, 'text/html').documentElement.textContent;
+        btext = new DOMParser().parseFromString(bodyContent, "text/html").documentElement
+          .textContent;
       }
       // Now it seems that everyone has "body content" so this is less than ideal
       // but there is a <!-- comment that gets through the body content?
       // Maybe it is a bug in Microsoft's side, but let's play along for now...
       // write a msg to console though
       btext = btext.trim();
-      if (btext.startsWith("<!--") && btext.endsWith("-->")) { // it is a comment
+      if (btext.startsWith("<!--") && btext.endsWith("-->")) {
+        // it is a comment
         console.log("Text covered by <!-- --!> so understood as a comment and ignored!");
       } else {
         // Add an icon that upon hovering adds extra information
@@ -243,12 +238,14 @@ async function showTasks() {
   <table class="table table-sm table-striped"">
     <thead style="text-align:center;">
       <tr> 
-        <th><h4>Tasks from ${listTitle} completed between ${startDate.format('DD/MM/YYYY')} and ${finalDate.format('DD/MM/YYYY')} </h4></th>
+        <th><h4>Tasks from ${listTitle} completed between ${startDate.format(
+    "DD/MM/YYYY"
+  )} and ${finalDate.format("DD/MM/YYYY")} </h4></th>
       </tr>
     </thead>
     <tbody>${listOfTasks}</tbody>
   </table>
-  </div>`
+  </div>`;
 
   mainContainer.innerHTML = tableContent;
 }
@@ -259,7 +256,7 @@ async function showTasks() {
  * and hides/shows the right buttons/elements
  */
 function updatePage() {
-  const user = JSON.parse(sessionStorage.getItem('graphUser'));
+  const user = JSON.parse(sessionStorage.getItem("graphUser"));
 
   if (user) {
     // Hide the signin button

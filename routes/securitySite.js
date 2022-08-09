@@ -1,6 +1,6 @@
 /**
  * This module exports several middleware functions
- * with a signature (req, res, next) 
+ * with a signature (req, res, next)
  * to blacklist IP that do suspicious stuff
  *
  * External functions:
@@ -16,7 +16,7 @@ let ipSuspicious = [];
 let ipBlackList = [];
 
 // Time (in miliseconds) that an IP will be blocked
-const banTime = 30*60*1000;
+const banTime = 30 * 60 * 1000;
 
 // Set the functions that act on the ip lists
 // these functions take an ip and output a text/plain response
@@ -24,9 +24,9 @@ const banTime = 30*60*1000;
  * Add an IP to the list of suspicious IPs
  */
 function isSuspicious(userIP) {
-    console.log("Adding userIP to the suspicious list: ", userIP);
-    ipSuspicious.push(userIP);
-    return `Your access will be denied if you do something funny!`;
+  console.log("Adding userIP to the suspicious list: ", userIP);
+  ipSuspicious.push(userIP);
+  return `Your access will be denied if you do something funny!`;
 }
 
 /*
@@ -34,16 +34,16 @@ function isSuspicious(userIP) {
  * and add it to the blacklist if so
  */
 function blockIfSuspicious(userIP) {
-    console.log("Adding userIP to the blacklist: ", userIP);
-    ipBlackList.push(userIP);
-    setTimeout( () => {
-      const i = ipBlackList.indexOf(userIP);
-      console.log("Lifted ban to: ", userIP);
-      ipBlackList.splice(i, 1);
-    }, banTime);
-    const i  = ipSuspicious.indexOf(userIP);
-    ipSuspicious.splice(i, 1);
-    return `Access Denied to ${userIP} (for 30 minutes)!`
+  console.log("Adding userIP to the blacklist: ", userIP);
+  ipBlackList.push(userIP);
+  setTimeout(() => {
+    const i = ipBlackList.indexOf(userIP);
+    console.log("Lifted ban to: ", userIP);
+    ipBlackList.splice(i, 1);
+  }, banTime);
+  const i = ipSuspicious.indexOf(userIP);
+  ipSuspicious.splice(i, 1);
+  return `Access Denied to ${userIP} (for 30 minutes)!`;
 }
 
 /*
@@ -52,13 +52,13 @@ function blockIfSuspicious(userIP) {
  */
 function checkAndBlock(req, res, next) {
   // Get the IP
-  const userIP = req.header('X-Real-IP') || req.connection.remoteAddress;
+  const userIP = req.header("X-Real-IP") || req.connection.remoteAddress;
   if (ipBlackList.indexOf(userIP) === -1) {
     next();
   } else {
     console.log("Blocked access to ", userIP);
-    res.type('text/plain')
-    res.send('Access Denied');
+    res.type("text/plain");
+    res.send("Access Denied");
   }
 }
 
@@ -67,8 +67,8 @@ function checkAndBlock(req, res, next) {
  * and, if it is already there, to the blacklist
  */
 function blockOrMark(req, res, next) {
-  const userIP = req.header('X-Real-IP') || req.connection.remoteAddress;
-  res.type('text/plain')
+  const userIP = req.header("X-Real-IP") || req.connection.remoteAddress;
+  res.type("text/plain");
   // Check whether the IP is suspicious, if it is
   // add it to the blocking list
   if (ipSuspicious.indexOf(userIP) > -1) {
@@ -81,5 +81,5 @@ function blockOrMark(req, res, next) {
 
 module.exports = {
   checkAndBlock,
-  blockOrMark
-}
+  blockOrMark,
+};

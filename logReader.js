@@ -1,33 +1,33 @@
-'use strict';
+"use strict";
 /* Look at the log folder, and every time a new log file appears
  * parse it and gzip it to the backup folder
  * Rudimentary but simpler and safer that alternatives
  */
 
 // Imports
-const fs = require('fs');
-const mv = require('mv');
-const chokidar = require('chokidar');
-const sqlite3 = require('sqlite3');
+const fs = require("fs");
+const mv = require("mv");
+const chokidar = require("chokidar");
+const sqlite3 = require("sqlite3");
 const IPinfo = require("node-ipinfo");
 
 // Parameters
 const basicLogName = "access.log";
 const logFolder = "log/";
 const backupFolder = "log/backupLog/";
-const dbName = 'infovisits.db';
-const infoTable = 'info';
-const ipTable = 'iptab';
+const dbName = "infovisits.db";
+const infoTable = "info";
+const ipTable = "iptab";
 const dbTables = {
-  [infoTable] : ['date', 'web', 'ip' ],
-  [ipTable] : ['date', 'ip', 'country', 'region', 'city', 'geo', 'fullresponse']
+  [infoTable]: ["date", "web", "ip"],
+  [ipTable]: ["date", "ip", "country", "region", "city", "geo", "fullresponse"],
 };
 
 // Read up IPinfo (https://ipinfo.io)
 const ipToken = require("./ipinfodata.json")["token"];
 const ipinfo = new IPinfo(ipToken);
 
-// Create folders 
+// Create folders
 function checkCreate(folname) {
   if (!fs.existsSync(folname)) {
     console.log(`Creating ${folname}`);
@@ -42,8 +42,8 @@ let db = new sqlite3.Database(dbName);
 
 // Creation bit, only gets executed if the table does not exists
 function tableCreation(tableName, tableFields) {
-  const sqCreation = tableFields.join(', ');
-  const sqCreationQuery = `CREATE TABLE if not exists ${tableName} (${sqCreation})`
+  const sqCreation = tableFields.join(", ");
+  const sqCreationQuery = `CREATE TABLE if not exists ${tableName} (${sqCreation})`;
   db.run(sqCreationQuery);
 }
 for (let key in dbTables) {
@@ -59,13 +59,13 @@ for (let key in dbTables) {
  */
 const watcher = chokidar.watch(logFolder, {
   persistent: true,
-  ignored: `${backupFolder}*`
+  ignored: `${backupFolder}*`,
 });
 
 /*
  * Running loop
  *
- * We watch for changes in the folder, 
+ * We watch for changes in the folder,
  * which happen every time a log is rotated
  * If the file contains any line, we parse them all into the database
  * and then we look over the unique IPs and try to get information about them
@@ -73,7 +73,7 @@ const watcher = chokidar.watch(logFolder, {
  * Finally the log file is moved out to the backup folder
  *
  */
-watcher.on('add', (filename) => {
+watcher.on("add", (filename) => {
   // and move them to the backup folder
   if (filename.endsWith(`-${basicLogName}`)) {
     // Read the file up
@@ -88,23 +88,23 @@ watcher.on('add', (filename) => {
 
       // Parse all lines and insert them in the db
       let q = new Array(dbTables[infoTable].length).fill("?");
-      const infoInsertion = db.prepare(`INSERT INTO ${infoTable} VALUES (${q.join(',')})`);
+      const infoInsertion = db.prepare(`INSERT INTO ${infoTable} VALUES (${q.join(",")})`);
       for (let line of lines) {
         if (!line) continue;
         if (line.includes("favicon.ico")) continue;
-        const lineData = line.trim().split(" > ")
+        const lineData = line.trim().split(" > ");
         infoInsertion.run(lineData);
         // Now look at the IP and save it if necessary
         const ip = lineData[2];
-        if (!(ip in allIps))  allIps[ip] = lineData[0];
+        if (!(ip in allIps)) allIps[ip] = lineData[0];
       }
 
       // Now look for information on the IPs and save them in a different table
       q = new Array(dbTables[ipTable].length).fill("?");
-      const ipInsertion = db.prepare(`INSERT INTO ${ipTable} VALUES (${q.join(',')})`);
+      const ipInsertion = db.prepare(`INSERT INTO ${ipTable} VALUES (${q.join(",")})`);
       for (let ip in allIps) {
         if (ip.includes("192.168.1.")) continue;
-        ipinfo.lookupIp(ip).then( (response) => {
+        ipinfo.lookupIp(ip).then((response) => {
           console.log(`\n > > Checking IP: ${ip}:`);
           console.log(response);
           const country = response.country;
@@ -123,7 +123,6 @@ watcher.on('add', (filename) => {
       mv(filename, finalPath, (err) => {
         if (err) console.log(err);
       });
-
     });
   }
 });
