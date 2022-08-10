@@ -32,7 +32,7 @@ app.locals.basedir = path.join(__dirname, "views");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-// flag
+// flags
 app.use(express.static(path.join(__dirname, "node_modules/mdbootstrap/css/addons")));
 // sql
 app.use(express.static(path.join(__dirname, "node_modules/sql.js/dist/")));
@@ -54,7 +54,7 @@ logger.token("userIP", (req) => {
 // Prepare the logging (needs to be done before setting /)
 // set up the combine logger from morgan to console
 // might be unnecesarily verbose?
-app.use(logger("combined"));
+app.use(logger("[:userIP] :method :url :status <:user-agent - :referrer>"));
 
 //// Set up the IP
 app.use(
