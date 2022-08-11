@@ -2,6 +2,7 @@ var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
 var logger = require("morgan");
+var fs = require("fs");
 var rfs = require("rotating-file-stream");
 // Use helmet to protect the http headers
 // as per https://expressjs.com/en/advanced/best-practice-security.html#use-helmet
@@ -38,30 +39,88 @@ app.use(express.static(path.join(__dirname, "node_modules/mdbootstrap/css/addons
 app.use(express.static(path.join(__dirname, "node_modules/sql.js/dist/")));
 app.use(express.static(path.join(__dirname, "public")));
 
-// Create a log per day
-let logStream = rfs.createStream("access.log", {
-  interval: "1d", // rotate every day
-  path: path.join(__dirname, "log"),
-});
+// -------------- Prepare logger (needs to be configured before setting '/')
 
 // Create a token for the ip
 // (due to being behind nginx, the ip might not come in the standard place)
 logger.token("userIP", (req) => {
-  let userIP = req.header("X-Real-IP") || req.connection.remoteAddress;
+  const userIP = req.header("X-Real-IP") || req.connection.remoteAddress;
   return userIP;
 });
 
-// Prepare the logging (needs to be done before setting /)
-// set up the combine logger from morgan to console
-// might be unnecesarily verbose?
-app.use(logger("[:userIP] :method :url :status <:user-agent - :referrer>"));
+// Log at the same time to console
+// if ipinfo is available, check for the location of the IP and print it asynchronously to stdout
+// otherwise simply use morgan logger tokens
+let stdout_logger = logger("[:userIP] :method :url :status <:user-agent - :referrer>");
 
-//// Set up the IP
+const ipjson = "./ipinfodata.json";
+
+if (fs.existsSync(ipjson)) {
+  const { IPinfoWrapper } = require("node-ipinfo");
+  const ipToken = require(ipjson)["token"];
+  const ipinfo = new IPinfoWrapper(ipToken);
+  let allIp = {};
+  let ipLogging = true;
+
+  async function getIpInfo(ip) {
+    let mapLocation = allIp[ip];
+    if (!mapLocation && ipLogging) {
+      mapLocation = await ipinfo
+        .lookupIp(ip)
+        .then((response) => {
+          // Get the geographical information
+          console.log("Reading from ipinfo");
+          const country = response.country;
+          const region = response.region;
+          const city = response.city;
+          //const geoloc = response.loc;
+          return country ? ` - ${city} (${region}, ${country})` : " - ";
+        })
+        .catch((err) => {
+          console.log(err);
+          // Disable iplogging on failure
+          ipLogging = false;
+          console.log("IP logging has been disabled manually");
+        });
+    }
+    allIp[ip] = mapLocation;
+    return mapLocation;
+  }
+
+  // Create a middleware logger
+  stdout_logger = function (req, res, next) {
+    const ip = req.header("X-Real-IP") || req.connection.remoteAddress;
+    getIpInfo(ip).then((mapLocation) => {
+      // And the request information
+      const method = req.method;
+      const url = req.originalUrl || req.url;
+      const st = String(res.statusCode);
+      const uag = req.headers["user-agent"];
+      const ref = req.headers.referer || req.headers.referrer || "";
+
+      // And log it to console!
+      const logline = `[${ip}${mapLocation}] ${method} ${url} ${st} <${uag} - ${ref}>`;
+      console.log(logline);
+    });
+    next();
+  };
+}
+app.use(stdout_logger);
+
+// Create a log per day
+const logStream = rfs.createStream("access.log", {
+  interval: "1d", // rotate every day
+  path: path.join(__dirname, "log"),
+});
+
+// Log also information to file (to the access.log)
 app.use(
   logger(":date > :url > :userIP", {
     stream: logStream,
   })
 );
+
+// ------------------------ log finished
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);

@@ -9,7 +9,7 @@ const fs = require("fs");
 const mv = require("mv");
 const chokidar = require("chokidar");
 const sqlite3 = require("sqlite3");
-const IPinfo = require("node-ipinfo");
+const { IPinfoWrapper } = require("node-ipinfo");
 
 // Parameters
 const basicLogName = "access.log";
@@ -25,7 +25,7 @@ const dbTables = {
 
 // Read up IPinfo (https://ipinfo.io)
 const ipToken = require("./ipinfodata.json")["token"];
-const ipinfo = new IPinfo(ipToken);
+const ipinfo = new IPinfoWrapper(ipToken);
 
 // Create folders
 function checkCreate(folname) {
