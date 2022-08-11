@@ -1,4 +1,4 @@
-#!/usr/bin/node
+#!/usr/bin/env node
 
 // This script and the associated utilities rely on me using a very specific syntax for my notes
 // and will evolve alongside those
