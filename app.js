@@ -69,7 +69,6 @@ if (fs.existsSync(ipjson)) {
         .lookupIp(ip)
         .then((response) => {
           // Get the geographical information
-          console.log("Reading from ipinfo");
           const country = response.country;
           const region = response.region;
           const city = response.city;
