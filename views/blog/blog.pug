@@ -16,9 +16,17 @@ block content
 
         div.card-header(id="head"+key)
           h2.mb-0
-            button.btn.btn-light(type="button", data-toggle="collapse", data-target="#"+key, aria-expanded="true", aria-controls="collapseOne") #{key}: #{vals.brief}
-
+            button.btn.btn-light(type="button", data-toggle="collapse", data-target="#"+key, aria-expanded="false", aria-controls="collapseOne") #{key}: #{vals.brief}
+            
         div.collapse.collapsed(data-parent="#accordion", id=key, aria-labelledby="head"+key)
           div.card-body
             for val in vals.items
               p #[a(href="blogpost?"+val) #{registers[val].title}]: #{registers[val].brief}
+
+        // Uncollapse the blog for those who wish to avoid js
+        noscript
+          div(data-parent="#accordion", id=key, aria-labelledby="head"+key)
+                    div.card-body
+                      for val in vals.items
+                        p #[a(href="blogpost?"+val) #{registers[val].title}]: #{registers[val].brief}
+
