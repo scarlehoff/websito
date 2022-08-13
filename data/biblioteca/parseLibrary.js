@@ -15,8 +15,8 @@
 "use-strict";
 const tools = require("./parseUtils");
 
-// Books
-tools.markdown2json("./libros.md", "./libros.json");
-
-// Games
-tools.markdown2json("./videojuegos.md", "./videojuegos.json");
+// Argument 0 is the node executable
+// and 1 this script
+const input_md = process.argv[2];
+const output_json = "./" + process.argv[3];
+tools.markdown2json(input_md, output_json);
