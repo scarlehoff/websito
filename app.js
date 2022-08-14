@@ -7,6 +7,7 @@ var rfs = require("rotating-file-stream");
 // Use helmet to protect the http headers
 // as per https://expressjs.com/en/advanced/best-practice-security.html#use-helmet
 var helmet = require("helmet");
+var isbot = require("isbot");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
@@ -88,6 +89,10 @@ if (fs.existsSync(ipjson)) {
 
   // Create a middleware logger
   stdout_logger = function (req, res, next) {
+    if (isbot(req.get("user-agent"))) {
+      // Skip bots when logging to stdout
+      next();
+    }
     const ip = req.header("X-Real-IP") || req.connection.remoteAddress;
     getIpInfo(ip).then((mapLocation) => {
       // And the request information
