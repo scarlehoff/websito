@@ -26,9 +26,6 @@
     "rotating-file-stream": "^2.0.2",
     "sql.js": "^1.2.2"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.19"
-  },
   "optionalDependencies": {
     "chokidar": "^3.5.3",
     "mv": "^2.1.1",

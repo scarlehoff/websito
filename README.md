@@ -15,7 +15,7 @@ I started this project as a way of learning javascript which I think has been su
 git clone git@github.com:scarlehoff/websito.git
 cd websito
 npm install
-NODE_ENV=production nodemon
+NODE_ENV=production
 ```
 
 Alternatively you can place the `websito.service` file into `/etc/systemd/system/` and run
