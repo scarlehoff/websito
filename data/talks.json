@@ -1,5 +1,33 @@
 [
   {
+    "date": "November 2022",
+    "title": "Theory developments in PDF determination",
+    "conference": "QCD@LHC 2022",
+    "place": "IJCLab Orsay, France",
+    "url": "https://indico.cern.ch/event/1150707/contributions/5150553/",
+    "slides": "https://indico.cern.ch/event/1150707/contributions/5150553/attachments/2554933/4402486/juan_cm.pdf"
+  },
+  {
+    "date": "November 2022",
+    "title": "NNPDF4.0 and the path to reliable uncertainties in PDF determination",
+    "conference": "QCD Seminar",
+    "url": "https://indico.cern.ch/event/1210094/",
+    "place": "CERN, Switzerland",
+    "slides": "https://indico.cern.ch/event/1210094/attachments/2550321/4392988/jcm.pdf"
+  },
+  {
+    "date": "September 2022",
+    "title": "GPU accelerated particle physics",
+    "conference": "Invited seminar",
+    "place": "Nikhef, Amsterdam (The Netherlands)"
+  },
+  {
+    "date": "September 2022",
+    "title": "Status of the NNPDF fitting framework and theory pipeline",
+    "conference": "NNPDF Collaboration Meeting",
+    "place": "Gargnano, Lake Garda (Italy)"
+  },
+  {
     "date": "July 2022",
     "title": "Facilitating GPU acceleration for Monte Carlo simulations",
     "conference": "Invited seminar",

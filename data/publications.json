@@ -1,6 +1,26 @@
 {
   "article": [
     {
+      "author": "Barontini, Andrea and Candido, Alessandro and Cruz-Martinez, Juan and Hekhorn, Felix and Magni, Giacomo and Schwan, Christopher",
+      "title": "Theory pipeline for PDF fitting",
+      "eprint": "2211.10447",
+      "doi": "10.22323/1.414.0784",
+      "journal": "PoS",
+      "volume": "ICHEP2022",
+      "page": "784",
+      "year": "2022"
+    },
+    {
+      "author": "Ball, Richard D. and Candido, Alessandro and Cruz-Martinez, Juan and Forte, Stefano and Giani, Tommaso and Hekhorn, Felix and Kudashkin, Kirill and Magni, Giacomo and Rojo, Juan",
+      "title": "Evidence for intrinsic charm quarks in the proton",
+      "eprint": "2208.08372",
+      "doi": "10.1038/s41586-022-04998-2",
+      "journal": "Nature",
+      "volume": "608",
+      "page": "483--487",
+      "year": "2022"
+    },
+    {
       "author": "Amoroso, S. and others",
       "title": "Snowmass 2021 whitepaper: Proton structure at the precision frontier",
       "eprint": "2203.13923",
@@ -350,6 +370,22 @@
       "docs": "https://docs.nnpdf.science/",
       "url": "https://doi.org/10.5281/zenodo.5362228",
       "description": "An open-source machine learning  framework for global analyses of parton distributions"
+    },
+    {
+      "author": "Andrea Barontini and Felix Hekhorn and Alessandro Candido and Christopher Schwan and Stefano Carrazza and Juan M. Cruz-Martinez",
+      "title": "pineko",
+      "year": "2022",
+      "doi": "10.5281/zenodo.7093029",
+      "url": "https://doi.org/10.5281/zenodo.7093029",
+      "description": "Zenodo"
+    },
+    {
+      "author": "Christopher Schwan and Alessandro Candido and marcozaro and Juan M. Cruz-Martinez and Felix Hekhorn and Stefano Carrazza and Emanuele R. Nocera",
+      "title": "runcards",
+      "year": "2022",
+      "doi": "10.5281/zenodo.7093056",
+      "url": "https://doi.org/10.5281/zenodo.7093056",
+      "description": "Zenodo"
     }
   ]
 }
