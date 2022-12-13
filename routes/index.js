@@ -118,7 +118,14 @@ router.get("/foticos", function (req, res, next) {
 
 router.get("/foto/:fotoidx", function (req, res, next) {
   const foto_list = require("../data/fotos.json");
-  const foto = foto_list[req.params.fotoidx];
+  const foto_idx = req.params.fotoidx;
+  // By default, just show the last picture
+  let idx = 0;
+  // If the visitor is asking for some other picture, let's see whether it makes sense
+  if (foto_idx < foto_list.length && foto_idx >= 0) {
+    idx = foto_list.length-1-foto_idx;
+  }
+  const foto = foto_list[idx];
   res.render("foto", { title: "Foticos", foto: foto});
 });
 
