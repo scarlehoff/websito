@@ -28,11 +28,18 @@
 }
 
 .fotocard {
+    padding: 4px;
     height: 08rem;
 }
 
 .fotolink {
     background-color: #e1e1e1;
+}
+
+.fotorow {
+    margin: 0 auto;
+    margin-bottom: 10px;
+    max-width: 250px;
 }
 
 /* icons */

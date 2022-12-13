@@ -7,7 +7,7 @@ block bodyHead
 block content
   div.row.row-cols-2.row-cols-md-2.g-4
     each foto, idx in foto_list
-      div.col-md-3
-        div.card
-          img.card-img-top.fotocard(src=`./fotos/thumbnail/${foto.photo}`)
-          a.fotolink(href=`./foto/${foto_list.length-idx-1}`) #{foto.date} - #{foto.comment.slice(0,7)}...
+      div.col-md-4
+        div.card.fotorow
+          img.card-img-top.fotocard(src=`/fotos/thumbnail/${foto.photo}`)
+          a.fotolink.stretched-link(href=`/foto/${foto_list.length-idx-1}`) #{foto.date} - #{foto.comment.slice(0,7)}...

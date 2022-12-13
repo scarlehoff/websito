@@ -118,12 +118,18 @@ router.get("/foticos", function (req, res, next) {
 
 router.get("/foto/:fotoidx", function (req, res, next) {
   const foto_list = require("../data/fotos.json");
-  const foto_idx = req.params.fotoidx;
+  const foto_idx = Number(req.params.fotoidx);
+  if (! Number.isInteger(foto_idx) ) {
+    res.redirect(308, "/foticos/");
+    return;
+  }
+  console.log(foto_idx);
   // By default, just show the last picture
-  let idx = 0;
+  const idx = foto_list.length-1-foto_idx;
   // If the visitor is asking for some other picture, let's see whether it makes sense
-  if (foto_idx < foto_list.length && foto_idx >= 0) {
-    idx = foto_list.length-1-foto_idx;
+  if (idx < 0 || idx >= foto_list.length) {
+    res.redirect(302, "/foticos/");
+    return;
   }
   const foto = foto_list[idx];
   res.render("foto", { title: "Foticos", foto: foto});
