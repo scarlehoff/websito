@@ -111,6 +111,17 @@ router.get("/biblioteca", function (req, res, next) {
   res.render("biblioteca/biblioteca", { title: "Biblioteca" });
 });
 
+router.get("/foticos", function (req, res, next) {
+  const foto_list = require("../data/fotos.json");
+  res.render("foticos", { title: "Foticos", foto_list: foto_list });
+});
+
+router.get("/foto/:fotoidx", function (req, res, next) {
+  const foto_list = require("../data/fotos.json");
+  const foto = foto_list[req.params.fotoidx];
+  res.render("foto", { title: "Foticos", foto: foto});
+});
+
 function validMedia(mediaName) {
   return mediaName == "videojuegos" || mediaName == "libros";
 }
