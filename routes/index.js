@@ -125,7 +125,6 @@ router.get("/foto/:fotoidx", function (req, res, next) {
     res.redirect(308, "/foticos/");
     return;
   }
-  console.log(foto_idx);
   // By default, just show the last picture
   const idx = foto_list.length-1-foto_idx;
   // If the visitor is asking for some other picture, let's see whether it makes sense
