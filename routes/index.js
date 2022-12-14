@@ -113,12 +113,14 @@ router.get("/biblioteca", function (req, res, next) {
 
 router.get("/foticos", function (req, res, next) {
   const foto_list = require("../data/fotos.json");
+  res.header("X-robots-tag: noindex");
   res.render("foticos", { title: "Foticos", foto_list: foto_list });
 });
 
 router.get("/foto/:fotoidx", function (req, res, next) {
   const foto_list = require("../data/fotos.json");
   const foto_idx = Number(req.params.fotoidx);
+  res.header("X-robots-tag: noindex");
   if (! Number.isInteger(foto_idx) ) {
     res.redirect(308, "/foticos/");
     return;
@@ -218,7 +220,13 @@ router.get("/blogpost", function (req, res, next) {
 
 router.get("/robots.txt", (req, res, next) => {
   res.type("text/plain");
-  res.send("User-agent: *\nDisallow: /honey.pot");
+  const response = `User-agent: *
+Disallow: /honey.pot
+Disallow: /foticos
+Disallow: /foto/
+Disallow: /*.jpg$
+Disallow: /*.png$`
+  res.send(response);
 });
 
 router.get("/honey.pot", securitySite.blockOrMark);
