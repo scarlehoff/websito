@@ -54,7 +54,7 @@ node logReader.js
 ### Server deployment
 The deployment of the server is done via the software nginx. 
 With nginx it is easy to run the expressjs server in whatever port you want and then proxy the visitors from 80 to 3000
-using the files in `/etc/nginx/sites-available/mysite.conf` (remember to creat the link to `sites-enable`!!).
+using the files in `/etc/nginx/sites-available/mysite.conf` (remember to create the link to `sites-enable`!!).
 
 In particular, the `juacrumar.es.conf` file for me was:
 
