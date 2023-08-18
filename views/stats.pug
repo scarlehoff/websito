@@ -1,5 +1,7 @@
 extends layout
 
+block csp
+
 block extracss
   link(rel='stylesheet', href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css", integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=", crossorigin="anonymous")
   script(src='https://unpkg.com/leaflet@1.6.0/dist/leaflet.js', integrity="sha256-fNoRrwkP2GuYPbNSJmMJOCyfRB2DhPQe0rGTgzRsyso=", crossorigin="anonymous")
@@ -40,8 +42,7 @@ block content
       div.col-2
         button.btn.btn-outline-danger(type='button', id='clearMarkers') Clear
     div.container(style='margin-top: 20px;', id='informationContent')
-  script
-    include stats.js
+  script(src="scripts/stats.js")
   script.
     $('#datetimepickerId').datetimepicker({
         format: 'L'

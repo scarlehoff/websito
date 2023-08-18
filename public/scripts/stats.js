@@ -41,9 +41,8 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   id: "mapbox/satellite-streets-v11",
   tileSize: 512,
   zoomOffset: -1,
-  // TODO: remember to rotate this token or to set some domain limit or whatever when merging (if) to master
   accessToken:
-    "pk.eyJ1Ijoic2NhcmxlaG9mZiIsImEiOiJjazkzOHNwcDEwMmtmM2ZubnZ1bzAxNHhiIn0.u2dsmdZ6Mqd76N3U6T86WQ",
+    "pk.eyJ1Ijoic2NhcmxlaG9mZiIsImEiOiJjbGxnYjdmejIwbWkzM2pxanQ2Z2FsZ2hoIn0.GUkFSgrRB3hJWOuj14M-bg",
 }).addTo(map);
 let savedPositionsLayerGroup = L.layerGroup([]).addTo(map);
 

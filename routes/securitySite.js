@@ -16,7 +16,7 @@ let ipSuspicious = [];
 let ipBlackList = [];
 
 // Time (in miliseconds) that an IP will be blocked
-const banTime = 30 * 60 * 1000;
+const banTime = 60 * 1000;
 
 // Set the functions that act on the ip lists
 // these functions take an ip and output a text/plain response
