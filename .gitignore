@@ -71,3 +71,6 @@ getac.sh
 *.orig
 update_cv.sh
 have_a_look.sh
+data/biblioteca/*.json
+data/biblioteca/Libros
+data/biblioteca/Videojuegos

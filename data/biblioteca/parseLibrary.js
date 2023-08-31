@@ -4,7 +4,7 @@
 // and will evolve alongside those
 // At the moment this syntax is:
 //
-// ## Author
+// <Author Name>.md
 // ### Title of the book
 // <date>
 // Review
@@ -18,5 +18,8 @@ const tools = require("./parseUtils");
 // Argument 0 is the node executable
 // and 1 this script
 const input_md = process.argv[2];
-const output_json = "./" + process.argv[3];
+let output_json = process.argv[3];
+if ( output_json.charAt(0) != '/' ) {
+  output_json = "./" + output_json;
+}
 tools.markdown2json(input_md, output_json);
