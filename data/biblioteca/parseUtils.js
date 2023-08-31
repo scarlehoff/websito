@@ -35,7 +35,6 @@ async function wikiAuthor(entry, lang = "es") {
   author = entry.full_name;
   // Get information about the author through the wikipedia API
   const api_endpoint = `https://${lang}.wikipedia.org/api/rest_v1/page/summary/${author}`;
-  console.log(api_endpoint);
   const author_data = await fetch(api_endpoint)
     .then((response) => {
       return response.json();
