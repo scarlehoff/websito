@@ -1,6 +1,54 @@
 {
   "article": [
     {
+      "author": "Ball, Richard D. and Candido, Alessandro and Cruz-Martinez, Juan and Forte, Stefano and Giani, Tommaso and Hekhorn, Felix and Magni, Giacomo and Nocera, Emanuele R. and Rojo, Juan and Stegeman, Roy",
+      "title": "The intrinsic charm quark valence distribution of the proton",
+      "eprint": "2311.00743",
+      "year": "2023"
+    },
+    {
+      "author": "akel\\",
+      "title": "The LHC as a Neutrino-Ion Collider",
+      "eprint": "2309.09581",
+      "year": "2023"
+    },
+    {
+      "author": "Cruz-Martinez, Juan M. and Robbiati, Matteo and Carrazza, Stefano",
+      "title": "Multi-variable integration with a variational quantum circuit",
+      "eprint": "2308.05657",
+      "year": "2023"
+    },
+    {
+      "author": "Robbiati, Matteo and Cruz-Martinez, Juan M. and Carrazza, Stefano",
+      "title": "Determining probability density functions with adiabatic quantum computing",
+      "eprint": "2303.11346",
+      "year": "2023"
+    },
+    {
+      "author": "Barontini, Andrea and Candido, Alessandro and Cruz-Martinez, Juan M. and Hekhorn, Felix and Schwan, Christopher",
+      "title": "Theory prediction in PDF fitting",
+      "booktitle": "21th International Workshop on Advanced Computing and Analysis Techniques in Physics Research: {AI meets Reality}",
+      "eprint": "2303.07119",
+      "year": "2023",
+      "journal": "21th International Workshop on Advanced Computing and Analysis Techniques in Physics Research: {AI meets Reality}"
+    },
+    {
+      "author": "Barontini, Andrea and Candido, Alessandro and Cruz-Martinez, Juan M. and Hekhorn, Felix and Schwan, Christopher",
+      "title": "Pineline: Industrialization of High-Energy Theory Predictions",
+      "eprint": "2302.12124",
+      "year": "2023"
+    },
+    {
+      "author": "Carrazza, Stefano and Cruz-Martinez, Juan M. and Palazzo, Gabriele",
+      "title": "Extending MadFlow: device-specific optimization",
+      "eprint": "2211.14056",
+      "doi": "10.22323/1.414.0207",
+      "journal": "PoS",
+      "volume": "ICHEP2022",
+      "page": "207",
+      "year": "2022"
+    },
+    {
       "author": "Barontini, Andrea and Candido, Alessandro and Cruz-Martinez, Juan and Hekhorn, Felix and Magni, Giacomo and Schwan, Christopher",
       "title": "Theory pipeline for PDF fitting",
       "eprint": "2211.10447",
@@ -377,15 +425,7 @@
       "year": "2022",
       "doi": "10.5281/zenodo.7093029",
       "url": "https://doi.org/10.5281/zenodo.7093029",
-      "description": "Zenodo"
-    },
-    {
-      "author": "Christopher Schwan and Alessandro Candido and marcozaro and Juan M. Cruz-Martinez and Felix Hekhorn and Stefano Carrazza and Emanuele R. Nocera",
-      "title": "runcards",
-      "year": "2022",
-      "doi": "10.5281/zenodo.7093056",
-      "url": "https://doi.org/10.5281/zenodo.7093056",
-      "description": "Zenodo"
+      "description": "streamlined high energy theory predictions for PDF fitting and beyond"
     }
   ]
 }
