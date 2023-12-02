@@ -1,5 +1,50 @@
 [
   {
+    "date": "November 2023",
+    "title": "Implications of NNPDF4.0 for LHC physics",
+    "conference": "PDF4LHC 2023",
+    "place": "CERN, Switzerland",
+    "url": "https://indico.cern.ch/event/1311146/",
+    "slides": "https://indico.cern.ch/event/1311146/contributions/5617295/attachments/2754580/4796059/2023-11-17%20PDF4LHC%20CERN.pdf"
+  },
+  {
+    "date": "November 2023",
+    "title": "Towards a framework for GPU event generation",
+    "conference": "Event generator' and N(n)LO codes' acceleration",
+    "place": "CERN, Switzerland",
+    "url": "https://indico.cern.ch/event/1312061/",
+    "slides": "https://indico.cern.ch/event/1312061/contributions/5646362/attachments/2751546/4789588/jcm.pdf"
+  },
+  {
+    "date": "September 2023",
+    "title": "Status of the NNPDF framework and data implementation",
+    "conference": "NNPDF Collaboration Meeting",
+    "place": "Gargnano, Lake Garda (Italy)",
+    "url": "https://indico.cern.ch/event/1295984/"
+  },
+  {
+    "date": "September 2023",
+    "title": "Physics with Muons at the FPF (SM pow)",
+    "conference": "FPF Theory Workshop",
+    "place": "CERN, Switzerland",
+    "url": "https://indico.cern.ch/event/1296658/",
+    "slides": "https://indico.cern.ch/event/1296658/contributions/5542024/attachments/2711949/4717540/juanCM_PDFs.pdf"
+  },
+  {
+    "date": "May 2023",
+    "title": "Recent results on PDF extractions",
+    "conference": "LHCP11 2023",
+    "place": "Belgrade, Serbia",
+    "url": "https://indico.cern.ch/event/1198609/",
+    "slides": "https://indico.cern.ch/event/1198609/contributions/5366541/attachments/2653554/4594950/2023_05_25_LHCp_Belgrade.pdf"
+  },
+  {
+    "date": "May 2023",
+    "title": "NNPDF4.0 and the path to reliable uncertainties",
+    "conference": "HEP Theory Seminar",
+    "place": "Brookhaven National Lab. (USA, Virtual)"
+  },
+  {
     "date": "November 2022",
     "title": "Theory developments in PDF determination",
     "conference": "QCD@LHC 2022",
