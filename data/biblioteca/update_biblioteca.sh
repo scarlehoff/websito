@@ -22,6 +22,8 @@ generate_json() {
             node parseLibrary.js "${nota_md}" "${tmp}"
         done
         mv $tmp $output
+        chmod o+r ${output}
+        chmod g+r ${output}
     else
         echo "Folder ${folder} not found"
     fi
