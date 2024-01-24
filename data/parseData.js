@@ -1,12 +1,13 @@
 #!/usr/bin/node
 
 "use strict";
+const homedir = require('os').homedir();
 const fs = require('fs');
 const path = require('path');
 
-const fileIn = "/home/jumax9/Documents/Burocracia/Curriculum Vitae/publications.bib";
+//const fileIn = "/home/jumax9/Documents/Burocracia/Curriculum Vitae/publications.bib";
+const fileIn = path.join(homedir, "Documents/Burocracia/Curriculum Vitae/publications.bib")
 const fileOut = path.join(__dirname, "publications.json");
-
 
 // +++++ Utilities
 

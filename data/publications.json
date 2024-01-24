@@ -1,13 +1,25 @@
 {
   "article": [
     {
+      "author": "Ball, Richard D. and others",
+      "title": "Determination of the theory uncertainties from missing higher orders on NNLO parton distributions with percent accuracy",
+      "eprint": "2401.10319",
+      "year": "2024"
+    },
+    {
+      "author": "Ball, Richard D. and others",
+      "title": "Photons in the proton: implications for the LHC",
+      "eprint": "2401.08749",
+      "year": "2024"
+    },
+    {
       "author": "Ball, Richard D. and Candido, Alessandro and Cruz-Martinez, Juan and Forte, Stefano and Giani, Tommaso and Hekhorn, Felix and Magni, Giacomo and Nocera, Emanuele R. and Rojo, Juan and Stegeman, Roy",
       "title": "The intrinsic charm quark valence distribution of the proton",
       "eprint": "2311.00743",
       "year": "2023"
     },
     {
-      "author": "akel\\",
+      "author": "Cruz-Martinez, Juan M. and Fieg, Max and Giani, Tommaso and Krack, Peter and Makela, Toni and Rabemananjara, Tanjona and Rojo, Juan",
       "title": "The LHC as a Neutrino-Ion Collider",
       "eprint": "2309.09581",
       "year": "2023"
@@ -34,9 +46,13 @@
     },
     {
       "author": "Barontini, Andrea and Candido, Alessandro and Cruz-Martinez, Juan M. and Hekhorn, Felix and Schwan, Christopher",
-      "title": "Pineline: Industrialization of High-Energy Theory Predictions",
+      "title": "Pineline: Industrialization of high-energy theory predictions",
       "eprint": "2302.12124",
-      "year": "2023"
+      "doi": "10.1016/j.cpc.2023.109061",
+      "journal": "Comput. Phys. Commun.",
+      "volume": "297",
+      "page": "109061",
+      "year": "2024"
     },
     {
       "author": "Carrazza, Stefano and Cruz-Martinez, Juan M. and Palazzo, Gabriele",
@@ -70,8 +86,12 @@
     },
     {
       "author": "Amoroso, S. and others",
-      "title": "Snowmass 2021 whitepaper: Proton structure at the precision frontier",
+      "title": "Snowmass 2021 Whitepaper: Proton Structure at the Precision Frontier",
       "eprint": "2203.13923",
+      "doi": "10.5506/APhysPolB.53.12-A1",
+      "journal": "Acta Phys. Polon. B",
+      "volume": "53",
+      "page": "12-A1",
       "year": "2022"
     },
     {
@@ -411,7 +431,7 @@
       "description": "Automating event generation MC simulation on hardware accelerators."
     },
     {
-      "author": "Richard D. Ball and Stefano Carrazza and Juan M. Cruz-Martinez and Luigi Del Debbio and Stefano Forte and Tommaso Giani and Shayan Iranipour and Zahari Kassabov and Jose I. Latorre and Emanuele R. Nocera and Rosalyn L. Pearson and Juan Rojo and Roy Stegeman and Christopher Schwan and Maria Ubiali and Cameron Voisey and Michael Wilson",
+      "author": "NNPDF Collaboration",
       "title": "nnpdf",
       "year": "2021",
       "doi": "10.5281/zenodo.5362228",
@@ -420,7 +440,7 @@
       "description": "An open-source machine learning  framework for global analyses of parton distributions"
     },
     {
-      "author": "Andrea Barontini and Felix Hekhorn and Alessandro Candido and Christopher Schwan and Stefano Carrazza and Juan M. Cruz-Martinez",
+      "author": "NNPDF Collaboration",
       "title": "pineko",
       "year": "2022",
       "doi": "10.5281/zenodo.7093029",

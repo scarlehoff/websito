@@ -1,4 +1,19 @@
 [
+  { 
+    "date": "December 2023",
+    "title": "Towards a framework for GPU event generation",
+    "conference": "Milan Christmas Meeting 2023",
+    "url": "http://indico.cern.ch/event/1338739/",
+    "slides": "https://indico.cern.ch/event/1338739/contributions/5704842/attachments/2775541/4836927/jcm.pdf",
+    "place": "CERN, Switzerland"
+  },
+  {
+    "date": "December 2023",
+    "title": "Why are we still talking about PDFs?",
+    "conference": "Collider Cross Talk",
+    "url": "https://indico.cern.ch/event/1315522/",
+    "place": "CERN, Switzerland"
+  },
   {
     "date": "November 2023",
     "title": "Implications of NNPDF4.0 for LHC physics",
