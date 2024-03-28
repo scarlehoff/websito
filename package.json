@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "debug": "~2.6.9",
-    "express": "~4.17.3",
+    "express": "~4.19.2",
     "express-rate-limit": "^5.5.1",
     "helmet": "^3.23.3",
     "highlight.js": "^10.7.3",
