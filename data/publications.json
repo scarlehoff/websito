@@ -1,34 +1,56 @@
 {
   "article": [
     {
+      "author": "Cruz-Martinez, Juan and Forte, Stefano and Laurenti, Niccolo and Rabemananjara, Tanjona R. and Rojo, Juan",
+      "title": "LO, NLO, and NNLO Parton Distributions for LHC Event Generators",
+      "eprint": "2406.12961",
+      "year": "2024"
+    },
+    {
+      "author": "Ball, Richard D. and others",
+      "title": "The Path to N$^3$LO Parton Distributions",
+      "eprint": "2402.18635",
+      "year": "2024"
+    },
+    {
       "author": "Ball, Richard D. and others",
       "title": "Determination of the theory uncertainties from missing higher orders on NNLO parton distributions with percent accuracy",
       "eprint": "2401.10319",
+      "doi": "10.1140/epjc/s10052-024-12772-z",
+      "journal": "Eur. Phys. J. C",
+      "volume": "84",
+      "page": "517",
       "year": "2024"
     },
     {
       "author": "Ball, Richard D. and others",
       "title": "Photons in the proton: implications for the LHC",
       "eprint": "2401.08749",
+      "doi": "10.1140/epjc/s10052-024-12731-8",
+      "journal": "Eur. Phys. J. C",
+      "volume": "84",
+      "page": "540",
       "year": "2024"
     },
     {
       "author": "Ball, Richard D. and Candido, Alessandro and Cruz-Martinez, Juan and Forte, Stefano and Giani, Tommaso and Hekhorn, Felix and Magni, Giacomo and Nocera, Emanuele R. and Rojo, Juan and Stegeman, Roy",
-      "title": "The intrinsic charm quark valence distribution of the proton",
+      "title": "Intrinsic charm quark valence distribution of the proton",
       "eprint": "2311.00743",
-      "year": "2023"
+      "doi": "10.1103/PhysRevD.109.L091501",
+      "journal": "Phys. Rev. D",
+      "volume": "109",
+      "page": "L091501",
+      "year": "2024"
     },
     {
-      "author": "Cruz-Martinez, Juan M. and Fieg, Max and Giani, Tommaso and Krack, Peter and Makela, Toni and Rabemananjara, Tanjona and Rojo, Juan",
+      "author": "Cruz-Martinez, Juan M. and Fieg, Max and Giani, Tommaso and Krack, Peter and Makela, Toni and Rabemananjara, Tanjona R. and Rojo, Juan",
       "title": "The LHC as a Neutrino-Ion Collider",
       "eprint": "2309.09581",
-      "year": "2023"
-    },
-    {
-      "author": "Cruz-Martinez, Juan M. and Robbiati, Matteo and Carrazza, Stefano",
-      "title": "Multi-variable integration with a variational quantum circuit",
-      "eprint": "2308.05657",
-      "year": "2023"
+      "doi": "10.1140/epjc/s10052-024-12665-1",
+      "journal": "Eur. Phys. J. C",
+      "volume": "84",
+      "page": "369",
+      "year": "2024"
     },
     {
       "author": "Robbiati, Matteo and Cruz-Martinez, Juan M. and Carrazza, Stefano",
@@ -337,6 +359,16 @@
       "page": "066",
       "doi": "10.1007/JHEP10(2016)066",
       "eprint": "1607.08817"
+    },
+    {
+      "doi": "10.1088/2058-9565/ad5866",
+      "url": "https://dx.doi.org/10.1088/2058-9565/ad5866",
+      "year": "2024",
+      "volume": "9",
+      "page": "035053",
+      "author": "Juan M Cruz-Martinez and Matteo Robbiati and Stefano Carrazza",
+      "title": "Multi-variable integration with a variational quantum circuit",
+      "journal": "Quantum Science and Technology"
     },
     {
       "author": "Cruz-Martinez, J.",

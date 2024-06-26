@@ -1,5 +1,25 @@
 [
-  { 
+  {
+    "date": "April 2024",
+    "title": "Phenomenological implications of modern PDF determinations",
+    "conference": "DIS2024",
+    "place": "Grenoble (France)",
+    "url": "https://lpsc-indico.in2p3.fr/event/3268/contributions/7380/",
+    "slides": "https://lpsc-indico.in2p3.fr/event/3268/contributions/7380/attachments/5315/7976/juanCM_pheno.pdf"
+  },
+  {
+    "date": "March 2024",
+    "title": "NNLO Grids in NNPDF from NNLOJET",
+    "conference": "NNLOJET Collaboration  meeting",
+    "place": "Milano (Italy)"
+  },
+  {
+    "date": "February 2024",
+    "title": "Code status and data implementation updates towards NNPDF4.1",
+    "conference": "NNPDF Collaboration meeting",
+    "place": "Amsterdam (The Netherlands)"
+  },
+  {
     "date": "December 2023",
     "title": "Towards a framework for GPU event generation",
     "conference": "Milan Christmas Meeting 2023",
