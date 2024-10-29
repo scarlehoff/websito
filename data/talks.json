@@ -1,7 +1,33 @@
-[
+[  {
+    "date": "October 2024",
+    "title": "PDF constraints from new data and expectations from future experiments",
+    "duration": "5d",
+    "conference": "QCD@LHC 2024",
+    "place": "Freiburg (Germany)",
+    "url": "https://indico.cern.ch/event/1360294/contributions/5782072/",
+    "slides": "https://indico.cern.ch/event/1360294/contributions/5782072/attachments/2944524/5174285/juacrumar_qcdatLHC.pdf"
+  },
+  {
+    "date": "September 2024",
+    "title": "State of the Code",
+    "duration": "3d",
+    "conference": "NNPDF Collaboration Meeting",
+    "place": "Morimondo (Italy)",
+    "url": "https://indico.cern.ch/event/1425978/"
+  },
+  {
+    "date": "September 2024",
+    "title": "Challenges and developments on PDF determination",
+    "duration": "1d",
+    "conference": "Invited Seminar",
+    "url" : "https://indico.ific.uv.es/event/7718/",
+    "place": "IFIC Valencia (Spain)",
+    "slides": "https://nnpdf.mi.infn.it/wp-content/uploads/2024/10/JCruz-Martinez_Valencia_092024.pdf"
+  },
   {
     "date": "April 2024",
     "title": "Phenomenological implications of modern PDF determinations",
+    "duration": "5d",
     "conference": "DIS2024",
     "place": "Grenoble (France)",
     "url": "https://lpsc-indico.in2p3.fr/event/3268/contributions/7380/",
@@ -10,18 +36,21 @@
   {
     "date": "March 2024",
     "title": "NNLO Grids in NNPDF from NNLOJET",
+    "duration": "3d",
     "conference": "NNLOJET Collaboration  meeting",
     "place": "Milano (Italy)"
   },
   {
     "date": "February 2024",
     "title": "Code status and data implementation updates towards NNPDF4.1",
+    "duration": "2d",
     "conference": "NNPDF Collaboration meeting",
     "place": "Amsterdam (The Netherlands)"
   },
   {
     "date": "December 2023",
     "title": "Towards a framework for GPU event generation",
+    "duration": "3d",
     "conference": "Milan Christmas Meeting 2023",
     "url": "http://indico.cern.ch/event/1338739/",
     "slides": "https://indico.cern.ch/event/1338739/contributions/5704842/attachments/2775541/4836927/jcm.pdf",
@@ -30,6 +59,7 @@
   {
     "date": "December 2023",
     "title": "Why are we still talking about PDFs?",
+    "duration": "1d",
     "conference": "Collider Cross Talk",
     "url": "https://indico.cern.ch/event/1315522/",
     "place": "CERN, Switzerland"
@@ -37,6 +67,7 @@
   {
     "date": "November 2023",
     "title": "Implications of NNPDF4.0 for LHC physics",
+    "duration": "1d",
     "conference": "PDF4LHC 2023",
     "place": "CERN, Switzerland",
     "url": "https://indico.cern.ch/event/1311146/",
@@ -45,6 +76,7 @@
   {
     "date": "November 2023",
     "title": "Towards a framework for GPU event generation",
+    "duration": "2d",
     "conference": "Event generator' and N(n)LO codes' acceleration",
     "place": "CERN, Switzerland",
     "url": "https://indico.cern.ch/event/1312061/",
@@ -53,6 +85,7 @@
   {
     "date": "September 2023",
     "title": "Status of the NNPDF framework and data implementation",
+    "duration": "3d",
     "conference": "NNPDF Collaboration Meeting",
     "place": "Gargnano, Lake Garda (Italy)",
     "url": "https://indico.cern.ch/event/1295984/"
@@ -60,6 +93,7 @@
   {
     "date": "September 2023",
     "title": "Physics with Muons at the FPF (SM pow)",
+    "duration": "2d",
     "conference": "FPF Theory Workshop",
     "place": "CERN, Switzerland",
     "url": "https://indico.cern.ch/event/1296658/",
@@ -68,6 +102,7 @@
   {
     "date": "May 2023",
     "title": "Recent results on PDF extractions",
+    "duration": "5d",
     "conference": "LHCP11 2023",
     "place": "Belgrade, Serbia",
     "url": "https://indico.cern.ch/event/1198609/",
@@ -76,12 +111,14 @@
   {
     "date": "May 2023",
     "title": "NNPDF4.0 and the path to reliable uncertainties",
+    "duration": "1d",
     "conference": "HEP Theory Seminar",
     "place": "Brookhaven National Lab. (USA, Virtual)"
   },
   {
     "date": "November 2022",
     "title": "Theory developments in PDF determination",
+    "duration": "5d",
     "conference": "QCD@LHC 2022",
     "place": "IJCLab Orsay, France",
     "url": "https://indico.cern.ch/event/1150707/contributions/5150553/",
@@ -90,6 +127,7 @@
   {
     "date": "November 2022",
     "title": "NNPDF4.0 and the path to reliable uncertainties in PDF determination",
+    "duration": "1d",
     "conference": "QCD Seminar",
     "url": "https://indico.cern.ch/event/1210094/",
     "place": "CERN, Switzerland",
@@ -98,18 +136,21 @@
   {
     "date": "September 2022",
     "title": "GPU accelerated particle physics",
+    "duration": "1d",
     "conference": "Invited seminar",
     "place": "Nikhef, Amsterdam (The Netherlands)"
   },
   {
     "date": "September 2022",
     "title": "Status of the NNPDF fitting framework and theory pipeline",
+    "duration": "3d",
     "conference": "NNPDF Collaboration Meeting",
     "place": "Gargnano, Lake Garda (Italy)"
   },
   {
     "date": "July 2022",
     "title": "Facilitating GPU acceleration for Monte Carlo simulations",
+    "duration": "1d",
     "conference": "Invited seminar",
     "place": "Freiburg (Germany)",
     "url": "http://www.tep.physik.uni-freiburg.de/seminars/fundi"
@@ -117,6 +158,7 @@
   {
     "date": "July 2022",
     "title": "MadFlow: automating Monte Carlo simulation on GPU for particle physics",
+    "duration": "10d",
     "conference": "41th International Conference on High Energy Physics, ICHEP 2022",
     "place": "Bologna (Italy)",
     "url": "https://agenda.infn.it/event/28874/contributions/170197/",
@@ -125,6 +167,7 @@
   {
     "date": "May 2022",
     "title": "Machine Learning in PDF determination: NNPDF4.0",
+    "duration": "5d",
     "conference": "Transversity 2022",
     "url": "https://agenda.infn.it/event/19219/",
     "slides": "https://agenda.infn.it/event/19219/contributions/170916/attachments/91468/124205/juanCM.pdf",
@@ -133,12 +176,14 @@
   {
     "date": "May 2022",
     "title": "Accelerating Monte Carlo simulations across hardware platforms",
+    "duration": "1d",
     "conference": "Invited seminar",
     "place": "USM/LMU Munich (Germany)"
   },
   {
     "date": "November 2021",
     "title": "NNPDF4.0: the path to proton structure at 1\\% accuracy",
+    "duration": "1d",
     "conference": "Invited seminar, Dalitz series",
     "url": "https://inspirehep.net/seminars/1939751",
     "place": "Oxford (UK, Virtual)"
@@ -146,6 +191,7 @@
   {
     "date": "November 2021",
     "title": "GPU acceleration in High Energy Physics",
+    "duration": "5d",
     "conference": "The 2021 International Workshop on the High Energy Circular Electron Positron Collider",
     "url": "https://indico.ihep.ac.cn/event/14938/",
     "slides": "https://indico.ihep.ac.cn/event/14938/session/15/contribution/166/material/slides/0.pdf",
@@ -154,12 +200,14 @@
   {
     "date": "June 2021",
     "title": "Towards a GPU future for particle physics Monte Carlo simulations",
+    "duration": "1d",
     "conference": "Invited Seminar (virtual)",
     "place": "KIT Karlsruhe (Germany)"
   },
   {
     "date": "May 2021",
     "title": "MadFlow: towards the automation of Monte Carlo simulation on GPU for particle physics",
+    "duration": "5d",
     "conference": "25th International Conference on Computing in High-Energy and Nuclear Physics (vCHEP)",
     "url": "https://indico.cern.ch/event/948465/contributions/4324113/",
     "slides": "http://n3pdf.mi.infn.it/wp-content/uploads/2021/05/JuanCM_vCHEP_19052021.pdf",
@@ -168,6 +216,7 @@
   {
     "date": "March 2021",
     "title": "New studies from the NNPDF group",
+    "duration": "1d",
     "conference": "PDF4LHC 2021",
     "slides" : "http://n3pdf.mi.infn.it/wp-content/uploads/2021/04/pdf4lhc_all.pdf",
     "url": "https://indico.cern.ch/event/1002964/contributions/4256827/",
@@ -176,6 +225,7 @@
   {
     "date": "February 2021",
     "title": "Offloading Monte Carlo simulations to hardware accelerators",
+    "duration": "1d",
     "conference": "Milano Joint Phenomenology Seminar",
     "url" : "https://indico.cern.ch/event/1003552/",
     "slides": "https://indico.cern.ch/event/1003552/attachments/2181450/3709100/juanCM.pdf",
@@ -184,6 +234,7 @@
   {
     "date": "February 2021",
     "title": "PDF determination with a quantum hardware",
+    "duration": "1d",
     "conference": "Invited Seminar (virtual)",
     "url" : "https://indico.ific.uv.es/event/6041/",
     "slides": "https://indico.ific.uv.es/event/6041/attachments/8497/10642/juanCM.pdf",
@@ -192,6 +243,7 @@
   {
     "date": "November 2020",
     "title": "PDF/Vegas-Flow",
+    "duration": "5d",
     "conference": "HSF WLCG Virtual Workshop",
     "url" : "https://indico.cern.ch/event/941278/",
     "slides": "https://indico.cern.ch/event/941278/contributions/4095929/attachments/2146217/3619331/juancruzmartinez.pdf",
@@ -200,6 +252,7 @@
   {
     "date": "October 2020",
     "title": "VegasFlow and PDFFlow: accelerating Monte Carlo simulation across multiple devices (joint talk with M. Rossi)",
+    "duration": "1d",
     "conference": "Generator Infrastructure and Tools Subgroup Meeting",
     "url" : "https://indico.cern.ch/event/969470/",
     "slides": "http://n3pdf.mi.infn.it/wp-content/uploads/2020/11/JCruzMartinez_ATLAS_2020.pdf",
@@ -208,6 +261,7 @@
   {
     "date": "August 2020",
     "title": "VegasFlow: accelerating Monte Carlo simulation across platforms",
+    "duration": "10d",
     "conference": "40th International Conference on High Energy Physics, ICHEP",
     "url": "https://ichep2020.org/",
     "slides": "https://indico.cern.ch/event/868940/contributions/3814440/",
@@ -216,6 +270,7 @@
   {
     "date": "February 2020",
     "title": "Optimizing the hyperoptimization",
+    "duration": "2d",
     "conference": "NNPDF Collaboration meeting",
     "url": "https://twitter.com/NNPDF_Team/status/1226783667126751232",
     "place": "Amsterdam (The Netherlands)"
@@ -223,6 +278,7 @@
   {
     "date": "October 2019",
     "title": "Studying the parton content of the proton with deep learning models",
+    "duration": "5d",
     "conference": "Artificial Intelligence for Science, Industry and Society Symposium (AISIS 2019)",
     "slides": "http://n3pdf.mi.infn.it/wp-content/uploads/2019/10/JCruz-Martinez_Mexico_102019.pdf", 
     "url": "https://indico.cern.ch/event/781223/",
@@ -231,6 +287,7 @@
   {
     "date": "September 2019",
     "title": "Methodological improvements in PDF determination",
+    "duration": "3d",
     "conference": "James Stirling Memorial Conference \\& PDF4LHC",
     "slides": "http://n3pdf.mi.infn.it/wp-content/uploads/2019/09/JCruz-Martinez_Durham_092019.pdf",
     "url" : "https://conference.ippp.dur.ac.uk/event/794/",
@@ -239,6 +296,7 @@
   {
     "date": "August 2019",
     "title": "n3fit and hyperoptimization in the context of NNPDF 4.0",
+    "duration": "3d",
     "conference": "NNPDF Collaboration meeting",
     "url": "https://indico.cern.ch/event/825705/",
     "place": "Varenna (Italy)"
@@ -246,6 +304,7 @@
   {
     "date": "July 2019",
     "title": "Towards a new generation of PDFs with deep learning models",
+    "duration": "5d",
     "conference": "QCD@LHC 2019",
     "url" : "https://indico.fnal.gov/event/19380/",
     "slides": "http://n3pdf.mi.infn.it/wp-content/uploads/2019/07/JCruz-Martinez_USA_072019.pdf",
@@ -254,12 +313,14 @@
   {
     "date": "May 2019",
     "title": "Numerical Integration with Neural Networks",
+    "duration": "3d",
     "conference": "NNLOJET Collaboration  meeting",
     "place": "Zurich (Switzerland)"
   },
   {
     "date": "February 2019",
     "title": "N3PDF studies of new methodologies",
+    "duration": "2d",
     "conference": "NNPDF Collaboration meeting",
     "url": "http://nnpdf.mi.infn.it/news/#mce_2",
     "place": "Amsterdam (The Netherlands)"
@@ -267,6 +328,7 @@
   {
     "date": "September 2018",
     "title": "Recent developments within NNLOJET",
+    "duration": "3d",
     "conference": "NNPDF Collaboration \\& N3PDF Kickoff Meeting",
     "url" : "https://indico.cern.ch/event/742441/",
     "slides": "https://indico.cern.ch/event/742441/contributions/3081440/attachments/1716733/2770322/juan.pdf",
@@ -275,6 +337,7 @@
   {
     "date": "May 2018",
     "title": "NNLO corrections to VBF Higgs boson production",
+    "duration": "5d",
     "conference": "Loops and Legs in Quantum Field Theory 2018",
     "url": "https://pos.sissa.it/303/",
     "place": "St. Goar (Germany)"
@@ -282,14 +345,16 @@
   {
     "date": "September 2017",
     "title": "NNLO phenomenology with Antenna Subtraction",
+    "duration": "5d",
     "conference": "HiggsTools Final Meeting",
     "slides": "https://conference.ippp.dur.ac.uk/event/624/contributions/3433/attachments/2909/3162/Juan.pdf",
-    "url": "https://www.ippp.dur.ac.uk/final-higgstools-meeting",
+    "url": "https://conference.ippp.dur.ac.uk/event/624/",
     "place": "Durham (UK)"
   },
   {
     "date": "May 2017",
     "title": "\\phi^*_\\eta observable for Higgs production",
+    "duration": "1d",
     "conference": "Internal Seminar",
     "url": "https://conference.ippp.dur.ac.uk/category/16/",
     "place": "Durham (UK)"
@@ -297,6 +362,7 @@
   {
     "date": "February 2017",
     "title": "Higgs phenomenology with antenna subtraction",
+    "duration": "1d",
     "conference": "Student Seminar",
     "url": "http://www.maths.dur.ac.uk/users/studentseminar/home.php",
     "place": "Durham (UK)"
@@ -304,6 +370,7 @@
   {
     "date": "January 2017",
     "title": "Higgs phenomenology with antenna subtraction",
+    "duration": "1d",
     "conference": "Invited Seminar",
     "url": "https://indico.ific.uv.es/event/2876/",
     "slides": "https://indico.ific.uv.es/event/2876/attachments/3105/3475/presentation.pdf",
@@ -312,6 +379,7 @@
   {
     "date": "April 2016",
     "title": "NNLO calculations for Higgs processes",
+    "duration": "4d",
     "conference": "HiggsTools Second Annual Meeting",
     "slides": "https://indico.cern.ch/event/470228/contributions/1989642/attachments/1256308/1854697/JuanCruzMartinez.pdf",
     "url": "https://indico.cern.ch/event/470228/",
@@ -320,6 +388,7 @@
   {
     "date": "February 2016",
     "title": "Renormalisation Scale Dependence as a Testing Ground for NNLO calculations",
+    "duration": "1d",
     "conference": "Internal Seminar",
     "url": "https://conference.ippp.dur.ac.uk/category/16/",
     "place": "Durham (UK)"
@@ -327,6 +396,7 @@
   {
     "date": "February 2016",
     "title": "Building and Playing with NNLO Monte Carlos",
+    "duration": "1d",
     "conference": "Student Seminar",
     "url": "http://www.maths.dur.ac.uk/users/studentseminar/home.php",
     "place": "Durham (UK)"
@@ -334,6 +404,7 @@
   {
     "date": "April 2015",
     "title": "NNLO predictions for Higgs production at LHC",
+    "duration": "3d",
     "conference": "HiggsTools First Annual Meeting",
     "url": "https://indico.cern.ch/event/373699/",
     "slides": "https://indico.cern.ch/event/373699/contributions/887233/attachments/744339/1021048/6_Juan.pdf",

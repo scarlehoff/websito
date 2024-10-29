@@ -1,15 +1,29 @@
 {
   "article": [
     {
+      "author": "Cruz-Martinez, Juan and Jansen, Aaron and van Oord, Gijs and Rabemananjara, Tanjona R. and Rocha, Carlos M. R. and Rojo, Juan and Stegeman, Roy",
+      "title": "Hyperparameter Optimisation in Deep Learning from Ensemble Methods: Applications to Proton Structure",
+      "eprint": "2410.16248",
+      "year": "2024"
+    },
+    {
       "author": "Cruz-Martinez, Juan and Forte, Stefano and Laurenti, Niccolo and Rabemananjara, Tanjona R. and Rojo, Juan",
-      "title": "LO, NLO, and NNLO Parton Distributions for LHC Event Generators",
+      "title": "LO, NLO, and NNLO parton distributions for LHC event generators",
       "eprint": "2406.12961",
+      "doi": "10.1007/JHEP09(2024)088",
+      "journal": "JHEP",
+      "volume": "09",
+      "page": "088",
       "year": "2024"
     },
     {
       "author": "Ball, Richard D. and others",
-      "title": "The Path to N$^3$LO Parton Distributions",
+      "title": "The path to $\\hbox {N^3\\hbox {LO}$ parton distributions}",
       "eprint": "2402.18635",
+      "doi": "10.1140/epjc/s10052-024-12891-7",
+      "journal": "Eur. Phys. J. C",
+      "volume": "84",
+      "page": "659",
       "year": "2024"
     },
     {
