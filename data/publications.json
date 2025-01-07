@@ -1,6 +1,12 @@
 {
   "article": [
     {
+      "author": "Cridge, Thomas and others",
+      "title": "Combination of aN$^3$LO PDFs and implications for Higgs production cross-sections at the LHC",
+      "eprint": "2411.05373",
+      "year": "2024"
+    },
+    {
       "author": "Cruz-Martinez, Juan and Jansen, Aaron and van Oord, Gijs and Rabemananjara, Tanjona R. and Rocha, Carlos M. R. and Rojo, Juan and Stegeman, Roy",
       "title": "Hyperparameter Optimisation in Deep Learning from Ensemble Methods: Applications to Proton Structure",
       "eprint": "2410.16248",
@@ -70,7 +76,11 @@
       "author": "Robbiati, Matteo and Cruz-Martinez, Juan M. and Carrazza, Stefano",
       "title": "Determining probability density functions with adiabatic quantum computing",
       "eprint": "2303.11346",
-      "year": "2023"
+      "doi": "10.1007/s42484-024-00228-2",
+      "journal": "Quantum Machine Intelligence",
+      "volume": "7",
+      "page": "5",
+      "year": "2025"
     },
     {
       "author": "Barontini, Andrea and Candido, Alessandro and Cruz-Martinez, Juan M. and Hekhorn, Felix and Schwan, Christopher",
