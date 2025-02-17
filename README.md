@@ -1,7 +1,5 @@
 # Personal webpage: https://juacrumar.es
 
-![CodeQL](https://github.com/scarlehoff/websito/workflows/CodeQL/badge.svg)
-
 
 A personal webpage to keep a nice-to-the-eye cv on The Internets.
 
