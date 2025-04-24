@@ -74,3 +74,5 @@ have_a_look.sh
 data/biblioteca/*.json
 data/biblioteca/Libros
 data/biblioteca/Videojuegos
+
+static_version/
