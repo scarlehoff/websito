@@ -35,7 +35,7 @@ app.locals.basedir = path.join(__dirname, "views");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 // flags
-app.use(express.static(path.join(__dirname, "node_modules/mdbootstrap/css/addons")));
+//app.use(express.static(path.join(__dirname, "node_modules/mdbootstrap/css/addons")));
 // sql
 app.use(express.static(path.join(__dirname, "node_modules/sql.js/dist/")));
 app.use(express.static(path.join(__dirname, "public")));
