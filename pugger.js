@@ -137,7 +137,7 @@ for (const [key, authorData] of Object.entries(library)) {
     title: "Biblioteca",
     pagetitle: authorData.full_name,
     author: authorData,
-    originMedia: "Libros"
+    originMedia: "libros"
   },
     "biblioteca/mediaDetail"
   );

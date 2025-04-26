@@ -18,6 +18,10 @@ generate_json() {
 
         for nota_md in ${folder}/*.md
         do
+            if [[ ${nota_md} = *"Errej"* ]]
+            then
+                continue
+            fi
             echo "Reading ${nota_md}"
             node parseLibrary.js "${nota_md}" "${tmp}"
         done
