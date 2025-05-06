@@ -39,7 +39,7 @@ html
                 a.nav-link(href="/resume") Resume 
             li.nav-item(class=(title=="Foticos" ? 'active' : ''))
                 a.nav-link(href="/Foticos") Foticos
-            li.nav-item(class=(title=="Biblioteca" ? 'active' : ''))
+            // li.nav-item(class=(title=="Biblioteca" ? 'active' : ''))
                 a.nav-link(href="/biblioteca") Biblioteca
           ul.navbar-nav.ml-auto
             li.nav-item
@@ -49,6 +49,8 @@ html
             li.nav-item
               a.fab.fa-twitter.nav-link(href="http://twitter.com/juacrumar")
             li.nav-item
+              a.fa-brands.fa-bluesky.nav-link(href="https://bsky.app/profile/juacrumar.es")
+            li.nav-item
               a.fab.fa-linkedin.nav-link(href="https://www.linkedin.com/in/juacrumar/")
           // Links for those w/o js enabled
           noscript
@@ -56,7 +58,7 @@ html
               li.nav-item
                 a.nav-link(href="https://github.com/scarlehoff/") github
               li.nav-item
-                a.nav-link(href="http://twitter.com/juacrumar") twitter
+                a.nav-link(href="https://bsky.app/profile/juacrumar.es") bluesky
               li.nav-item
                 a.nav-link(href="https://www.linkedin.com/in/juacrumar/") linkedin
 
@@ -71,7 +73,7 @@ html
     block footer
       footer.container
         p(align='left')
-        p(align="right") Juan M. Cruz-Martinez (#[a(href="mailto:juacrumar@lairen.eu") juacrumar@lairen.eu] - #[a(href="pgpjuacrumar.asc") key])
+        p(align="right") Juan M. Cruz-Martinez (#[a(href="mailto:juacrumar@lairen.eu") juacrumar@lairen.eu] - #[a(href="pgpjuacrumar.asc") pgp key])
         // Facilitates anchoring
         script(src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js", integrity="sha256-aQmOEF2ZD4NM/xt4hthzREIo/2PFkOX/g01WjxEV7Ys=", crossorigin="anonymous")
         script anchors.add('.anchored');

@@ -117,31 +117,31 @@ pugToHTML("resume", {
   iconmap
 });
 
-pugToHTML("biblioteca", {
-  title: "Biblioteca"
-},
-  "biblioteca/biblioteca"
-);
-
-pugToHTML("biblioteca/libros", {
-  title: "Biblioteca",
-  pagetitle: "Libros",
-  library
-},
-  "biblioteca/media"
-);
-
-// Create all authors
-for (const [key, authorData] of Object.entries(library)) {
-  pugToHTML(`biblioteca/Libros/${key}`, {
-    title: "Biblioteca",
-    pagetitle: authorData.full_name,
-    author: authorData,
-    originMedia: "libros"
-  },
-    "biblioteca/mediaDetail"
-  );
-}
+//pugToHTML("biblioteca", {
+//  title: "Biblioteca"
+//},
+//  "biblioteca/biblioteca"
+//);
+//
+//pugToHTML("biblioteca/libros", {
+//  title: "Biblioteca",
+//  pagetitle: "Libros",
+//  library
+//},
+//  "biblioteca/media"
+//);
+//
+//// Create all authors
+//for (const [key, authorData] of Object.entries(library)) {
+//  pugToHTML(`biblioteca/Libros/${key}`, {
+//    title: "Biblioteca",
+//    pagetitle: authorData.full_name,
+//    author: authorData,
+//    originMedia: "libros"
+//  },
+//    "biblioteca/mediaDetail"
+//  );
+//}
 
 
 // -- JS Webapps --
