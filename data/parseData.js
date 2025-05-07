@@ -132,6 +132,11 @@ fs.readFile(fileIn, (err, textContent) => {
         if (key == 'inproceedings') {
           result["journal"] = result["booktitle"];
           key = 'article';
+          // Don't include proceedings anymore
+          break;
+        }
+        if (result["journal"] && result["journal"].includes("PoS")) {
+          break;
         }
         bibInformation[key].push(result);
         break;

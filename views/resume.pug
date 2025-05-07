@@ -31,7 +31,7 @@ block content
     div.row.rounded.bg-white
       div.col-sm-12(id="tech")
         h2.anchored.text-center(id="techskills") Tech skills
-        p Learning new programming languages or more or less useful libraries has been one of my main hobbies for a long time. In fact, I made this webpage because I wanted to learn to use javascript and node (this page is powered by #[a(href="https://expressjs.com/") Express]). Here I list some of the languages, frameworks and technologies I use in my everyday life and work.
+        p Learning new programming languages or more or less useful libraries has been one of my main hobbies for a long time. In fact, this webpage only exists because I wanted to learn to use javascript and node. The content is generated using the #[a(href="https://pugjs.org/api/getting-started.html") pug] templating engine while the static content is generated with custom code. Here I list some of the languages, frameworks and technologies I use in my everyday life and work.
         each desc, tech in resume.technologies
           - var iconName = iconmap[tech];
           if iconName

@@ -122,14 +122,6 @@
     },
     {
       "author": "Barontini, Andrea and Candido, Alessandro and Cruz-Martinez, Juan M. and Hekhorn, Felix and Schwan, Christopher",
-      "title": "Theory prediction in PDF fitting",
-      "booktitle": "21th International Workshop on Advanced Computing and Analysis Techniques in Physics Research: {AI meets Reality}",
-      "eprint": "2303.07119",
-      "year": "2023",
-      "journal": "21th International Workshop on Advanced Computing and Analysis Techniques in Physics Research: {AI meets Reality}"
-    },
-    {
-      "author": "Barontini, Andrea and Candido, Alessandro and Cruz-Martinez, Juan M. and Hekhorn, Felix and Schwan, Christopher",
       "title": "Pineline: Industrialization of high-energy theory predictions",
       "eprint": "2302.12124",
       "doi": "10.1016/j.cpc.2023.109061",
@@ -137,26 +129,6 @@
       "volume": "297",
       "page": "109061",
       "year": "2024"
-    },
-    {
-      "author": "Carrazza, Stefano and Cruz-Martinez, Juan M. and Palazzo, Gabriele",
-      "title": "Extending MadFlow: device-specific optimization",
-      "eprint": "2211.14056",
-      "doi": "10.22323/1.414.0207",
-      "journal": "PoS",
-      "volume": "ICHEP2022",
-      "page": "207",
-      "year": "2022"
-    },
-    {
-      "author": "Barontini, Andrea and Candido, Alessandro and Cruz-Martinez, Juan and Hekhorn, Felix and Magni, Giacomo and Schwan, Christopher",
-      "title": "Theory pipeline for PDF fitting",
-      "eprint": "2211.10447",
-      "doi": "10.22323/1.414.0784",
-      "journal": "PoS",
-      "volume": "ICHEP2022",
-      "page": "784",
-      "year": "2022"
     },
     {
       "author": "Ball, Richard D. and Candido, Alessandro and Cruz-Martinez, Juan and Forte, Stefano and Giani, Tommaso and Hekhorn, Felix and Kudashkin, Kirill and Magni, Giacomo and Rojo, Juan",
@@ -177,14 +149,6 @@
       "volume": "53",
       "page": "12-A1",
       "year": "2022"
-    },
-    {
-      "author": "Campbell, J. M. and others",
-      "title": "Event Generators for High-Energy Physics Experiments",
-      "booktitle": "2022 Snowmass Summer Study",
-      "eprint": "2203.11110",
-      "year": "2022",
-      "journal": "2022 Snowmass Summer Study"
     },
     {
       "author": "Carrazza, Stefano and Cruz-Martinez, Juan M. and Stegeman, Roy",
@@ -237,14 +201,6 @@
       "year": "2021"
     },
     {
-      "author": "Carrazza, Stefano and Cruz-Martinez, Juan and Rossi, Marco and Zaro, Marco",
-      "title": "Towards the automation of Monte Carlo simulation on GPU for particle physics processes",
-      "booktitle": "25th International Conference on Computing in High-Energy and Nuclear Physics",
-      "eprint": "2105.10529",
-      "year": "2021",
-      "journal": "25th International Conference on Computing in High-Energy and Nuclear Physics"
-    },
-    {
       "author": "Carrazza, Stefano and Cruz-Martinez, Juan M. and Rabemananjara, Tanjona R.",
       "title": "Compressing PDF sets using generative adversarial networks",
       "eprint": "2104.04535",
@@ -265,16 +221,6 @@
       "year": "2021"
     },
     {
-      "author": "Rossi, Marco and Carrazza, Stefano and Cruz-Martinez, Juan M.",
-      "title": "PDFFlow: hardware accelerating parton density access",
-      "booktitle": "40th International Conference on High Energy Physics",
-      "eprint": "2012.08221",
-      "doi": "10.5821/zenodo.4286175",
-      "year": "2020",
-      "url": "https://pos.sissa.it/390/921/",
-      "journal": "40th International Conference on High Energy Physics"
-    },
-    {
       "author": "Perez-Salinas, Adrian and Cruz-Martinez, Juan and Alhajri, Abdulla A. and Carrazza, Stefano",
       "title": "Determining the proton content with a quantum computer",
       "eprint": "2011.13934",
@@ -282,25 +228,6 @@
       "journal": "Phys. Rev. D",
       "volume": "103",
       "page": "034027",
-      "year": "2021"
-    },
-    {
-      "author": "Carrazza, Stefano and Cruz-Martinez, Juan M.",
-      "title": "VegasFlow: accelerating Monte Carlo simulation across platforms",
-      "booktitle": "40th International Conference on High Energy Physics",
-      "eprint": "2010.09341",
-      "year": "2020",
-      "url": "https://pos.sissa.it/390/906/",
-      "journal": "40th International Conference on High Energy Physics"
-    },
-    {
-      "author": "Carrazza, Stefano and Cruz-Martinez, Juan M. and Schwan, Christopher",
-      "title": "Constructing PineAPPL grids on hardware accelerators",
-      "eprint": "2009.11798",
-      "doi": "10.22323/1.382.0057",
-      "journal": "PoS",
-      "volume": "LHCP2020",
-      "page": "057",
       "year": "2021"
     },
     {
@@ -315,15 +242,6 @@
       "eprint": "2009.06635"
     },
     {
-      "author": "Amoroso, S. and others",
-      "title": "Les Houches 2019: Physics at TeV Colliders: Standard Model Working Group Report",
-      "booktitle": "11th Les Houches Workshop on Physics at TeV Colliders: {PhysTeV Les Houches}",
-      "eprint": "2003.01700",
-      "url": "http://cds.cern.ch/record/2712776",
-      "year": "2020",
-      "journal": "11th Les Houches Workshop on Physics at TeV Colliders: {PhysTeV Les Houches}"
-    },
-    {
       "author": "Carrazza, Stefano and Cruz-Martinez, Juan M.",
       "title": "VegasFlow: accelerating Monte Carlo simulation across multiple hardware platforms",
       "eprint": "2002.12921",
@@ -332,15 +250,6 @@
       "volume": "254",
       "page": "107376",
       "year": "2020"
-    },
-    {
-      "author": "Cruz-Martinez, Juan M. and Carrazza, Stefano and Stegeman, Roy",
-      "title": "Studying the parton content of the proton with deep learning models",
-      "booktitle": "Artificial Intelligence for Science, Industry and Society",
-      "eprint": "2002.06587",
-      "doi": "10.22323/1.372.0008",
-      "year": "2020",
-      "journal": "Artificial Intelligence for Science, Industry and Society"
     },
     {
       "author": "Carrazza, Stefano and Cruz-Martinez, Juan and Urtasun-Elizari, Jesús and Villa, Emilio",
@@ -373,16 +282,6 @@
       "eprint": "1902.04070"
     },
     {
-      "author": "Cruz-Martinez, Juan and Glover, E. W. Nigel and Gehrmann,  Thomas and Huss, Alexander",
-      "title": "NNLO corrections to VBF Higgs boson production",
-      "journal": "PoS",
-      "volume": "LL2018",
-      "year": "2018",
-      "page": "003",
-      "doi": "10.22323/1.303.0003",
-      "eprint": "1807.07908"
-    },
-    {
       "author": "Cruz-Martinez, J. and Gehrmann, T. and Glover, E. W. N. and Huss, A.",
       "title": "Second-order QCD effects in Higgs boson production through vector boson fusion",
       "journal": "Phys. Lett.",
@@ -391,16 +290,6 @@
       "page": "672-677",
       "doi": "10.1016/j.physletb.2018.04.046",
       "eprint": "1802.02445"
-    },
-    {
-      "author": "Gehrmann, Thomas and others",
-      "title": "Jet cross sections and transverse momentum distributions with NNLOJET",
-      "journal": "PoS",
-      "volume": "RADCOR2017",
-      "year": "2018",
-      "page": "074",
-      "doi": "10.22323/1.290.0074",
-      "eprint": "1801.06415"
     },
     {
       "author": "Boggia, M. and others",
@@ -440,15 +329,6 @@
       "year": "2018",
       "page": "277-284",
       "doi": "10.5506/APhysPolBSupp.11.277"
-    },
-    {
-      "author": "Stegeman, Roy and Carrazza, Stefano and Cruz-Martinez, Juan",
-      "title": "Small $x$ extrapolation for parton distributions",
-      "doi": "10.22323/1.398.0371",
-      "journal": "PoS",
-      "volume": "EPS-HEP2021",
-      "page": "371",
-      "year": "2022"
     }
   ],
   "software": [
