@@ -1,6 +1,40 @@
 {
   "article": [
     {
+      "author": "Huss, A. and others",
+      "title": "NNLOJET: a parton-level event generator for jet cross sections at NNLO QCD accuracy",
+      "eprint": "2503.22804",
+      "year": "2025"
+    },
+    {
+      "author": "Cruz-Martinez, Juan and Hasenack, Toon and Hekhorn, Felix and Magni, Giacomo and Nocera, Emanuele R. and Rabemananjara, Tanjona R. and Rojo, Juan and Sharma, Tanishq and van Seeventer, Gijs",
+      "title": "NNPDFpol2.0: unbiased global determination of polarized PDFs and their uncertainties at next-to-next-to-leading order",
+      "eprint": "2503.11814",
+      "year": "2025"
+    },
+    {
+      "author": "Cruz-Martinez, Juan M. and De Laurentis, Giuseppe and Pellen, Mathieu",
+      "title": "Accelerating Berends-Giele recursion for gluons in arbitrary dimensions over finite fields",
+      "eprint": "2502.07060",
+      "year": "2025"
+    },
+    {
+      "author": "Cruz-Martinez, Juan and Huss, Alexander and Schwan, Christopher",
+      "title": "Fast interpolation grids for the Drell\\textendash{Yan process}",
+      "eprint": "2501.13167",
+      "doi": "10.1140/epjc/s10052-025-14170-5",
+      "journal": "Eur. Phys. J. C",
+      "volume": "85",
+      "page": "459",
+      "year": "2025"
+    },
+    {
+      "author": "Chiefa, Amedeo and Costantini, Mark N. and Cruz-Martinez, Juan and Nocera, Emanuele R. and Rabemananjara, Tanjona R. and Rojo, Juan and Sharma, Tanishq and Stegeman, Roy and Ubiali, Maria",
+      "title": "Parton distributions confront LHC Run II data: a quantitative appraisal",
+      "eprint": "2501.10359",
+      "year": "2025"
+    },
+    {
       "author": "Cridge, Thomas and others",
       "title": "Combination of aN$^3$LO PDFs and implications for Higgs production cross-sections at the LHC",
       "eprint": "2411.05373",
@@ -8,9 +42,13 @@
     },
     {
       "author": "Cruz-Martinez, Juan and Jansen, Aaron and van Oord, Gijs and Rabemananjara, Tanjona R. and Rocha, Carlos M. R. and Rojo, Juan and Stegeman, Roy",
-      "title": "Hyperparameter Optimisation in Deep Learning from Ensemble Methods: Applications to Proton Structure",
+      "title": "Hyperparameter optimisation in deep learning from ensemble methods: applications to proton structure",
       "eprint": "2410.16248",
-      "year": "2024"
+      "doi": "10.1088/2632-2153/adcd39",
+      "journal": "Mach. Learn. Sci. Tech.",
+      "volume": "6",
+      "page": "025027",
+      "year": "2025"
     },
     {
       "author": "Cruz-Martinez, Juan and Forte, Stefano and Laurenti, Niccolo and Rabemananjara, Tanjona R. and Rojo, Juan",
