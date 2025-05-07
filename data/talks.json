@@ -1,5 +1,13 @@
 [   
 {
+    "date": "March 2025",
+    "title": "Challenges and developments in the determination of Parton Distribution Functions",
+    "duration": "3d",
+    "conference": "Invited Seminar",
+    "place": "Cambridge University (UK)",
+    "url": "https://talks.cam.ac.uk/talk/index/227113"
+  },
+  {
     "date": "November 2024",
     "title": "PDF determination and the EIC: impact and opportunities",
     "duration": "3d",
@@ -123,6 +131,7 @@
     "title": "NNPDF4.0 and the path to reliable uncertainties",
     "duration": "1d",
     "conference": "HEP Theory Seminar",
+    "url": "https://www.bnl.gov/event.php?q=18865",
     "place": "Brookhaven National Lab. (USA, Virtual)"
   },
   {
@@ -148,6 +157,7 @@
     "title": "GPU accelerated particle physics",
     "duration": "1d",
     "conference": "Invited seminar",
+    "url": "https://indico.nikhef.nl/event/3899/",
     "place": "Nikhef, Amsterdam (The Netherlands)"
   },
   {

@@ -23,7 +23,7 @@
       "title": "NNPDF",
       "documentation" : "https://docs.nnpdf.science/",
       "repository" : "https://github.com/NNPDF/nnpdf/",
-      "description" : "An open-source machine learning framework for global analyses of parton distributions. It uses Neural Networks to model the parton-content of the proton."
+      "description" : "I am the main maintainer and Research and Development coordinator of NNPDF, an open-source machine learning framework for global analyses of parton distributions. It uses Neural Networks to model the parton-content of the proton."
     },
     {
       "title": "MadFlow",

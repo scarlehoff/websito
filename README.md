@@ -3,9 +3,11 @@
 
 A personal webpage to keep a nice-to-the-eye cv on The Internets.
 
-The server is expressjs and most of the random scripts that do things (log the visitors, parse the log data, etc) are done using javascript.
+While only a small portion of the site needs a backend infrastructure and can be provided as a static site,
+this repository also includes the code for running a expressjs server.
+It also includes most of the scripts that I have used at several stages when building this page.
 
-I started this project as a way of learning javascript which I think has been successful.
+I started this project as a way of learning javascript which I think has been successful :)
 
 #### Dev deployement
 
