@@ -1,10 +1,10 @@
 extends layout
 
 block bodyHead
-  p As a particle phenomenologist with a focus on computation, my research it's half way between the experimental and theoretical worlds, without fully falling in any of them. Putting it in layman terms, I use theoretical models to compute simulations that can then be tested by my experimentalist colleagues in the various experiments across the globe (most of them, actually, in Geneva (Switzerland)).
-  p Of the wide world of particle physics, my work is mainly within the realm of Quantum Chromodynamics. My aim is to obtain more precise predictions with more faithful errors which can then be compared to the experiments. I am part of the #[a(href="https://nnpdf.science") NNPDF collaboration] where we apply Machine Learning techniques to investigate the internal content of the proton.
-  p In the computational side, my research is on Machine Learning, Monte Carlo simulations and hardware acceleration. They are all pieces of the same big puzzle: artificial intelligence is used to model the internal structure of the colliding protons, the theory of Quantum Chromodynamics allows us to model what happens after the collision. The resulting complicated integrals are then computed using Monte Carlo methods. This computations are very complex (and costly!) and thus the usage of grid computing or GPUs becomes essential.
-  p In this page you can read a bit more about what I do and also find an up to date list of all my #[a(href="#papers") papers], #[a(href="#talks") talks] and open-sourced published #[a(href="#software") software]. My ORCiD number is #[a(href="https://orcid.org/0000-0002-8061-1965") 0000-0002-8061-1965].
+  p As a particle phenomenologist with a strong focus on computation, my research sits halfway between the experimental and theoretical worlds, without fully belonging to either. In simpler terms, I use theoretical models to compute simulations that can then be tested by my experimentalist colleagues in the various experiments across the globe (most of them, actually, in Geneva (Switzerland)).
+  p Of the wide world of particle physics, my work is primarily within the realm of Quantum Chromodynamics. My goal is to produce increasingly precise predictions with reliable and robust uncertainties which can then be meaningfully compared to the experiments. I am part of the #[a(href="https://nnpdf.science") NNPDF collaboration] where we apply Machine Learning techniques to investigate the internal content of the proton.
+  p On the computational side, my research involves Machine Learning, Monte Carlo simulations and hardware acceleration. They are all pieces of the same big puzzle: artificial intelligence is used to model the internal structure of the colliding protons, the theory of Quantum Chromodynamics allows us to model what happens after the collision. The resulting complicated integrals are then computed using Monte Carlo methods. These computations are very complex (and costly!) and thus the use of grid computing or GPUs becomes essential.
+  p On this page you can read a bit more about what I do and also find an up to date list of all my #[a(href="#papers") papers], #[a(href="#talks") talks] and open-sourced published #[a(href="#software") software]. My ORCiD number is #[a(href="https://orcid.org/0000-0002-8061-1965") 0000-0002-8061-1965].
   p !{extra_content}
 
 block content
@@ -60,7 +60,7 @@ block content
           tr 
             th #{item['title']}
             th 
-             a(href=item['url']) #{item['conference']}
+            a(href=item['url']) #{item['conference']}
             td #{item['place']}
             td #{item['date']}
             if item['slides']

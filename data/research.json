@@ -1,7 +1,7 @@
 [
   {
-    "title" : "Machine Learning",
-    "text" : "A branch of Artificial Intelligence, this scientific discipline uses automated learning to perform tasks without knowing the necessary explicit instructions. We use ML algorithms in order construct mathematical models which, based on sample data (commonly known as training data), are able to make prediction on data that the model has never seen. Nowadays machine learning techniques are widespread in the world of physics (jet tagging, model building, pdf determination, ...) and beyond (email filtering, computer vision, ...). Currently my main topic of research as part of <a href='http://n3pdf.mi.infn.it'>N3PDF</a> consist on the application of ML techniques to the <a href='https://link.springer.com/article/10.1140/epjc/s10052-019-7197-2'>determination of the internal structure of the proton</a>.",
+    "title" : "Machine Learning and Artificial Intelligence",
+    "text" : "This scientific discipline uses automated learning to perform tasks without necessarily knowing the necessary explicit instructions. We use ML algorithms in order construct mathematical models which, based on sample data (commonly known as training data), are able to make prediction on data that the model has never seen. Nowadays machine learning techniques are widespread in the world of physics (jet tagging, model building, pdf determination, ...) and beyond (email filtering, computer vision, ...). Currently my main topic of research as part of <a href='http://n3pdf.mi.infn.it'>N3PDF</a> consist on the application of ML techniques to the <a href='https://link.springer.com/article/10.1140/epjc/s10052-019-7197-2'>determination of the internal structure of the proton</a>.",
     "thumbnail" : ["/images/neural.png", 200, 200],
     "active" : true,
     "left" : true
@@ -14,8 +14,8 @@
     "active" : true
   },
   {
-    "title" : "QCD corrections to Higgs physics",
-    "text" : "The Higgs boson is at the center of the physics program of the LHC at CERN. After its discovery in 2012, the effort of the phenomenological community (hep-ph) has been focused on the more precise determination of its properties.<p>I have worked on some of the most precise calculations for the determination of the corrections due to Quantum Chromodynamics (QCD) effects to Higgs boson production on the <a href='https://doi.org/10.1007/JHEP10(2016)066'>gluon fusion</a> and <a href='https://doi.org/10.1016/j.physletb.2018.04.046'>Vector Boson Fusion</a> (VBF) production channels.",
+    "title" : "Fixed-Order calculations in QCD",
+    "text": "Fixed-order calculations in perturbative Quantum Chromodynamics (QCD) provides precise theoretical predictions for processes studied at the LHC and other high-energy colliders. These calculations help us understand how quarks and gluons interact and how their dynamics manifest in experimentally measurable quantities.<p>I have worked on some of the most precise calculations for the determination of the corrections due to Quantum Chromodynamics (QCD) effects to Higgs boson production on the <a href='https://doi.org/10.1007/JHEP10(2016)066'>gluon fusion</a> and <a href='https://doi.org/10.1016/j.physletb.2018.04.046'>Vector Boson Fusion</a> (VBF) production channels.",
     "thumbnail": ["/images/cms-event.jpg", 300, 200],
     "left" : true,
     "active" : true
@@ -28,7 +28,7 @@
     "active" : true
   },
   {
-    "title" : "New Hardware in High Energy Physics",
+    "title" : "New Hardware in High Energy Physics: GPUs and Quantum Computing",
     "text"  : "Very complicated calculations are also very costly in terms of computing resources. As a result physics at the frontier of knowledge require technologies at the frontier of software and hardware. I am also dedicated to adapt these very complicated calculations to hardware accelerators which have seen an amazing development during the last decades. With a focus on Graphical Processing Units (<b>GPUs</b>) with packages like <a href='https://arxiv.org/abs/2002.12921'>Vegasflow</a> or <a href='https://pdfflow.readthedocs.io/en/latest/'>PDFFlow</a>, we are also considering Field Programmable Gate Arrays (FPGAs) or, more recently, we are exploring the usage of quantum circuits as co-processor in order to accelerate calculation, such as the <a href='https://arxiv.org/abs/2011.13934'>QPDF</a> for PDF fitting using Variational Quantum Circuits.",
     "thumbnail": ["/images/qpdf.png", 300, 200],
     "left" : true,
