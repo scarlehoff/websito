@@ -26,6 +26,12 @@
       "description" : "I am the main maintainer and Research and Development coordinator of NNPDF, an open-source machine learning framework for global analyses of parton distributions. It uses Neural Networks to model the parton-content of the proton."
     },
     {
+      "title": "pybliotecario",
+      "documentation" : "https://github.com/scarlehoff/pybliotecario/wiki",
+      "repository" : "https://github.com/scarlehoff/pybliotecario",
+      "description" : "A Telegram bot written en python with some features to make (my own) life easier. The main goal of the program is to mantain an active connection between the computer in which the pybliotecario runs and your Telegram account."
+    },
+    {
       "title": "MadFlow",
       "documentation" : "https://madflow.readthedocs.io//",
       "repository" : "https://github.com/N3PDF/madflow/",
@@ -48,12 +54,6 @@
       "documentation" : "https://scarlehoff.github.io/pyHepGrid",
       "repository" : "https://github.com/scarlehoff/pyhepgrid",
       "description" : "Tool for distributed computing management geared towards HEP applications."
-    },
-    {
-      "title": "pybliotecario",
-      "documentation" : "https://github.com/scarlehoff/pybliotecario/wiki",
-      "repository" : "https://github.com/scarlehoff/pybliotecario",
-      "description" : "Simple Telegram bot written en python. The goal of the program is to mantain an active connection between the computer in which the pybliotecario runs and your Telegram account."
     }
   ]
 }
