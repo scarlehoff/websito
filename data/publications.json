@@ -1,6 +1,16 @@
 {
   "article": [
     {
+      "author": "Ball, Richard D. and Barontini, Andrea and Cruz-Martinez, Juan and Forte, Stefano and Hekhorn, Felix and Nocera, Emanuele R. and Rojo, Juan and Stegeman, Roy",
+      "title": "A determination of alpha_s(m_Z) at aN3LO QCD x NLO QED accuracy from a global PDF analysis}",
+      "eprint": "2506.13871",
+      "doi": "10.1140/epjc/s10052-025-14676-y",
+      "journal": "Eur. Phys. J. C",
+      "volume": "85",
+      "page": "1001",
+      "year": "2025"
+    },
+    {
       "author": "Huss, A. and others",
       "title": "NNLOJET: a parton-level event generator for jet cross sections at NNLO QCD accuracy",
       "eprint": "2503.22804",
@@ -8,14 +18,22 @@
     },
     {
       "author": "Cruz-Martinez, Juan and Hasenack, Toon and Hekhorn, Felix and Magni, Giacomo and Nocera, Emanuele R. and Rabemananjara, Tanjona R. and Rojo, Juan and Sharma, Tanishq and van Seeventer, Gijs",
-      "title": "NNPDFpol2.0: unbiased global determination of polarized PDFs and their uncertainties at next-to-next-to-leading order",
+      "title": "NNPDFpol2.0: a global determination of polarised PDFs and their uncertainties at next-to-next-to-leading order",
       "eprint": "2503.11814",
+      "doi": "10.1007/JHEP07(2025)168",
+      "journal": "JHEP",
+      "volume": "07",
+      "page": "168",
       "year": "2025"
     },
     {
       "author": "Cruz-Martinez, Juan M. and De Laurentis, Giuseppe and Pellen, Mathieu",
-      "title": "Accelerating Berends-Giele recursion for gluons in arbitrary dimensions over finite fields",
+      "title": "Accelerating Berends{\\textendashGiele recursion for gluons in arbitrary dimensions over finite fields}",
       "eprint": "2502.07060",
+      "doi": "10.1140/epjc/s10052-025-14318-3",
+      "journal": "Eur. Phys. J. C",
+      "volume": "85",
+      "page": "590",
       "year": "2025"
     },
     {
@@ -32,13 +50,21 @@
       "author": "Chiefa, Amedeo and Costantini, Mark N. and Cruz-Martinez, Juan and Nocera, Emanuele R. and Rabemananjara, Tanjona R. and Rojo, Juan and Sharma, Tanishq and Stegeman, Roy and Ubiali, Maria",
       "title": "Parton distributions confront LHC Run II data: a quantitative appraisal",
       "eprint": "2501.10359",
+      "doi": "10.1007/JHEP07(2025)067",
+      "journal": "JHEP",
+      "volume": "07",
+      "page": "067",
       "year": "2025"
     },
     {
       "author": "Cridge, Thomas and others",
       "title": "Combination of aN$^3$LO PDFs and implications for Higgs production cross-sections at the LHC",
       "eprint": "2411.05373",
-      "year": "2024"
+      "doi": "10.1088/1361-6471/adde78",
+      "journal": "J. Phys. G",
+      "volume": "52",
+      "page": "6",
+      "year": "2025"
     },
     {
       "author": "Cruz-Martinez, Juan and Jansen, Aaron and van Oord, Gijs and Rabemananjara, Tanjona R. and Rocha, Carlos M. R. and Rojo, Juan and Stegeman, Roy",

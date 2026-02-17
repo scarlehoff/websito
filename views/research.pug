@@ -60,7 +60,8 @@ block content
           tr 
             th #{item['title']}
             th 
-            a(href=item['url']) #{item['conference']}
+            td
+              a(href=item['url']) #{item['conference']}
             td #{item['place']}
             td #{item['date']}
             if item['slides']
