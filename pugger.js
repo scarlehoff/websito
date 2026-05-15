@@ -117,6 +117,10 @@ pugToHTML("resume", {
   iconmap
 });
 
+pugToHTML("teaching", {
+  title: "Resume",
+});
+
 //pugToHTML("biblioteca", {
 //  title: "Biblioteca"
 //},
