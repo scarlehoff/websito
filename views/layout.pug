@@ -1,16 +1,31 @@
 doctype html
 html
   head
+    -
+      const extraScriptHashes = (typeof cspScriptHashes !== "undefined" && Array.isArray(cspScriptHashes)) ? cspScriptHashes.join(" ") : "";
+      const scriptSrc = [
+        "'self'",
+        "kit.fontawesome.com",
+        "cdn.jsdelivr.net",
+        "code.jquery.com",
+        "stackpath.bootstrapcdn.com",
+        "'sha256-+LV2isFC2hC0gXPadTuf/LPvHK75pq0t58QYBR5IPVY='",
+        extraScriptHashes
+      ].filter(Boolean).join(" ");
+      const cspContent = [
+        "default-src 'self'",
+        "img-src 'self' data: https://*",
+        `script-src ${scriptSrc}`,
+        "style-src 'self' 'unsafe-inline' stackpath.bootstrapcdn.com cdn.materialdesignicons.com cdn.rawgit.com cdn.jsdelivr.net",
+        "font-src 'self' ka-f.fontawesome.com cdn.jsdelivr.net data:",
+        "object-src 'none'",
+        "connect-src 'self' ka-f.fontawesome.com inspirehep.net"
+      ].join("; ");
     block csp
-      meta(http-equiv="Content-Security-Policy", charset="UTF-8", content="default-src 'self'; \
-        img-src 'self' data: https://* ;\
-        script-src 'self' kit.fontawesome.com cdn.jsdelivr.net code.jquery.com stackpath.bootstrapcdn.com 'sha256-+LV2isFC2hC0gXPadTuf/LPvHK75pq0t58QYBR5IPVY=';\
-        style-src 'self' 'unsafe-inline' stackpath.bootstrapcdn.com cdn.materialdesignicons.com cdn.rawgit.com cdn.jsdelivr.net ;\
-        font-src 'self' ka-f.fontawesome.com cdn.jsdelivr.net data: ;\
-        object-src 'none' ;\
-        connect-src 'self' ka-f.fontawesome.com inspirehep.net")
+      meta(http-equiv="Content-Security-Policy", charset="UTF-8", content=cspContent)
     block title
     title= pagetitle ? pagetitle : title
+    block metadata
     meta(name="active-menu", content=menuId)
     block extracss
     meta(name="viewport", content="width=device-width, initial-scale=1")

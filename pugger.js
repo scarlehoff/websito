@@ -53,6 +53,7 @@ function pugToHTML(filename, config, pugfilename = null) {
 
 // Variables and json files
 const nameTitle = "Juan Manuel Cruz Martinez, PhD";
+const { getIndexMetadata } = require(path.join(dataPath, "indexMetadata.js"));
 // Research
 const research = require(path.join(dataPath, "research.json"));
 const pubInfo = require(path.join(dataPath, "publications.json"));
@@ -92,6 +93,7 @@ pugToHTML("index", {
     title: nameTitle,
     headertitle: nameTitle,
     pagetitle: "Juan Cruz-Martinez",
+    ...getIndexMetadata(),
 });
 
 pugToHTML("research", {

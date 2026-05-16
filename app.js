@@ -92,6 +92,7 @@ if (fs.existsSync(ipjson)) {
     if (isbot(req.get("user-agent"))) {
       // Skip bots when logging to stdout
       next();
+      return;
     }
     const ip = req.header("X-Real-IP") || req.connection.remoteAddress;
     getIpInfo(ip).then((mapLocation) => {

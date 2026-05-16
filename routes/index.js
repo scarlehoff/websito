@@ -4,6 +4,7 @@ let securitySite = require("./securitySite");
 let fs = require("fs");
 let path = require("path");
 let createError = require("http-errors");
+const { getIndexMetadata } = require("../data/indexMetadata");
 // get syntax highlighting for the blog
 let hljs = require("highlight.js");
 // use markdownit to convert the blog posts (written in github-style markdown) to html
@@ -57,6 +58,7 @@ router.get("/", function (req, res, next) {
     title: nameTitle,
     headertitle: nameTitle,
     pagetitle: "Juan Cruz-Martinez",
+    ...getIndexMetadata(),
   });
 });
 

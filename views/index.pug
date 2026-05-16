@@ -1,5 +1,21 @@
 extends layout
 
+block metadata
+  meta(name="description", content=machineReadableDescription)
+  meta(name="abstract", content=machineReadableSummary)
+  meta(name="keywords", content=machineReadableKeywords)
+  meta(name="author", content="Juan Manuel Cruz-Martinez")
+  meta(property="og:type", content="profile")
+  meta(property="og:title", content="Juan Manuel Cruz-Martinez, PhD")
+  meta(property="og:description", content=machineReadableDescription)
+  meta(property="og:url", content="https://juacrumar.es/")
+  meta(property="og:image", content="https://juacrumar.es/images/uncafe.jpg")
+  meta(property="profile:first_name", content="Juan Manuel")
+  meta(property="profile:last_name", content="Cruz-Martinez")
+  meta(name="twitter:card", content="summary")
+  meta(name="twitter:title", content="Juan Manuel Cruz-Martinez, PhD")
+  meta(name="twitter:description", content=machineReadableDescription)
+  script(type="application/ld+json") !{personSchemaJson}
 
 block bodyHead 
   div.row
@@ -9,8 +25,9 @@ block bodyHead
         figcaption.figure-caption Fig. 1: Physicist having a relaxing cup of café con leche.
     div.col-lg-9
       p I am currently a #[a(href="https://prisma.us.es/investigador/10181") Ramón y Cajal fellow in the Department of Atomic and Nuclear Physics of the University of Sevilla].
-      p Previously I've been a #[a(href="https://home.cern/") CERN] senior fellow in the #[a(href="https://th-dep.web.cern.ch/") Theory group] and a postdoc at the Department of Physics of the University of Milan, as part of the #[a(href="http://n3pdf.mi.infn.it/") N3PDF] team. I did my PhD at #[a(href="https://www.ippp.dur.ac.uk/") Durham University].
-      p My main #[a(href="research") research] interests are at the intersection between High Energy Physics (HEP) and High Performance Computing (HPC). I am the Research & Development coordinator of the NNPDF collaboration, where we utilize Machine Learning techniques to model the partonic structure (quarks and gluons) of the proton in highly energetic collisions. I am involved with the development of several #[a(href="research#software") computing tools] dedicated to state-of-the-art high precision calculations using either novel methodologies or pioneering new hardware in particle physics, such as Graphics Processing Units (GPUs) or Quantum Computers (QC).
+      p Previously I was a #[a(href="https://home.cern/") CERN] senior fellow in the #[a(href="https://th-dep.web.cern.ch/") Theory group] and a postdoc at the Department of Physics of the University of Milan, as part of the #[a(href="http://n3pdf.mi.infn.it/") N3PDF] team. I did my PhD at #[a(href="https://www.ippp.dur.ac.uk/") Durham University].
+      p My #[a(href="research") research] focuses on precision QCD, proton structure and scientific computing for the LHC, sitting at the intersection between High Energy Physics (HEP) and High Performance Computing (HPC).
+      p I am the Research & Development coordinator of the #[a(href="https://nnpdf.mi.infn.it/") NNPDF collaboration], where we utilize Machine Learning techniques to model the partonic structure (quarks and gluons) of the proton in highly energetic collisions. I am involved with the development of several #[a(href="research#software") computing tools] dedicated to state-of-the-art high precision calculations using either novel methodologies or pioneering new hardware in particle physics, such as Graphics Processing Units (GPUs) or Quantum Computers (QC). To make the long story short, I have worked on percent-level proton structure, intrinsic charm, Higgs phenomenology, and occasionally persuading GPUs and quantum circuits to do particle physics.
       p Outside of research (but not far removed), I am a strong proponent of open-source #[a(href="software") software] and try to contribute whenever life allows, and I enjoy the tumultuous world of system administration. So if you are a student or young researcher interested in theoretical physics, computing, or both, feel free to drop by or send me an email.
       p You can contact me by #[a(href="mailto:juacrumar@lairen.eu") mail], #[a(href="https://bsky.app/profile/juacrumar.es") bluesky] or #[a(href="https://xkcd.com/1254/") messenger pigeon].
 
