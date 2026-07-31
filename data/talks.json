@@ -1,11 +1,46 @@
 [
   {
+    "date": "May 2026",
+    "title": "Global analyses of PDFs",
+    "duration": "5d",
+    "conference": "DIS2026",
+    "place": "Bologna (Italy)",
+    "url": "https://agenda.infn.it/event/47074/contributions/289167/",
+    "slides": "https://agenda.infn.it/event/47074/contributions/289167/attachments/149332/228335/juan_cm.pdf"
+  },
+  {
+    "date": "April 2026",
+    "title": "The methodological landscape of PDF determinations",
+    "duration": "1d",
+    "conference": "Invited Seminar",
+    "place": "Michigan State University (USA, Virtual)",
+    "url": "https://pa.msu.edu/news-events-seminars/hep-seminar-schedule.aspx"
+  },
+  {
+    "date": "March 2026",
+    "title": "Machine Learning applications for PDFs: Recent Progress and Open Challenges",
+    "duration": "3d",
+    "conference": "SHARP First Network Conference",
+    "place": "Curia (Portugal)",
+    "url": "https://indico.cern.ch/event/1642976/overview",
+    "slides": "https://indico.cern.ch/event/1642976/contributions/6962161/attachments/3232387/5762218/cost_jcm.pdf"
+  },
+  {
+    "date": "February 2026",
+    "title": "Code, theory and data status towards NNPDF4.1",
+    "duration": "2d",
+    "conference": "NNPDF Collaboration meeting",
+    "place": "Amsterdam (The Netherlands)"
+  },
+    {
     "date": "December 2025",
     "title": "The world of possibilities of the NNPDF framework",
-    "conference": "Milan Christmas Meeting",
-    "duration": "3d",
-    "place": "Milano (Italy)"
-  },
+    "duration": "2d",
+    "conference": "The world of possibilities of the NNPDF framework",
+    "place": "Milano (Italy)",
+    "url": "https://indico.cern.ch/event/1595323/contributions/6829734/",
+    "slides": "https://indico.cern.ch/event/1595323/contributions/6829734/attachments/3195587/5687644/jc_christmas_meeting_2025.pdf"
+  },   
 {
     "date": "March 2025",
     "title": "Challenges and developments in the determination of Parton Distribution Functions",
@@ -380,7 +415,7 @@
   },
   {
     "date": "May 2017",
-    "title": "\\phi^*_\\eta observable for Higgs production",
+    "title": "$\\phi^*_\\eta$ observable for Higgs production",
     "duration": "1d",
     "conference": "Internal Seminar",
     "url": "https://conference.ippp.dur.ac.uk/category/16/",

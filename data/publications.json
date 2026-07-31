@@ -1,6 +1,40 @@
 {
   "article": [
     {
+      "author": "Cruz-Martinez, Juan M. and Nocera, Emanuele R. and Rottoli, Luca and Torrielli, Paolo",
+      "title": "Impact of Z-boson transverse-momentum resummation on PDF determination",
+      "eprint": "2607.19183",
+      "year": "2026"
+    },
+    {
+      "author": "Cruz-Martinez, Juan M. and Linder, Jakob and Pellen, Mathieu and Pelliccioli, Giovanni and Re, Emanuele",
+      "title": "Higher-order effects in amplitude-assisted polarisation extraction with machine-learning techniques",
+      "eprint": "2607.00962",
+      "year": "2026"
+    },
+    {
+      "author": "Cruz-Martinez, Juan M. and Giani, Tommaso and Rabemananjara, Tanjona R.",
+      "title": "Hyperoptimisation algorithm for the next generation of PDF determinations: ensemble regression with an unbiased selection model",
+      "eprint": "2605.31482",
+      "year": "2026"
+    },
+    {
+      "author": "Cruz-Martinez, Juan M. and Giani, Tommaso and Harland-Lang, Lucian A.",
+      "title": "Assessing the impact of fitting methodology at aN$^{3$LO with FPPDF: an open source tool for extracting Parton distribution functions in the Hessian approach}",
+      "eprint": "2602.07118",
+      "doi": "10.1007/JHEP07(2026)185",
+      "journal": "JHEP",
+      "volume": "07",
+      "page": "185",
+      "year": "2026"
+    },
+    {
+      "author": "Cridge, Thomas and Cruz Martinez, Juan and Huston, Joey",
+      "title": "QED Effects in PDFs -- A Les Houches Comparison Study",
+      "eprint": "2602.06908",
+      "year": "2026"
+    },
+    {
       "author": "Ball, Richard D. and Barontini, Andrea and Cruz-Martinez, Juan and Forte, Stefano and Hekhorn, Felix and Nocera, Emanuele R. and Rojo, Juan and Stegeman, Roy",
       "title": "A determination of alpha_s(m_Z) at aN3LO QCD x NLO QED accuracy from a global PDF analysis}",
       "eprint": "2506.13871",
@@ -11,10 +45,14 @@
       "year": "2025"
     },
     {
-      "author": "Huss, A. and others",
-      "title": "NNLOJET: a parton-level event generator for jet cross sections at NNLO QCD accuracy",
+      "author": "Huss, Alexander and others",
+      "title": "NNLOJET: A parton-level event generator for jet cross sections at NNLO QCD accuracy",
       "eprint": "2503.22804",
-      "year": "2025"
+      "doi": "10.21468/SciPostPhysCodeb.69",
+      "journal": "SciPost Phys. Codeb.",
+      "volume": "69",
+      "page": "1",
+      "year": "2026"
     },
     {
       "author": "Cruz-Martinez, Juan and Hasenack, Toon and Hekhorn, Felix and Magni, Giacomo and Nocera, Emanuele R. and Rabemananjara, Tanjona R. and Rojo, Juan and Sharma, Tanishq and van Seeventer, Gijs",
