@@ -10,7 +10,7 @@
     },
     {
       "title" : "Shell Projects & Technology Rijswijk",
-      "description" : "As part of an internship I was part of the Projects and Tehcnology branch of Shell, where I worked on the geophysical tomography imaging tool <a href='https://www.shell.com/energy-and-innovation/overcoming-technology-challenges/finding-oil-and-gas/_jcr_content/par/textimage.stream/1519763871115/bb09c37973c5a21a00f9e95015f705e1dae794cf/geophysical-imaging-brochure-2014.pdf'> SIPMAP<a/>."
+      "description" : "As part of an internship I was part of the Projects and Technology branch of Shell, where I worked on the geophysical tomography imaging tool <a href='https://www.shell.com/energy-and-innovation/overcoming-technology-challenges/finding-oil-and-gas/_jcr_content/par/textimage.stream/1519763871115/bb09c37973c5a21a00f9e95015f705e1dae794cf/geophysical-imaging-brochure-2014.pdf'> SIPMAP<a/>."
     },
     {
       "title" : "NNPDF",
@@ -29,7 +29,7 @@
       "title": "pybliotecario",
       "documentation" : "https://github.com/scarlehoff/pybliotecario/wiki",
       "repository" : "https://github.com/scarlehoff/pybliotecario",
-      "description" : "A Telegram bot written en python with some features to make (my own) life easier. The main goal of the program is to mantain an active connection between the computer in which the pybliotecario runs and your Telegram account."
+      "description" : "A Telegram bot written in python with some features to make (my own) life easier. The main goal of the program is to maintain an active connection between the computer in which the pybliotecario runs and your Telegram account."
     },
     {
       "title": "MadFlow",

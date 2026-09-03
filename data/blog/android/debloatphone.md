@@ -51,7 +51,7 @@ Y para activarlos de nuevo hay que correr los mismos
 
 ## Samsung stuff
 
-El autocompletado de Samsung functiona solo usando Samsung Internet (que no uso) así que no hay problema en desactivarlo.
+El autocompletado de Samsung funciona solo usando Samsung Internet (que no uso) así que no hay problema en desactivarlo.
 
 ```bash
   adb shell pm disable-user --user 0 com.samsung.android.samsungpassautofill

@@ -120,7 +120,7 @@ pugToHTML("resume", {
 });
 
 pugToHTML("teaching", {
-  title: "Resume",
+  title: "Teaching",
 });
 
 //pugToHTML("biblioteca", {

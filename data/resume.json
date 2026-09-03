@@ -26,12 +26,12 @@
     {
       "name" : "English",
       "flag" : "uk",
-      "description" : "I have lived for four years in <a href='https://www.thisisdurham.com/'>Durham</a> (UK). For some examples of my writting you can check my <a href='research#papers'>papers</a> or my <a href='http://etheses.dur.ac.uk/12806/'>PhD thesis</a>."
+      "description" : "I have lived for four years in <a href='https://www.thisisdurham.com/'>Durham</a> (UK). For some examples of my writing you can check my <a href='research#papers'>papers</a> or my <a href='http://etheses.dur.ac.uk/12806/'>PhD thesis</a>."
     },
     {
       "name" : "Italian",
       "flag" : "italy",
-      "description" : "I have lived for severals year in Milan (Italy) and have teached several courses in the <a href='https://www.unimi.it/en/ugov/person/juan-cruz'>university</a> during this time."
+      "description" : "I have lived for several year in Milan (Italy) and have taught several courses in the <a href='https://www.unimi.it/en/ugov/person/juan-cruz'>university</a> during this time."
     }
   ]
 }
